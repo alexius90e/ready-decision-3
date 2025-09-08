@@ -42,6 +42,11 @@ textarea {
     padding: 0 15px;
   }
 }
+@media (max-width: 340px) {
+  .container {
+    padding: 0 10px;
+  }
+}
 
 .button {
   display: inline-block;

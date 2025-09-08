@@ -41,6 +41,10 @@ textarea {
   @include mobile {
     padding: 0 15px;
   }
+
+  @include mobilesm {
+    padding: 0 10px;
+  }
 }
 
 .button {
