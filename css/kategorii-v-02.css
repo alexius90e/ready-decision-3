@@ -43,11 +43,76 @@
             flex: 1 1 100%;
   }
 }
-.kategorii-v-02__card-link-image {
+.kategorii-v-02__card-link {
+  position: relative;
+  display: inline-block;
+}
+.kategorii-v-02__card-link-photo {
+  margin: 0;
+  overflow: hidden;
+}
+.kategorii-v-02__card-link-photo-image {
   display: block;
   max-width: 100%;
   width: 100%;
   height: auto;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.kategorii-v-02__card-link:hover .kategorii-v-02__card-link-photo-image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.kategorii-v-02__card-link-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: #ebebeb;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.kategorii-v-02__card-link-icon::before {
+  content: "";
+  display: block;
+  width: 28px;
+  aspect-ratio: 1;
+  background: url(../assets/kategorii-v-02/link-icon.svg) center/cover no-repeat;
+  -webkit-transition-property: -webkit-filter;
+  transition-property: -webkit-filter;
+  transition-property: filter;
+  transition-property: filter, -webkit-filter;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.kategorii-v-02__card-link:hover .kategorii-v-02__card-link-icon {
+  background-color: #1e674e;
+}
+.kategorii-v-02__card-link:hover .kategorii-v-02__card-link-icon::before {
+  -webkit-filter: brightness(0%) invert(100%);
+          filter: brightness(0%) invert(100%);
 }
 .kategorii-v-02__card-link-title {
   display: inline-block;
