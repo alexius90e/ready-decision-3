@@ -201,19 +201,39 @@
   background-color: #ffffff;
 }
 .perv-ekr-v-01__discount-form-input::-webkit-input-placeholder {
+  font-weight: 400;
   color: #ebebeb;
 }
 .perv-ekr-v-01__discount-form-input::-moz-placeholder {
+  font-weight: 400;
   color: #ebebeb;
 }
 .perv-ekr-v-01__discount-form-input:-ms-input-placeholder {
+  font-weight: 400;
   color: #ebebeb;
 }
 .perv-ekr-v-01__discount-form-input::-ms-input-placeholder {
+  font-weight: 400;
   color: #ebebeb;
 }
 .perv-ekr-v-01__discount-form-input::placeholder {
+  font-weight: 400;
   color: #ebebeb;
+}
+.perv-ekr-v-01__discount-form-input:focus::-webkit-input-placeholder {
+  color: #3e3e3e;
+}
+.perv-ekr-v-01__discount-form-input:focus::-moz-placeholder {
+  color: #3e3e3e;
+}
+.perv-ekr-v-01__discount-form-input:focus:-ms-input-placeholder {
+  color: #3e3e3e;
+}
+.perv-ekr-v-01__discount-form-input:focus::-ms-input-placeholder {
+  color: #3e3e3e;
+}
+.perv-ekr-v-01__discount-form-input:focus::placeholder {
+  color: #3e3e3e;
 }
 .perv-ekr-v-01__discount-form-button {
   text-transform: uppercase;
