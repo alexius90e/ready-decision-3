@@ -1,0 +1,51 @@
+@import './variables';
+@import './mixins';
+
+.kategorii-v-02 {
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 36px 30px;
+    margin: 0;
+
+    @include desktoplg {
+      gap: 36px 20px;
+    }
+  }
+
+  &__card {
+    flex: 0 0 calc(100% / 3 - 30px / 3 * 2);
+    box-sizing: border-box;
+
+    @include desktoplg {
+      flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+    }
+
+    @include laptop {
+      flex: 0 0 calc(100% / 2 - 20px / 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+
+    &-link {
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+
+      &-title {
+        display: inline-block;
+        margin: 20px 0 0;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: normal;
+        color: $color-black;
+      }
+    }
+  }
+}
