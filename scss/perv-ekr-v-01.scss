@@ -148,6 +148,7 @@
         flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
         max-width: calc(100% / 3 - 24px / 3 * 2);
         box-sizing: border-box;
+        border-radius: 0px;
         outline: none;
 
         @include desktoplg {
