@@ -1,4 +1,5 @@
-@import './b-mixins';
+@import './variables';
+@import './mixins';
 
 .kategorii-v-01 {
   &__title {
@@ -6,7 +7,7 @@
     font-weight: 500;
     font-size: 46px;
     line-height: 140%;
-    color: #1c1c20;
+    color: $color-black;
 
     @include desktoplg {
       font-size: 40px;
@@ -27,7 +28,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #3e3e3e;
+    color: $color-dark-gray;
 
     @include desktoplg {
       max-width: none;
@@ -77,7 +78,7 @@
       font-weight: 500;
       font-size: 24px;
       line-height: 140%;
-      color: #1c1c20;
+      color: $color-black;
     }
 
     &-list {
@@ -89,7 +90,7 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 180%;
-        color: #3e3e3e;
+        color: $color-dark-gray;
       }
     }
 
@@ -138,8 +139,8 @@
             cursor: pointer;
 
             &:hover {
-              color: #ffffff;
-              background-color: #1c1c20;
+              color: $color-white;
+              background-color: $color-black;
             }
           }
         }
