@@ -1,0 +1,389 @@
+@import './variables';
+@import './mixins';
+
+@keyframes appear {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  33%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.vidzhet-sv-v-01 {
+  position: fixed;
+  right: 64px;
+  bottom: 64px;
+  z-index: 100;
+  width: fit-content;
+
+  @include mobile {
+    right: 30px;
+    bottom: 30px;
+  }
+
+  &__toggler {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    aspect-ratio: 1 / 1;
+    border-radius: 64px;
+    background-color: $color-black;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 200%;
+      height: 200%;
+      box-sizing: border-box;
+      margin-left: -50%;
+      margin-top: -50%;
+      border-radius: 400px;
+      background-color: $color-black;
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      pointer-events: none;
+    }
+
+    &-icon {
+      position: relative;
+      display: block;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      opacity: 1;
+
+      &-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        user-select: none;
+
+        &:nth-child(1) {
+          animation: appear 6s infinite;
+        }
+
+        &:nth-child(2) {
+          animation: appear 6s infinite 2s;
+        }
+
+        &:nth-child(3) {
+          animation: appear 6s infinite 4s;
+        }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      opacity: 0;
+
+      &-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: auto;
+        user-select: none;
+      }
+    }
+  }
+
+  &.active &__toggler {
+    &::before {
+      content: none;
+    }
+
+    &-icon {
+      opacity: 0;
+    }
+
+    &-close {
+      opacity: 1;
+    }
+  }
+
+  &__social {
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity ease-in-out 0.2s;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 74px;
+      aspect-ratio: 1 / 1;
+      border-radius: 74px;
+      background-color: $color-black;
+
+      &_telegram {
+        background-color: #166ff5;
+      }
+
+      &_whatsapp {
+        background-color: #06cc4d;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+
+  &.active &__social {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__sidebar {
+    position: absolute;
+    right: calc(100% + 16px);
+    bottom: calc((100% - 54px) / 2);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: max-content;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    &-phone,
+    &-callback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      gap: 16px;
+      min-height: 56px;
+      padding: 8px 30px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      text-align: center;
+      border: 2px solid $color-black;
+      border-radius: 80px;
+      transition-property: background-color, color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.2s;
+      cursor: pointer;
+    }
+
+    &-phone {
+      color: $color-white;
+      background-color: $color-black;
+
+      &:hover {
+        color: $color-black;
+        background-color: $color-white;
+      }
+    }
+
+    &-callback {
+      color: $color-black;
+      background-color: $color-white;
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  &.active &__sidebar {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: $color-black, $alpha: 0);
+    transition: background-color ease-in-out 0.2s;
+    will-change: background-color;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: all;
+      background-color: rgba($color: $color-black, $alpha: 0.5);
+    }
+
+    &-body {
+      position: relative;
+      max-height: calc(100dvh - 48px);
+      max-width: calc(100dvw - 30px);
+      width: 360px;
+      padding: 24px 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      background-color: $color-white;
+      opacity: 0;
+      transition: opacity ease-in-out 0.4s;
+      will-change: opacity;
+    }
+
+    &.active &-body {
+      opacity: 1;
+    }
+
+    &-content {
+      max-height: calc(100dvh - 96px);
+      overflow: auto;
+    }
+
+    &-title {
+      margin: 0 0 8px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: $color-black;
+    }
+
+    &-description {
+      margin: 0 0 24px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #3e3e3e;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0 0 12px;
+
+      @include mobile {
+        margin-bottom: 11px;
+      }
+
+      &-input {
+        display: inline-block;
+        min-height: 50px;
+        width: 100%;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: $color-black;
+        border: 1px solid #ebebeb;
+        background-color: $color-white;
+        transition-property: background-color, border-color, color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+
+        &:user-invalid {
+          color: $color-red;
+          border-color: $color-red;
+        }
+
+        &::placeholder {
+          color: #a1a1a4;
+        }
+      }
+
+      &-submit {
+        margin: 0;
+      }
+    }
+
+    &-disclaimer {
+      margin: 0;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 154%;
+      color: #a1a1a4;
+      transition: color ease-in-out 0.2s;
+
+      & a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: inherit;
+
+        &:hover {
+          color: #1e674e;
+        }
+      }
+    }
+
+    &-close {
+      &-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        aspect-ratio: 1;
+        padding: 0;
+        border: none;
+        background-color: #f5f5f5;
+        cursor: pointer;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 20px;
+          aspect-ratio: 1;
+          background: url(../assets/vidzhet-sv-v-01/close.svg) center / cover no-repeat;
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+}
