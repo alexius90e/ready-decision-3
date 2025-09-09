@@ -321,6 +321,8 @@
         line-height: 140%;
         color: $color-black;
         border: 1px solid #ebebeb;
+        border-radius: 0px;
+        outline: none;
         background-color: $color-white;
         transition-property: background-color, border-color, color;
         transition-timing-function: ease-out;

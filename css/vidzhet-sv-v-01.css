@@ -370,6 +370,8 @@
   line-height: 140%;
   color: #1c1c20;
   border: 1px solid #ebebeb;
+  border-radius: 0px;
+  outline: none;
   background-color: #ffffff;
   -webkit-transition-property: background-color, border-color, color;
   transition-property: background-color, border-color, color;
