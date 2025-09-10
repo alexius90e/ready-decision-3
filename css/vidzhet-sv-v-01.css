@@ -387,18 +387,23 @@
   border-color: #ff4747;
 }
 .vidzhet-sv-v-01__modal-form-input::-webkit-input-placeholder {
+  font-weight: 400;
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-input::-moz-placeholder {
+  font-weight: 400;
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-input:-ms-input-placeholder {
+  font-weight: 400;
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-input::-ms-input-placeholder {
+  font-weight: 400;
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-input::placeholder {
+  font-weight: 400;
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-submit {
