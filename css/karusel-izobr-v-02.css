@@ -1,0 +1,103 @@
+.karusel-izobr-v-02 {
+  overflow: hidden;
+}
+.karusel-izobr-v-02__wrapper {
+  overflow: auto;
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-02__wrapper {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .karusel-izobr-v-02__wrapper {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .karusel-izobr-v-02__wrapper {
+    margin: 0 -10px;
+  }
+}
+.karusel-izobr-v-02__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 24px 30px;
+}
+@media (max-width: 1500px) {
+  .karusel-izobr-v-02__cards {
+    gap: 24px 20px;
+  }
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-02__cards {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  .karusel-izobr-v-02__cards {
+    gap: 24px 16px;
+    min-width: 692px;
+  }
+}
+@media (max-width: 576px) {
+  .karusel-izobr-v-02__cards {
+    padding: 0 15px;
+    min-width: 612px;
+  }
+}
+@media (max-width: 340px) {
+  .karusel-izobr-v-02__cards {
+    padding: 0 10px;
+  }
+}
+.karusel-izobr-v-02__card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - 22.5px);
+          flex: 0 0 calc(25% - 22.5px);
+}
+@media (max-width: 1500px) {
+  .karusel-izobr-v-02__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(25% - 15px);
+            flex: 0 0 calc(25% - 15px);
+  }
+}
+@media (max-width: 768px) {
+  .karusel-izobr-v-02__card {
+    gap: 24px 16px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(25% - 12px);
+            flex: 0 0 calc(25% - 12px);
+  }
+}
+.karusel-izobr-v-02__card-figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0;
+}
+.karusel-izobr-v-02__card-figure-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.karusel-izobr-v-02__card-text {
+  padding: 16px 6px 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  color: #1c1c20;
+}

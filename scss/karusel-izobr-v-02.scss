@@ -1,0 +1,85 @@
+@import './variables';
+@import './mixins';
+
+.karusel-izobr-v-02 {
+  overflow: hidden;
+
+  &__wrapper {
+    overflow: auto;
+
+    @include laptop {
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px 30px;
+
+    @include desktoplg {
+      gap: 24px 20px;
+    }
+
+    @include laptop {
+      padding: 0 20px;
+    }
+
+    @include tablet {
+      gap: 24px 16px;
+      min-width: 692px;
+    }
+
+    @include mobile {
+      padding: 0 15px;
+      min-width: 612px;
+    }
+
+    @include mobilesm {
+      padding: 0 10px;
+    }
+  }
+
+  &__card {
+    flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+
+    @include desktoplg {
+      flex: 0 0 calc(100% / 4 - 20px / 4 * 3);
+    }
+
+    @include tablet {
+      gap: 24px 16px;
+      flex: 0 0 calc(100% / 4 - 16px / 4 * 3);
+    }
+
+    &-figure {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-text {
+      padding: 16px 6px 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: $color-black;
+    }
+  }
+}
