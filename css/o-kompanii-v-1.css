@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+.o-kompanii-v-1 {
+  overflow: hidden;
+}
+.o-kompanii-v-1__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0 24px;
+  padding: 50px 0;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__wrapper {
+    padding: 34px 0 25px;
+  }
+}
+.o-kompanii-v-1__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  margin: 0 0 30px;
+  font-family: "Old Standard TT", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  color: #2f2f2f;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__title {
+    font-size: 28px;
+  }
+}
+@media (max-width: 576px) {
+  .o-kompanii-v-1__title {
+    margin-bottom: 15px;
+  }
+}
+.o-kompanii-v-1__description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  max-width: calc(100% - 512px - 24px);
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__description {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    max-width: none;
+    margin: 30px 0 0;
+  }
+}
+.o-kompanii-v-1__description-paragraph {
+  margin: 15px 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: #333;
+}
+.o-kompanii-v-1__description-paragraph:first-child {
+  margin-top: 0;
+}
+.o-kompanii-v-1__description-paragraph:last-child {
+  margin-bottom: 0px;
+}
+.o-kompanii-v-1__gallery {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  max-width: 512px;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__gallery {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    max-width: 100%;
+  }
+}
+.o-kompanii-v-1__gallery-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.o-kompanii-v-1__gallery .swiper-button-next, .o-kompanii-v-1__gallery .swiper-button-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #f5f7fa;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.o-kompanii-v-1__gallery .swiper-button-next::after, .o-kompanii-v-1__gallery .swiper-button-prev::after {
+  content: "";
+  display: block;
+  width: 16px;
+  aspect-ratio: 1;
+  background: url(../assets/o-kompanii-v-1/next.svg) center/cover no-repeat;
+}
+.o-kompanii-v-1__gallery .swiper-button-prev {
+  left: 0;
+}
+.o-kompanii-v-1__gallery .swiper-button-prev::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.o-kompanii-v-1__gallery .swiper-button-next {
+  right: 0;
+}
+.o-kompanii-v-1__gallery .swiper-button-next::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.o-kompanii-v-1__advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  gap: 24px;
+  margin: 44px 0 0;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__advantages {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .o-kompanii-v-1__advantages {
+    gap: 16px;
+  }
+}
+.o-kompanii-v-1__advantages-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  gap: 15px;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__advantages-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 12px);
+            flex: 0 0 calc(50% - 12px);
+  }
+}
+@media (max-width: 576px) {
+  .o-kompanii-v-1__advantages-item {
+    gap: 12px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 8px);
+            flex: 0 0 calc(50% - 8px);
+  }
+}
+.o-kompanii-v-1__advantages-item-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 58px;
+          flex: 0 0 58px;
+  margin: 0;
+}
+.o-kompanii-v-1__advantages-item-icon-image {
+  display: block;
+  max-width: 100%;
+  width: 58px;
+  height: auto;
+}
+.o-kompanii-v-1__advantages-item-content-title {
+  margin: 0;
+  font-family: "Old Standard TT", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+@media (max-width: 1020px) {
+  .o-kompanii-v-1__advantages-item-content-title {
+    font-size: 27px;
+  }
+}
+@media (max-width: 576px) {
+  .o-kompanii-v-1__advantages-item-content-title {
+    font-size: 22px;
+  }
+}
+.o-kompanii-v-1__advantages-item-content-text {
+  margin: 3px 0 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+@media (max-width: 576px) {
+  .o-kompanii-v-1__advantages-item-content-text {
+    margin-top: 0px;
+    font-size: 12px;
+  }
+}

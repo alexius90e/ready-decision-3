@@ -1,0 +1,268 @@
+@import './variables';
+@import './mixins';
+
+.o-kompanii-v-01 {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 30px;
+
+    @include desktop {
+      gap: 0 20px;
+    }
+  }
+
+  &__title {
+    display: none;
+    flex: 1 1 100%;
+    margin: 0 0 12px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 140%;
+    color: $color-black;
+
+    @include laptop {
+      display: block;
+    }
+
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+
+  &__info {
+    flex: 0 0 calc(100% - 630px - 30px);
+    max-width: 730px;
+
+    @include desktoplg {
+      flex: 0 0 calc(100% - 516px - 30px);
+    }
+
+    @include desktop {
+      flex: 0 0 calc(100% - 430px - 30px);
+    }
+
+    @include laptop {
+      flex: 1 1 100%;
+      order: 1;
+      max-width: none;
+      margin: 16px 0 0;
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: 500;
+      font-size: 38px;
+      line-height: 140%;
+      color: $color-black;
+
+      @include desktoplg {
+        font-size: 34px;
+      }
+
+      @include desktop {
+        font-size: 32px;
+      }
+
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-subtitle {
+      margin: 12px 0 16px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: $color-black;
+
+      @include laptop {
+        margin: 0 0 16px;
+      }
+    }
+
+    &-text {
+      margin: 12px 0 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: $color-dark-gray;
+    }
+  }
+
+  &__gallery {
+    flex: 0 0 630px;
+
+    @include desktoplg {
+      flex: 0 0 516px;
+    }
+
+    @include desktop {
+      flex: 0 0 430px;
+    }
+
+    @include laptop {
+      flex: 1 1 100%;
+      order: 0;
+    }
+
+    &-title {
+      display: none;
+
+      @include laptop {
+        display: block;
+        margin: 0 0 28px;
+      }
+    }
+
+    & .swiper {
+      display: grid;
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/o-kompanii-v-01/arrow-left.svg) center / cover no-repeat;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    &-figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    gap: 30px;
+    padding: 50px 0 0;
+
+    @include desktoplg {
+      padding: 40px 0 0;
+    }
+
+    @include laptop {
+      order: 2;
+      gap: 24px 16px;
+    }
+
+    &-card {
+      flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+
+      @include desktop {
+        flex: 0 0 calc(100% / 2 - 30px / 2);
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 16px / 2);
+      }
+
+      &-title {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 3px 6px;
+        max-width: 245px;
+        margin: 0;
+
+        @include laptop {
+          gap: 2px 6px;
+        }
+
+        &-value {
+          flex: 0 0 auto;
+          font-weight: 500;
+          font-size: 48px;
+          line-height: 100%;
+          color: $color-black;
+
+          @include laptop {
+            font-size: 38px;
+          }
+        }
+
+        &-text {
+          flex: 0 0 auto;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 100%;
+          color: $color-black;
+
+          @include laptop {
+            font-size: 15px;
+          }
+        }
+      }
+
+      &-text {
+        max-width: 245px;
+        margin: 11px 0 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #a1a1a4;
+
+        @include laptop {
+          margin: 8px 0 0;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
