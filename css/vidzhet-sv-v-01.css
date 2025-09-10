@@ -352,7 +352,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   margin: 0 0 12px;
 }
 @media (max-width: 576px) {
@@ -410,7 +410,7 @@
   color: #a1a1a4;
 }
 .vidzhet-sv-v-01__modal-form-submit {
-  margin: 0;
+  margin: 4px 0 0;
 }
 .vidzhet-sv-v-01__modal-disclaimer {
   margin: 0;
