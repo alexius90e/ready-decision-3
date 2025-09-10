@@ -251,6 +251,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     background-color: rgba($color: $color-black, $alpha: 0);
     transition: background-color ease-in-out 0.2s;
     will-change: background-color;
@@ -263,7 +264,7 @@
 
     &-body {
       position: relative;
-      max-height: calc(100dvh - 48px);
+      max-height: calc(100dvh - 30px);
       max-width: calc(100dvw - 30px);
       width: 360px;
       padding: 24px 20px;
@@ -280,12 +281,13 @@
     }
 
     &-content {
-      max-height: calc(100dvh - 96px);
+      max-height: calc(100dvh - 74px);
       overflow: auto;
     }
 
     &-title {
       margin: 0 0 8px;
+      padding-right: 30px;
       font-weight: 500;
       font-size: 20px;
       line-height: 140%;

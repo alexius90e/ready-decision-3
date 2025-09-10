@@ -296,6 +296,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
   background-color: rgba(28, 28, 32, 0);
   -webkit-transition: background-color ease-in-out 0.2s;
   transition: background-color ease-in-out 0.2s;
@@ -308,7 +309,7 @@
 }
 .vidzhet-sv-v-01__modal-body {
   position: relative;
-  max-height: calc(100dvh - 48px);
+  max-height: calc(100dvh - 30px);
   max-width: calc(100dvw - 30px);
   width: 360px;
   padding: 24px 20px;
@@ -325,11 +326,12 @@
   opacity: 1;
 }
 .vidzhet-sv-v-01__modal-content {
-  max-height: calc(100dvh - 96px);
+  max-height: calc(100dvh - 74px);
   overflow: auto;
 }
 .vidzhet-sv-v-01__modal-title {
   margin: 0 0 8px;
+  padding-right: 30px;
   font-weight: 500;
   font-size: 20px;
   line-height: 140%;
