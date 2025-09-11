@@ -50,6 +50,10 @@
           max-width: 100%;
           width: 231px;
           height: auto;
+
+          @include laptop {
+            width: 167px;
+          }
         }
       }
 

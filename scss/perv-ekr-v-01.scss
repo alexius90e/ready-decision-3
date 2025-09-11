@@ -173,14 +173,24 @@
         border: 2px solid #444444;
         background-color: #444444;
 
+        @include tablet {
+          min-height: 58px;
+          width: calc(16 / 14 * 100%);
+          margin: 0 -7%;
+          padding: 14px 20px;
+          box-sizing: border-box;
+          font-size: 16px;
+          line-height: 100%;
+          transform: scale(0.875);
+        }
+
         &:focus {
           border: 2px solid $color-white;
           background-color: $color-white;
         }
 
-        &:user-valid {
-          border: 2px solid $color-white;
-          background-color: $color-white;
+        &:user-invalid {
+          border-color: $color-red;
         }
 
         &::placeholder {

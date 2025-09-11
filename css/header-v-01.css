@@ -70,6 +70,11 @@
   width: 231px;
   height: auto;
 }
+@media (max-width: 992px) {
+  .header-v-01__top-logo-link-image {
+    width: 167px;
+  }
+}
 .header-v-01__top-logo-slogan {
   display: inline-block;
   max-width: 160px;
