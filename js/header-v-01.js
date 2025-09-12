@@ -1,17 +1,22 @@
-const headerBurger = document.querySelector('.header-v-01__nav-menu-item-burger');
+const headerBurger = document.querySelector('.header-v-01__top-burger-button');
+const headerCatalogBurger = document.querySelector('.header-v-01__bottom-nav-menu-item-burger');
 const headerMenu = document.querySelector('.header-v-01__menu');
 
-if (headerBurger && headerMenu) {
-  headerBurger.addEventListener('click', (event) => {
-    const isActive = event.currentTarget.classList.contains('active');
+if (headerBurger && headerMenu && headerCatalogBurger) {
+  const burgerButtons = [headerBurger, headerCatalogBurger];
 
-    if (isActive) {
-      event.currentTarget.classList.remove('active');
-      headerMenu.classList.remove('active');
-    } else {
-      event.currentTarget.classList.add('active');
-      headerMenu.classList.add('active');
-    }
+  burgerButtons.forEach((button, _index, array) => {
+    button.addEventListener('click', (event) => {
+      const isActive = event.currentTarget.classList.contains('active');
+
+      if (isActive) {
+        array.forEach((button) => button.classList.remove('active'));
+        headerMenu.classList.remove('active');
+      } else {
+        array.forEach((button) => button.classList.add('active'));
+        headerMenu.classList.add('active');
+      }
+    });
   });
 }
 
@@ -80,7 +85,9 @@ headerMobileNavItems.forEach((mobileNavItem) => {
 
 const headerModal = document.querySelector('.header-v-01__modal');
 const headerModalForm = document.querySelector('.header-v-01__modal-form');
-const headerCallbackButtons = document.querySelectorAll('.header-v-01__contacts-callback-button');
+const headerCallbackButtons = document.querySelectorAll(
+  '.header-v-01__top-contacts-callback-button'
+);
 const headerCallbackMobButtons = document.querySelectorAll(
   '.header-v-01__menu-mobile-contacts-callback-button'
 );
