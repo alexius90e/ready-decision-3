@@ -20,20 +20,23 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
   });
 }
 
-const headerLists = document.querySelectorAll('.header-v-01__menu-list');
+const headerDesktopMenuItems = document.querySelectorAll('.header-v-01__menu-desktop-menu-item');
+const headerDesktopMenuLinks = document.querySelector('.header-v-01__menu-desktop-links');
 
-headerLists.forEach((list) => {
-  list.addEventListener('click', (event) => {
-    const isListActive = event.currentTarget.classList.contains('active');
-    const isMoreBtn = event.target.classList.contains('header-v-01__menu-list-more-button');
+headerDesktopMenuItems.forEach((item) => {
+  item.addEventListener('pointerover', (event) => {
+    const currentTarget = event.currentTarget;
+    const submenu = currentTarget.querySelector('.header-v-01__menu-desktop-menu-item-submenu');
+    headerDesktopMenuItems.forEach((item) => item.classList.remove('active'));
+    currentTarget.classList.add('active');
 
-    if (isMoreBtn) {
-      event.target.innerText = isListActive ? 'Еще...' : 'Скрыть';
-
-      if (isListActive) {
-        event.currentTarget.classList.remove('active');
+    if (headerDesktopMenuLinks) {
+      if (submenu) {
+        const clone = submenu.cloneNode(true);
+        headerDesktopMenuLinks.innerHTML = '';
+        headerDesktopMenuLinks.appendChild(clone);
       } else {
-        event.currentTarget.classList.add('active');
+        headerDesktopMenuLinks.innerHTML = '';
       }
     }
   });
@@ -42,46 +45,15 @@ headerLists.forEach((list) => {
 const headerMobileNavItems = document.querySelectorAll('.header-v-01__menu-mobile-nav-item');
 const headerMenuContent = document.querySelector('.header-v-01__menu-content');
 
-headerMobileNavItems.forEach((mobileNavItem) => {
-  mobileNavItem.addEventListener('click', (event) => {
-    const isTitle = event.target.classList.contains('header-v-01__menu-mobile-nav-item-title');
-    const isTitleLink = event.target.classList.contains(
-      'header-v-01__menu-mobile-nav-item-title-link'
-    );
-    const isMoreBtn = event.target.classList.contains(
-      'header-v-01__menu-mobile-nav-item-more-button'
-    );
-    const isBackBtn = event.target.classList.contains(
-      'header-v-01__menu-mobile-nav-item-back-button'
-    );
-    const detailsEl = event.currentTarget.querySelector(
-      '.header-v-01__menu-mobile-nav-item-details'
-    );
-
-    if (isMoreBtn) {
-      event.currentTarget.classList.add('active');
-      if (headerMenuContent) headerMenuContent.scrollTop = 0;
-    }
-
-    if (isTitle) {
-      if (detailsEl !== null) {
-        event.currentTarget.classList.add('active');
-        if (headerMenuContent) headerMenuContent.scrollTop = 0;
-      }
-    }
-
-    if (isTitleLink) {
-      if (headerBurger && headerMenu) {
-        headerBurger.classList.remove('active');
-        headerMenu.classList.remove('active');
-      }
-    }
-
+headerMobileNavItems.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    const backBtnClassName = 'header-v-01__menu-mobile-nav-item-back-button';
+    const isBackBtn = event.target.classList.contains(backBtnClassName);
     if (isBackBtn) event.currentTarget.classList.remove('active');
   });
 });
 
-////
+//// Modal
 
 const headerModal = document.querySelector('.header-v-01__modal');
 const headerModalForm = document.querySelector('.header-v-01__modal-form');
