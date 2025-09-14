@@ -1,5 +1,8 @@
 .header-v-01 {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
   padding: 0;
 }
@@ -182,7 +185,7 @@
   aspect-ratio: 1;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 24px;
+  background-size: 20px;
   -webkit-transition-property: border, color, background-color;
   transition-property: border, color, background-color;
   -webkit-transition-timing-function: ease-in-out;
@@ -452,32 +455,36 @@
 }
 .header-v-01__menu {
   position: fixed;
-  top: 120px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
-  border-top: 2px solid #f2f2f2;
-  background-color: #ffffff;
+  z-index: 100;
+  padding-top: 120px;
   -webkit-transform: translate3d(0, -120dvh, 0);
           transform: translate3d(0, -120dvh, 0);
-  -webkit-transition: -webkit-transform ease-in-out 0.4s;
-  transition: -webkit-transform ease-in-out 0.4s;
-  transition: transform ease-in-out 0.4s;
-  transition: transform ease-in-out 0.4s, -webkit-transform ease-in-out 0.4s;
   will-change: transform;
 }
 @media (max-width: 992px) {
   .header-v-01__menu {
     top: 64px;
+    z-index: 0;
+    padding-top: 0;
+    background-color: #ffffff;
+    -webkit-transition: -webkit-transform ease-in-out 0.4s;
+    transition: -webkit-transform ease-in-out 0.4s;
+    transition: transform ease-in-out 0.4s;
+    transition: transform ease-in-out 0.4s, -webkit-transform ease-in-out 0.4s;
   }
 }
 .header-v-01__menu.active {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
-.header-v-01__menu > .container {
-  height: 100%;
+@media (max-width: 992px) {
+  .header-v-01__menu > .container {
+    height: 100%;
+  }
 }
 .header-v-01__menu-wrapper {
   max-height: 100%;
@@ -497,6 +504,14 @@
     padding: 24px 0;
   }
 }
+@media (max-width: 992px) {
+  .header-v-01__menu-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+  }
+}
 .header-v-01__menu-content {
   display: block;
   max-height: calc(100dvh - 112px);
@@ -504,6 +519,8 @@
 }
 @media (max-width: 992px) {
   .header-v-01__menu-content {
+    position: relative;
+    z-index: 100;
     max-height: calc(100dvh - 64px - 24px - 24px);
   }
 }

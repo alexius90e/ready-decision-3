@@ -18,6 +18,13 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
       }
     });
   });
+
+  headerMenu.addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) {
+      headerMenu.classList.remove('active');
+      burgerButtons.forEach((button) => button.classList.remove('active'));
+    }
+  });
 }
 
 const headerDesktopMenuItems = document.querySelectorAll('.header-v-01__menu-desktop-menu-item');
@@ -48,7 +55,17 @@ const headerMenuContent = document.querySelector('.header-v-01__menu-content');
 headerMobileNavItems.forEach((item) => {
   item.addEventListener('click', (event) => {
     const backBtnClassName = 'header-v-01__menu-mobile-nav-item-back-button';
+    const titleClassName = 'header-v-01__menu-mobile-nav-item-title';
+    const moreClassName = 'header-v-01__menu-mobile-nav-item-more-button';
     const isBackBtn = event.target.classList.contains(backBtnClassName);
+    const isTitle = event.target.classList.contains(titleClassName);
+    const isMoreBtn = event.target.classList.contains(moreClassName);
+
+    if (isMoreBtn || isTitle) {
+      event.currentTarget.classList.add('active');
+      if (headerMenuContent) headerMenuContent.scrollTop = 0;
+    }
+
     if (isBackBtn) event.currentTarget.classList.remove('active');
   });
 });

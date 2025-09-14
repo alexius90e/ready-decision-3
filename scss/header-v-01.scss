@@ -2,7 +2,10 @@
 @import './mixins';
 
 .header-v-01 {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
   padding: 0;
 
@@ -142,7 +145,7 @@
           aspect-ratio: 1;
           background-position: center;
           background-repeat: no-repeat;
-          background-size: 24px;
+          background-size: 20px;
           transition-property: border, color, background-color;
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
@@ -403,19 +406,21 @@
 
   &__menu {
     position: fixed;
-    top: 120px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
-    border-top: 2px solid #f2f2f2;
-    background-color: #ffffff;
+    z-index: 100;
+    padding-top: 120px;
     transform: translate3d(0, -120dvh, 0);
-    transition: transform ease-in-out 0.4s;
     will-change: transform;
 
     @include laptop {
       top: 64px;
+      z-index: 0;
+      padding-top: 0;
+      background-color: #ffffff;
+      transition: transform ease-in-out 0.4s;
     }
 
     &.active {
@@ -423,7 +428,9 @@
     }
 
     & > .container {
-      height: 100%;
+      @include laptop {
+        height: 100%;
+      }
     }
 
     &-wrapper {
@@ -440,6 +447,15 @@
         margin: 0;
         padding: 24px 0;
       }
+
+      &::before {
+        @include laptop {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: #ffffff;
+        }
+      }
     }
 
     &-content {
@@ -448,6 +464,8 @@
       overflow: auto;
 
       @include laptop {
+        position: relative;
+        z-index: 100;
         max-height: calc(100dvh - 64px - 24px - 24px);
       }
     }
