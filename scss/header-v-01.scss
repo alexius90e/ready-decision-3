@@ -223,7 +223,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 30px;
-      padding: 8px 0;
+      margin: 0 0 -1px;
+      padding: 0;
 
       @include desktop {
         gap: 25px;
@@ -236,35 +237,36 @@
       &-menu {
         display: flex;
         align-items: center;
-        gap: 40px;
         margin: 0;
         padding: 0;
         list-style-type: none;
 
-        @include desktoplg {
-          gap: 30px;
-        }
-
-        @include desktop {
-          gap: 20px;
-        }
-
         &-item {
+          position: relative;
           transition: opacity ease-out 0.4s;
 
           &-burger,
           &-link {
+            padding: 14px 20px;
             font-weight: 500;
             font-size: 14px;
-            line-height: 140%;
+            line-height: 20px;
             color: #1c1c20;
+
+            @include desktoplg {
+              padding: 14px 15px;
+            }
+
+            @include desktop {
+              padding: 14px 10px;
+            }
           }
 
           &-burger {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 0;
+            padding-left: 0;
             outline: none;
             border: none;
             background-color: rgba($color: #ffffff, $alpha: 0);
@@ -284,7 +286,50 @@
           }
 
           &-link {
-            display: inline-block;
+            display: block;
+          }
+
+          &-submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: block;
+            width: 264px;
+            padding: 12px 0;
+            margin: 0;
+            list-style-type: none;
+            background-color: #fafafa;
+            display: none;
+
+            &-item {
+              position: relative;
+              padding: 8px 20px;
+
+              &-link {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+                color: #3e3e3e;
+                transition: color ease-out 0.2s;
+
+                &:hover {
+                  color: #1e674e;
+                }
+              }
+            }
+
+            &-item > & {
+              top: -12px;
+              left: 100%;
+            }
+
+            &-item:hover > & {
+              display: block;
+            }
+          }
+
+          &:hover > &-submenu {
+            display: block;
           }
         }
 
@@ -399,7 +444,7 @@
 
     &-content {
       display: block;
-      max-height: calc(100dvh - 170px);
+      max-height: calc(100dvh - 112px);
       overflow: auto;
 
       @include laptop {
