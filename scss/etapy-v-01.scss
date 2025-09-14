@@ -1,0 +1,129 @@
+@import './variables';
+@import './mixins';
+
+.etapy-v-01 {
+  &__wrapper {
+  }
+
+  &__gallery {
+    & .swiper {
+      display: grid;
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-slide {
+        height: 100%;
+        width: fit-content;
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          @include laptop {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/o-kompanii-v-01/arrow-left.svg) center / cover no-repeat;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 2px solid #ebebeb;
+    background-color: $color-white;
+
+    @include laptop {
+      max-width: 294px;
+      width: auto;
+    }
+
+    @include tablet {
+      max-width: 299px;
+    }
+
+    &-details {
+      flex: 1 1 auto;
+
+      &-title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        color: #1c1c20;
+      }
+
+      &-description {
+        margin: 20px 0 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #3e3e3e;
+      }
+
+      &-controls {
+        margin: 6px 0 0;
+
+        &-button {
+          text-transform: uppercase;
+          transform: translateY(14px);
+        }
+      }
+    }
+
+    &-id {
+      margin: 14px 0 0;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 100%;
+      text-transform: uppercase;
+      text-align: right;
+      color: #2f2f2f;
+    }
+  }
+}
