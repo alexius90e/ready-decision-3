@@ -2,9 +2,6 @@
 @import './mixins';
 
 .etapy-v-01 {
-  &__wrapper {
-  }
-
   &__gallery {
     & .swiper {
       display: grid;
@@ -45,7 +42,7 @@
             width: 22px;
             aspect-ratio: 1;
             filter: invert(100%);
-            background: url(../assets/o-kompanii-v-01/arrow-left.svg) center / cover no-repeat;
+            background: url(../assets/etapy-v-01/arrow-left.svg) center / cover no-repeat;
           }
         }
 
