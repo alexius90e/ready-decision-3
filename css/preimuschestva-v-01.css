@@ -125,6 +125,7 @@
 .preimuschestva-v-01__callback-button {
   max-width: calc(25% - 22.5px);
   width: 100%;
+  font-weight: 500;
 }
 @media (max-width: 1500px) {
   .preimuschestva-v-01__callback-button {

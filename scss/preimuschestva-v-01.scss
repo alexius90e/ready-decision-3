@@ -125,6 +125,7 @@
     &-button {
       max-width: calc(100% / 4 - 30px / 4 * 3);
       width: 100%;
+      font-weight: 500;
 
       @include desktoplg {
         max-width: calc(100% / 4 - 20px / 4 * 3);
