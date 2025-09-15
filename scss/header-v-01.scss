@@ -948,6 +948,7 @@
       flex-direction: column;
       gap: 14px;
       margin: 0 0 12px;
+      overflow: hidden;
 
       @include mobile {
         margin-bottom: 11px;
@@ -957,7 +958,7 @@
         display: inline-block;
         min-height: 58px;
         width: calc(16 / 14 * 100%);
-        margin: 0 -7%;
+        margin: 0 -7.1%;
         padding: 14px 20px;
         box-sizing: border-box;
         font-weight: 500;

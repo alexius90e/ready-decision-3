@@ -1079,6 +1079,7 @@
           flex-direction: column;
   gap: 14px;
   margin: 0 0 12px;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .header-v-01__modal-form {
@@ -1089,7 +1090,7 @@
   display: inline-block;
   min-height: 58px;
   width: 114.2857142857%;
-  margin: 0 -7%;
+  margin: 0 -7.1%;
   padding: 14px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
