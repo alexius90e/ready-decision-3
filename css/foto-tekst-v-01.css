@@ -1,0 +1,109 @@
+.foto-tekst-v-01__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.foto-tekst-v-01__title {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 140%;
+  color: #1c1c20;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__title {
+    display: block;
+    margin: 0 0 12px;
+  }
+}
+@media (max-width: 768px) {
+  .foto-tekst-v-01__title {
+    font-size: 28px;
+  }
+}
+.foto-tekst-v-01__photo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 44.5%;
+          flex: 0 0 44.5%;
+  margin: 0;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__photo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.foto-tekst-v-01__photo-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.foto-tekst-v-01__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 55.5%;
+          flex: 0 0 55.5%;
+  padding: 20px 5.3%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__details {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    padding: 0;
+  }
+}
+.foto-tekst-v-01__details-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 140%;
+  color: #1c1c20;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__details-title {
+    display: none;
+  }
+}
+.foto-tekst-v-01__details-description {
+  margin: 20px 0 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #3e3e3e;
+}
+.foto-tekst-v-01__details-callback {
+  margin: 40px 0 0;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__details-callback {
+    margin-top: 24px;
+  }
+}
+.foto-tekst-v-01__details-callback-button {
+  max-width: 410px;
+  width: 100%;
+  text-transform: uppercase;
+}
+@media (max-width: 992px) {
+  .foto-tekst-v-01__details-callback-button {
+    max-width: none;
+  }
+}

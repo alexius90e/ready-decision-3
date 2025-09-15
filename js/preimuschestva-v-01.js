@@ -5,7 +5,7 @@ if (preimuschestvaV01SwiperEl) {
     slidesPerView: 1,
     spaceBetween: 30,
     breakpoints: {
-      320: {
+      340: {
         slidesPerView: 'auto',
         spaceBetween: 20,
       },
