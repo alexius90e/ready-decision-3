@@ -53,7 +53,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .header-v-01__top-logo {
     gap: 20px;
   }
@@ -297,8 +297,6 @@
 }
 .header-v-01__bottom-nav-menu-item {
   position: relative;
-  -webkit-transition: opacity ease-out 0.4s;
-  transition: opacity ease-out 0.4s;
 }
 .header-v-01__bottom-nav-menu-item-burger, .header-v-01__bottom-nav-menu-item-link {
   padding: 14px 20px;
@@ -306,6 +304,8 @@
   font-size: 14px;
   line-height: 20px;
   color: #1c1c20;
+  -webkit-transition: opacity ease-out 0.4s;
+  transition: opacity ease-out 0.4s;
 }
 @media (max-width: 1500px) {
   .header-v-01__bottom-nav-menu-item-burger, .header-v-01__bottom-nav-menu-item-link {
@@ -381,10 +381,10 @@
 .header-v-01__bottom-nav-menu-item:hover > .header-v-01__bottom-nav-menu-item-submenu {
   display: block;
 }
-.header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) .header-v-01__bottom-nav-menu-item {
+.header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) > .header-v-01__bottom-nav-menu-item > .header-v-01__bottom-nav-menu-item-link, .header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) > .header-v-01__bottom-nav-menu-item > .header-v-01__bottom-nav-menu-item-burger {
   opacity: 0.5;
 }
-.header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) .header-v-01__bottom-nav-menu-item:hover {
+.header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) > .header-v-01__bottom-nav-menu-item > .header-v-01__bottom-nav-menu-item-link:hover, .header-v-01__bottom-nav-menu:has(.header-v-01__bottom-nav-menu-item:hover) > .header-v-01__bottom-nav-menu-item > .header-v-01__bottom-nav-menu-item-burger:hover {
   opacity: 1;
 }
 .header-v-01__bottom-mode, .header-v-01__bottom-location {
@@ -461,16 +461,18 @@
   bottom: 0;
   z-index: 100;
   padding-top: 120px;
-  -webkit-transform: translate3d(0, -120dvh, 0);
-          transform: translate3d(0, -120dvh, 0);
-  will-change: transform;
+  display: none;
 }
 @media (max-width: 992px) {
   .header-v-01__menu {
-    top: 64px;
+    top: 61px;
     z-index: 0;
+    display: block;
     padding-top: 0;
     background-color: #ffffff;
+    -webkit-transform: translate3d(0, -120dvh, 0);
+            transform: translate3d(0, -120dvh, 0);
+    will-change: transform;
     -webkit-transition: -webkit-transform ease-in-out 0.4s;
     transition: -webkit-transform ease-in-out 0.4s;
     transition: transform ease-in-out 0.4s;
@@ -478,8 +480,13 @@
   }
 }
 .header-v-01__menu.active {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  display: block;
+}
+@media (max-width: 992px) {
+  .header-v-01__menu.active {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 @media (max-width: 992px) {
   .header-v-01__menu > .container {
@@ -521,7 +528,7 @@
   .header-v-01__menu-content {
     position: relative;
     z-index: 100;
-    max-height: calc(100dvh - 64px - 24px - 24px);
+    max-height: calc(100dvh - 61px - 24px - 24px);
   }
 }
 .header-v-01__menu-desktop {
@@ -670,13 +677,13 @@
             flex: 0 0 calc(33.3333333333% - 13.3333333333px);
   }
 }
-.header-v-01__menu-desktop-menu-item-submenu-item:hover {
-  color: #1e674e;
-}
 .header-v-01__menu-desktop-menu-item-submenu-item-link {
   color: inherit;
   -webkit-transition: color ease-in-out 0.2s;
   transition: color ease-in-out 0.2s;
+}
+.header-v-01__menu-desktop-menu-item-submenu-item-link:hover {
+  color: #1e674e;
 }
 .header-v-01__menu-desktop-menu-item:has(.header-v-01__menu-desktop-menu-item-submenu).active {
   color: #1e674e;
@@ -1112,8 +1119,10 @@
           transition-duration: 0.2s;
 }
 .header-v-01__modal-form-input:user-invalid {
-  color: #ff4747;
   border-color: #ff4747;
+}
+.header-v-01__modal-form-input:focus {
+  border-color: #1e674e;
 }
 .header-v-01__modal-form-input::-webkit-input-placeholder {
   font-weight: 400;
@@ -1151,7 +1160,7 @@
   text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: inherit;
+  color: #1c1c20;
 }
 .header-v-01__modal-disclaimer a:hover {
   color: #1e674e;

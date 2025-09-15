@@ -241,8 +241,10 @@
           transition-duration: 0.2s;
 }
 .etapy-v-01__modal-form-input:user-invalid {
-  color: #ff4747;
   border-color: #ff4747;
+}
+.etapy-v-01__modal-form-input:focus {
+  border-color: #1e674e;
 }
 .etapy-v-01__modal-form-input::-webkit-input-placeholder {
   font-weight: 400;
@@ -280,7 +282,7 @@
   text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: inherit;
+  color: #1c1c20;
 }
 .etapy-v-01__modal-disclaimer a:hover {
   color: #1e674e;

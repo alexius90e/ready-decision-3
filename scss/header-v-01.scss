@@ -41,7 +41,7 @@
       order: 0;
       width: fit-content;
 
-      @include laptop {
+      @include desktop {
         gap: 20px;
       }
 
@@ -246,7 +246,6 @@
 
         &-item {
           position: relative;
-          transition: opacity ease-out 0.4s;
 
           &-burger,
           &-link {
@@ -255,6 +254,7 @@
             font-size: 14px;
             line-height: 20px;
             color: #1c1c20;
+            transition: opacity ease-out 0.4s;
 
             @include desktoplg {
               padding: 14px 15px;
@@ -336,7 +336,8 @@
           }
         }
 
-        &:has(&-item:hover) &-item {
+        &:has(&-item:hover) > &-item > &-item-link,
+        &:has(&-item:hover) > &-item > &-item-burger {
           opacity: 0.5;
 
           &:hover {
@@ -412,19 +413,25 @@
     bottom: 0;
     z-index: 100;
     padding-top: 120px;
-    transform: translate3d(0, -120dvh, 0);
-    will-change: transform;
+    display: none;
 
     @include laptop {
-      top: 64px;
+      top: 61px;
       z-index: 0;
+      display: block;
       padding-top: 0;
       background-color: #ffffff;
+      transform: translate3d(0, -120dvh, 0);
+      will-change: transform;
       transition: transform ease-in-out 0.4s;
     }
 
     &.active {
-      transform: translate3d(0, 0, 0);
+      display: block;
+
+      @include laptop {
+        transform: translate3d(0, 0, 0);
+      }
     }
 
     & > .container {
@@ -466,7 +473,7 @@
       @include laptop {
         position: relative;
         z-index: 100;
-        max-height: calc(100dvh - 64px - 24px - 24px);
+        max-height: calc(100dvh - 61px - 24px - 24px);
       }
     }
 
@@ -573,13 +580,13 @@
                 flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
               }
 
-              &:hover {
-                color: #1e674e;
-              }
-
               &-link {
                 color: inherit;
                 transition: color ease-in-out 0.2s;
+
+                &:hover {
+                  color: #1e674e;
+                }
               }
             }
           }
@@ -975,14 +982,18 @@
         transition-duration: 0.2s;
 
         &:user-invalid {
-          color: $color-red;
           border-color: $color-red;
+        }
+
+        &:focus {
+          border-color: #1e674e;
         }
 
         &::placeholder {
           font-weight: 400;
           color: #a1a1a4;
         }
+        
       }
 
       &-submit {
@@ -1001,7 +1012,7 @@
       & a {
         text-decoration: underline;
         text-decoration-skip-ink: none;
-        color: inherit;
+        color: #1c1c20;
 
         &:hover {
           color: #1e674e;

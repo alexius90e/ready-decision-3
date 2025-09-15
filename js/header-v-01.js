@@ -12,9 +12,11 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
       if (isActive) {
         array.forEach((button) => button.classList.remove('active'));
         headerMenu.classList.remove('active');
+        document.body.style.overflow = null;
       } else {
         array.forEach((button) => button.classList.add('active'));
         headerMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
     });
   });
@@ -23,6 +25,7 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
     if (event.target === event.currentTarget) {
       headerMenu.classList.remove('active');
       burgerButtons.forEach((button) => button.classList.remove('active'));
+      document.body.style.overflow = null;
     }
   });
 }

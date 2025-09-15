@@ -226,14 +226,18 @@
         transition-duration: 0.2s;
 
         &:user-invalid {
-          color: $color-red;
           border-color: $color-red;
+        }
+
+        &:focus {
+          border-color: #1e674e;
         }
 
         &::placeholder {
           font-weight: 400;
           color: #a1a1a4;
         }
+        
       }
 
       &-submit {
@@ -252,7 +256,7 @@
       & a {
         text-decoration: underline;
         text-decoration-skip-ink: none;
-        color: inherit;
+        color: #1c1c20;
 
         &:hover {
           color: #1e674e;
