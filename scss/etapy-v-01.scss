@@ -220,7 +220,7 @@
         border-radius: 0px;
         outline: none;
         background-color: $color-white;
-        transform: scale(0.875);
+        transform: scale(0.87);
         transition-property: background-color, border-color, color;
         transition-timing-function: ease-out;
         transition-duration: 0.2s;
@@ -237,7 +237,6 @@
           font-weight: 400;
           color: #a1a1a4;
         }
-        
       }
 
       &-submit {

@@ -307,6 +307,7 @@
       flex-direction: column;
       gap: 14px;
       margin: 0 0 12px;
+      overflow: hidden;
 
       @include mobile {
         margin-bottom: 11px;
@@ -316,7 +317,7 @@
         display: inline-block;
         min-height: 58px;
         width: calc(16 / 14 * 100%);
-        margin: 0 -7%;
+        margin: 0 -7.1%;
         padding: 14px 20px;
         box-sizing: border-box;
         font-weight: 500;
@@ -327,14 +328,17 @@
         border-radius: 0px;
         outline: none;
         background-color: $color-white;
-        transform: scale(0.875);
+        transform: scale(0.87);
         transition-property: background-color, border-color, color;
         transition-timing-function: ease-out;
         transition-duration: 0.2s;
 
         &:user-invalid {
-          color: $color-red;
           border-color: $color-red;
+        }
+
+        &:focus {
+          border-color: #1e674e;
         }
 
         &::placeholder {
@@ -359,7 +363,7 @@
       & a {
         text-decoration: underline;
         text-decoration-skip-ink: none;
-        color: inherit;
+        color: #1c1c20;
 
         &:hover {
           color: #1e674e;

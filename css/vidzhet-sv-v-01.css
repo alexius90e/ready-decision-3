@@ -354,6 +354,7 @@
           flex-direction: column;
   gap: 14px;
   margin: 0 0 12px;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .vidzhet-sv-v-01__modal-form {
@@ -364,7 +365,7 @@
   display: inline-block;
   min-height: 58px;
   width: 114.2857142857%;
-  margin: 0 -7%;
+  margin: 0 -7.1%;
   padding: 14px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -376,8 +377,8 @@
   border-radius: 0px;
   outline: none;
   background-color: #ffffff;
-  -webkit-transform: scale(0.875);
-          transform: scale(0.875);
+  -webkit-transform: scale(0.87);
+          transform: scale(0.87);
   -webkit-transition-property: background-color, border-color, color;
   transition-property: background-color, border-color, color;
   -webkit-transition-timing-function: ease-out;
@@ -386,8 +387,10 @@
           transition-duration: 0.2s;
 }
 .vidzhet-sv-v-01__modal-form-input:user-invalid {
-  color: #ff4747;
   border-color: #ff4747;
+}
+.vidzhet-sv-v-01__modal-form-input:focus {
+  border-color: #1e674e;
 }
 .vidzhet-sv-v-01__modal-form-input::-webkit-input-placeholder {
   font-weight: 400;
@@ -425,7 +428,7 @@
   text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: inherit;
+  color: #1c1c20;
 }
 .vidzhet-sv-v-01__modal-disclaimer a:hover {
   color: #1e674e;

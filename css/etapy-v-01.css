@@ -231,8 +231,8 @@
   border-radius: 0px;
   outline: none;
   background-color: #ffffff;
-  -webkit-transform: scale(0.875);
-          transform: scale(0.875);
+  -webkit-transform: scale(0.87);
+          transform: scale(0.87);
   -webkit-transition-property: background-color, border-color, color;
   transition-property: background-color, border-color, color;
   -webkit-transition-timing-function: ease-out;

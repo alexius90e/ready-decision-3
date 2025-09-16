@@ -22,7 +22,7 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
   });
 
   headerMenu.addEventListener('click', (event) => {
-    const isLayout =  event.target === event.currentTarget
+    const isLayout = event.target === event.currentTarget;
 
     if (isLayout) {
       headerMenu.classList.remove('active');
