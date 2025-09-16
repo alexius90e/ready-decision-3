@@ -529,10 +529,10 @@
           font-size: 14px;
           line-height: 140%;
           color: #1c1c20;
-          cursor: pointer;
 
           &:has(&-submenu):hover {
             color: #1e674e;
+            cursor: pointer;
           }
 
           &-link {
@@ -574,7 +574,6 @@
               font-size: 14px;
               line-height: 140%;
               color: #3e3e3e;
-              cursor: pointer;
 
               @include desktoplg {
                 flex: 0 0 calc(100% / 3 - 30px / 3 * 2);
@@ -587,6 +586,7 @@
               &-link {
                 color: inherit;
                 transition: color ease-in-out 0.2s;
+                cursor: pointer;
 
                 &:hover {
                   color: #1e674e;

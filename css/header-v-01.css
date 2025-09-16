@@ -609,10 +609,10 @@
   font-size: 14px;
   line-height: 140%;
   color: #1c1c20;
-  cursor: pointer;
 }
 .header-v-01__menu-desktop-menu-item:has(.header-v-01__menu-desktop-menu-item-submenu):hover {
   color: #1e674e;
+  cursor: pointer;
 }
 .header-v-01__menu-desktop-menu-item-link {
   color: inherit;
@@ -664,7 +664,6 @@
   font-size: 14px;
   line-height: 140%;
   color: #3e3e3e;
-  cursor: pointer;
 }
 @media (max-width: 1500px) {
   .header-v-01__menu-desktop-menu-item-submenu-item {
@@ -684,6 +683,7 @@
   color: inherit;
   -webkit-transition: color ease-in-out 0.2s;
   transition: color ease-in-out 0.2s;
+  cursor: pointer;
 }
 .header-v-01__menu-desktop-menu-item-submenu-item-link:hover {
   color: #1e674e;
