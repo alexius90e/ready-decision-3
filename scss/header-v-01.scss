@@ -531,13 +531,17 @@
           color: #1c1c20;
           cursor: pointer;
 
-          &:hover {
+          &:has(&-submenu):hover {
             color: #1e674e;
           }
 
           &-link {
             color: inherit;
             transition: color ease-in-out 0.2s;
+
+            &:hover {
+              color: #1e674e;
+            }
           }
 
           & > &-submenu {
@@ -976,7 +980,7 @@
         border-radius: 0px;
         outline: none;
         background-color: $color-white;
-        transform: scale(0.875);
+        transform: scale(0.87);
         transition-property: background-color, border-color, color;
         transition-timing-function: ease-out;
         transition-duration: 0.2s;
@@ -993,7 +997,6 @@
           font-weight: 400;
           color: #a1a1a4;
         }
-        
       }
 
       &-submit {

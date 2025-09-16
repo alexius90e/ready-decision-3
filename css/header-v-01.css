@@ -611,13 +611,16 @@
   color: #1c1c20;
   cursor: pointer;
 }
-.header-v-01__menu-desktop-menu-item:hover {
+.header-v-01__menu-desktop-menu-item:has(.header-v-01__menu-desktop-menu-item-submenu):hover {
   color: #1e674e;
 }
 .header-v-01__menu-desktop-menu-item-link {
   color: inherit;
   -webkit-transition: color ease-in-out 0.2s;
   transition: color ease-in-out 0.2s;
+}
+.header-v-01__menu-desktop-menu-item-link:hover {
+  color: #1e674e;
 }
 .header-v-01__menu-desktop-menu-item > .header-v-01__menu-desktop-menu-item-submenu {
   display: none;
@@ -1109,8 +1112,8 @@
   border-radius: 0px;
   outline: none;
   background-color: #ffffff;
-  -webkit-transform: scale(0.875);
-          transform: scale(0.875);
+  -webkit-transform: scale(0.87);
+          transform: scale(0.87);
   -webkit-transition-property: background-color, border-color, color;
   transition-property: background-color, border-color, color;
   -webkit-transition-timing-function: ease-out;

@@ -12,20 +12,22 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
       if (isActive) {
         array.forEach((button) => button.classList.remove('active'));
         headerMenu.classList.remove('active');
-        document.body.style.overflow = null;
+        document.body.classList.remove('hidden');
       } else {
         array.forEach((button) => button.classList.add('active'));
         headerMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('hidden');
       }
     });
   });
 
   headerMenu.addEventListener('click', (event) => {
-    if (event.target === event.currentTarget) {
+    const isLayout =  event.target === event.currentTarget
+
+    if (isLayout) {
       headerMenu.classList.remove('active');
       burgerButtons.forEach((button) => button.classList.remove('active'));
-      document.body.style.overflow = null;
+      document.body.classList.remove('hidden');
     }
   });
 }

@@ -17,6 +17,12 @@ body {
   overflow-y: scroll;
   color: var(--color-black);
   background-color: var(--color-white);
+
+  &.hidden {
+    @include laptop {
+      overflow: hidden;
+    }
+  }
 }
 
 a,
