@@ -377,37 +377,33 @@
     }
 
     &-copyright {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 140%;
-      letter-spacing: -0.01em;
-      color: #87878e;
+      font-weight: 400;
+      font-size: 15px;
+      color: #a1a1a4;
 
       @include laptop {
-        font-size: 20px;
+        font-size: 14px;
       }
     }
 
     &-policy {
       @include laptop {
-        margin: 27px 0 54px;
+        margin: 4px 0 0;
       }
 
       &-link {
         display: inline-block;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: -0.01em;
+        font-weight: 400;
+        font-size: 15px;
+        color: #a1a1a4;
         text-decoration: underline;
         text-decoration-skip-ink: none;
         text-align: center;
-        color: #87878e;
         transition: color ease-in-out 0.2s;
 
         @include laptop {
-          font-size: 20px;
-          text-align: left;
-        }
+        font-size: 14px;
+      }
 
         &:hover {
           color: #ffffff;
@@ -417,6 +413,10 @@
 
     &-developer {
       flex: 0 0 auto;
+
+      @include laptop {
+        margin: 40px 0 0;
+      }
 
       &-link {
         display: flex;
@@ -432,11 +432,11 @@
         }
 
         &-logo {
-          width: 126px;
+          width: 110px;
         }
 
         &-text {
-          width: 109px;
+          width: 95px;
           transition: filter ease-in-out 0.2s;
         }
 
