@@ -1,0 +1,449 @@
+@import './variables';
+@import './mixins';
+
+.footer-v-01 {
+  padding: 40px 0;
+  background-color: #1c1c20;
+
+  @include laptop {
+    padding: 36px 0 60px;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 0;
+    margin: 0 0 50px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 0 0 calc((100% - 240px) / 4);
+      gap: 30px;
+
+      @include desktop {
+        flex: 1 1 100%;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      @include laptop {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      &-logo {
+        flex: 0 0 auto;
+        margin: 0;
+
+        &-link {
+          display: flex;
+          justify-content: flex-start;
+
+          @include laptop {
+            justify-content: flex-start;
+          }
+
+          &-image {
+            display: block;
+            max-width: 100%;
+            width: 198px;
+            height: auto;
+          }
+        }
+      }
+
+      &-location {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #fff;
+        transition: color ease-out 0.1s;
+        user-select: none;
+        cursor: pointer;
+
+        &:hover {
+          color: #1e674e;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          width: 10px;
+          aspect-ratio: 1;
+          background: url(../assets/header-v-01/location.svg) center / cover no-repeat;
+          filter: brightness(1000%);
+          transition: filter ease-out 0.1s;
+        }
+
+        &:hover::before {
+          filter: brightness(100%);
+        }
+      }
+    }
+
+    &-nav {
+      &-desktop {
+        display: flex;
+        gap: 60px;
+        flex: 0 0 calc((100% - 240px) / 4 * 3);
+
+        @include desktoplg {
+          gap: 24px;
+        }
+
+        @include desktop {
+          flex: 0 0 calc(100% - 240px);
+        }
+
+        @include laptop {
+          display: none;
+        }
+
+        &-menu {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          flex: 0 0 calc(100% / 3 - 60px / 3 * 2);
+          gap: 12px;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+
+          @include desktoplg {
+            flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
+          }
+
+          &-item {
+            &-link {
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 140%;
+              color: $color-white;
+              transition: all ease-out 0.2s;
+
+              &:hover {
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+              }
+            }
+          }
+        }
+      }
+
+      &-mobile {
+        display: none;
+
+        @include laptop {
+          display: block;
+          flex: 1 1 100%;
+        }
+
+        &-menu {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+
+          &-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0 14px;
+
+            &:has(&-submenu)::after {
+              content: '';
+              display: block;
+              flex: 0 0 auto;
+              order: 1;
+              width: 20px;
+              aspect-ratio: 1;
+              background: url(../assets/footer-v-01/chevron-down.svg) center / cover no-repeat;
+            }
+
+            &.active::after {
+              transform: rotate(180deg);
+            }
+
+            &-link {
+              display: inline-block;
+              flex: 0 0 calc(100% - 34px);
+              order: 0;
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 140%;
+              color: #fff;
+            }
+
+            &-submenu {
+              display: flex;
+              flex-direction: column;
+              flex: 1 1 100%;
+              order: 2;
+              max-height: 0;
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              overflow: hidden;
+              transition: max-height ease-in-out 0.2s;
+
+              &-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 14px;
+                padding: 14px 0 0;
+
+                &-link {
+                  display: inline-block;
+                  font-weight: 400;
+                  font-size: 15px;
+                  line-height: 140%;
+                  color: #a1a1a4;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-contacts {
+      flex: 0 0 240px;
+
+      @include laptop {
+        flex: 1 1 100%;
+        max-width: none;
+      }
+
+      &-phones {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
+        margin: 0 0 4px;
+
+        @include laptop {
+          align-items: flex-start;
+        }
+
+        &-link {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 140%;
+          text-align: right;
+          color: #fff;
+          transition: opacity ease-out 0.2s;
+
+          &:hover {
+            text-decoration-line: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #1e674e;
+          }
+        }
+      }
+
+      &-time {
+        margin: 4px 0 0;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        text-align: right;
+        color: #fff;
+
+        @include laptop {
+          text-align: left;
+        }
+      }
+
+      &-address {
+        max-width: 240px;
+        margin: 12px 0 0;
+        text-align: right;
+
+        @include laptop {
+          text-align: left;
+        }
+
+        &-link {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 140%;
+          color: #fff;
+
+          &:hover {
+            text-decoration-line: underline;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #1e674e;
+          }
+        }
+      }
+
+      &-email {
+        display: flex;
+        justify-content: flex-end;
+        margin: 12px 0 0;
+
+        @include laptop {
+          justify-content: flex-start;
+        }
+
+        &-link {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 140%;
+          color: #fff;
+
+          @include laptop {
+            text-align: left;
+          }
+
+          &:hover {
+            text-decoration-line: underline;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #1e674e;
+          }
+        }
+      }
+
+      &-social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin: 12px 0 0;
+
+        @include laptop {
+          justify-content: flex-start;
+          margin-top: 18px;
+        }
+
+        &-link {
+          display: inline-block;
+          width: 40px;
+          flex: 0 0 auto;
+          aspect-ratio: 1 / 1;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+          transition-property: border, color, background-color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          &:hover {
+            background-color: #2f2f2f;
+          }
+
+          &_tg {
+            background-image: url(../assets/footer-v-01/telegram.svg);
+            background-color: #166ff5;
+          }
+
+          &_wts {
+            background-image: url(../assets/footer-v-01/whatsapp.svg);
+            background-color: #06cc4d;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    @include laptop {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    &-copyright {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #87878e;
+
+      @include laptop {
+        font-size: 20px;
+      }
+    }
+
+    &-policy {
+      @include laptop {
+        margin: 27px 0 54px;
+      }
+
+      &-link {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-align: center;
+        color: #87878e;
+        transition: color ease-in-out 0.2s;
+
+        @include laptop {
+          font-size: 20px;
+          text-align: left;
+        }
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    &-developer {
+      flex: 0 0 auto;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        &-logo,
+        &-text {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+
+        &-logo {
+          width: 126px;
+        }
+
+        &-text {
+          width: 109px;
+          transition: filter ease-in-out 0.2s;
+        }
+
+        &:hover &-text {
+          filter: brightness(200%);
+        }
+      }
+    }
+  }
+}
