@@ -131,11 +131,15 @@
               font-size: 15px;
               line-height: 140%;
               color: $color-white;
-              transition: all ease-out 0.2s;
+              transition: color ease-out 0.2s;
 
-              &:hover {
+              &_underline {
                 text-decoration: underline;
                 text-decoration-skip-ink: none;
+              }
+
+              &:hover {
+                color: #1e674e;
               }
             }
           }
@@ -188,6 +192,20 @@
               font-size: 15px;
               line-height: 140%;
               color: #fff;
+              transition: color ease-out 0.2s;
+
+              &_underline {
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+              }
+
+              &:hover {
+                color: #1e674e;
+              }
+            }
+
+            &:has(&-submenu) &-link {
+              pointer-events: none;
             }
 
             &-submenu {
@@ -209,12 +227,26 @@
                 gap: 14px;
                 padding: 14px 0 0;
 
+                &:last-child {
+                  padding-bottom: 6px;
+                }
+
                 &-link {
                   display: inline-block;
                   font-weight: 400;
                   font-size: 15px;
                   line-height: 140%;
                   color: #a1a1a4;
+                  transition: color ease-out 0.2s;
+
+                  &_underline {
+                    text-decoration: underline;
+                    text-decoration-skip-ink: none;
+                  }
+
+                  &:hover {
+                    color: #1e674e;
+                  }
                 }
               }
             }
@@ -403,8 +435,8 @@
         transition: color ease-in-out 0.2s;
 
         @include laptop {
-        font-size: 14px;
-      }
+          font-size: 14px;
+        }
 
         &:hover {
           color: #ffffff;
