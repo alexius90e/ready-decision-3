@@ -256,9 +256,10 @@
 }
 .footer-v-01__top-nav-mobile-menu-item-link {
   display: inline-block;
+  max-width: calc(100% - 34px);
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% - 34px);
-          flex: 0 0 calc(100% - 34px);
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
