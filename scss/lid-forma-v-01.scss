@@ -74,6 +74,10 @@
       gap: 16px 20px;
       margin: 24px 0 0;
 
+      @include laptop {
+        gap: 12px 20px;
+      }
+
       &-input,
       &-textarea {
         display: inline-block;
@@ -85,11 +89,20 @@
         line-height: 140%;
         color: $color-white;
         border: 1px solid #28599a;
+        border-radius: 0px;
         outline: none;
         background-color: #28599a;
         transition-property: color, background-color, border-color;
         transition-timing-function: ease-in-out;
         transition-duration: 0.2s;
+
+        @include laptop {
+          width: calc(16 / 14 * 100%);
+          padding: 16px 22px;
+          margin: 0 -7.1%;
+          font-size: 16px;
+          transform: scale(0.87);
+        }
 
         &:focus {
           color: #1c1c20;
@@ -117,6 +130,7 @@
 
         @include laptop {
           flex: 1 1 100%;
+          min-height: 58px;
         }
       }
 
@@ -134,7 +148,7 @@
         }
 
         @include laptop {
-          min-height: 121px;
+          min-height: 173px;
         }
       }
 

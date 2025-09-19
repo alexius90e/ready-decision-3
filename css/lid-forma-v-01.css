@@ -90,6 +90,11 @@
   gap: 16px 20px;
   margin: 24px 0 0;
 }
+@media (max-width: 992px) {
+  .lid-forma-v-01__callback-form {
+    gap: 12px 20px;
+  }
+}
 .lid-forma-v-01__callback-form-input, .lid-forma-v-01__callback-form-textarea {
   display: inline-block;
   width: 100%;
@@ -101,6 +106,7 @@
   line-height: 140%;
   color: #ffffff;
   border: 1px solid #28599a;
+  border-radius: 0px;
   outline: none;
   background-color: #28599a;
   -webkit-transition-property: color, background-color, border-color;
@@ -109,6 +115,16 @@
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+}
+@media (max-width: 992px) {
+  .lid-forma-v-01__callback-form-input, .lid-forma-v-01__callback-form-textarea {
+    width: 114.2857142857%;
+    padding: 16px 22px;
+    margin: 0 -7.1%;
+    font-size: 16px;
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+  }
 }
 .lid-forma-v-01__callback-form-input:focus, .lid-forma-v-01__callback-form-textarea:focus {
   color: #1c1c20;
@@ -164,6 +180,7 @@
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+    min-height: 58px;
   }
 }
 .lid-forma-v-01__callback-form-textarea {
@@ -185,7 +202,7 @@
 }
 @media (max-width: 992px) {
   .lid-forma-v-01__callback-form-textarea {
-    min-height: 121px;
+    min-height: 173px;
   }
 }
 .lid-forma-v-01__callback-form-submit {
