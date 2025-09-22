@@ -1004,8 +1004,8 @@
   width: 10px;
   aspect-ratio: 1;
   background: url(../assets/header-v-01/location.svg) center/cover no-repeat;
-  -webkit-filter: brightness(1000%);
-          filter: brightness(1000%);
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
   -webkit-transition: -webkit-filter ease-out 0.2s;
   transition: -webkit-filter ease-out 0.2s;
   transition: filter ease-out 0.2s;

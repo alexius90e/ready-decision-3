@@ -166,21 +166,14 @@
     &-channel {
       display: flex;
       align-items: center;
-      gap: 63px;
+      justify-content: space-between;
+      gap: 24px;
       flex: 0 0 54%;
       width: 100%;
       padding: 0 0 5px;
       margin: 0;
       border: none;
       border-bottom: 4px solid #dfdfe0;
-
-      @include desktoplg {
-        gap: 44px;
-      }
-
-      @include laptop {
-        gap: 25px;
-      }
 
       @include tablet {
         justify-content: space-between;

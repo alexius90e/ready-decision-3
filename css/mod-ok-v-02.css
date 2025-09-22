@@ -215,7 +215,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 63px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 54%;
           flex: 0 0 54%;
@@ -224,16 +227,6 @@
   margin: 0;
   border: none;
   border-bottom: 4px solid #dfdfe0;
-}
-@media (max-width: 1500px) {
-  .mod-ok-v-02__form-channel {
-    gap: 44px;
-  }
-}
-@media (max-width: 992px) {
-  .mod-ok-v-02__form-channel {
-    gap: 25px;
-  }
 }
 @media (max-width: 768px) {
   .mod-ok-v-02__form-channel {

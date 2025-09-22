@@ -1,0 +1,172 @@
+@import './variables';
+@import './mixins';
+
+.perv-ekr-v-02 {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px 60px;
+
+    @include tablet {
+      gap: 24px;
+    }
+  }
+
+  &__info {
+    flex: 0 0 682px;
+    order: 0;
+
+    @include desktoplg {
+      flex: 0 0 606px;
+    }
+
+    @include laptop {
+      flex: 0 0 430px;
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 120%;
+      color: $color-black;
+    }
+
+    &-description {
+      margin: 10px 0 0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      color: $color-dark-gray;
+
+      @include desktoplg {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__details {
+    flex: 0 1 450px;
+    order: 1;
+    max-width: calc(100% - 682px - 60px);
+
+    @include desktoplg {
+      flex: 0 1 450px;
+      max-width: calc(100% - 606px - 60px);
+    }
+
+    @include laptop {
+      flex: 0 1 274px;
+      max-width: calc(100% - 430px - 60px);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+      order: 2;
+      max-width: none;
+    }
+
+    &-price {
+      margin: 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      text-align: right;
+      color: $color-black;
+    }
+
+    &-disclaimer {
+      margin: 3px 0 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: right;
+      color: #a1a1a4;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 100%;
+    gap: 16px 20px;
+    order: 2;
+
+    @include tablet {
+      flex-wrap: wrap;
+      order: 3;
+    }
+
+    &-consult,
+    &-proposal {
+      min-width: 264px;
+      text-transform: uppercase;
+
+      @include tablet {
+        flex: 1 1 100%;
+      }
+    }
+
+    &-consult {
+      border-color: $color-black;
+      background-color: $color-black;
+
+      &:hover {
+        border-color: #1e674e;
+        background-color: #1e674e;
+      }
+    }
+  }
+
+  &__photo {
+    margin: 0;
+    order: 3;
+
+    @include desktoplg {
+      margin: 0 -30px;
+    }
+
+    @include desktop {
+      margin: 0 -20px;
+    }
+
+    @include tablet {
+      order: 1;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+
+      &_desktop {
+        display: block;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+  }
+}
