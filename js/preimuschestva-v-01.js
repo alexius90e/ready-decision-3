@@ -33,8 +33,9 @@ const preimuschestvaV01CallbackButtons = document.querySelectorAll(
 
 if (preimuschestvaV01Modal && preimuschestvaV01ModalForm) {
   preimuschestvaV01CallbackButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      preimuschestvaV01Modal.classList.add('active');
+    button.addEventListener('click', (event) => {
+      const isDisabled = event.currentTarget.classList.contains('prevent-default');
+      if (!isDisabled) vidzhetSvV01Modal.classList.add('active');
     });
   });
 

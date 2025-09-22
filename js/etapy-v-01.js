@@ -33,8 +33,9 @@ const etapyV01CallbackButtons = document.querySelectorAll(
 
 if (etapyV01Modal && etapyV01ModalForm) {
   etapyV01CallbackButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      etapyV01Modal.classList.add('active');
+    button.addEventListener('click', (event) => {
+      const isDisabled = event.currentTarget.classList.contains('prevent-default');
+      if (!isDisabled) vidzhetSvV01Modal.classList.add('active');
     });
   });
 

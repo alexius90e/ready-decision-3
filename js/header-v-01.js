@@ -89,8 +89,9 @@ const headerContactButtons = [...headerCallbackButtons, ...headerCallbackMobButt
 
 if (headerModal && headerModalForm) {
   headerContactButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      headerModal.classList.add('active');
+    button.addEventListener('click', (event) => {
+      const isDisabled = event.currentTarget.classList.contains('prevent-default');
+      if (!isDisabled) vidzhetSvV01Modal.classList.add('active');
     });
   });
 
