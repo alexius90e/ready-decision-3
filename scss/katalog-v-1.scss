@@ -172,11 +172,12 @@
 
       @include laptop {
         gap: 24px 20px;
-        padding: 0 15px 20px;
+        padding: 0 15px;
       }
 
       @include tablet {
         gap: 24px 16px;
+        padding-bottom: 20px;
       }
 
       &-photo {

@@ -200,12 +200,13 @@
 @media (max-width: 992px) {
   .katalog-v-1__catalog-product {
     gap: 24px 20px;
-    padding: 0 15px 20px;
+    padding: 0 15px;
   }
 }
 @media (max-width: 768px) {
   .katalog-v-1__catalog-product {
     gap: 24px 16px;
+    padding-bottom: 20px;
   }
 }
 .katalog-v-1__catalog-product-photo {

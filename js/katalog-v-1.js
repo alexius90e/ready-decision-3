@@ -21,9 +21,6 @@ function adjustKatalogV1CategoriesWidth() {
     }
   });
 
-  console.log(firstLineItems);
-  console.log(secondLineItems);
-
   const firstLineItemsWidth = firstLineItems
     .map((item) => item.offsetWidth)
     .reduce((item, acc) => item + acc, 0);
