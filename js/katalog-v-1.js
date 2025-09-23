@@ -42,28 +42,3 @@ function adjustKatalogV1CategoriesWidth() {
 
 window.addEventListener('load', adjustKatalogV1CategoriesWidth);
 window.addEventListener('resize', adjustKatalogV1CategoriesWidth);
-
-const katalogV1ModalProposal = document.querySelector('.katalog-v-1__modal-proposal');
-const katalogV1ModalProposalForm = document.querySelector('.katalog-v-1__modal-proposal-form');
-const katalogV1ModalProposalButtons = document.querySelectorAll(
-  '.katalog-v-1__catalog-product-order-button '
-);
-
-if (katalogV1ModalProposal && katalogV1ModalProposalForm) {
-  katalogV1ModalProposalButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      katalogV1ModalProposal.classList.add('active');
-    });
-  });
-
-  katalogV1ModalProposal.addEventListener('click', (event) => {
-    const isLayout = event.currentTarget === event.target;
-    const isClose = event.target.classList.contains('katalog-v-1__modal-proposal-close-button');
-    if (isLayout || isClose) katalogV1ModalProposal.classList.remove('active');
-  });
-
-  katalogV1ModalProposalForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    katalogV1ModalProposal.classList.remove('active');
-  });
-}
