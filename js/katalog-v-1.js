@@ -12,10 +12,8 @@ function adjustKatalogV1CategoriesWidth() {
     .map((item) => Math.ceil(item.offsetWidth))
     .reduce((item, acc) => item + acc, 0);
 
-  const listMaxWidth = listItemsMaxWidth + gapWidth * (items.length - 1);
-
   items.forEach((item) => {
-    if (halfItemsWidth < listMaxWidth / 2) {
+    if (halfItemsWidth < listItemsMaxWidth / 2) {
       firstLineItems.push(item);
       halfItemsWidth += item.offsetWidth;
     } else {
@@ -23,12 +21,14 @@ function adjustKatalogV1CategoriesWidth() {
     }
   });
 
+  console.log(firstLineItems);
+  console.log(secondLineItems);
+
   const firstLineItemsWidth = firstLineItems
     .map((item) => item.offsetWidth)
     .reduce((item, acc) => item + acc, 0);
 
   const firstLineFullWidth = firstLineItemsWidth + gapWidth * (firstLineItems.length - 1);
-
 
   const secondLineItemsWidth = secondLineItems
     .map((item) => item.offsetWidth)
@@ -36,11 +36,10 @@ function adjustKatalogV1CategoriesWidth() {
 
   const secondLineFullWidth = secondLineItemsWidth + gapWidth * (secondLineItems.length - 1);
 
-
   if (wrapper.offsetWidth > secondLineFullWidth && wrapper.offsetWidth > firstLineFullWidth) {
     list.style.width = `${wrapper.offsetWidth}px`;
   } else {
-    list.style.width = `${firstLineFullWidth + gapWidth}px`;
+    list.style.width = `${firstLineFullWidth}px`;
   }
 }
 
