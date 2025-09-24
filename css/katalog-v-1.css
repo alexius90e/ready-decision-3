@@ -2,6 +2,21 @@
   overflow-y: hidden;
   overflow-x: auto;
 }
+@media (max-width: 992px) {
+  .katalog-v-1__categories {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .katalog-v-1__categories {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .katalog-v-1__categories {
+    margin: 0 -10px;
+  }
+}
 .katalog-v-1__categories-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,6 +28,21 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+@media (max-width: 992px) {
+  .katalog-v-1__categories-list {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .katalog-v-1__categories-list {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 340px) {
+  .katalog-v-1__categories-list {
+    padding: 0 10px;
+  }
 }
 .katalog-v-1__categories-list-item {
   display: block;

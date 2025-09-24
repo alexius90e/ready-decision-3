@@ -1,10 +1,17 @@
 function adjustKatalogV1CategoriesWidth() {
+  const windowWidth = window.innerWidth;
+  const windowWidthLimit = 992;
   const list = document.querySelector('.katalog-v-1__categories-list');
   const wrapper = list.parentElement;
   const gapWidth = 16;
   const firstLineItems = [];
   const secondLineItems = [];
   let halfItemsWidth = 0;
+
+  if (windowWidth > windowWidthLimit) {
+    list.style.width = null;
+    return;
+  }
 
   const items = Array.from(list.children);
 
