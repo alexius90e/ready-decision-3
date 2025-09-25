@@ -149,6 +149,21 @@
           flex: 1 1 auto;
   min-height: 440px;
 }
+@media (max-width: 992px) {
+  .kontakty-v-01__map {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .kontakty-v-01__map {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .kontakty-v-01__map {
+    margin: 0 -10px;
+  }
+}
 .kontakty-v-01__map iframe {
   display: block;
   min-height: 440px;
