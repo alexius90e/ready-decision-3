@@ -1,0 +1,158 @@
+@import './variables';
+@import './mixins';
+
+.kontakty-v-01 {
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 446px;
+    gap: 18px;
+
+    @include laptop {
+      margin: 0 0 24px;
+    }
+
+    &-item {
+      flex: 1 1 100%;
+    }
+
+    &-title {
+      margin: 0 0 4px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #87878e;
+    }
+
+    &-phones {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+
+      &-link {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: #1c1c20;
+
+        &:hover {
+          color: #1e674e;
+        }
+      }
+    }
+
+    &-address {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #1c1c20;
+    }
+
+    &-email {
+      &-link {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: #1c1c20;
+
+        &:hover {
+          color: #1e674e;
+        }
+      }
+    }
+
+    &-social {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 0;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        aspect-ratio: 1;
+        background-color: $color-black;
+        transition-duration: background-color, background-image;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+
+        &:hover {
+          background-color: #1e674e;
+          background-image: linear-gradient(#1e674e, #1e674e);
+        }
+
+        &_wts {
+          background-color: #25d065;
+        }
+
+        &_tg {
+          background-color: #32aade;
+        }
+
+        &_vkmes {
+          background-image: linear-gradient(
+            229deg,
+            #894ee1 0%,
+            #7347e2 22.8%,
+            #257cf6 70.95%,
+            #42b7f5 100%
+          );
+        }
+
+        &_ytb {
+          background-color: #e60000;
+        }
+
+        &_vk {
+          background-color: #3169b3;
+        }
+
+        &_inst {
+          background-image: linear-gradient(
+            227deg,
+            #bc49ba 0%,
+            #8b3689 20.33%,
+            #db416a 64.93%,
+            #f6be4d 100%
+          );
+        }
+
+        &-icon {
+          display: block;
+          max-width: 24px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__map {
+    flex: 1 1 auto;
+    min-height: 440px;
+
+    & iframe {
+      display: block;
+      min-height: 440px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
