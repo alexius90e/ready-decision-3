@@ -5,6 +5,15 @@
   &__wrapper {
     display: flex;
     align-items: flex-start;
+    gap: 124px;
+
+    @include desktoplg {
+      gap: 40px;
+    }
+
+    @include desktop {
+      gap: 20px;
+    }
 
     @include laptop {
       display: block;
@@ -16,19 +25,9 @@
     flex-wrap: wrap;
     flex: 0 0 446px;
     gap: 18px;
-    padding-right: 64px;
     box-sizing: border-box;
 
-    @include desktoplg {
-      padding-right: 40px;
-    }
-
-    @include desktop {
-      padding-right: 20px;
-    }
-
     @include laptop {
-      padding-right: 0;
       margin: 0 0 24px;
     }
 
