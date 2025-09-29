@@ -18,9 +18,8 @@ thanksForms.forEach((thanksForm) => {
 
     if (url) {
       setTimeout(() => {
-         window.open(url, '_blank');
-      }, 4000)
-     
+        window.open(url, '_blank');
+      }, 4000);
     }
 
     setTimeout(() => {

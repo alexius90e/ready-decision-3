@@ -1,0 +1,110 @@
+@import './variables';
+@import './mixins';
+
+.karusel-izobr-v-03 {
+  overflow: hidden;
+  background-color: #3e3e3e;
+
+  &__slider {
+    @include laptop {
+      margin: 0 -20px;
+    }
+
+    @include tablet {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    & .swiper {
+      display: grid;
+      overflow: visible;
+
+      @include laptop {
+        overflow: visible;
+      }
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-slide {
+        height: 100%;
+        width: 424px;
+
+        @include desktop {
+          width: 404px;
+        }
+
+        @include laptop {
+          width: calc((100% - 78px) / 2 - 20px);
+        }
+
+        @include tablet {
+          width: calc(100% - 60px - 16px);
+        }
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          @include laptop {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/etapy-v-01/arrow-left.svg) center / cover no-repeat;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    margin: 0;
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

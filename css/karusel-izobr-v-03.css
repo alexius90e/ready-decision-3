@@ -1,0 +1,109 @@
+.karusel-izobr-v-03 {
+  overflow: hidden;
+  background-color: #3e3e3e;
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-03__slider {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 768px) {
+  .karusel-izobr-v-03__slider {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .karusel-izobr-v-03__slider {
+    margin: 0 -10px;
+  }
+}
+.karusel-izobr-v-03__slider .swiper {
+  display: grid;
+  overflow: visible;
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-03__slider .swiper {
+    overflow: visible;
+  }
+}
+.karusel-izobr-v-03__slider .swiper-wrapper {
+  min-width: 0;
+}
+.karusel-izobr-v-03__slider .swiper-slide {
+  height: 100%;
+  width: 424px;
+}
+@media (max-width: 1200px) {
+  .karusel-izobr-v-03__slider .swiper-slide {
+    width: 404px;
+  }
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-03__slider .swiper-slide {
+    width: calc((100% - 78px) / 2 - 20px);
+  }
+}
+@media (max-width: 768px) {
+  .karusel-izobr-v-03__slider .swiper-slide {
+    width: calc(100% - 60px - 16px);
+  }
+}
+.karusel-izobr-v-03__slider .swiper-button-prev, .karusel-izobr-v-03__slider .swiper-button-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #1c1c20;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+@media (max-width: 992px) {
+  .karusel-izobr-v-03__slider .swiper-button-prev, .karusel-izobr-v-03__slider .swiper-button-next {
+    display: none;
+  }
+}
+.karusel-izobr-v-03__slider .swiper-button-prev:hover, .karusel-izobr-v-03__slider .swiper-button-next:hover {
+  background-color: #1e674e;
+}
+.karusel-izobr-v-03__slider .swiper-button-prev::after, .karusel-izobr-v-03__slider .swiper-button-next::after {
+  content: "";
+  display: block;
+  width: 22px;
+  aspect-ratio: 1;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  background: url(../assets/etapy-v-01/arrow-left.svg) center/cover no-repeat;
+}
+.karusel-izobr-v-03__slider .swiper-button-prev {
+  left: 0;
+}
+.karusel-izobr-v-03__slider .swiper-button-prev::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.karusel-izobr-v-03__slider .swiper-button-next {
+  right: 0;
+}
+.karusel-izobr-v-03__slider .swiper-button-disabled {
+  opacity: 0;
+}
+.karusel-izobr-v-03__slide {
+  width: 100%;
+  margin: 0;
+}
+.karusel-izobr-v-03__slide-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
