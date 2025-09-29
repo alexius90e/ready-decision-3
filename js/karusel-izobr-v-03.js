@@ -5,6 +5,10 @@ if (etapyV01SwiperEl) {
     slidesPerView: 'auto',
     spaceBetween: 16,
     loop: true,
+    loopAdditionalSlides: 2,
+    initialSlide: 1,
+    preloadImages: true,
+    watchSlidesVisibility: true,
     breakpoints: {
       0: {
         spaceBetween: 16,
