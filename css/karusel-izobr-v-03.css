@@ -4,17 +4,17 @@
 }
 @media (max-width: 992px) {
   .karusel-izobr-v-03__slider {
-    margin: 0 -20px;
+    margin: 0 -21px;
   }
 }
 @media (max-width: 576px) {
   .karusel-izobr-v-03__slider {
-    margin: 0 -15px;
+    margin: 0 -16px;
   }
 }
 @media (max-width: 340px) {
   .karusel-izobr-v-03__slider {
-    margin: 0 -10px;
+    margin: 0 -11px;
   }
 }
 .karusel-izobr-v-03__slider .swiper {
