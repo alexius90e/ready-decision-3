@@ -1,0 +1,94 @@
+@import './variables';
+@import './mixins';
+
+.otziviki-v-01 {
+  &__list {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include desktoplg {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: 0 0 calc(100% / 3 - 30px / 3 * 2);
+    min-height: 150px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+
+    @include desktoplg {
+      flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+    }
+
+    @include laptop {
+      flex: 1 1 100%;
+      min-height: 120px;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 50%;
+      height: 100%;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      border-right: 2px solid #ebebeb;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 132px;
+        height: auto;
+      }
+    }
+
+    &-details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 50%;
+      flex-direction: column;
+      gap: 5px;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+
+      &-count {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #3e3e3e;
+      }
+
+      &-rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #3e3e3e;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 28px;
+          aspect-ratio: 1;
+          background: url(../assets/otziviki-v-01/star.svg) center / cover no-repeat;
+        }
+      }
+    }
+  }
+}
