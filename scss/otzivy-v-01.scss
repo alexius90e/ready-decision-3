@@ -2,4 +2,329 @@
 @import './mixins';
 
 .otzivy-v-01 {
+  &__main {
+    overflow: hidden;
+  }
+
+  &__slider {
+    @include laptop {
+      margin: 0 -21px;
+    }
+
+    @include mobile {
+      margin: 0 -16px;
+    }
+
+    @include mobilesm {
+      margin: 0 -11px;
+    }
+
+    & .swiper {
+      display: grid;
+      overflow: visible;
+
+      @include laptop {
+        overflow: visible;
+      }
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-slide {
+        height: 100%;
+        width: 424px;
+
+        @include desktop {
+          width: 404px;
+        }
+
+        @include laptop {
+          width: calc((100% - 78px) / 2 - 20px);
+        }
+
+        @include tablet {
+          width: calc(100% - 60px - 16px);
+        }
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          @include laptop {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/otzivy-v-01/arrow-left.svg) center / cover no-repeat;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    transition-property: background-color, color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+
+    &:hover {
+      background-color: #3e3e3e;
+    }
+
+    &-source {
+      &-link {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding-left: 12px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #3e3e3e;
+        transition-property: color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          flex: 0 0 auto;
+          width: 32px;
+          aspect-ratio: 1;
+          filter: brightness(1000%);
+          background: url(../assets/otzivy-v-01/open-in-new.svg) center / 16px no-repeat;
+          transition-property: filter;
+          transition-timing-function: ease-out;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+
+    &:hover &-source {
+      &-link {
+        color: #3e3e3e;
+        background-color: #fff;
+
+        &::after {
+          filter: brightness(100%);
+        }
+      }
+    }
+
+    &-name {
+      margin: 30px 0 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: #1c1c20;
+      transition-property: color;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+    }
+
+    &:hover &-name {
+      color: #ffffff;
+    }
+
+    &-short {
+      margin: 20px 0 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #3e3e3e;
+      transition-property: color;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+    }
+
+    &:hover &-short {
+      color: #ffffff;
+    }
+
+    &-long {
+      display: none;
+    }
+
+    &-more {
+      margin: 20px 0 0;
+
+      &-button {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 140%;
+        color: #3e3e3e;
+        border: none;
+        background: none;
+        transition-property: color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+      }
+    }
+
+    &:hover &-more-button {
+      color: #ffffff;
+    }
+
+    &-date {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      flex: 1 1 auto;
+      margin: 40px 0 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: #a1a1a4;
+    }
+  }
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba($color: $color-black, $alpha: 0);
+    transition: background-color ease-in-out 0.2s;
+    will-change: background-color;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: all;
+      background-color: rgba($color: $color-black, $alpha: 0.5);
+    }
+
+    &-body {
+      position: relative;
+      max-height: calc(100dvh - 30px);
+      max-width: calc(100dvw - 30px);
+      width: 580px;
+      padding: 24px;
+      box-sizing: border-box;
+      overflow: hidden;
+      background-color: $color-white;
+      opacity: 0;
+      transition: opacity ease-in-out 0.4s;
+      will-change: opacity;
+    }
+
+    &.active &-body {
+      opacity: 1;
+    }
+
+    &-content {
+      max-height: calc(100dvh - 78px);
+      overflow: auto;
+    }
+
+    &-name {
+      margin: 0;
+      padding-right: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #1c1c20;
+    }
+
+    &-text {
+      margin: 20px 0 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #3e3e3e;
+    }
+
+    &-date {
+      margin: 20px 0 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: #a1a1a4;
+    }
+
+    &-close {
+      &-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        aspect-ratio: 1;
+        padding: 0;
+        border: none;
+        background-color: #f5f5f5;
+        cursor: pointer;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 20px;
+          aspect-ratio: 1;
+          background: url(../assets/otzivy-v-01/close.svg) center / cover no-repeat;
+          filter: brightness(0);
+        }
+      }
+    }
+  }
 }
