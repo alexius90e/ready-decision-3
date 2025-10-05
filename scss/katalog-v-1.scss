@@ -178,7 +178,7 @@
 
     &-product {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       flex-wrap: wrap;
       flex: 1 1 100%;
       gap: 12px 24px;
@@ -205,6 +205,9 @@
       }
 
       &-photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex: 0 0 121px;
         order: 0;
         margin: 0;
