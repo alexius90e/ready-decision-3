@@ -4,20 +4,24 @@
 .otzivy-v-01 {
   &__main {
     overflow: hidden;
+
+    & .container {
+      max-width: none;
+    }
   }
 
   &__slider {
-    @include laptop {
-      margin: 0 -21px;
-    }
+    // @include laptop {
+    //   margin: 0 -21px;
+    // }
 
-    @include mobile {
-      margin: 0 -16px;
-    }
+    // @include mobile {
+    //   margin: 0 -16px;
+    // }
 
-    @include mobilesm {
-      margin: 0 -11px;
-    }
+    // @include mobilesm {
+    //   margin: 0 -11px;
+    // }
 
     & .swiper {
       display: grid;

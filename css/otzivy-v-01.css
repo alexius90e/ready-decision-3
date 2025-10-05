@@ -1,20 +1,8 @@
 .otzivy-v-01__main {
   overflow: hidden;
 }
-@media (max-width: 992px) {
-  .otzivy-v-01__slider {
-    margin: 0 -21px;
-  }
-}
-@media (max-width: 576px) {
-  .otzivy-v-01__slider {
-    margin: 0 -16px;
-  }
-}
-@media (max-width: 340px) {
-  .otzivy-v-01__slider {
-    margin: 0 -11px;
-  }
+.otzivy-v-01__main .container {
+  max-width: none;
 }
 .otzivy-v-01__slider .swiper {
   display: grid;
