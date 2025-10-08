@@ -1,0 +1,192 @@
+@import './variables';
+@import './mixins';
+
+.perv-ekr-v-03 {
+  background-color: #003765;
+
+  &__slider {
+    & .swiper {
+      &-pagination {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 120px;
+        box-sizing: border-box;
+
+        @include desktopxl {
+          padding: 0 80px;
+        }
+
+        @include desktoplg {
+          padding: 0 30px;
+        }
+
+        @include desktop {
+          padding: 0 20px;
+        }
+
+        @include laptop {
+          justify-content: center;
+        }
+
+        @include tablet {
+          padding: 0 15px;
+        }
+
+        &-bullet {
+          display: block;
+          margin: 0 !important;
+          width: 50px;
+          height: 5px;
+          border-radius: 7px;
+          opacity: 1;
+          background-color: #828282;
+          cursor: pointer;
+
+          &-active {
+            background-color: #1e674e;
+          }
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: flex-end;
+
+    @include laptop {
+      flex-wrap: wrap;
+      padding-bottom: 105px;
+    }
+
+    &-content {
+      flex: 0 0 50%;
+      padding: 240px 120px;
+      box-sizing: border-box;
+
+      @include desktopxl {
+        padding: 200px 80px;
+      }
+
+      @include desktoplg {
+        padding: 170px 30px;
+      }
+
+      @include desktop {
+        padding: 150px 20px;
+      }
+
+      @include laptop {
+        padding: 100px 20px;
+      }
+
+      @include laptop {
+        flex: 1 1 100%;
+        padding: 70px 20px 40px;
+      }
+
+      @include mobile {
+        padding: 70px 15px 40px;
+      }
+
+      &-title {
+        margin: 0;
+        max-width: 767px;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 120%;
+        color: #fff;
+
+        @include desktopxxl {
+          max-width: 665px;
+          font-size: 52px;
+        }
+
+        @include desktopxl {
+          max-width: 588px;
+          font-size: 46px;
+        }
+
+        @include desktoplg {
+          max-width: 512px;
+          font-size: 40px;
+        }
+
+        @include desktop {
+          max-width: 466px;
+          font-size: 36px;
+        }
+
+        @include tablet {
+          font-size: 32px;
+        }
+      }
+
+      &-description {
+        margin: 24px 0 0;
+        font-weight: 400;
+        font-size: 38px;
+        line-height: 120%;
+        color: #fff;
+
+        @include desktopxxl {
+          font-size: 34px;
+        }
+
+        @include desktopxl {
+          margin-top: 20px;
+          font-size: 30px;
+        }
+
+        @include desktoplg {
+          font-size: 26px;
+        }
+
+        @include desktop {
+          margin-top: 20px;
+          font-size: 24px;
+        }
+
+        @include tablet {
+          font-size: 22px;
+        }
+      }
+
+      &-contact {
+        margin: 46px 0 0;
+
+        @include desktoplg {
+          margin-top: 40px;
+        }
+
+        &-button {
+          min-width: 277px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &-figure {
+      flex: 0 0 50%;
+      margin: 0;
+      box-sizing: border-box;
+
+      @include laptop {
+        flex: 1 1 100%;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
