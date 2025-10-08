@@ -1,0 +1,170 @@
+@import './variables';
+@import './mixins';
+
+.lid-forma-v-02 {
+  &__wrapper {
+    position: relative;
+    padding: 30px 26px;
+    padding-right: 350px;
+    background-color: #ff914c;
+
+    @include desktoplg {
+      padding: 24px 20px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 350px);
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    @include desktoplg {
+      display: none;
+    }
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__callback {
+    &-title {
+      margin: 0;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 140%;
+      color: #fff;
+
+      @include desktoplg {
+        font-size: 26px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+      }
+
+      @include tablet {
+        font-size: 22px;
+      }
+    }
+
+    &-description {
+      margin: 8px 0 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #fff;
+
+      @include tablet {
+        font-size: 15pxv;
+      }
+    }
+
+    &-form {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px 20px;
+      margin: 24px 0 0;
+
+      @include laptop {
+        gap: 12px 20px;
+      }
+
+      &-input {
+        display: inline-block;
+        min-height: 50px;
+        width: 100%;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: $color-white;
+        border: 1px solid #ffffff;
+        border-radius: 0px;
+        outline: none;
+        background-color: #ffffff;
+        transition-property: color, background-color, border-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+
+        @include laptop {
+          width: calc(16 / 14 * 100%);
+          padding: 16px 22px;
+          margin: 0 -7.1%;
+          font-size: 16px;
+          transform: scale(0.87);
+        }
+
+        &:focus {
+          border-color: #1e674e;
+        }
+
+        &::placeholder {
+          font-weight: 400;
+          color: #a1a1a4;
+        }
+
+        &:focus::placeholder {
+          color: $color-black;
+        }
+
+        &:user-invalid {
+          border-color: $color-red;
+        }
+      }
+
+      &-submit {
+        color: $color-white;
+        border-color: $color-black;
+        background-color: $color-black;
+
+        @include desktop {
+          flex: 0 0 240px;
+          min-width: 240px;
+        }
+
+        @include laptop {
+          flex: 1 1 100%;
+        }
+
+        &:hover {
+          border-color: #1e674e;
+          background-color: #1e674e;
+        }
+      }
+
+      &-input,
+      &-submit {
+        flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+
+        @include laptop {
+          flex: 1 1 100%;
+        }
+      }
+    }
+
+    &-disclaimer {
+      margin: 12px 0 0;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 154%;
+      color: #fff;
+
+      &-link {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+}
