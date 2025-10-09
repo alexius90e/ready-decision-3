@@ -64,7 +64,7 @@
       color: #fff;
 
       @include tablet {
-        font-size: 15pxv;
+        font-size: 15px;
       }
     }
 
@@ -72,8 +72,12 @@
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 16px 20px;
+      gap: 16px 24px;
       margin: 24px 0 0;
+
+      @include desktoplg {
+        gap: 16px 20px;
+      }
 
       @include laptop {
         gap: 12px 20px;
@@ -145,7 +149,7 @@
 
       &-input,
       &-submit {
-        flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+        flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
 
         @include laptop {
           flex: 1 1 100%;
