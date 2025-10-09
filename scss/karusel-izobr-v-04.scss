@@ -18,10 +18,10 @@
 
       &-slide {
         height: 100%;
-        width: calc(100% / 8 - 20px / 8 * 7);
+        width: calc(1440px / 8 - 20px / 8 * 7);
 
         @include desktop {
-          width: calc(100% / 8 - 16px / 8 * 7);
+          width: calc(1160px / 8 - 16px / 8 * 7);
         }
 
         @include laptop {
@@ -40,6 +40,7 @@
       &-button {
         &-prev,
         &-next {
+          top: calc(162px / 2);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -49,6 +50,10 @@
           transition-property: color;
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
+
+          @include desktop {
+            top: calc(131px / 2);
+          }
 
           @include laptop {
             display: none;
