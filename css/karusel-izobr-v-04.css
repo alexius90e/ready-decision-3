@@ -88,10 +88,20 @@
 }
 .karusel-izobr-v-04__slide {
   width: 100%;
+}
+.karusel-izobr-v-04__slide-figure {
+  width: 100%;
   margin: 0;
 }
-.karusel-izobr-v-04__slide-image {
+.karusel-izobr-v-04__slide-figure-image {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.karusel-izobr-v-04__slide-text {
+  padding: 12px 6px 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  color: #1c1c20;
 }
