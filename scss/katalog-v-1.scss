@@ -58,6 +58,16 @@
           color: #ffffff;
           background-color: #1e674e;
         }
+
+        &:has(a) {
+          padding: 0;
+        }
+
+        &:has(a) > a {
+          display: inline-block;
+          padding: 14px;
+          color: inherit;
+        }
       }
     }
   }
