@@ -1,0 +1,85 @@
+@import './variables';
+@import './mixins';
+
+.taby-v-01 {
+  &__buttons {
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    @include laptop {
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      @include laptop {
+        padding: 0 20px;
+      }
+
+      @include mobile {
+        padding: 0 15px;
+      }
+
+      @include mobilesm {
+        padding: 0 10px;
+      }
+
+      &-item {
+        display: block;
+        flex: 0 0 auto;
+        padding: 14px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: $color-black;
+        background-color: $color-gray;
+        transition-property: color, background-color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          color: #ffffff;
+          background-color: #1e674e;
+        }
+
+        &:has(a) {
+          padding: 0;
+        }
+
+        &:has(a) > a {
+          display: inline-block;
+          padding: 14px;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    &-item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.taby-v-01__buttons {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+@media (max-width: 992px) {
+  .taby-v-01__buttons {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .taby-v-01__buttons {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .taby-v-01__buttons {
+    margin: 0 -10px;
+  }
+}
+.taby-v-01__buttons-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media (max-width: 992px) {
+  .taby-v-01__buttons-list {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .taby-v-01__buttons-list {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 340px) {
+  .taby-v-01__buttons-list {
+    padding: 0 10px;
+  }
+}
+.taby-v-01__buttons-list-item {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #1c1c20;
+  background-color: #ebebeb;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+.taby-v-01__buttons-list-item.active, .taby-v-01__buttons-list-item:hover {
+  color: #ffffff;
+  background-color: #1e674e;
+}
+.taby-v-01__buttons-list-item:has(a) {
+  padding: 0;
+}
+.taby-v-01__buttons-list-item:has(a) > a {
+  display: inline-block;
+  padding: 14px;
+  color: inherit;
+}
+.taby-v-01__tabs-item {
+  display: none;
+}
+.taby-v-01__tabs-item.active {
+  display: block;
+}
