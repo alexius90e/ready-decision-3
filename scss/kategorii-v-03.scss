@@ -6,16 +6,15 @@
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
-    gap: 36px 30px;
+    gap: 36px 20px;
     margin: 0;
 
     @include desktoplg {
-      gap: 36px 20px;
     }
   }
 
   &__card {
-    flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+    flex: 0 0 calc(100% / 4 - 20px / 4 * 3);
     box-sizing: border-box;
 
     @include laptop {
