@@ -1,0 +1,110 @@
+.kategorii-v-03__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 36px 30px;
+  margin: 0;
+}
+@media (max-width: 1500px) {
+  .kategorii-v-03__cards {
+    gap: 36px 20px;
+  }
+}
+.kategorii-v-03__card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - 22.5px);
+          flex: 0 0 calc(25% - 22.5px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  .kategorii-v-03__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 10px);
+            flex: 0 0 calc(50% - 10px);
+  }
+}
+.kategorii-v-03__card-link {
+  position: relative;
+  display: inline-block;
+}
+.kategorii-v-03__card-link-photo {
+  margin: 0;
+  overflow: hidden;
+}
+.kategorii-v-03__card-link-photo-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.kategorii-v-03__card-link:hover .kategorii-v-03__card-link-photo-image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.kategorii-v-03__card-link-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: #ebebeb;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.kategorii-v-03__card-link-icon::before {
+  content: "";
+  display: block;
+  width: 28px;
+  aspect-ratio: 1;
+  background: url(../assets/kategorii-v-02/link-icon.svg) center/cover no-repeat;
+  -webkit-transition-property: -webkit-filter;
+  transition-property: -webkit-filter;
+  transition-property: filter;
+  transition-property: filter, -webkit-filter;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.kategorii-v-03__card-link:hover .kategorii-v-03__card-link-icon {
+  background-color: #1e674e;
+}
+.kategorii-v-03__card-link:hover .kategorii-v-03__card-link-icon::before {
+  -webkit-filter: brightness(0%) invert(100%);
+          filter: brightness(0%) invert(100%);
+}
+.kategorii-v-03__card-link-title {
+  display: inline-block;
+  margin: 20px 0 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: #1c1c20;
+}
