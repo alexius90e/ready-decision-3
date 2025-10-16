@@ -9,7 +9,8 @@
     gap: 36px 20px;
     margin: 0;
 
-    @include desktoplg {
+    @include laptop {
+      gap: 36px 16px;
     }
   }
 
@@ -18,7 +19,7 @@
     box-sizing: border-box;
 
     @include laptop {
-      flex: 0 0 calc(100% / 2 - 20px / 2);
+      flex: 0 0 calc(100% / 2 - 16px / 2);
     }
 
     &-link {

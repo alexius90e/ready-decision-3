@@ -10,6 +10,11 @@
   gap: 36px 20px;
   margin: 0;
 }
+@media (max-width: 992px) {
+  .kategorii-v-03__cards {
+    gap: 36px 16px;
+  }
+}
 .kategorii-v-03__card {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(25% - 15px);
@@ -20,8 +25,8 @@
 @media (max-width: 992px) {
   .kategorii-v-03__card {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 10px);
-            flex: 0 0 calc(50% - 10px);
+        -ms-flex: 0 0 calc(50% - 8px);
+            flex: 0 0 calc(50% - 8px);
   }
 }
 .kategorii-v-03__card-link {
