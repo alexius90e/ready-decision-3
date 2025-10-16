@@ -11,7 +11,7 @@
       margin: 0 -20px;
     }
 
-    @include tablet {
+    @include mobile {
       margin: 0 -15px;
     }
   }
@@ -38,6 +38,9 @@
     @include tablet {
       gap: 20px 16px;
       min-width: 220%;
+    }
+
+    @include mobile {
       padding: 0 15px;
     }
 
@@ -66,8 +69,10 @@
 
       &-id {
         display: block;
-        flex: 0 0 91px;
+        flex: 0 0 92px;
+        max-width: 92px;
         padding: 20px;
+        padding-left: 10px;
         box-sizing: border-box;
         font-weight: 500;
         font-size: 50px;
@@ -78,20 +83,19 @@
         background-color: #1e674e;
 
         @include desktoplg {
-          flex: 0 0 73px;
+          flex: 0 0 72px;
+          max-width: 72px;
         }
 
         @include desktop {
           flex: 0 0 92px;
+          max-width: 92px;
         }
 
         @include laptop {
-          flex: 0 0 61px;
+          flex: 0 0 64px;
+          max-width: 64px;
           padding: 20px 15px;
-        }
-
-        @include tablet {
-          flex: 0 0 55px;
         }
       }
 
