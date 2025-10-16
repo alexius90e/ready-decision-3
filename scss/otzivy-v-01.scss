@@ -11,18 +11,6 @@
   }
 
   &__slider {
-    // @include laptop {
-    //   margin: 0 -21px;
-    // }
-
-    // @include mobile {
-    //   margin: 0 -16px;
-    // }
-
-    // @include mobilesm {
-    //   margin: 0 -11px;
-    // }
-
     & .swiper {
       display: grid;
       overflow: visible;
@@ -117,6 +105,10 @@
 
     &:hover {
       background-color: #3e3e3e;
+
+      @include laptop {
+        background-color: #f5f5f5;
+      }
     }
 
     &-source {
@@ -156,8 +148,17 @@
         color: #3e3e3e;
         background-color: #fff;
 
+        @include laptop {
+          color: #fff;
+          background-color: #3e3e3e;
+        }
+
         &::after {
           filter: brightness(100%);
+
+          @include laptop {
+            filter: brightness(1000%);
+          }
         }
       }
     }
@@ -176,6 +177,10 @@
 
     &:hover &-name {
       color: #ffffff;
+
+      @include laptop {
+        color: #1c1c20;
+      }
     }
 
     &-short {
@@ -191,6 +196,10 @@
 
     &:hover &-short {
       color: #ffffff;
+
+      @include laptop {
+        color: #3e3e3e;
+      }
     }
 
     &-long {
@@ -219,6 +228,10 @@
 
     &:hover &-more-button {
       color: #ffffff;
+
+      @include laptop {
+        color: #3e3e3e;
+      }
     }
 
     &-date {
