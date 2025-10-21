@@ -18,14 +18,10 @@
 
       &-slide {
         height: 100%;
-        width: calc(1440px / 4 - 20px / 4 * 3);
+        width: calc(100% / 4 - 30px / 4 * 3);
 
-        @include desktop {
-          width: calc(1160px / 4 - 16px / 4 * 3);
-        }
-
-        @include laptop {
-          width: calc(100% / 4 - 16px / 4 * 3);
+        @include desktoplg {
+          width: calc(100% / 4 - 20px / 4 * 3);
         }
 
         @include tablet {
@@ -40,7 +36,7 @@
       &-button {
         &-prev,
         &-next {
-          top: calc(345px / 2);
+          top: 0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -50,10 +46,6 @@
           transition-property: color;
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
-
-          @include desktop {
-            top: calc(278px / 2);
-          }
 
           @include laptop {
             display: none;
