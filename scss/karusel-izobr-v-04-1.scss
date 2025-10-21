@@ -1,0 +1,117 @@
+@import './variables';
+@import './mixins';
+
+.karusel-izobr-v-04-1 {
+  overflow: hidden;
+
+  &__slider {
+    & .swiper {
+      display: grid;
+
+      @include laptop {
+        overflow: visible;
+      }
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-slide {
+        height: 100%;
+        width: calc(1440px / 8 - 20px / 8 * 7);
+
+        @include desktop {
+          width: calc(1160px / 8 - 16px / 8 * 7);
+        }
+
+        @include laptop {
+          width: calc((100% - 48px) / 5 - 16px);
+        }
+
+        @include tablet {
+          width: calc((100% - 38px) / 4 - 16px);
+        }
+
+        @include mobile {
+          width: calc((100% - 44px) / 2 - 16px);
+        }
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          top: calc(162px / 2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          @include desktop {
+            top: calc(131px / 2);
+          }
+
+          @include laptop {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/karusel-izobr-v-04/arrow-left.svg) center / cover no-repeat;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+
+        &-disabled {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    width: 100%;
+
+    &-figure {
+      width: 100%;
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-text {
+      padding: 12px 6px 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: #1c1c20;
+    }
+  }
+}
