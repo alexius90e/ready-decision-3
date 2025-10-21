@@ -52,7 +52,7 @@
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .karusel-izobr-v-06__slider .swiper-button-prev, .karusel-izobr-v-06__slider .swiper-button-next {
     display: none;
   }

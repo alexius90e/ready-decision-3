@@ -47,7 +47,7 @@
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
 
-          @include laptop {
+          @include tablet {
             display: none;
           }
 
