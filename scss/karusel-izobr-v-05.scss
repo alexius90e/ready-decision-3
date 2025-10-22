@@ -1,0 +1,78 @@
+@import './variables';
+@import './mixins';
+
+.karusel-izobr-v-05 {
+  overflow: hidden;
+
+  &__wrapper {
+    overflow: auto;
+
+    @include laptop {
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px 16px;
+
+    @include laptop {
+      gap: 24px 16px;
+      min-width: calc(150px * 8 + 16px * 7);
+      padding: 0 20px;
+    }
+
+    @include tablet {
+      gap: 24px 12px;
+      min-width: calc(161px * 8 + 12px * 7);
+    }
+
+    @include mobile {
+      padding: 0 15px;
+      min-width: calc(141px * 8 + 12px * 7);
+    }
+
+    @include mobilesm {
+      padding: 0 10px;
+    }
+  }
+
+  &__card {
+    flex: 0 0 calc(100% / 8 - 16px / 8 * 7);
+
+    @include tablet {
+      flex: 0 0 calc(100% / 8 - 12px / 8 * 7);
+    }
+
+    &-figure {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-text {
+      padding: 12px 6px 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: $color-black;
+    }
+  }
+}
