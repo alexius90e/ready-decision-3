@@ -1,0 +1,417 @@
+@import './variables';
+@import './mixins';
+
+.perv-ekr-v-04 {
+  &-main {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__photo {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+
+    @include desktoplg {
+      margin: 0 -30px;
+    }
+
+    @include desktop {
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+
+      &_desktop {
+        display: block;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+
+    &-caption {
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: fit-content;
+      padding: 7px 20px;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      text-align: center;
+      color: $color-white;
+      background-color: #1e674e;
+
+      @include desktop {
+        left: 20px;
+        font-size: 24px;
+      }
+
+      @include laptop {
+        font-size: 22px;
+      }
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 962px;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+
+    @include desktoplg {
+      top: 80px;
+    }
+
+    @include desktop {
+      top: 70px;
+    }
+
+    @include laptop {
+      top: 60px;
+    }
+
+
+    &-title {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+      color: #fff;
+
+      @include desktoplg {
+        font-size: 42px;
+      }
+
+      @include desktop {
+        font-size: 38px;
+      }
+
+      @include laptop {
+        font-size: 36px;
+      }
+
+      @include tablet {
+        font-size: 32px;
+        text-align: left;
+      }
+      
+    }
+
+    &-subtitle,
+    &-description {
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 140%;
+      text-align: center;
+      color: #fff;
+
+      @include desktoplg {
+        font-size: 24px;
+      }
+
+      @include desktop {
+        font-size: 22px;
+      }
+
+      @include laptop {
+        font-size: 20px;
+      }
+
+      @include tablet {
+        text-align: left;
+      }
+    }
+
+    &-subtitle {
+      margin: 24px 0 0;
+
+      @include desktop {
+        margin-top: 20px;
+      }
+    }
+
+    &-description {
+      display: inline-block;
+      padding: 9px 18px;
+      margin: 36px auto 0;
+      box-sizing: border-box;
+      background-color: #1e674e;
+
+      @include desktoplg {
+        padding: 8px 16px;
+      }
+
+      @include desktop {
+        padding: 7px 14px;
+        margin-top: 30px;
+      }
+
+      @include laptop {
+        padding: 6px 12px;
+      }
+
+      @include tablet {
+        max-width: fit-content;
+        margin: 30px 0 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+    margin: -32px 0 0;
+
+    @include desktoplg {
+      margin: -32px 0 0;
+    }
+  }
+
+  &__discount {
+    max-width: 1162px;
+    margin: 0 auto 38px;
+    padding: 30px 26px;
+    box-sizing: border-box;
+    background-color: $color-black;
+
+    @include desktoplg {
+      max-width: 987px;
+      padding: 24px 20px;
+    }
+
+    @include desktop {
+      max-width: 916px;
+    }
+
+    @include laptop {
+      max-width: none;
+    }
+
+    &-title {
+      margin: 0 0 8px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: $color-white;
+    }
+
+    &-description {
+      margin: 0 0 24px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #a1a1a4;
+
+      @include tablet {
+        font-size: 15px;
+      }
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin: 0 0 12px;
+
+      @include desktoplg {
+        gap: 20px;
+      }
+
+      @include tablet {
+        flex-wrap: wrap;
+      }
+
+      &-input,
+      &-button {
+        display: inline-block;
+        flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
+        max-width: calc(100% / 3 - 24px / 3 * 2);
+        box-sizing: border-box;
+        border-radius: 0px;
+        outline: none;
+
+        @include desktoplg {
+          flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+          max-width: calc(100% / 3 - 20px / 3 * 2);
+        }
+
+        @include tablet {
+          flex: 1 1 100%;
+          max-width: none;
+        }
+      }
+
+      &-input {
+        min-height: 50px;
+        padding: 13px 20px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: $color-black;
+        border: 2px solid #444444;
+        background-color: #444444;
+
+        @include tablet {
+          min-height: 58px;
+          width: calc(16 / 14 * 100%);
+          margin: 0 -7%;
+          padding: 14px 20px;
+          box-sizing: border-box;
+          font-size: 16px;
+          line-height: 100%;
+          transform: scale(0.875);
+        }
+
+        &:focus {
+          border: 2px solid $color-white;
+          background-color: $color-white;
+        }
+
+        &:user-invalid {
+          border-color: $color-red;
+        }
+
+        &::placeholder {
+          font-weight: 400;
+          color: $color-gray;
+        }
+
+        &:focus::placeholder {
+          color: $color-dark-gray;
+        }
+      }
+
+      &-button {
+        text-transform: uppercase;
+
+        &:hover {
+          color: $color-black;
+          border-color: $color-white;
+          background-color: $color-white;
+        }
+      }
+    }
+
+    &-disclaimer {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 154%;
+      letter-spacing: -0.01em;
+      color: #a1a1a4;
+
+      & a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        transition-property: border, color, background-color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 30px;
+
+    @include desktoplg {
+      gap: 32px 20px;
+    }
+
+    &-card {
+      flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+
+      @include desktoplg {
+        flex: 0 0 calc(100% / 4 - 20px / 4 * 3);
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 20px / 2);
+      }
+
+      @include tablet {
+        flex: 1 1 100%;
+      }
+
+      &-icon {
+        display: block;
+        width: fit-content;
+        margin: 0 0 20px;
+        padding: 0 12px;
+
+        @include tablet {
+          margin-bottom: 17px;
+        }
+
+        &-image {
+          display: block;
+          max-width: 100%;
+          width: 40px;
+          height: auto;
+        }
+      }
+
+      &-title {
+        margin: 0 0 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: $color-black;
+      }
+
+      &-text {
+        margin: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        color: #3e3e3e;
+      }
+    }
+  }
+}
