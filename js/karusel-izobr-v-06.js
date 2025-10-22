@@ -25,18 +25,3 @@ if (karuselIzobrV06SwiperEl) {
     },
   });
 }
-
-const karuselIzobrV06Slide = document.querySelector('.karusel-izobr-v-06__slide');
-const karuselIzobrV06Prev = document.querySelector('.karusel-izobr-v-06 .swiper-button-next');
-const karuselIzobrV06Next = document.querySelector('.karusel-izobr-v-06 .swiper-button-prev');
-
-const updateKaruselIzobrV06ButtonsTop = () => {
-  if (karuselIzobrV06Slide && karuselIzobrV06Prev && karuselIzobrV06Next) {
-    karuselIzobrV06Prev.style.top = `${karuselIzobrV06Slide.offsetWidth / 2}px`;
-    karuselIzobrV06Next.style.top = `${karuselIzobrV06Slide.offsetWidth / 2}px`;
-  }
-};
-
-window.addEventListener('resize', updateKaruselIzobrV06ButtonsTop);
-
-updateKaruselIzobrV06ButtonsTop();

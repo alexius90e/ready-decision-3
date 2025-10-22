@@ -32,7 +32,7 @@
   }
 }
 .karusel-izobr-v-06__slider .swiper-button-prev, .karusel-izobr-v-06__slider .swiper-button-next {
-  top: 0;
+  top: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
