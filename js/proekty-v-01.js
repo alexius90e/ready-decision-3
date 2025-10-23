@@ -9,7 +9,7 @@ proektyV5CardSliders.forEach((slidersElem) => {
 
   if (mainSliderElem && thumbsSliderElem) {
     const thumbsSwiper = new Swiper(thumbsSliderElem, {
-      spaceBetween: 0,
+      spaceBetween: -1,
       slidesPerView: 3,
       freeMode: true,
       watchSlidesProgress: true,

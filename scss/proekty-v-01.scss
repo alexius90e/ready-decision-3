@@ -108,7 +108,7 @@
       &-thumbs {
         position: relative;
         z-index: 100;
-        margin: -1px 0 0;
+        overflow: hidden;
 
         &-image {
           display: block;
@@ -117,9 +117,13 @@
         }
 
         & .swiper {
+          margin-right: -1px;
+
           &-slide {
             position: relative;
             box-sizing: border-box;
+            display: block;
+            overflow: hidden;
 
             &::before {
               content: '';
@@ -129,14 +133,19 @@
               right: 0;
               bottom: 0;
               z-index: 10;
+              display: none;
               border: 2px solid #1e674e;
-              opacity: 0;
+              box-sizing: border-box;
               transition: opacity ease-out 0.1s;
             }
 
             &-thumb {
               &-active {
+                position: relative;
+                z-index: 10;
+              
                 &::before {
+                  display: block;
                   opacity: 1;
                 }
               }
