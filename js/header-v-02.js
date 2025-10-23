@@ -11,8 +11,10 @@ window.addEventListener('scroll', () => {
 
   if (currentScroll < lastScroll && lastScroll - currentScroll > minScrollStep) {
     headerV02.classList.remove('hidden');
-  } else if (currentScroll > scrollLimit && currentScroll > lastScroll) {
+  } else if (currentScroll > lastScroll && currentScroll > scrollLimit) {
     headerV02.classList.add('hidden');
+  } else if (currentScroll < scrollLimit) {
+    headerV02.classList.remove('hidden');
   }
 
   lastScroll = currentScroll;
