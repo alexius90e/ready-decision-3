@@ -31,7 +31,7 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
 
-  if (currentScroll < lastScroll) {
+  if (currentScroll < lastScroll && lastScroll - currentScroll > 20) {
     headerV02.classList.remove('hidden');
   } else if (currentScroll > scrollLimit && currentScroll > lastScroll) {
     headerV02.classList.add('hidden');
