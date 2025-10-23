@@ -30,31 +30,6 @@ proektyV5CardSliders.forEach((slidersElem) => {
   }
 });
 
-const proektyV5Modal = document.querySelector('.proekty-v-01__modal');
-const proektyV5ModalForm = document.querySelector('.proekty-v-01__modal-form');
-const proektyV5ContactButtons = document.querySelectorAll(
-  '.proekty-v-01__card-content-contact-button'
-);
-
-if (proektyV5Modal && proektyV5ModalForm) {
-  proektyV5ContactButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      proektyV5Modal.classList.add('active');
-    });
-  });
-
-  proektyV5Modal.addEventListener('click', (event) => {
-    const isLayout = event.currentTarget === event.target;
-    const isClose = event.target.classList.contains('proekty-v-01__modal-close-button');
-    if (isLayout || isClose) proektyV5Modal.classList.remove('active');
-  });
-
-  proektyV5ModalForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    proektyV5Modal.classList.remove('active');
-  });
-}
-
 const proektyV5More = document.querySelector('.proekty-v-01__more');
 
 if (proektyV5More) {
