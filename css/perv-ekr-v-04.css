@@ -16,26 +16,6 @@
           justify-content: center;
   margin: 0;
 }
-@media (max-width: 1500px) {
-  .perv-ekr-v-04__photo {
-    margin: 0 -30px;
-  }
-}
-@media (max-width: 1200px) {
-  .perv-ekr-v-04__photo {
-    margin: 0 -20px;
-  }
-}
-@media (max-width: 576px) {
-  .perv-ekr-v-04__photo {
-    margin: 0 -15px;
-  }
-}
-@media (max-width: 340px) {
-  .perv-ekr-v-04__photo {
-    margin: 0 -10px;
-  }
-}
 .perv-ekr-v-04__photo-image {
   display: block;
   max-width: 100%;

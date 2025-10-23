@@ -188,24 +188,11 @@
 
   &__map {
     flex: 1 1 auto;
-    min-height: 546px;
-    margin: 0 -30px;
 
-    @include desktop {
-      margin: 0 -20px;
-    }
-
-    @include mobile {
-      margin: 0 -15px;
-    }
-
-    @include mobilesm {
-      margin: 0 -10px;
-    }
 
     & iframe {
       display: block;
-      min-height: 440px;
+      min-height: 546px;
       width: 100%;
       height: 100%;
     }

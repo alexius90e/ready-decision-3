@@ -315,16 +315,14 @@
   }
 }
 .proekty-v-01__more-button {
-  padding: 16px 18px;
+  padding: 16px 32px 13px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
   color: #ffffff;
   border-color: #1e674e;
   background-color: #1e674e;
-}
-@media (max-width: 992px) {
-  .proekty-v-01__more-button {
-    min-height: 54px;
-    padding: 15px 16px;
-  }
 }
 .proekty-v-01__more-button:hover {
   border-color: #1c1c20;
