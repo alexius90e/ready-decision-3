@@ -2,7 +2,10 @@
   overflow: hidden;
 }
 .karusel-izobr-v-05__wrapper {
+  position: relative;
   overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0);
 }
 @media (max-width: 992px) {
   .karusel-izobr-v-05__wrapper {
@@ -19,6 +22,17 @@
     margin: 0 -10px;
   }
 }
+.karusel-izobr-v-05__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  display: block;
+  width: 40px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .karusel-izobr-v-05__cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,20 +47,22 @@
 @media (max-width: 992px) {
   .karusel-izobr-v-05__cards {
     gap: 24px 16px;
-    min-width: 1312px;
+    min-width: calc((100% - 64px - 20px - 40px) / 4 * 8 + 40px + 112px);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0 20px;
   }
 }
 @media (max-width: 768px) {
   .karusel-izobr-v-05__cards {
     gap: 24px 12px;
-    min-width: 1372px;
+    min-width: calc((100% - 36px - 20px - 40px) / 3 * 8 + 40px + 84px);
   }
 }
 @media (max-width: 576px) {
   .karusel-izobr-v-05__cards {
+    min-width: calc((100% - 24px - 15px - 40px) / 2 * 8 + 30px + 84px);
     padding: 0 15px;
-    min-width: 1212px;
   }
 }
 @media (max-width: 340px) {
