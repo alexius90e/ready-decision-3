@@ -5,7 +5,7 @@
   position: relative;
   overflow: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0);
+  scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
 }
 @media (max-width: 992px) {
   .karusel-izobr-v-05__wrapper {
@@ -21,17 +21,6 @@
   .karusel-izobr-v-05__wrapper {
     margin: 0 -10px;
   }
-}
-.karusel-izobr-v-05__wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  display: block;
-  width: 40px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .karusel-izobr-v-05__cards {
   display: -webkit-box;
