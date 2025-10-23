@@ -17,13 +17,18 @@
       gap: 20px;
     }
 
-    @include laptop {
+    @include tablet {
       display: block;
     }
   }
 
   &__office {
     flex: 0 0 367px;
+
+    @include laptop {
+      flex: 0 1 367px;
+      max-width: calc(100% / 2 - 20px / 2);
+    }
 
     &-title {
       margin: 0 0 18px;

@@ -20,7 +20,7 @@
     gap: 20px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .kontakty-v-02__wrapper {
     display: block;
   }
@@ -29,6 +29,14 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 367px;
           flex: 0 0 367px;
+}
+@media (max-width: 992px) {
+  .kontakty-v-02__office {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 367px;
+            flex: 0 1 367px;
+    max-width: calc(50% - 10px);
+  }
 }
 .kontakty-v-02__office-title {
   margin: 0 0 18px;
