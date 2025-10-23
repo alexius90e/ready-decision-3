@@ -7,8 +7,9 @@
   &__wrapper {
     position: relative;
     overflow: auto;
-    scrollbar-width: thin;
     scrollbar-color: rgba($color: #ffffff, $alpha: 0) rgba($color: #ffffff, $alpha: 0);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     @include laptop {
       margin: 0 -20px;
@@ -20,6 +21,10 @@
 
     @include mobilesm {
       margin: 0 -10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 

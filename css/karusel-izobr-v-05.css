@@ -4,8 +4,9 @@
 .karusel-izobr-v-05__wrapper {
   position: relative;
   overflow: auto;
-  scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 @media (max-width: 992px) {
   .karusel-izobr-v-05__wrapper {
@@ -21,6 +22,9 @@
   .karusel-izobr-v-05__wrapper {
     margin: 0 -10px;
   }
+}
+.karusel-izobr-v-05__wrapper::-webkit-scrollbar {
+  display: none;
 }
 .karusel-izobr-v-05__cards {
   display: -webkit-box;
