@@ -6,19 +6,11 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 24px 36px;
+    gap: 40px;
     margin: 0 0 30px;
 
-    @include desktoplg {
-      gap: 40px;
-    }
-
     @include desktop {
-      gap: 20px;
-    }
-
-    @include tablet {
-      display: block;
+      gap: 30px;
     }
   }
 
@@ -27,7 +19,12 @@
 
     @include laptop {
       flex: 0 1 367px;
-      max-width: calc(100% / 2 - 20px / 2);
+      max-width: calc(100% / 2 - 30px / 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+      max-width: none;
     }
 
     &-title {
@@ -46,10 +43,6 @@
     flex: 0 0 446px;
     gap: 18px;
     box-sizing: border-box;
-
-    @include laptop {
-      margin: 0 0 24px;
-    }
 
     &-item {
       flex: 1 1 100%;
@@ -188,7 +181,6 @@
 
   &__map {
     flex: 1 1 auto;
-
 
     & iframe {
       display: block;
