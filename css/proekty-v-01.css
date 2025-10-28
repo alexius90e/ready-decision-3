@@ -129,14 +129,15 @@
   position: relative;
   z-index: 100;
   overflow: hidden;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 .proekty-v-01__card-sliders-thumbs-image {
   display: block;
   max-width: 100%;
   height: auto;
-}
-.proekty-v-01__card-sliders-thumbs .swiper {
-  margin-right: -1px;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .proekty-v-01__card-sliders-thumbs .swiper-slide {
   position: relative;

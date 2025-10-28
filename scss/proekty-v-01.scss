@@ -109,16 +109,16 @@
         position: relative;
         z-index: 100;
         overflow: hidden;
+        transform: translateY(-1px);
 
         &-image {
           display: block;
           max-width: 100%;
           height: auto;
+          transform: scale(1.05);
         }
 
         & .swiper {
-          margin-right: -1px;
-
           &-slide {
             position: relative;
             box-sizing: border-box;
@@ -143,7 +143,7 @@
               &-active {
                 position: relative;
                 z-index: 10;
-              
+
                 &::before {
                   display: block;
                   opacity: 1;
