@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .mod-ok-v-03 {
   position: fixed;
   top: 0;
@@ -179,15 +178,20 @@
 .mod-ok-v-03__chat-message-incoming::before, .mod-ok-v-03__chat-message-outgoing::before {
   content: "";
   position: absolute;
+  bottom: -1px;
+  z-index: -1;
   display: block;
   width: 10px;
   aspect-ratio: 1;
   background: url(../assets/mod-ok-v-03/tail.svg) center/cover no-repeat;
-  background-color: #118c4e;
-  display: none;
 }
-.mod-ok-v-03__chat-message-incoming {
-  left: -4px;
+.mod-ok-v-03__chat-message-incoming::before {
+  left: -5px;
+}
+.mod-ok-v-03__chat-message-outgoing::before {
+  right: -5px;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 .mod-ok-v-03__form {
   display: -webkit-box;
@@ -222,7 +226,7 @@
   background-color: #ffffff;
   resize: none;
   -webkit-transform: scale(0.875);
-          transform: scale(0.875); /* визуально ~14px */
+          transform: scale(0.875);
   -webkit-transform-origin: left top;
           transform-origin: left top;
 }
