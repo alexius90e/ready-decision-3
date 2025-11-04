@@ -1,0 +1,289 @@
+.mod-ok-v-03 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: rgba(28, 28, 32, 0);
+  -webkit-transition: background-color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
+  will-change: background-color;
+  pointer-events: none;
+}
+.mod-ok-v-03.active {
+  pointer-events: all;
+  background-color: rgba(28, 28, 32, 0.5);
+}
+.mod-ok-v-03__body {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  max-height: calc(100dvh - 30px);
+  max-width: calc(100dvw - 30px);
+  width: 360px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #ffffff;
+  opacity: 0;
+  -webkit-transition: opacity ease-in-out 0.4s;
+  transition: opacity ease-in-out 0.4s;
+  will-change: opacity;
+}
+.mod-ok-v-03__body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url(../assets/mod-ok-v-03/chat-bg.jpg) top center/100% repeat-y;
+  opacity: 0.5;
+}
+.mod-ok-v-03_tg .mod-ok-v-03__body::before {
+  -webkit-filter: invert(0%);
+          filter: invert(0%);
+}
+.mod-ok-v-03_wts .mod-ok-v-03__body::before {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+.mod-ok-v-03_max .mod-ok-v-03__body::before {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+.mod-ok-v-03.active .mod-ok-v-03__body {
+  opacity: 1;
+}
+.mod-ok-v-03__content {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.mod-ok-v-03_tg .mod-ok-v-03__content {
+  background-color: rgba(191, 209, 230, 0.87);
+}
+.mod-ok-v-03_wts .mod-ok-v-03__content {
+  background-color: rgba(246, 241, 235, 0.87);
+}
+.mod-ok-v-03_max .mod-ok-v-03__content {
+  background-color: rgba(142, 200, 237, 0.87);
+}
+.mod-ok-v-03__header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 13px 16px;
+  background-color: #1c1c20;
+}
+.mod-ok-v-03__header-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+}
+.mod-ok-v-03__header-logo-icon {
+  display: block;
+  max-width: 38px;
+  max-height: 38px;
+  height: auto;
+}
+.mod-ok-v-03__header-logo-name {
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+}
+.mod-ok-v-03_tg .mod-ok-v-03__header {
+  background-color: #3f86ce;
+}
+.mod-ok-v-03_wts .mod-ok-v-03__header {
+  background-color: #118c4e;
+}
+.mod-ok-v-03_max .mod-ok-v-03__header {
+  background-color: #3f86ce;
+}
+.mod-ok-v-03__policy {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 10px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #a1a1a4;
+  background-color: #f5f5f5;
+}
+.mod-ok-v-03__policy-link {
+  color: inherit;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+.mod-ok-v-03__chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-height: 190px;
+  max-height: 300px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.mod-ok-v-03__chat-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+.mod-ok-v-03__chat-message:has(.mod-ok-v-03__chat-message-incoming) {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.mod-ok-v-03__chat-message:has(.mod-ok-v-03__chat-message-outgoing) {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.mod-ok-v-03__chat-message-incoming, .mod-ok-v-03__chat-message-outgoing {
+  position: relative;
+  max-width: 250px;
+  width: 250px;
+  padding: 10px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+  background-color: #ffffff;
+}
+.mod-ok-v-03__chat-message-incoming::before, .mod-ok-v-03__chat-message-outgoing::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  aspect-ratio: 1;
+  background: url(../assets/mod-ok-v-03/tail.svg) center/cover no-repeat;
+  background-color: #118c4e;
+  display: none;
+}
+.mod-ok-v-03__chat-message-incoming {
+  left: -4px;
+}
+.mod-ok-v-03__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8px;
+  padding: 18px 16px;
+  background-color: #eaf3f8;
+}
+.mod-ok-v-03__form-textarea {
+  display: block;
+  min-height: 54px;
+  max-height: 240px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 18px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1c1c20;
+  overflow-y: hidden;
+  border: none;
+  border-radius: 28px;
+  outline: none;
+  background-color: #ffffff;
+  resize: none;
+}
+.mod-ok-v-03__form-textarea::-webkit-input-placeholder {
+  color: #a1a1a4;
+}
+.mod-ok-v-03__form-textarea::-moz-placeholder {
+  color: #a1a1a4;
+}
+.mod-ok-v-03__form-textarea:-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.mod-ok-v-03__form-textarea::-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.mod-ok-v-03__form-textarea::placeholder {
+  color: #a1a1a4;
+}
+.mod-ok-v-03__form-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 54px;
+  padding: 0;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 28px;
+  background-position: center;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-color: #1c1c20;
+  -webkit-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+  cursor: pointer;
+}
+.mod-ok-v-03__form-submit:hover {
+  background-color: #1c1c20;
+}
+.mod-ok-v-03_tg .mod-ok-v-03__form {
+  background-color: rgba(234, 243, 248, 0);
+}
+.mod-ok-v-03_tg .mod-ok-v-03__form-submit {
+  background-color: #3183d5;
+  background-image: url(../assets/mod-ok-v-03/tg-submit.svg);
+}
+.mod-ok-v-03_tg .mod-ok-v-03__form-submit:hover {
+  background-color: #1c1c20;
+}
+.mod-ok-v-03_wts .mod-ok-v-03__form {
+  background-color: rgba(234, 243, 248, 0);
+}
+.mod-ok-v-03_wts .mod-ok-v-03__form-submit {
+  background-color: #238e58;
+  background-image: url(../assets/mod-ok-v-03/wts-submit.svg);
+}
+.mod-ok-v-03_wts .mod-ok-v-03__form-submit:hover {
+  background-color: #1c1c20;
+}
+.mod-ok-v-03_max .mod-ok-v-03__form {
+  background-color: #eaf3f8;
+}
+.mod-ok-v-03_max .mod-ok-v-03__form-submit {
+  background-color: #0279fc;
+  background-image: url(../assets/mod-ok-v-03/max-submit.svg);
+}
+.mod-ok-v-03_max .mod-ok-v-03__form-submit:hover {
+  background-color: #1c1c20;
+}
