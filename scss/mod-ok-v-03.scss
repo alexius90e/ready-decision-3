@@ -24,7 +24,7 @@
     right: 15px;
     // left: 15px;
     bottom: 15px;
-    max-height: calc(100dvh - 30px);
+
     max-width: calc(100dvw - 30px);
     width: 360px;
     box-sizing: border-box;
@@ -72,6 +72,8 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
+    max-height: calc(100dvh - 30px);
+    overflow: auto;
   }
 
   &_tg &__content {
@@ -202,21 +204,24 @@
 
     &-textarea {
       display: block;
-      min-height: 54px;
+      min-height: calc(54px / 14 * 16);
       max-height: 240px;
       width: 100%;
       height: fit-content;
-      padding: 18px 20px;
+      margin-right: -36px;
+      padding: calc(18px / 14 * 16) calc(20px / 14 * 16);
       box-sizing: border-box;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 16px;
       color: #1c1c20;
       overflow-y: hidden;
       border: none;
-      border-radius: 28px;
+      border-radius: calc(28px / 14 * 16);
       outline: none;
       background-color: #ffffff;
       resize: none;
+      transform: scale(0.875); /* визуально ~14px */
+      transform-origin: left top;
 
       &::placeholder {
         color: #a1a1a4;
