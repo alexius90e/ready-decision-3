@@ -132,13 +132,14 @@
       }
 
       &-text {
-        &-input {
-          display: inline-block;
+        &-textarea {
+          display: block;
           min-height: 50px;
           height: 100%;
           width: 100%;
           padding: 13px 20px 14px;
           box-sizing: border-box;
+          overflow: hidden;
           font-weight: 500;
           font-size: 15px;
           line-height: 140%;
@@ -146,10 +147,21 @@
           border: 1px solid #dfdfe0;
           border-radius: 0px;
           outline: none;
+          resize: none;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
           background-color: #ffffff;
           transition-property: border;
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
+
+          @include tablet {
+            width: 106.669%;
+            padding: 15px 21px 14px;
+            font-size: 16px;
+            transform: scale(0.9375);
+            transform-origin: top left;
+          }
 
           &:hover {
             border: 1px solid #1e674e;
@@ -210,7 +222,7 @@
           display: block;
           flex: 0 0 auto;
           width: 14px;
-          aspect-ratio: 1;
+          height: 14px;
           box-sizing: border-box;
           border: 1px solid #dfdfe0;
         }
@@ -261,6 +273,8 @@
 
     &-next {
       flex: 0 0 auto;
+      font-weight: 500;
+      font-size: 14px;
     }
   }
 
@@ -323,6 +337,7 @@
         @include desktoplg {
           padding-bottom: 14px;
           margin-bottom: 20px;
+          font-size: 16px;
         }
       }
 
@@ -373,6 +388,7 @@
 
           @include tablet {
             margin: 0 0 24px;
+            gap: 16px;
           }
 
           &-input {
@@ -401,6 +417,11 @@
 
             @include tablet {
               flex: 1 1 100%;
+              margin-right: -6.25%;
+              padding: 15px 22px 16px;
+              font-size: 16px;
+              transform-origin: top left;
+              transform: scale(0.9375);
             }
           }
         }
@@ -429,22 +450,40 @@
             }
 
             &-text {
+              position: relative;
               display: inline-block;
               padding: 0 0 6px;
               font-weight: 500;
               font-size: 14px;
-              color: #1c1c20;
+              color: #a1a1a4;
               text-transform: uppercase;
-              border-bottom: 2px solid rgba($color: #1e674e, $alpha: 0);
-              transition: border ease-in-out 0.2s;
+              transition: color ease-out 0.2s;
 
               @include tablet {
                 font-size: 13px;
               }
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 2px;
+                width: 100%;
+                background-color: #1e674e;
+                opacity: 0;
+                transform: translateY(-3px);
+                transition: opacity ease-out 0.2s;
+              }
             }
 
             &:has(input:checked) &-text {
-              border-bottom: 2px solid rgba($color: #1e674e, $alpha: 1);
+              color: #1c1c20;
+
+              &::before {
+                opacity: 1;
+              }
             }
           }
         }
@@ -475,11 +514,10 @@
 
           &-disclaimer {
             max-width: 300px;
-            font-weight: 500;
-            font-size: 14px;
+            font-weight: 400;
+            font-size: 13px;
             line-height: 140%;
-            letter-spacing: -0.01em;
-            color: #b9b9b9;
+            color: #a1a1a4;
 
             @include tablet {
               flex: 1 1 100%;
@@ -507,7 +545,9 @@
       margin: 0;
 
       @include desktoplg {
+        position: relative;
         flex: 0 0 357px;
+        overflow: hidden;
       }
 
       @include desktop {
@@ -518,6 +558,10 @@
         display: block;
         max-width: 100%;
         height: auto;
+
+        @include desktoplg {
+          position: absolute;
+        }
       }
     }
   }

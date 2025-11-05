@@ -130,3 +130,22 @@ kvizQuestionRadioTextEls.forEach((radioEl) => {
     });
   });
 });
+
+const kvizV01TextareaEls = document.querySelectorAll('.kviz-v-01__question-list-text-textarea');
+
+function updatekvizV01Textarea(textarea) {
+  textarea.style.minHeight = 'auto';
+  textarea.style.minHeight = textarea.scrollHeight + 'px';
+}
+
+kvizV01TextareaEls.forEach((textarea) => {
+  updatekvizV01Textarea(textarea);
+
+  textarea.addEventListener('input', () => {
+    updatekvizV01Textarea(textarea);
+  });
+
+  window.addEventListener('resize', () => {
+    updatekvizV01Textarea(textarea);
+  });
+});
