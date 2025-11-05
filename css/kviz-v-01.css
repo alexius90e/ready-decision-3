@@ -527,6 +527,12 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 363px;
           flex: 0 0 363px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
 }
 @media (max-width: 768px) {
   .kviz-v-01__results-info-form-bottom-submit {

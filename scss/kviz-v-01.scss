@@ -461,6 +461,12 @@
 
           &-submit {
             flex: 0 0 363px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
 
             @include tablet {
               flex: 1 1 100%;
