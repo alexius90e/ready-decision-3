@@ -21,14 +21,14 @@
 
   &__body {
     position: absolute;
-    right: 15px;
+    left: 15px;
+    // right: 15px;
     bottom: 15px;
     max-width: calc(100dvw - 30px);
     width: 360px;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 20px;
-    background-color: $color-white;
     opacity: 0;
     transition: opacity ease-in-out 0.4s;
     will-change: opacity;
@@ -222,7 +222,7 @@
         border: none;
         border-radius: 7px;
         outline: none;
-        background: #eaeaea;
+        background-color: #eaeaea;
         transform: scale(0.875);
         transform-origin: top left;
 
@@ -253,12 +253,12 @@
       font-weight: 400;
       font-size: 16px;
       color: #1c1c20;
-      overflow-y: hidden;
       border: none;
       border-radius: calc(28px / 14 * 16);
       outline: none;
       background-color: #ffffff;
       resize: none;
+      scrollbar-width: thin;
       transform: scale(0.875);
       transform-origin: left top;
 

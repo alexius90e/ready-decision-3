@@ -18,7 +18,7 @@
 }
 .mod-ok-v-03__body {
   position: absolute;
-  right: 15px;
+  left: 15px;
   bottom: 15px;
   max-width: calc(100dvw - 30px);
   width: 360px;
@@ -26,7 +26,6 @@
           box-sizing: border-box;
   overflow: hidden;
   border-radius: 20px;
-  background-color: #ffffff;
   opacity: 0;
   -webkit-transition: opacity ease-in-out 0.4s;
   transition: opacity ease-in-out 0.4s;
@@ -224,7 +223,7 @@
   border: none;
   border-radius: 7px;
   outline: none;
-  background: #eaeaea;
+  background-color: #eaeaea;
   -webkit-transform: scale(0.875);
           transform: scale(0.875);
   -webkit-transform-origin: top left;
@@ -274,12 +273,12 @@
   font-weight: 400;
   font-size: 16px;
   color: #1c1c20;
-  overflow-y: hidden;
   border: none;
   border-radius: 32px;
   outline: none;
   background-color: #ffffff;
   resize: none;
+  scrollbar-width: thin;
   -webkit-transform: scale(0.875);
           transform: scale(0.875);
   -webkit-transform-origin: left top;

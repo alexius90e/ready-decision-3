@@ -1,3 +1,16 @@
+const modOkV03textareas = document.querySelectorAll('.mod-ok-v-03__footer-textarea');
+
+const updateModOkV03textareas = (textarea) => {
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
+};
+
+modOkV03textareas.forEach((textarea) => {
+  textarea.addEventListener('input', (event) => {
+    updateModOkV03textareas(event.currentTarget);
+  });
+});
+
 const modOkV03Els = document.querySelectorAll('.mod-ok-v-03');
 
 modOkV03Els.forEach((modal) => {
@@ -5,7 +18,10 @@ modOkV03Els.forEach((modal) => {
     const isLayout = event.currentTarget === event.target;
     const isClose = event.target.classList.contains('mod-ok-v-03__close-button');
 
-    if (isLayout || isClose) modal.classList.remove('active');
+    if (isLayout || isClose) {
+      modal.classList.remove('active');
+      modOkV03textareas.forEach((textarea) => updateModOkV03textareas(textarea));
+    }
   });
 });
 
@@ -22,16 +38,6 @@ modOkV03ButtonEls.forEach((button) => {
   });
 });
 
-const modOkV03textareas = document.querySelectorAll('.mod-ok-v-03__footer-textarea');
-
-modOkV03textareas.forEach((textarea) => {
-  textarea.addEventListener('input', (event) => {
-    console.log(textarea);
-    event.currentTarget.style.height = 'auto';
-    event.currentTarget.style.height = event.currentTarget.scrollHeight + 'px';
-  });
-});
-
 const modOkV03Forms = document.querySelectorAll('.mod-ok-v-03__form');
 
 modOkV03Forms.forEach((form) => {
@@ -40,5 +46,6 @@ modOkV03Forms.forEach((form) => {
     event.currentTarget.reset();
     const modal = event.currentTarget.closest('.mod-ok-v-03');
     if (modal) modal.classList.remove('active');
+    modOkV03textareas.forEach((textarea) => updateModOkV03textareas(textarea));
   });
 });
