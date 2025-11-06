@@ -144,6 +144,58 @@
     gap: 14px;
   }
 }
+.kviz-v-01__question-list-text-input {
+  display: inline-block;
+  min-height: 50px;
+  height: 100%;
+  width: 100%;
+  padding: 13px 20px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  color: #1c1c20;
+  border: 1px solid #dfdfe0;
+  border-radius: 0px;
+  outline: none;
+  background-color: #ffffff;
+  -webkit-transition-property: border;
+  transition-property: border;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+@media (max-width: 768px) {
+  .kviz-v-01__question-list-text-input {
+    width: 106.669%;
+    padding: 15px 21px 14px;
+    font-size: 16px;
+    -webkit-transform: scale(0.9375);
+            transform: scale(0.9375);
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+  }
+}
+.kviz-v-01__question-list-text-input:hover {
+  border: 1px solid #1e674e;
+}
+.kviz-v-01__question-list-text-input::-webkit-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-input::-moz-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-input:-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-input::-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-input::placeholder {
+  color: #a1a1a4;
+}
 .kviz-v-01__question-list-text-textarea {
   display: block;
   min-height: 50px;
@@ -184,6 +236,21 @@
 }
 .kviz-v-01__question-list-text-textarea:hover {
   border: 1px solid #1e674e;
+}
+.kviz-v-01__question-list-text-textarea::-webkit-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-textarea::-moz-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-textarea:-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-textarea::-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__question-list-text-textarea::placeholder {
+  color: #a1a1a4;
 }
 .kviz-v-01__question-list-text, .kviz-v-01__question-list-checkbox, .kviz-v-01__question-list-radio {
   -webkit-box-flex: 0;
@@ -255,7 +322,8 @@
   border: 1px solid #dfdfe0;
 }
 .kviz-v-01__question-list-checkbox:has(input:checked)::before {
-  border: 5px solid #1e674e;
+  border: none;
+  background: url(../assets/kviz-v-01/checkbox.svg) center/contain no-repeat;
 }
 .kviz-v-01__controls {
   display: -webkit-box;
@@ -470,6 +538,21 @@
 }
 .kviz-v-01__results-info-form-data-input:hover {
   border: 1px solid #1e674e;
+}
+.kviz-v-01__results-info-form-data-input::-webkit-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__results-info-form-data-input::-moz-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__results-info-form-data-input:-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__results-info-form-data-input::-ms-input-placeholder {
+  color: #a1a1a4;
+}
+.kviz-v-01__results-info-form-data-input::placeholder {
+  color: #a1a1a4;
 }
 @media (max-width: 768px) {
   .kviz-v-01__results-info-form-data-input {

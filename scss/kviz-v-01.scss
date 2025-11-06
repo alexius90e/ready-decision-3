@@ -132,6 +132,42 @@
       }
 
       &-text {
+        &-input {
+          display: inline-block;
+          min-height: 50px;
+          height: 100%;
+          width: 100%;
+          padding: 13px 20px 14px;
+          box-sizing: border-box;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 140%;
+          color: #1c1c20;
+          border: 1px solid #dfdfe0;
+          border-radius: 0px;
+          outline: none;
+          background-color: #ffffff;
+          transition-property: border;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+
+          @include tablet {
+            width: 106.669%;
+            padding: 15px 21px 14px;
+            font-size: 16px;
+            transform: scale(0.9375);
+            transform-origin: top left;
+          }
+
+          &:hover {
+            border: 1px solid #1e674e;
+          }
+
+          &::placeholder {
+            color: #a1a1a4;
+          }
+        }
+
         &-textarea {
           display: block;
           min-height: 50px;
@@ -165,6 +201,10 @@
 
           &:hover {
             border: 1px solid #1e674e;
+          }
+
+          &::placeholder {
+            color: #a1a1a4;
           }
         }
       }
@@ -229,7 +269,8 @@
 
         &:has(input:checked) {
           &::before {
-            border: 5px solid #1e674e;
+            border: none;
+            background: url(../assets/kviz-v-01/checkbox.svg) center / contain no-repeat;
           }
         }
       }
@@ -413,6 +454,10 @@
 
             &:hover {
               border: 1px solid #1e674e;
+            }
+
+            &::placeholder {
+              color: #a1a1a4;
             }
 
             @include tablet {
