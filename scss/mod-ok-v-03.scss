@@ -242,24 +242,27 @@
 
     &-textarea {
       display: block;
-      min-height: calc(54px / 14 * 16);
+      // min-height: calc(54px / 14 * 16);
+      min-height: calc(54px);
       max-height: 240px;
       width: 100%;
       height: fit-content;
-      margin-right: -12%;
-      padding: calc(18px / 14 * 16) calc(20px / 14 * 16);
+      // margin-right: -12%;
+      // padding: calc(18px / 14 * 16) calc(20px / 14 * 16);
+      padding: calc(18px) calc(20px);
       box-sizing: border-box;
       font-weight: 400;
       font-size: 16px;
       color: #1c1c20;
       border: none;
-      border-radius: calc(28px / 14 * 16);
+      // border-radius: calc(28px / 14 * 16);
+      border-radius: calc(28px);
       outline: none;
       background-color: #ffffff;
       resize: none;
       scrollbar-width: thin;
-      transform: scale(0.875);
-      transform-origin: left top;
+      // transform: scale(0.875);
+      // transform-origin: left top;
 
       &::placeholder {
         color: #a1a1a4;
