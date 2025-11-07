@@ -585,14 +585,14 @@
     }
 
     &-figure {
+      position: relative;
       flex: 0 0 409px;
       padding: 0;
       margin: 0;
+      overflow: hidden;
 
       @include desktoplg {
-        position: relative;
         flex: 0 0 357px;
-        overflow: hidden;
       }
 
       @include desktop {
@@ -600,13 +600,13 @@
       }
 
       &-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
         display: block;
         max-width: 100%;
         height: auto;
-
-        @include desktoplg {
-          position: absolute;
-        }
+        transform: translate3d(-50%, -50%, 0);
       }
     }
   }

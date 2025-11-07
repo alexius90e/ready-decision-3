@@ -695,19 +695,19 @@
   color: #1c1c20;
 }
 .kviz-v-01__results-figure {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 409px;
           flex: 0 0 409px;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 @media (max-width: 1500px) {
   .kviz-v-01__results-figure {
-    position: relative;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 357px;
             flex: 0 0 357px;
-    overflow: hidden;
   }
 }
 @media (max-width: 1200px) {
@@ -716,12 +716,12 @@
   }
 }
 .kviz-v-01__results-figure-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: block;
   max-width: 100%;
   height: auto;
-}
-@media (max-width: 1500px) {
-  .kviz-v-01__results-figure-image {
-    position: absolute;
-  }
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
 }
