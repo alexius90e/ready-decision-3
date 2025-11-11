@@ -1,0 +1,38 @@
+.taby-v-02 {
+  overflow: hidden;
+}
+.taby-v-02__gallery .swiper {
+  overflow: visible;
+}
+.taby-v-02__gallery .swiper-slide {
+  width: auto;
+}
+.taby-v-02__tab {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 14px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #1c1c20;
+  white-space: nowrap;
+  border-radius: 64px;
+  background-color: #f5f5f5;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  will-change: background-color, color;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.taby-v-02__tab:hover {
+  color: #ffffff;
+  background-color: #1e674e;
+}
