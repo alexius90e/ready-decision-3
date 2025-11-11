@@ -8,7 +8,7 @@ if (tabyV02SwiperEl) {
       320: {
         spaceBetween: 14,
       },
-      1501: {
+      993: {
         spaceBetween: 16,
       },
     },
