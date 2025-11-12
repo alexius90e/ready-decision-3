@@ -223,6 +223,7 @@
     padding: 32px 28px 36px;
     box-sizing: border-box;
     background-color: #1c1c20;
+    opacity: 0.92;
 
     @include desktop {
       max-width: 360px;
@@ -232,6 +233,7 @@
     @include laptop {
       max-width: none;
       margin-top: -54px;
+      opacity: 1;
     }
 
     &-title {

@@ -10,6 +10,11 @@
 
       &-slide {
         width: auto;
+        padding-right: 16px;
+
+        @include laptop {
+          padding-right: 14px;
+        }
       }
     }
   }

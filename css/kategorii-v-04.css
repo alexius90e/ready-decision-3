@@ -45,6 +45,8 @@
   line-height: 140%;
   letter-spacing: -0.01em;
   color: #1c1c20;
+  border: none;
+  outline: none;
   background-color: #f5f5f5;
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
@@ -56,6 +58,12 @@
 .kategorii-v-04__links-item:hover {
   color: #ffffff;
   background-color: #1e674e;
+}
+@media (max-width: 768px) {
+  .kategorii-v-04__links-item:hover {
+    color: #1c1c20;
+    background-color: #f5f5f5;
+  }
 }
 .kategorii-v-04__links-item-text {
   -webkit-box-flex: 0;
@@ -77,4 +85,10 @@
 .kategorii-v-04__links-item:hover .kategorii-v-04__links-item-icon {
   -webkit-filter: brightness(0%) invert(100%);
           filter: brightness(0%) invert(100%);
+}
+@media (max-width: 768px) {
+  .kategorii-v-04__links-item:hover .kategorii-v-04__links-item-icon {
+    -webkit-filter: brightness(100%) invert(0%);
+            filter: brightness(100%) invert(0%);
+  }
 }

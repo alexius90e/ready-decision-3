@@ -6,6 +6,12 @@
 }
 .taby-v-02__gallery .swiper-slide {
   width: auto;
+  padding-right: 16px;
+}
+@media (max-width: 992px) {
+  .taby-v-02__gallery .swiper-slide {
+    padding-right: 14px;
+  }
 }
 .taby-v-02__tab {
   width: -webkit-fit-content;

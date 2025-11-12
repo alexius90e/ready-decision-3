@@ -265,6 +265,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #1c1c20;
+  opacity: 0.92;
 }
 @media (max-width: 1200px) {
   .preimush-forma-v-01__callback {
@@ -276,6 +277,7 @@
   .preimush-forma-v-01__callback {
     max-width: none;
     margin-top: -54px;
+    opacity: 1;
   }
 }
 .preimush-forma-v-01__callback-title {
