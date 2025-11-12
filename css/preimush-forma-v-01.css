@@ -1,0 +1,430 @@
+.preimush-forma-v-01 {
+  position: relative;
+  padding: 60px 0;
+  background-color: #2f2f2f;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01 {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01 {
+    padding: 0;
+    background-color: rgba(47, 47, 47, 0);
+  }
+}
+.preimush-forma-v-01__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__bg {
+    display: none;
+  }
+}
+.preimush-forma-v-01__bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preimush-forma-v-01__wrapper {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+}
+.preimush-forma-v-01__content {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 671px;
+          flex: 0 1 671px;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 620px;
+            flex: 0 1 620px;
+  }
+}
+@media (max-width: 1200px) {
+  .preimush-forma-v-01__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 542px;
+            flex: 0 1 542px;
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    padding: 40px 20px 122px;
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .preimush-forma-v-01__content {
+    padding: 48px 15px 100px;
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .preimush-forma-v-01__content {
+    margin: 0 -10px;
+  }
+}
+.preimush-forma-v-01__content-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: none;
+  margin: 0;
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__content-bg {
+    display: block;
+  }
+}
+.preimush-forma-v-01__content-bg-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.preimush-forma-v-01__content-title {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 120%;
+  color: #fff;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-title {
+    font-size: 38px;
+  }
+}
+@media (max-width: 1200px) {
+  .preimush-forma-v-01__content-title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__content-title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .preimush-forma-v-01__content-title {
+    font-size: 28px;
+  }
+}
+.preimush-forma-v-01__content-description {
+  margin: 0 0 40px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  color: #c3c3c3;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-description {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .preimush-forma-v-01__content-description {
+    font-size: 18px;
+  }
+}
+.preimush-forma-v-01__content-description b {
+  font-weight: 500;
+  color: #ffffff;
+}
+.preimush-forma-v-01__content-advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px 70px;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-advantages {
+    gap: 30px 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .preimush-forma-v-01__content-advantages {
+    gap: 30px 40px;
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__content-advantages {
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .preimush-forma-v-01__content-advantages {
+    gap: 30px 20px;
+  }
+}
+.preimush-forma-v-01__content-advantages-card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 35px);
+          flex: 0 0 calc(50% - 35px);
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-advantages-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 25px);
+            flex: 0 0 calc(50% - 25px);
+  }
+}
+@media (max-width: 1200px) {
+  .preimush-forma-v-01__content-advantages-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 20px);
+            flex: 0 0 calc(50% - 20px);
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__content-advantages-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 15px);
+            flex: 0 0 calc(50% - 15px);
+  }
+}
+@media (max-width: 768px) {
+  .preimush-forma-v-01__content-advantages-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 10px);
+            flex: 0 0 calc(50% - 10px);
+  }
+}
+.preimush-forma-v-01__content-advantages-card-icon {
+  padding: 0;
+  padding-left: 12px;
+  margin: 0 0 16px;
+}
+.preimush-forma-v-01__content-advantages-card-icon-image {
+  display: block;
+  max-width: 100%;
+  width: 40px;
+  height: auto;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-advantages-card-icon-image {
+    width: 36px;
+  }
+}
+.preimush-forma-v-01__content-advantages-card-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__content-advantages-card-title {
+    font-size: 15px;
+  }
+}
+.preimush-forma-v-01__callback {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  max-width: 381px;
+  padding: 32px 28px 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #1c1c20;
+}
+@media (max-width: 1200px) {
+  .preimush-forma-v-01__callback {
+    max-width: 360px;
+    padding: 24px 20px;
+  }
+}
+@media (max-width: 992px) {
+  .preimush-forma-v-01__callback {
+    max-width: none;
+    margin-top: -54px;
+  }
+}
+.preimush-forma-v-01__callback-title {
+  margin: 0 0 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.preimush-forma-v-01__callback-subtitle {
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #a1a1a4;
+}
+.preimush-forma-v-01__callback-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  margin: 0 0 12px;
+}
+.preimush-forma-v-01__callback-form-input, .preimush-forma-v-01__callback-form-button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(33.3333333333% - 16px);
+          flex: 0 0 calc(33.3333333333% - 16px);
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  outline: none;
+}
+@media (max-width: 1500px) {
+  .preimush-forma-v-01__callback-form-input, .preimush-forma-v-01__callback-form-button {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.3333333333% - 13.3333333333px);
+            flex: 0 0 calc(33.3333333333% - 13.3333333333px);
+  }
+}
+@media (max-width: 768px) {
+  .preimush-forma-v-01__callback-form-input, .preimush-forma-v-01__callback-form-button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.preimush-forma-v-01__callback-form-input {
+  display: block;
+  min-height: 50px;
+  width: 100%;
+  padding: 13px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+  color: #a1a1a4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+  border: 2px solid #3e3e3e;
+  border-radius: 0px;
+  background-color: #3e3e3e;
+  -webkit-transition-property: color, border, background-color;
+  transition-property: color, border, background-color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.preimush-forma-v-01__callback-form-input:hover {
+  background-color: #ffffff;
+}
+.preimush-forma-v-01__callback-form-input:focus, .preimush-forma-v-01__callback-form-input:hover {
+  color: #1c1c20;
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+}
+.preimush-forma-v-01__callback-form-input:user-valid {
+  color: #1c1c20;
+  border: 2px solid #1e674e;
+  background-color: #ffffff;
+}
+.preimush-forma-v-01__callback-form-input::-webkit-input-placeholder {
+  color: #87878e;
+}
+.preimush-forma-v-01__callback-form-input::-moz-placeholder {
+  color: #87878e;
+}
+.preimush-forma-v-01__callback-form-input:-ms-input-placeholder {
+  color: #87878e;
+}
+.preimush-forma-v-01__callback-form-input::-ms-input-placeholder {
+  color: #87878e;
+}
+.preimush-forma-v-01__callback-form-input::placeholder {
+  color: #87878e;
+}
+.preimush-forma-v-01__callback-form-button {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fefefe;
+  border: none;
+  background-color: #1e674e;
+  -webkit-transition-property: border, color, background-color;
+  transition-property: border, color, background-color;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  cursor: pointer;
+}
+.preimush-forma-v-01__callback-form-button:hover {
+  color: #1c1c20;
+  background-color: #fefefe;
+}
+.preimush-forma-v-01__callback-disclaimer {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: -0.01em;
+  color: #a1a1a4;
+}
+.preimush-forma-v-01__callback-disclaimer a {
+  color: inherit;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  -webkit-transition-property: border, color, background-color;
+  transition-property: border, color, background-color;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.preimush-forma-v-01__callback-disclaimer a:hover {
+  color: #fefefe;
+}
