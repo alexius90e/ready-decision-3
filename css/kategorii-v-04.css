@@ -45,6 +45,7 @@
   line-height: 140%;
   letter-spacing: -0.01em;
   color: #1c1c20;
+  overflow: hidden !important;
   border: none !important;
   outline: none !important;
   -webkit-box-shadow: none !important;
