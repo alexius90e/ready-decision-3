@@ -59,6 +59,9 @@
   color: #ffffff;
   background-color: #1e674e;
 }
+.kategorii-v-04__links-item:focus {
+  outline: none;
+}
 .kategorii-v-04__links-item-text {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;

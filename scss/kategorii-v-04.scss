@@ -50,6 +50,10 @@
         background-color: #1e674e;
       }
 
+      &:focus {
+        outline: none;
+      }
+
       &-text {
         flex: 0 1 auto;
       }
