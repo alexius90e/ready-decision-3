@@ -38,8 +38,9 @@
       line-height: 140%;
       letter-spacing: -0.01em;
       color: #1c1c20;
-      border: none;
-      outline: none;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
       background-color: #f5f5f5;
       transition-property: color, background-color;
       transition-timing-function: ease-out;
@@ -48,10 +49,6 @@
       &:hover {
         color: #ffffff;
         background-color: #1e674e;
-      }
-
-      &:focus {
-        outline: none;
       }
 
       &-text {
