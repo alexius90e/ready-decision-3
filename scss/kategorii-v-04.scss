@@ -48,11 +48,6 @@
       &:hover {
         color: #ffffff;
         background-color: #1e674e;
-
-        @include tablet {
-          color: #1c1c20;
-          background-color: #f5f5f5;
-        }
       }
 
       &-text {
@@ -73,10 +68,6 @@
 
       &:hover &-icon {
         filter: brightness(0%) invert(100%);
-
-        @include tablet {
-          filter: brightness(100%) invert(0%);
-        }
       }
     }
   }
