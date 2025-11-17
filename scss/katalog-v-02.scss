@@ -226,12 +226,24 @@
         align-items: center;
         justify-content: center;
         margin: 0;
+        overflow: hidden;
         background-color: #f0f0f0;
+
+        &-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
         &-image {
           display: block;
           max-width: 100%;
           height: auto;
+          transition: transform ease-out 0.4s;
+
+          &:hover {
+            transform: scale(1.04);
+          }
         }
       }
 
@@ -242,7 +254,13 @@
         line-height: 120%;
         color: #1c1c20;
 
-        @include tablet {
+        &-link {
+          color: #1c1c20;
+          transition: color ease-out 0.2s;
+
+          &:hover {
+            color: #1e674e;
+          }
         }
       }
 

@@ -274,12 +274,32 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
+  overflow: hidden;
   background-color: #f0f0f0;
+}
+.katalog-v-02__catalog-product-photo-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .katalog-v-02__catalog-product-photo-image {
   display: block;
   max-width: 100%;
   height: auto;
+  -webkit-transition: -webkit-transform ease-out 0.4s;
+  transition: -webkit-transform ease-out 0.4s;
+  transition: transform ease-out 0.4s;
+  transition: transform ease-out 0.4s, -webkit-transform ease-out 0.4s;
+}
+.katalog-v-02__catalog-product-photo-image:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 .katalog-v-02__catalog-product-title {
   margin: 20px 0 0;
@@ -287,6 +307,14 @@
   font-size: 20px;
   line-height: 120%;
   color: #1c1c20;
+}
+.katalog-v-02__catalog-product-title-link {
+  color: #1c1c20;
+  -webkit-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
+}
+.katalog-v-02__catalog-product-title-link:hover {
+  color: #1e674e;
 }
 .katalog-v-02__catalog-product-description {
   margin: 8px 0 0;
