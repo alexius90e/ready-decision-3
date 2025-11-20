@@ -1,0 +1,136 @@
+@import './variables';
+@import './mixins';
+
+.video-v-01 {
+  &__video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    &-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+      display: none;
+    }
+
+    &-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      display: flex;
+      align-content: inherit;
+      justify-content: center;
+
+      &-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        transition: filter ease-out 0.2s;
+        filter: brightness(0.5);
+      }
+
+      &:hover &-image {
+        filter: brightness(0.9);
+      }
+
+      &-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100px;
+        aspect-ratio: 1 / 1;
+        border: none;
+        border-radius: 100px;
+        background: url(../assets/video-v-01/play.svg) center / cover no-repeat;
+        transform: translate3d(-50%, -50%, 0);
+        cursor: pointer;
+
+        @include desktoplg {
+          width: 80px;
+        }
+
+        @include laptop {
+          width: 60px;
+        }
+
+        @include tablet {
+          width: 50px;
+        }
+      }
+
+      &:has(&-button:hover) &-image {
+        filter: brightness(1);
+      }
+
+      &-text {
+        position: absolute;
+        left: 0;
+        bottom: 128px;
+        max-width: 915px;
+        padding: 20px 17px;
+        padding-left: 55px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 59px;
+        line-height: 111%;
+        color: #fff;
+        background: linear-gradient(90deg, #194011 0.26%, #40a32a 48.7%, #194011 100%);
+        opacity: 0.8;
+        transition: filter ease-out 0.2s;
+
+        @include desktoplg {
+          bottom: 89px;
+          max-width: 724px;
+          padding: 16px 13px;
+          padding-left: 44px;
+          font-size: 47px;
+        }
+
+        @include desktop {
+          bottom: 65px;
+          max-width: 604px;
+          padding: 14px 12px;
+          padding-left: 37px;
+          font-size: 39px;
+        }
+
+        @include laptop {
+          bottom: 36px;
+          max-width: 462px;
+          padding: 11px 9px;
+          padding-left: 28px;
+          font-size: 30px;
+        }
+
+        @include tablet {
+          bottom: 17px;
+          max-width: 228px;
+          padding: 6px 5px;
+          padding-left: 14px;
+          font-size: 14px;
+        }
+      }
+
+      &:hover &-text {
+        filter: brightness(1);
+      }
+    }
+
+    &.active &-frame {
+      display: block;
+    }
+
+    &.active &-cover {
+      display: none;
+    }
+  }
+}
