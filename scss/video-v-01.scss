@@ -38,7 +38,7 @@
       }
 
       &:hover &-image {
-        filter: brightness(0.9);
+        filter: brightness(1);
       }
 
       &-button {
@@ -65,63 +65,6 @@
         @include tablet {
           width: 50px;
         }
-      }
-
-      &:has(&-button:hover) &-image {
-        filter: brightness(1);
-      }
-
-      &-text {
-        position: absolute;
-        left: 0;
-        bottom: 128px;
-        max-width: 915px;
-        padding: 20px 17px;
-        padding-left: 55px;
-        box-sizing: border-box;
-        font-weight: 500;
-        font-size: 59px;
-        line-height: 111%;
-        color: #fff;
-        background: linear-gradient(90deg, #194011 0.26%, #40a32a 48.7%, #194011 100%);
-        opacity: 0.8;
-        transition: filter ease-out 0.2s;
-
-        @include desktoplg {
-          bottom: 89px;
-          max-width: 724px;
-          padding: 16px 13px;
-          padding-left: 44px;
-          font-size: 47px;
-        }
-
-        @include desktop {
-          bottom: 65px;
-          max-width: 604px;
-          padding: 14px 12px;
-          padding-left: 37px;
-          font-size: 39px;
-        }
-
-        @include laptop {
-          bottom: 36px;
-          max-width: 462px;
-          padding: 11px 9px;
-          padding-left: 28px;
-          font-size: 30px;
-        }
-
-        @include tablet {
-          bottom: 17px;
-          max-width: 228px;
-          padding: 6px 5px;
-          padding-left: 14px;
-          font-size: 14px;
-        }
-      }
-
-      &:hover &-text {
-        filter: brightness(1);
       }
     }
 

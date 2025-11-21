@@ -43,8 +43,8 @@
           filter: brightness(0.5);
 }
 .video-v-01__video-cover:hover .video-v-01__video-cover-image {
-  -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
 }
 .video-v-01__video-cover-button {
   position: absolute;
@@ -74,71 +74,6 @@
   .video-v-01__video-cover-button {
     width: 50px;
   }
-}
-.video-v-01__video-cover:has(.video-v-01__video-cover-button:hover) .video-v-01__video-cover-image {
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
-}
-.video-v-01__video-cover-text {
-  position: absolute;
-  left: 0;
-  bottom: 128px;
-  max-width: 915px;
-  padding: 20px 17px;
-  padding-left: 55px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-weight: 500;
-  font-size: 59px;
-  line-height: 111%;
-  color: #fff;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0.26%, #194011), color-stop(48.7%, #40a32a), to(#194011));
-  background: linear-gradient(90deg, #194011 0.26%, #40a32a 48.7%, #194011 100%);
-  opacity: 0.8;
-  -webkit-transition: -webkit-filter ease-out 0.2s;
-  transition: -webkit-filter ease-out 0.2s;
-  transition: filter ease-out 0.2s;
-  transition: filter ease-out 0.2s, -webkit-filter ease-out 0.2s;
-}
-@media (max-width: 1500px) {
-  .video-v-01__video-cover-text {
-    bottom: 89px;
-    max-width: 724px;
-    padding: 16px 13px;
-    padding-left: 44px;
-    font-size: 47px;
-  }
-}
-@media (max-width: 1200px) {
-  .video-v-01__video-cover-text {
-    bottom: 65px;
-    max-width: 604px;
-    padding: 14px 12px;
-    padding-left: 37px;
-    font-size: 39px;
-  }
-}
-@media (max-width: 992px) {
-  .video-v-01__video-cover-text {
-    bottom: 36px;
-    max-width: 462px;
-    padding: 11px 9px;
-    padding-left: 28px;
-    font-size: 30px;
-  }
-}
-@media (max-width: 768px) {
-  .video-v-01__video-cover-text {
-    bottom: 17px;
-    max-width: 228px;
-    padding: 6px 5px;
-    padding-left: 14px;
-    font-size: 14px;
-  }
-}
-.video-v-01__video-cover:hover .video-v-01__video-cover-text {
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
 }
 .video-v-01__video.active .video-v-01__video-frame {
   display: block;
