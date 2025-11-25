@@ -82,6 +82,7 @@
           flex-direction: column;
 }
 .mod-ok-v-03__header {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -107,6 +108,19 @@
   font-weight: 500;
   font-size: 18px;
   color: #fff;
+}
+.mod-ok-v-03__header-close-button {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  display: inline-block;
+  width: 40px;
+  aspect-ratio: 1;
+  border: none;
+  background: url(../assets/mod-ok-v-03/close.svg) center/20px no-repeat;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
 }
 .mod-ok-v-03_tg .mod-ok-v-03__header {
   background-color: #3f86ce;
