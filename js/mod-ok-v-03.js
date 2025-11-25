@@ -16,7 +16,7 @@ const modOkV03Els = document.querySelectorAll('.mod-ok-v-03');
 modOkV03Els.forEach((modal) => {
   modal.addEventListener('click', (event) => {
     const isLayout = event.currentTarget === event.target;
-    const isClose = event.target.classList.contains('mod-ok-v-03__close-button');
+    const isClose = event.target.classList.contains('mod-ok-v-03__header-close-button');
 
     if (isLayout || isClose) {
       modal.classList.remove('active');
