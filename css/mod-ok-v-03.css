@@ -120,6 +120,9 @@
   background: url(../assets/mod-ok-v-03/close.svg) center/20px no-repeat;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
 .mod-ok-v-03_tg .mod-ok-v-03__header {
