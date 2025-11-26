@@ -1,0 +1,385 @@
+@import './variables';
+@import './mixins';
+
+.kartochka-tovara-v-01 {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    @include desktoplg {
+      gap: 30px;
+    }
+
+    @include desktop {
+      gap: 50px 20px;
+    }
+
+    @include laptop {
+      flex-wrap: wrap;
+    }
+
+    @include tablet {
+      gap: 30px;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    gap: 12px;
+    flex: 0 0 722px;
+    max-width: 722px;
+
+    @include desktoplg {
+      flex: 0 0 581px;
+      max-width: 581px;
+      gap: 10px;
+    }
+
+    @include desktop {
+      flex: 0 0 480px;
+      max-width: 480px;
+    }
+
+    @include laptop {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    @include tablet {
+      display: block;
+    }
+
+    &-thumbs {
+      position: relative;
+      flex: 0 0 128px;
+      order: 0;
+      max-width: 128px;
+      max-height: 582px;
+      padding: 0;
+      box-sizing: border-box;
+
+      @include desktoplg {
+        flex: 0 0 102px;
+        max-width: 102px;
+        max-height: 469px;
+        gap: 10px;
+      }
+
+      @include desktop {
+        flex: 0 0 82px;
+        max-width: 82px;
+        max-height: 388px;
+      }
+
+      @include laptop {
+        flex: 0 0 130px;
+        max-width: 130px;
+        max-height: calc(100dvw - 130px - 10px - 20px * 2);
+      }
+
+      @include tablet {
+        display: grid;
+        max-width: none;
+        max-height: none;
+        width: 100%;
+        padding: 0;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      & .swiper {
+        max-height: 100%;
+        max-width: 100%;
+
+        @include tablet {
+          max-height: none;
+        }
+
+        &-slide {
+          box-sizing: border-box;
+
+          @media screen and (min-width: 768.1px) {
+            height: auto !important;
+          }
+
+          @include tablet {
+            max-height: 77px;
+            width: 77px;
+          }
+
+          &-thumb {
+            box-sizing: border-box;
+
+            &-active {
+              border: 2px solid #1e674e;
+            }
+          }
+        }
+      }
+    }
+
+    &-main {
+      display: grid;
+      order: 1;
+
+      @include tablet {
+        margin: 0 -20px 10px;
+      }
+
+      @include mobile {
+        margin: 0 -15px 10px;
+      }
+
+      @include mobilesm {
+        margin: 0 -10px 10px;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      & .swiper {
+        max-width: 100%;
+      }
+    }
+
+    &-prev,
+    &-next {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background-color: #ffffff;
+      cursor: pointer;
+
+      @include tablet {
+        display: none;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 34px;
+        aspect-ratio: 1;
+        background: url(../assets/kartochka-tovara-v-01/arrow-shevron.svg) bottom center / 34px
+          no-repeat;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+    }
+
+    &-prev {
+      top: 0;
+
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-next {
+      bottom: 0;
+    }
+  }
+
+  &__details {
+    flex: 1 1 auto;
+
+    @include laptop {
+      flex: 1 1 100%;
+    }
+
+    &-title {
+      margin: 0 0 12px;
+      font-weight: 500;
+      font-size: 34px;
+      color: #1c1c20;
+
+      @include desktoplg {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 28px;
+      }
+
+      @include tablet {
+        margin-bottom: 8px;
+        font-size: 24px;
+      }
+    }
+
+    &-subtitle {
+      margin: 0 0 36px;
+      font-weight: 400;
+      font-size: 20px;
+      color: #3e3e3e;
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+
+      @include tablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style-type: none;
+
+      &-item {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex: 1 1 100%;
+        gap: 10px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #ebebeb;
+
+        &-title,
+        &-value {
+          flex: 0 0 calc(100% / 2 - 10px / 2);
+          max-width: calc(100% / 2 - 10px / 2);
+        }
+
+        &-title {
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 140%;
+          color: #a1a1a4;
+
+          @include desktoplg {
+            font-size: 14px;
+          }
+        }
+
+        &-value {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+          text-align: right;
+          color: #1c1c20;
+
+          @include desktoplg {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    &-more {
+      margin: 0 0 44px;
+
+      @include desktoplg {
+        margin-bottom: 36px;
+      }
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+
+      @include tablet {
+        margin-bottom: 24px;
+      }
+
+      &-button {
+        display: inline-block;
+        padding: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #3e3e3e;
+        border: none;
+        transition: color ease-out 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          color: #1e674e;
+        }
+      }
+    }
+
+    &-description {
+      margin: 0 0 40px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 160%;
+      color: #3e3e3e;
+
+      @include desktoplg {
+        margin-bottom: 36px;
+        font-size: 14px;
+      }
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    &-order {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      &-price {
+        &-message {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+          color: #1c1c20;
+        }
+
+        &-value {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 140%;
+          color: #1c1c20;
+        }
+      }
+
+      &-button {
+        max-width: 246px;
+        width: 100%;
+
+        @include desktop {
+          max-width: 216px;
+        }
+
+        @include tablet {
+          max-width: 176px;
+        }
+      }
+    }
+  }
+}
