@@ -224,6 +224,7 @@
 }
 .kartochka-tovara-v-01__slider-prev.swiper-button-disabled, .kartochka-tovara-v-01__slider-next.swiper-button-disabled {
   opacity: 0;
+  pointer-events: none;
 }
 .kartochka-tovara-v-01__slider-prev {
   top: 0;
