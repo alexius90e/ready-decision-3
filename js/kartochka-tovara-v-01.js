@@ -55,6 +55,7 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
     spaceBetween: 10,
     slidesPerView: 1,
     autoHeight: true,
+    allowTouchMove: false,
     speed: 200,
     thumbs: {
       swiper: thumbsSwiper,

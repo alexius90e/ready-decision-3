@@ -86,11 +86,11 @@
       }
 
       @include mobile {
-        margin: 0 -20px;
+        margin: 0 -15px;
       }
 
       @include mobilesm {
-        margin: 0 -20px;
+        margin: 0 -10px;
       }
 
       &-image {
@@ -229,7 +229,7 @@
       }
     }
 
-    &:has(&-thumbs .swiper-slide-thumb-active:first-child) &-prev {
+    &:has(&-thumbs .swiper-slide-active:first-child) &-prev {
       display: none;
     }
 
@@ -237,7 +237,7 @@
       bottom: 0;
     }
 
-    &:has(&-thumbs .swiper-slide-thumb-active:last-child) &-next {
+    &:has(&-thumbs .swiper-slide-visible:last-child) &-next {
       display: none;
     }
   }
