@@ -82,8 +82,15 @@
         display: grid;
         max-width: none;
         max-height: none;
-        width: 100%;
-        padding: 0;
+        margin: 0 -20px;
+      }
+
+      @include mobile {
+        margin: 0 -20px;
+      }
+
+      @include mobilesm {
+        margin: 0 -20px;
       }
 
       &-image {
@@ -102,10 +109,23 @@
 
         @include tablet {
           max-height: none;
+          width: 100%;
+          overflow: hidden;
         }
 
         &-slide {
+          position: relative;
+          padding-bottom: 12px;
           box-sizing: border-box;
+
+          @include desktoplg {
+            padding-bottom: 10px;
+          }
+
+          @include tablet {
+            padding-bottom: 0;
+            padding-right: 8px;
+          }
 
           @media screen and (min-width: 768.1px) {
             height: auto !important;
@@ -113,14 +133,31 @@
 
           @include tablet {
             max-height: 77px;
-            width: 77px;
+            width: 85px;
+            overflow: hidden;
           }
 
           &-thumb {
-            box-sizing: border-box;
-
             &-active {
-              border: 2px solid #1e674e;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 12px;
+                display: block;
+                border: 2px solid #1e674e;
+
+                @include desktoplg {
+                  bottom: 10px;
+                }
+
+                @include tablet {
+                  right: 8px;
+                  bottom: 0;
+                }
+              }
             }
           }
         }
@@ -182,11 +219,6 @@
         background: url(../assets/kartochka-tovara-v-01/arrow-shevron.svg) bottom center / 34px
           no-repeat;
       }
-
-      &.swiper-button-disabled {
-        opacity: 0;
-        pointer-events: none;
-      }
     }
 
     &-prev {
@@ -197,8 +229,16 @@
       }
     }
 
+    &:has(&-thumbs .swiper-slide-thumb-active:first-child) &-prev {
+      display: none;
+    }
+
     &-next {
       bottom: 0;
+    }
+
+    &:has(&-thumbs .swiper-slide-thumb-active:last-child) &-next {
+      display: none;
     }
   }
 
@@ -317,6 +357,7 @@
         text-decoration-skip-ink: none;
         color: #3e3e3e;
         border: none;
+        background-color: rgba($color: #ffffff, $alpha: 0);
         transition: color ease-out 0.2s;
         cursor: pointer;
 
@@ -372,6 +413,11 @@
       &-button {
         max-width: 246px;
         width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
 
         @include desktop {
           max-width: 216px;

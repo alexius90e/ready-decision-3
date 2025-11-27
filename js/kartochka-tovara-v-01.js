@@ -15,34 +15,65 @@ const kartochkaTovaraV01MainSwiperNextBtn = document.querySelector(
 
 if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
   const thumbsSwiper = new Swiper(kartochkaTovaraV01ThumbsSwiperEl, {
-    spaceBetween: 10,
     slidesPerView: 'auto',
-    freeMode: true,
+    slidesOffsetBefore: 10,
+    slidesOffsetAfter: 10,
+    freeMode: false,
     watchSlidesProgress: true,
     direction: 'horizontal',
+    centeredSlides: false,
+    speed: 200,
+    mousewheel: {
+      invert: false,
+    },
     breakpoints: {
       320: {
+        slidesOffsetBefore: 10,
+        slidesOffsetAfter: 10,
         direction: 'horizontal',
       },
-      481: {
+      341: {
         direction: 'horizontal',
+        slidesOffsetBefore: 15,
+        slidesOffsetAfter: 15,
+      },
+      577: {
+        direction: 'horizontal',
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
       },
       769: {
         direction: 'vertical',
         slidesPerView: 'auto',
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
       },
     },
   });
+
   const mainSwiper = new Swiper(kartochkaTovaraV01MainSwiperEl, {
     spaceBetween: 10,
     slidesPerView: 1,
     autoHeight: true,
-    navigation: {
-      nextEl: kartochkaTovaraV01MainSwiperNextBtn,
-      prevEl: kartochkaTovaraV01MainSwiperPrevBtn,
-    },
+    speed: 200,
     thumbs: {
       swiper: thumbsSwiper,
     },
+  });
+
+  mainSwiper.on('slideChange', function () {
+    if (thumbsSwiper.activeIndex === 0) {
+      thumbsSwiper.slideTo(0, 0);
+    } else {
+      thumbsSwiper.slidePrev();
+    }
+  });
+
+  kartochkaTovaraV01MainSwiperPrevBtn.addEventListener('click', () => {
+    thumbsSwiper.slidePrev();
+  });
+
+  kartochkaTovaraV01MainSwiperNextBtn.addEventListener('click', () => {
+    thumbsSwiper.slideNext();
   });
 }
