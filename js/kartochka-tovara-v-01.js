@@ -22,6 +22,7 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
     watchSlidesProgress: true,
     direction: 'horizontal',
     centeredSlides: false,
+    slideToClickedSlide: false,
     speed: 200,
     mousewheel: {
       invert: false,
@@ -62,13 +63,6 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
     },
   });
 
-  mainSwiper.on('slideChange', function () {
-    if (thumbsSwiper.activeIndex === 0) {
-      thumbsSwiper.slideTo(0, 0);
-    } else {
-      thumbsSwiper.slidePrev();
-    }
-  });
 
   kartochkaTovaraV01MainSwiperPrevBtn.addEventListener('click', () => {
     thumbsSwiper.slidePrev();
