@@ -178,6 +178,10 @@
     overflow: hidden;
   }
 }
+.kartochka-tovara-v-01__slider-thumbs .swiper-slide:last-child {
+  padding-bottom: 0;
+  padding-right: 0;
+}
 .kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active::before {
   content: "";
   position: absolute;

@@ -18,7 +18,7 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
     slidesPerView: 'auto',
     slidesOffsetBefore: 10,
     slidesOffsetAfter: 10,
-    freeMode: false,
+    freeMode: true,
     watchSlidesProgress: true,
     direction: 'horizontal',
     centeredSlides: false,
@@ -50,6 +50,11 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
         slidesOffsetAfter: 0,
       },
     },
+    on: {
+      progress(swiper, progress) {
+        swiper.updateSize();
+      },
+    },
   });
 
   const mainSwiper = new Swiper(kartochkaTovaraV01MainSwiperEl, {
@@ -62,7 +67,6 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
       swiper: thumbsSwiper,
     },
   });
-
 
   kartochkaTovaraV01MainSwiperPrevBtn.addEventListener('click', () => {
     thumbsSwiper.slidePrev();

@@ -137,6 +137,11 @@
             overflow: hidden;
           }
 
+          &:last-child {
+            padding-bottom: 0;
+            padding-right: 0;
+          }
+
           &-thumb {
             &-active {
               &::before {
