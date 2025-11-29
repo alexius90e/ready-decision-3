@@ -139,7 +139,11 @@
 
           &:last-child {
             padding-bottom: 0;
-            padding-right: 0;
+
+            @include tablet {
+              padding-right: 0;
+              width: 77px;
+            }
           }
 
           &-thumb {
@@ -161,6 +165,14 @@
                 @include tablet {
                   right: 8px;
                   bottom: 0;
+                }
+              }
+
+              &:last-child::before {
+                bottom: 0;
+
+                @include tablet {
+                  right: 0;
                 }
               }
             }

@@ -51,8 +51,18 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
       },
     },
     on: {
-      progress(swiper, progress) {
-        swiper.updateSize();
+      slideChange(swiper) {
+        const slidesNumber = swiper.slides.length;
+        const minProgress = 1 / slidesNumber;
+        const maxProgress = minProgress * (slidesNumber - 1);
+        const firstIndex = 0;
+        const lastIndex = slidesNumber - 1;
+
+        if (swiper.progress < minProgress) {
+          swiper.slideTo(firstIndex);
+        } else if (swiper.progress > maxProgress) {
+          swiper.slideTo(lastIndex);
+        }
       },
     },
   });

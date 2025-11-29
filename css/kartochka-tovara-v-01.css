@@ -180,7 +180,12 @@
 }
 .kartochka-tovara-v-01__slider-thumbs .swiper-slide:last-child {
   padding-bottom: 0;
-  padding-right: 0;
+}
+@media (max-width: 768px) {
+  .kartochka-tovara-v-01__slider-thumbs .swiper-slide:last-child {
+    padding-right: 0;
+    width: 77px;
+  }
 }
 .kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active::before {
   content: "";
@@ -201,6 +206,14 @@
   .kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active::before {
     right: 8px;
     bottom: 0;
+  }
+}
+.kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active:last-child::before {
+  bottom: 0;
+}
+@media (max-width: 768px) {
+  .kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active:last-child::before {
+    right: 0;
   }
 }
 .kartochka-tovara-v-01__slider-main {
