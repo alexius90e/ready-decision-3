@@ -29,39 +29,44 @@ if (kartochkaTovaraV01ThumbsSwiperEl && kartochkaTovaraV01MainSwiperEl) {
     },
     breakpoints: {
       320: {
+        slidesPerView: 'auto',
         slidesOffsetBefore: 10,
         slidesOffsetAfter: 10,
         direction: 'horizontal',
       },
       341: {
+        slidesPerView: 'auto',
         direction: 'horizontal',
         slidesOffsetBefore: 15,
         slidesOffsetAfter: 15,
       },
       577: {
+        slidesPerView: 'auto',
         direction: 'horizontal',
         slidesOffsetBefore: 20,
         slidesOffsetAfter: 20,
       },
       769: {
         direction: 'vertical',
-        slidesPerView: 'auto',
+        slidesPerView: 4,
         slidesOffsetBefore: 0,
         slidesOffsetAfter: 0,
       },
     },
     on: {
-      slideChange(swiper) {
-        const slidesNumber = swiper.slides.length;
-        const minProgress = 1 / slidesNumber;
-        const maxProgress = minProgress * (slidesNumber - 1);
-        const firstIndex = 0;
-        const lastIndex = slidesNumber - 1;
+      slideChangeTransitionEnd(swiper) {
+        if (window.innerWidth > 767) {
+          const slidesNumber = swiper.slides.length;
+          const activeIndex = swiper.activeIndex;
+          const slidesPerView = 4;
 
-        if (swiper.progress < minProgress) {
-          swiper.slideTo(firstIndex);
-        } else if (swiper.progress > maxProgress) {
-          swiper.slideTo(lastIndex);
+          console.log(slidesNumber, slidesPerView, activeIndex);
+
+          if (slidesNumber - slidesPerView <= activeIndex) {
+            swiper.slideTo(slidesNumber - 1);
+          } else if (activeIndex === 0) {
+            swiper.slideTo(0);
+          }
         }
       },
     },

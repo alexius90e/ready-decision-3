@@ -131,11 +131,17 @@
 .kartochka-tovara-v-01__slider-thumbs-image {
   display: block;
   max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .kartochka-tovara-v-01__slider-thumbs-image {
     width: 100%;
+    height: auto;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 }
 .kartochka-tovara-v-01__slider-thumbs .swiper {
@@ -166,20 +172,12 @@
     padding-right: 8px;
   }
 }
-@media screen and (min-width: 768.1px) {
-  .kartochka-tovara-v-01__slider-thumbs .swiper-slide {
-    height: auto !important;
-  }
-}
 @media (max-width: 768px) {
   .kartochka-tovara-v-01__slider-thumbs .swiper-slide {
     max-height: 77px;
     width: 85px;
     overflow: hidden;
   }
-}
-.kartochka-tovara-v-01__slider-thumbs .swiper-slide:last-child {
-  padding-bottom: 0;
 }
 @media (max-width: 768px) {
   .kartochka-tovara-v-01__slider-thumbs .swiper-slide:last-child {
@@ -207,9 +205,6 @@
     right: 8px;
     bottom: 0;
   }
-}
-.kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active:last-child::before {
-  bottom: 0;
 }
 @media (max-width: 768px) {
   .kartochka-tovara-v-01__slider-thumbs .swiper-slide-thumb-active:last-child::before {
