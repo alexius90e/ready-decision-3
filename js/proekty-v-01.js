@@ -52,12 +52,16 @@ proektyV01CardSliders.forEach((slidersElem) => {
       on: {
         slideChange: function () {
           proektyV01VideoEls.forEach((videoEl) => {
-            const iframeEl = videoEl.querySelector('iframe');
-            if (iframeEl) {
-              const iframeSrc = iframeEl.getAttribute('src');
-              iframeEl.setAttribute('src', iframeSrc);
+            const isActive = videoEl.classList.contains('active');
+
+            if (isActive) {
+              const iframeEl = videoEl.querySelector('iframe');
+              if (iframeEl) {
+                const iframeSrc = iframeEl.getAttribute('src');
+                iframeEl.setAttribute('src', iframeSrc);
+              }
+              videoEl.classList.remove('active');
             }
-            videoEl.classList.remove('active');
           });
         },
       },
