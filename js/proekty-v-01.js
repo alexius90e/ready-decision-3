@@ -1,6 +1,29 @@
-const proektyV5CardSliders = document.querySelectorAll('.proekty-v-01__card-sliders');
+const proektyV01VideoEls = document.querySelectorAll('.proekty-v-01__card-sliders-main-video');
 
-proektyV5CardSliders.forEach((slidersElem) => {
+proektyV01VideoEls.forEach((videoEl) => {
+  videoEl.addEventListener('click', (event) => {
+    proektyV01VideoEls.forEach((videoEl) => {
+      if (event.currentTarget !== videoEl) {
+        const iframeEl = videoEl.querySelector('iframe');
+        const iframeSrc = iframeEl.getAttribute('src');
+        iframeEl.setAttribute('src', iframeSrc);
+        videoEl.classList.remove('active');
+      } else {
+        const iframe = videoEl.querySelector('.proekty-v-01__card-sliders-main-video-frame');
+        if (iframe) {
+          setTimeout(() => {
+            iframe.contentWindow.postMessage('{"type":"player:play"}', '*');
+          }, 500);
+        }
+      }
+    });
+    event.currentTarget.classList.add('active');
+  });
+});
+
+const proektyV01CardSliders = document.querySelectorAll('.proekty-v-01__card-sliders');
+
+proektyV01CardSliders.forEach((slidersElem) => {
   const baseClassName = '.proekty-v-01__card-sliders';
   const mainSliderElem = slidersElem.querySelector(`${baseClassName}-main .swiper`);
   const thumbsSliderElem = slidersElem.querySelector(`${baseClassName}-thumbs .swiper`);
@@ -26,14 +49,26 @@ proektyV5CardSliders.forEach((slidersElem) => {
       thumbs: {
         swiper: thumbsSwiper,
       },
+      on: {
+        slideChange: function () {
+          proektyV01VideoEls.forEach((videoEl) => {
+            const iframeEl = videoEl.querySelector('iframe');
+            if (iframeEl) {
+              const iframeSrc = iframeEl.getAttribute('src');
+              iframeEl.setAttribute('src', iframeSrc);
+            }
+            videoEl.classList.remove('active');
+          });
+        },
+      },
     });
   }
 });
 
-const proektyV5More = document.querySelector('.proekty-v-01__more');
+const proektyV01More = document.querySelector('.proekty-v-01__more');
 
-if (proektyV5More) {
-  proektyV5More.addEventListener('click', (event) => {
+if (proektyV01More) {
+  proektyV01More.addEventListener('click', (event) => {
     const isButton = event.target.classList.contains('proekty-v-01__more-button');
 
     if (isButton) {
