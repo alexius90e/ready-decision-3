@@ -1,0 +1,155 @@
+@import './variables';
+@import './mixins';
+
+.kartochka-tovara-taby-v-01 {
+  &__wrapper {
+    max-width: 980px;
+  }
+
+  &__tabs {
+    max-width: 100%;
+    width: fit-content;
+    overflow: auto;
+
+    &-wrapper {
+      display: flex;
+      gap: 40px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    &-link {
+      position: relative;
+      flex: 0 0 auto;
+      font-weight: 500;
+      font-size: 18px;
+      color: #1c1c20;
+
+      @include laptop {
+        font-size: 16px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: block;
+        height: 1px;
+        background-color: #1e674e;
+        opacity: 0;
+      }
+
+      &.active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__block {
+    padding: 50px 0 0;
+
+    @include laptop {
+      padding-top: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-weight: 500;
+    font-size: 24px;
+    color: #1c1c20;
+
+    @include laptop {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex: 1 1 100%;
+      gap: 10px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #ebebeb;
+
+      &-title,
+      &-value {
+        flex: 0 0 calc(100% / 2 - 10px / 2);
+        max-width: calc(100% / 2 - 10px / 2);
+      }
+
+      &-title {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 140%;
+        color: #a1a1a4;
+
+        @include desktoplg {
+          font-size: 14px;
+        }
+      }
+
+      &-value {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: right;
+        color: #1c1c20;
+
+        @include desktoplg {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    color: #3e3e3e;
+
+    @include laptop {
+      font-size: 14px;
+    }
+  }
+
+  &__docs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #3e3e3e;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        aspect-ratio: 1;
+        background: url(../assets/kartochka-tovara-taby-v-01/download.svg) center / cover no-repeat;
+      }
+    }
+  }
+}
