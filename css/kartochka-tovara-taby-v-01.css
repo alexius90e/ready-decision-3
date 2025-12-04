@@ -2,6 +2,7 @@
   max-width: 980px;
 }
 .kartochka-tovara-taby-v-01__tabs {
+  max-width: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -9,16 +10,19 @@
 }
 @media (max-width: 768px) {
   .kartochka-tovara-taby-v-01__tabs {
+    max-width: calc(100% + 40px);
     margin: 0 -20px;
   }
 }
 @media (max-width: 576px) {
   .kartochka-tovara-taby-v-01__tabs {
+    max-width: calc(100% + 30px);
     margin: 0 -15px;
   }
 }
 @media (max-width: 340px) {
   .kartochka-tovara-taby-v-01__tabs {
+    max-width: calc(100% + 20px);
     margin: 0 -10px;
   }
 }
@@ -26,12 +30,17 @@
   display: none;
 }
 .kartochka-tovara-taby-v-01__tabs-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   padding: 0 0 10px;
-  border-bottom: 1px solid #e8e8e8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media (max-width: 768px) {
   .kartochka-tovara-taby-v-01__tabs-wrapper {
@@ -49,8 +58,38 @@
     padding: 0 10px 10px;
   }
 }
+.kartochka-tovara-taby-v-01__tabs-wrapper::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  height: 1px;
+  background-color: #e8e8e8;
+}
+@media (max-width: 768px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper::before {
+    left: 20px;
+    right: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper::before {
+    left: 15px;
+    right: 15px;
+  }
+}
+@media (max-width: 340px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper::before {
+    left: 10px;
+    right: 10px;
+  }
+}
 .kartochka-tovara-taby-v-01__tabs-link {
   position: relative;
+  z-index: 10;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -66,7 +105,7 @@
 .kartochka-tovara-taby-v-01__tabs-link::before {
   content: "";
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 9px);
   left: 0;
   right: 0;
   display: block;

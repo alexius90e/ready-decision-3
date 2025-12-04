@@ -7,30 +7,36 @@
   }
 
   &__tabs {
+    max-width: 100%;
     width: fit-content;
     overflow: auto;
 
     @include tablet {
+      max-width: calc(100% + 20px * 2);
       margin: 0 -20px;
     }
 
     @include mobile {
+      max-width: calc(100% + 15px * 2);
       margin: 0 -15px;
     }
 
     @include mobilesm {
+      max-width: calc(100% + 10px * 2);
       margin: 0 -10px;
     }
 
     &::-webkit-scrollbar {
-      display: none; 
+      display: none;
     }
 
     &-wrapper {
+      position: relative;
       display: flex;
       gap: 40px;
+      width: max-content;
       padding: 0 0 10px;
-      border-bottom: 1px solid #e8e8e8;
+      box-sizing: border-box;
 
       @include tablet {
         gap: 16px;
@@ -44,10 +50,38 @@
       @include mobilesm {
         padding: 0 10px 10px;
       }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+        height: 1px;
+        background-color: #e8e8e8;
+
+        @include tablet {
+          left: 20px;
+          right: 20px;
+        }
+
+        @include mobile {
+          left: 15px;
+          right: 15px;
+        }
+
+        @include mobilesm {
+          left: 10px;
+          right: 10px;
+        }
+      }
     }
 
     &-link {
       position: relative;
+      z-index: 10;
       flex: 0 0 auto;
       font-weight: 500;
       font-size: 18px;
@@ -60,7 +94,7 @@
       &::before {
         content: '';
         position: absolute;
-        top: calc(100% + 10px);
+        top: calc(100% + 9px);
         left: 0;
         right: 0;
         display: block;
