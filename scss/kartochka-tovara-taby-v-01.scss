@@ -7,15 +7,43 @@
   }
 
   &__tabs {
-    max-width: 100%;
     width: fit-content;
     overflow: auto;
+
+    @include tablet {
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
 
     &-wrapper {
       display: flex;
       gap: 40px;
       padding: 0 0 10px;
       border-bottom: 1px solid #e8e8e8;
+
+      @include tablet {
+        gap: 16px;
+        padding: 0 20px 10px;
+      }
+
+      @include mobile {
+        padding: 0 15px 10px;
+      }
+
+      @include mobilesm {
+        padding: 0 10px 10px;
+      }
     }
 
     &-link {
@@ -142,6 +170,10 @@
       font-size: 15px;
       line-height: 140%;
       color: #3e3e3e;
+
+      &:hover {
+        text-decoration: underline;
+      }
 
       &::before {
         content: '';

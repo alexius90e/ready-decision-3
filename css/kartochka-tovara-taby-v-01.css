@@ -2,11 +2,28 @@
   max-width: 980px;
 }
 .kartochka-tovara-taby-v-01__tabs {
-  max-width: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   overflow: auto;
+}
+@media (max-width: 768px) {
+  .kartochka-tovara-taby-v-01__tabs {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .kartochka-tovara-taby-v-01__tabs {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .kartochka-tovara-taby-v-01__tabs {
+    margin: 0 -10px;
+  }
+}
+.kartochka-tovara-taby-v-01__tabs::-webkit-scrollbar {
+  display: none;
 }
 .kartochka-tovara-taby-v-01__tabs-wrapper {
   display: -webkit-box;
@@ -15,6 +32,22 @@
   gap: 40px;
   padding: 0 0 10px;
   border-bottom: 1px solid #e8e8e8;
+}
+@media (max-width: 768px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper {
+    gap: 16px;
+    padding: 0 20px 10px;
+  }
+}
+@media (max-width: 576px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper {
+    padding: 0 15px 10px;
+  }
+}
+@media (max-width: 340px) {
+  .kartochka-tovara-taby-v-01__tabs-wrapper {
+    padding: 0 10px 10px;
+  }
 }
 .kartochka-tovara-taby-v-01__tabs-link {
   position: relative;
@@ -157,6 +190,9 @@
   font-size: 15px;
   line-height: 140%;
   color: #3e3e3e;
+}
+.kartochka-tovara-taby-v-01__docs-link:hover {
+  text-decoration: underline;
 }
 .kartochka-tovara-taby-v-01__docs-link::before {
   content: "";
