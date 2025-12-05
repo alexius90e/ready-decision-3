@@ -1,0 +1,253 @@
+.o-kompanii-v-02__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0 30px;
+}
+@media (max-width: 1200px) {
+  .o-kompanii-v-02__wrapper {
+    gap: 0 20px;
+  }
+}
+.o-kompanii-v-02__title {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 140%;
+  color: #1c1c20;
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__title {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .o-kompanii-v-02__title {
+    font-size: 28px;
+  }
+}
+.o-kompanii-v-02__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 630px - 30px);
+          flex: 0 0 calc(100% - 630px - 30px);
+  max-width: 730px;
+}
+@media (max-width: 1500px) {
+  .o-kompanii-v-02__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 516px - 30px);
+            flex: 0 0 calc(100% - 516px - 30px);
+  }
+}
+@media (max-width: 1200px) {
+  .o-kompanii-v-02__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 430px - 30px);
+            flex: 0 0 calc(100% - 430px - 30px);
+  }
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    max-width: none;
+    margin: 16px 0 0;
+  }
+}
+.o-kompanii-v-02__info-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 140%;
+  color: #1c1c20;
+}
+@media (max-width: 1500px) {
+  .o-kompanii-v-02__info-title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 1200px) {
+  .o-kompanii-v-02__info-title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__info-title {
+    display: none;
+  }
+}
+.o-kompanii-v-02__info-subtitle {
+  margin: 12px 0 16px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: #1c1c20;
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__info-subtitle {
+    margin: 0 0 16px;
+  }
+}
+.o-kompanii-v-02__info-text {
+  margin: 12px 0 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140%;
+  color: #3e3e3e;
+}
+.o-kompanii-v-02__info-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 30px 0 0;
+}
+@media (max-width: 1500px) {
+  .o-kompanii-v-02__info-controls {
+    margin-top: 24px;
+  }
+}
+.o-kompanii-v-02__info-controls-consult, .o-kompanii-v-02__info-controls-offer {
+  min-width: 246px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .o-kompanii-v-02__info-controls-consult, .o-kompanii-v-02__info-controls-offer {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    min-width: auto;
+  }
+}
+.o-kompanii-v-02__info-controls-consult {
+  background-color: #000000;
+}
+.o-kompanii-v-02__info-controls-consult:hover {
+  background-color: #1e674e;
+}
+.o-kompanii-v-02__gallery {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 630px;
+          flex: 0 0 630px;
+}
+@media (max-width: 1500px) {
+  .o-kompanii-v-02__gallery {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 516px;
+            flex: 0 0 516px;
+  }
+}
+@media (max-width: 1200px) {
+  .o-kompanii-v-02__gallery {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 430px;
+            flex: 0 0 430px;
+  }
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__gallery {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+.o-kompanii-v-02__gallery-title {
+  display: none;
+}
+@media (max-width: 992px) {
+  .o-kompanii-v-02__gallery-title {
+    display: block;
+    margin: 0 0 28px;
+  }
+}
+.o-kompanii-v-02__gallery .swiper {
+  display: grid;
+}
+.o-kompanii-v-02__gallery .swiper-wrapper {
+  min-width: 0;
+}
+.o-kompanii-v-02__gallery .swiper-button-prev, .o-kompanii-v-02__gallery .swiper-button-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #1c1c20;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+.o-kompanii-v-02__gallery .swiper-button-prev:hover, .o-kompanii-v-02__gallery .swiper-button-next:hover {
+  background-color: #1e674e;
+}
+.o-kompanii-v-02__gallery .swiper-button-prev::after, .o-kompanii-v-02__gallery .swiper-button-next::after {
+  content: "";
+  display: block;
+  width: 22px;
+  aspect-ratio: 1;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  background: url(../assets/o-kompanii-v-02/arrow-left.svg) center/cover no-repeat;
+}
+.o-kompanii-v-02__gallery .swiper-button-prev {
+  left: 0;
+}
+.o-kompanii-v-02__gallery .swiper-button-prev::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.o-kompanii-v-02__gallery .swiper-button-next {
+  right: 0;
+}
+.o-kompanii-v-02__gallery .swiper-button-disabled {
+  opacity: 0;
+}
+.o-kompanii-v-02__slide-figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+}
+.o-kompanii-v-02__slide-figure-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
