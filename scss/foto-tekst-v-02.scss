@@ -1,0 +1,103 @@
+@import './variables';
+@import './mixins';
+
+.foto-tekst-v-02 {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    @include desktoplg {
+      gap: 50px;
+    }
+
+    @include desktop {
+      gap: 40px;
+    }
+
+    @include laptop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 140%;
+    color: #1c1c20;
+
+    @include desktoplg {
+      font-size: 38px;
+    }
+
+    @include desktop {
+      font-size: 34px;
+    }
+
+    @include laptop {
+      font-size: 32px;
+    }
+
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    color: #3e3e3e;
+
+    @include desktoplg {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    margin: 0;
+
+    @include tablet {
+      justify-content: flex-end;
+      flex: 1 1 100%;
+    }
+
+    &-image {
+      display: block;
+      max-width: 100%;
+      width: 175px;
+      height: auto;
+
+      @include desktop {
+        width: 160px;
+      }
+
+      @include laptop {
+        width: 140px;
+      }
+    }
+  }
+}

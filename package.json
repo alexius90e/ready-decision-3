@@ -4,6 +4,8 @@
     "jsdom": "^27.2.0"
   },
   "scripts": {
-    "build": "node tools/build.js"
+    "build": "node tools/build.js",
+    "create": "node tools/createBlock.js"
   }
+  
 }
