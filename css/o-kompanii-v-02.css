@@ -140,9 +140,11 @@
   }
 }
 .o-kompanii-v-02__info-controls-consult {
+  border-color: #000000;
   background-color: #000000;
 }
 .o-kompanii-v-02__info-controls-consult:hover {
+  border-color: #1e674e;
   background-color: #1e674e;
 }
 .o-kompanii-v-02__gallery {

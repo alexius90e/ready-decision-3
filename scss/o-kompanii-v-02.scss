@@ -117,9 +117,11 @@
       }
 
       &-consult {
+        border-color: #000000;
         background-color: #000000;
 
         &:hover {
+          border-color: #1e674e;
           background-color: #1e674e;
         }
       }
