@@ -8,6 +8,12 @@
   right: 0;
   z-index: 999;
   padding: 0;
+  transition: transform ease-out 0.4s;
+
+
+  &.hidden {
+    transform: translateY(-110%);
+  }
 
   &__top {
     position: relative;

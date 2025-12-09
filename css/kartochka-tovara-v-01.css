@@ -147,6 +147,7 @@
 .kartochka-tovara-v-01__slider-thumbs .swiper {
   max-height: 100%;
   max-width: 100%;
+  height: 100%;
 }
 @media (max-width: 768px) {
   .kartochka-tovara-v-01__slider-thumbs .swiper {
