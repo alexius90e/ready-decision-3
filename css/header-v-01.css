@@ -1205,3 +1205,7 @@
   -webkit-filter: brightness(0);
           filter: brightness(0);
 }
+
+html {
+  scrollbar-gutter: stable;
+}

@@ -10,7 +10,6 @@
   padding: 0;
   transition: transform ease-out 0.4s;
 
-
   &.hidden {
     transform: translateY(-110%);
   }
@@ -1055,4 +1054,8 @@
       }
     }
   }
+}
+
+html {
+  scrollbar-gutter: stable;
 }
