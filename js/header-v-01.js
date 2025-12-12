@@ -1,4 +1,7 @@
 const headerV01 = document.querySelector('.header-v-01');
+const headerBurger = document.querySelector('.header-v-01__top-burger-button');
+const headerCatalogBurger = document.querySelector('.header-v-01__bottom-nav-menu-item-burger');
+const headerMenu = document.querySelector('.header-v-01__menu');
 
 const scrollLimit = 200;
 
@@ -12,17 +15,15 @@ window.addEventListener('scroll', () => {
   if (currentScroll < lastScroll && lastScroll - currentScroll > minScrollStep) {
     headerV01.classList.remove('hidden');
   } else if (currentScroll > lastScroll && currentScroll > scrollLimit) {
-    headerV01.classList.add('hidden');
+    if (!headerMenu.classList.contains('active')) {
+      headerV01.classList.add('hidden');
+    }
   } else if (currentScroll < scrollLimit) {
     headerV01.classList.remove('hidden');
   }
 
   lastScroll = currentScroll;
 });
-
-const headerBurger = document.querySelector('.header-v-01__top-burger-button');
-const headerCatalogBurger = document.querySelector('.header-v-01__bottom-nav-menu-item-burger');
-const headerMenu = document.querySelector('.header-v-01__menu');
 
 if (headerBurger && headerMenu && headerCatalogBurger) {
   const burgerButtons = [headerBurger, headerCatalogBurger];
@@ -34,11 +35,11 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
       if (isActive) {
         array.forEach((button) => button.classList.remove('active'));
         headerMenu.classList.remove('active');
-        document.body.style.overflow = null;
+        document.body.classList.remove('hidden');
       } else {
         array.forEach((button) => button.classList.add('active'));
         headerMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('hidden');
       }
     });
   });
@@ -49,7 +50,7 @@ if (headerBurger && headerMenu && headerCatalogBurger) {
     if (isLayout) {
       headerMenu.classList.remove('active');
       burgerButtons.forEach((button) => button.classList.remove('active'));
-      document.body.style.overflow = null;
+      document.body.classList.remove('hidden');
     }
   });
 }
