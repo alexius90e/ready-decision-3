@@ -1,0 +1,293 @@
+@import './variables';
+@import './mixins';
+
+.otzivy-v-02 {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 24px;
+
+    @include desktoplg {
+      gap: 20px 24px;
+    }
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      gap: 24px;
+    }
+  }
+
+  &__review {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
+    max-width: calc(100% / 3 - 24px / 3 * 2);
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    transition-property: background-color, color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+
+    @include desktop {
+      flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+      max-width: calc(100% / 3 - 20px / 3 * 2);
+    }
+
+    @include laptop {
+      flex: 0 0 calc(100% / 2 - 20px / 3 * 2);
+      max-width: calc(100% / 2 - 20px / 3 * 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    &:hover {
+      background-color: #3e3e3e;
+
+      @include laptop {
+        background-color: #f5f5f5;
+      }
+    }
+
+    &-source {
+      &-link {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding-left: 12px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #3e3e3e;
+        transition-property: color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          flex: 0 0 auto;
+          width: 32px;
+          aspect-ratio: 1;
+          filter: brightness(1000%);
+          background: url(../assets/otzivy-v-01/open-in-new.svg) center / 16px no-repeat;
+          transition-property: filter;
+          transition-timing-function: ease-out;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+
+    &:hover &-source {
+      &-link {
+        color: #3e3e3e;
+        background-color: #fff;
+
+        @include laptop {
+          color: #fff;
+          background-color: #3e3e3e;
+        }
+
+        &::after {
+          filter: brightness(100%);
+
+          @include laptop {
+            filter: brightness(1000%);
+          }
+        }
+      }
+    }
+
+    &-name {
+      margin: 30px 0 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: #1c1c20;
+      transition-property: color;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+    }
+
+    &:hover &-name {
+      color: #ffffff;
+
+      @include laptop {
+        color: #1c1c20;
+      }
+    }
+
+    &-short {
+      margin: 20px 0 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #3e3e3e;
+      transition-property: color;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+    }
+
+    &:hover &-short {
+      color: #ffffff;
+
+      @include laptop {
+        color: #3e3e3e;
+      }
+    }
+
+    &-long {
+      display: none;
+    }
+
+    &-more {
+      margin: 20px 0 0;
+
+      &-button {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 140%;
+        color: #3e3e3e;
+        border: none;
+        background: none;
+        transition-property: color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+      }
+    }
+
+    &:hover &-more-button {
+      color: #ffffff;
+
+      @include laptop {
+        color: #3e3e3e;
+      }
+    }
+
+    &-date {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      flex: 1 1 auto;
+      margin: 40px 0 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: #a1a1a4;
+    }
+  }
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba($color: $color-black, $alpha: 0);
+    transition: background-color ease-in-out 0.2s;
+    will-change: background-color;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: all;
+      background-color: rgba($color: $color-black, $alpha: 0.5);
+    }
+
+    &-body {
+      position: relative;
+      max-height: calc(100dvh - 30px);
+      max-width: calc(100dvw - 30px);
+      width: 580px;
+      padding: 24px;
+      box-sizing: border-box;
+      overflow: hidden;
+      background-color: $color-white;
+      opacity: 0;
+      transition: opacity ease-in-out 0.4s;
+      will-change: opacity;
+    }
+
+    &.active &-body {
+      opacity: 1;
+    }
+
+    &-content {
+      max-height: calc(100dvh - 78px);
+      overflow: auto;
+    }
+
+    &-name {
+      margin: 0;
+      padding-right: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #1c1c20;
+    }
+
+    &-text {
+      margin: 20px 0 0;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+      color: #3e3e3e;
+    }
+
+    &-date {
+      margin: 20px 0 0;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: #a1a1a4;
+    }
+
+    &-close {
+      &-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        aspect-ratio: 1;
+        padding: 0;
+        border: none;
+        background-color: #f5f5f5;
+        cursor: pointer;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 20px;
+          aspect-ratio: 1;
+          background: url(../assets/otzivy-v-01/close.svg) center / cover no-repeat;
+          filter: brightness(0);
+        }
+      }
+    }
+  }
+}
