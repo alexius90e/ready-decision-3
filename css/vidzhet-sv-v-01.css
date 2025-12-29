@@ -186,6 +186,9 @@
 .vidzhet-sv-v-01__social-link_whatsapp {
   background-color: #06cc4d;
 }
+.vidzhet-sv-v-01__social-link_max {
+  background: linear-gradient(242deg, #923fd7 11.79%, #314af9 60.51%, #33b2fc 100%);
+}
 .vidzhet-sv-v-01__social-link-image {
   display: block;
   max-width: 100%;

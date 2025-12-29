@@ -114,7 +114,7 @@
   aspect-ratio: 1;
   -webkit-filter: brightness(1000%);
           filter: brightness(1000%);
-  background: url(../assets/otzivy-v-01/open-in-new.svg) center/16px no-repeat;
+  background: url(../assets/otzivy-v-02/open-in-new.svg) center/16px no-repeat;
   -webkit-transition-property: -webkit-filter;
   transition-property: -webkit-filter;
   transition-property: filter;
@@ -336,7 +336,7 @@
   display: block;
   width: 20px;
   aspect-ratio: 1;
-  background: url(../assets/otzivy-v-01/close.svg) center/cover no-repeat;
+  background: url(../assets/otzivy-v-02/close.svg) center/cover no-repeat;
   -webkit-filter: brightness(0);
           filter: brightness(0);
 }

@@ -160,6 +160,10 @@
         background-color: #06cc4d;
       }
 
+      &_max {
+        background: linear-gradient(242deg, #923fd7 11.79%, #314af9 60.51%, #33b2fc 100%);
+      }
+
       &-image {
         display: block;
         max-width: 100%;
