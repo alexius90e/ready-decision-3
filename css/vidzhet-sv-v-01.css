@@ -1,16 +1,22 @@
 @-webkit-keyframes appear {
-  0%, 25% {
+  0% {
+    opacity: 0;
+  }
+  10% {
     opacity: 1;
   }
-  33%, 100% {
+  30%, 100% {
     opacity: 0;
   }
 }
 @keyframes appear {
-  0%, 25% {
+  0% {
+    opacity: 0;
+  }
+  10% {
     opacity: 1;
   }
-  33%, 100% {
+  30%, 100% {
     opacity: 0;
   }
 }
@@ -106,16 +112,20 @@
           user-select: none;
 }
 .vidzhet-sv-v-01__toggler-icon-image:nth-child(1) {
-  -webkit-animation: appear 6s infinite;
-          animation: appear 6s infinite;
+  -webkit-animation: appear 8s infinite;
+          animation: appear 8s infinite;
 }
 .vidzhet-sv-v-01__toggler-icon-image:nth-child(2) {
-  -webkit-animation: appear 6s infinite 2s;
-          animation: appear 6s infinite 2s;
+  -webkit-animation: appear 8s infinite 2s;
+          animation: appear 8s infinite 2s;
 }
 .vidzhet-sv-v-01__toggler-icon-image:nth-child(3) {
-  -webkit-animation: appear 6s infinite 4s;
-          animation: appear 6s infinite 4s;
+  -webkit-animation: appear 8s infinite 4s;
+          animation: appear 8s infinite 4s;
+}
+.vidzhet-sv-v-01__toggler-icon-image:nth-child(4) {
+  -webkit-animation: appear 8s infinite 6s;
+          animation: appear 8s infinite 6s;
 }
 .vidzhet-sv-v-01__toggler-close {
   position: absolute;
