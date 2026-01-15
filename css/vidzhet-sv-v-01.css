@@ -2,10 +2,10 @@
   0% {
     opacity: 0;
   }
-  25% {
+  20% {
     opacity: 1;
   }
-  33%, 100% {
+  25%, 100% {
     opacity: 0;
   }
 }
@@ -13,10 +13,10 @@
   0% {
     opacity: 0;
   }
-  25% {
+  20% {
     opacity: 1;
   }
-  33%, 100% {
+  25%, 100% {
     opacity: 0;
   }
 }
@@ -112,8 +112,8 @@
           user-select: none;
 }
 .vidzhet-sv-v-01__toggler-icon-image:nth-child(1) {
-  -webkit-animation: appear 8s infinite 0s;
-          animation: appear 8s infinite 0s;
+  -webkit-animation: appear 8s infinite;
+          animation: appear 8s infinite;
 }
 .vidzhet-sv-v-01__toggler-icon-image:nth-child(2) {
   -webkit-animation: appear 8s infinite 2s;
