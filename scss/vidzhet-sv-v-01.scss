@@ -5,10 +5,10 @@
   0% {
     opacity: 0;
   }
-  10% {
+  25% {
     opacity: 1;
   }
-  30%,
+  33%,
   100% {
     opacity: 0;
   }
@@ -85,7 +85,7 @@
         user-select: none;
 
         &:nth-child(1) {
-          animation: appear 8s infinite;
+          animation: appear 8s infinite 0s;
         }
 
         &:nth-child(2) {
