@@ -152,7 +152,7 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  gap: 4px;
+  gap: 6px;
 }
 .header-v-02__contacts-social-description {
   max-width: 160px;
@@ -167,29 +167,29 @@
   }
 }
 .header-v-02__contacts-social-link {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 40px;
-  aspect-ratio: 1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  -webkit-transition-property: border, color, background-color;
-  transition-property: border, color, background-color;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  height: 40px;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  cursor: pointer;
 }
-.header-v-02__contacts-social-link:hover {
-  background-color: #1c1c20;
-}
-.header-v-02__contacts-social-link_tg {
-  background-image: url(../assets/header-v-02/telegram.svg);
-  background-color: #166ff5;
-}
-.header-v-02__contacts-social-link_wts {
-  background-image: url(../assets/header-v-02/whatsapp.svg);
-  background-color: #06cc4d;
+.header-v-02__contacts-social-link-icon {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
 }
 .header-v-02__contacts-phone {
   position: relative;

@@ -106,7 +106,7 @@
         display: flex;
         align-items: center;
         flex: 0 0 auto;
-        gap: 4px;
+        gap: 6px;
       }
 
       &-description {
@@ -122,28 +122,22 @@
       }
 
       &-link {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 40px;
-        aspect-ratio: 1;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 20px;
-        transition-property: border, color, background-color;
-        transition-timing-function: ease-in-out;
-        transition-duration: 0.2s;
+        height: 40px;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+        background: rgba($color: #ffffff, $alpha: 0);
+        cursor: pointer;
 
-        &:hover {
-          background-color: #1c1c20;
-        }
-
-        &_tg {
-          background-image: url(../assets/header-v-02/telegram.svg);
-          background-color: #166ff5;
-        }
-
-        &_wts {
-          background-image: url(../assets/header-v-02/whatsapp.svg);
-          background-color: #06cc4d;
+        &-icon {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          pointer-events: none;
         }
       }
     }
