@@ -6,7 +6,7 @@
   background-image: url(../assets/first-screen-06/first-screen-06-bg.svg);
   background-repeat: no-repeat;
   background-size: auto 1448px;
-  background-position: top 73px left 788px;
+  background-position: top 73px left calc(50dvw - 40px);
   background-color: #1d1d1d;
 
   @include desktoplg {
@@ -34,20 +34,28 @@
   &__gallery {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 20px;
 
     @include laptop {
       gap: 10px;
     }
 
-    &-photo {
+    &-button {
+      display: inline-block;
+      flex: 0 0 auto;
+      padding: 0;
       margin: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
 
       &-image {
         display: block;
         max-width: 100%;
         width: 64px;
         height: auto;
+        pointer-events: none;
 
         @include desktoplg {
           width: 60px;

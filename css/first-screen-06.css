@@ -3,7 +3,7 @@
   background-image: url(../assets/first-screen-06/first-screen-06-bg.svg);
   background-repeat: no-repeat;
   background-size: auto 1448px;
-  background-position: top 73px left 788px;
+  background-position: top 73px left calc(50dvw - 40px);
   background-color: #1d1d1d;
 }
 @media (max-width: 1500px) {
@@ -39,6 +39,8 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 20px;
 }
 @media (max-width: 992px) {
@@ -46,22 +48,31 @@
     gap: 10px;
   }
 }
-.first-screen-06__gallery-photo {
+.first-screen-06__gallery-button {
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 0;
   margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
-.first-screen-06__gallery-photo-image {
+.first-screen-06__gallery-button-image {
   display: block;
   max-width: 100%;
   width: 64px;
   height: auto;
+  pointer-events: none;
 }
 @media (max-width: 1500px) {
-  .first-screen-06__gallery-photo-image {
+  .first-screen-06__gallery-button-image {
     width: 60px;
   }
 }
 @media (max-width: 992px) {
-  .first-screen-06__gallery-photo-image {
+  .first-screen-06__gallery-button-image {
     width: 54px;
   }
 }
