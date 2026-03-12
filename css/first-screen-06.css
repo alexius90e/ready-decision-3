@@ -99,44 +99,36 @@
 .first-screen-06__description {
   display: inline-block;
   margin: 36px 0 0;
-}
-@media (max-width: 1500px) {
-  .first-screen-06__description {
-    margin-top: 30px;
-  }
-}
-@media (max-width: 1200px) {
-  .first-screen-06__description {
-    margin-top: 24px;
-  }
-}
-@media (max-width: 992px) {
-  .first-screen-06__description {
-    margin-top: 20px;
-  }
-}
-.first-screen-06__description span {
   padding: 5px 10px;
   font-weight: 400;
   font-size: 32px;
   line-height: 140%;
   color: #fff;
-  background-color: #166ff5;
 }
 @media (max-width: 1500px) {
-  .first-screen-06__description span {
+  .first-screen-06__description {
+    margin-top: 30px;
     font-size: 30px;
   }
 }
 @media (max-width: 1200px) {
-  .first-screen-06__description span {
+  .first-screen-06__description {
+    margin-top: 24px;
     font-size: 28px;
   }
 }
 @media (max-width: 992px) {
-  .first-screen-06__description span {
+  .first-screen-06__description {
+    margin-top: 20px;
     font-size: 24px;
   }
+}
+.first-screen-06__description span {
+  display: inline;
+  background: #166ff5;
+  padding: 2px 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .first-screen-06__discount {
   max-width: 1162px;
