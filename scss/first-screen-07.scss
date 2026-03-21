@@ -1,0 +1,153 @@
+@import './variables';
+@import './mixins';
+
+.first-screen-07 {
+  &__wrapper {
+    display: block;
+  }
+
+  &__photo {
+    position: relative;
+    z-index: 0;
+    margin: 0;
+
+    &-image {
+      display: block;
+      max-width: 100dvw;
+      max-height: 1237px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include desktopxl {
+        max-height: none;
+        max-width: 100%;
+        width: auto;
+        object-fit: auto;
+      }
+
+      @include mobile {
+        min-height: 399px;
+      }
+
+      &_desktop {
+        display: block;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: block;
+    max-width: 2200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 120px 140px;
+
+    @include desktopxxl {
+      padding: 100px 120px;
+    }
+
+    @include desktopxl {
+      padding: 80px 100px;
+    }
+
+    @include desktoplg {
+      padding: 60px 80px;
+    }
+
+    @include desktop {
+      padding: 40px 60px;
+    }
+
+    @include laptop {
+      padding: 20px 40px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 120%;
+    color: #fff;
+
+    @include desktopxxl {
+      font-size: 76px;
+    }
+
+    @include desktopxl {
+      margin-bottom: 10px;
+      font-size: 64px;
+    }
+
+    @include desktoplg {
+      font-size: 56px;
+    }
+
+    @include desktop {
+      margin-bottom: 8px;
+      font-size: 48px;
+    }
+
+    @include laptop {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: #fff;
+
+    @include desktopxxl {
+      font-size: 40px;
+    }
+
+    @include desktopxl {
+      font-size: 36px;
+    }
+
+    @include desktoplg {
+      font-size: 30px;
+    }
+
+    @include desktop {
+      font-size: 24px;
+    }
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+}
