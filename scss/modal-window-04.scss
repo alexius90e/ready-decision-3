@@ -1,0 +1,125 @@
+@import './variables';
+@import './mixins';
+
+.modal-window-04 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba($color: $color-black, $alpha: 0);
+  transition: background-color ease-in-out 0.2s;
+  will-change: background-color;
+  pointer-events: none;
+
+  &.active {
+    pointer-events: all;
+    background-color: rgba($color: $color-black, $alpha: 0.5);
+  }
+
+  &__body {
+    position: relative;
+    max-height: calc(100dvh - 30px);
+    max-width: calc(100dvw - 30px);
+    width: 360px;
+    height: 433px;
+    padding: 24px 20px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: $color-white;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    will-change: opacity;
+  }
+
+  &.active &__body {
+    opacity: 1;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: #1c1c20;
+  }
+
+  &__search {
+    margin: 0 0 20px;
+
+    &-input {
+      display: inline-block;
+      width: 100%;
+      padding: 0 0 5px;
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #1c1c20;
+      border: none;
+      border-bottom: 1px solid #ebebeb;
+      outline: none;
+
+      &::placeholder {
+        color: #a1a1a4;
+      }
+    }
+  }
+
+  &__content {
+    max-height: calc(100dvh - 30px - 134px);
+    height: 300px;
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    color: #a1a1a4;
+    transition: color ease-out 0.2s;
+
+    &:hover {
+      color: #1c1c20;
+    }
+  }
+
+  &__close {
+    &-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      aspect-ratio: 1;
+      padding: 0;
+      border: none;
+      background-color: #f5f5f5;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        aspect-ratio: 1;
+        background: url(../assets/vidzhet-sv-v-01/close.svg) center / cover no-repeat;
+        filter: brightness(0);
+      }
+    }
+  }
+}
