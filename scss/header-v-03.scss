@@ -398,17 +398,65 @@
       }
 
       &-button {
-        display: block;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 0;
         width: 40px;
         aspect-ratio: 1 / 1;
         border: none;
         outline: none;
-        background: url(../assets/header-v-03/menu.svg) center / 20px no-repeat;
         background-color: #f5f5f5;
-        transition: background-image ease-in-out 0.2s;
+
+        $line-width: 15px;
+        $line-height: 2px;
+        $gap: 2px;
+
+        $total-height: ($line-height * 3) + ($gap * 2);
+        $offset: calc(50% - #{$total-height / 2});
+
+        & span,
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          width: $line-width;
+          height: $line-height;
+          background: #000;
+          transform: translateX(-50%);
+          transition: all 0.3s ease;
+        }
+
+        &::before {
+          top: $offset;
+        }
+
+        & span {
+          top: calc(#{$offset} + #{$line-height} + #{$gap});
+        }
+
+        &::after {
+          top: calc(#{$offset} + (#{$line-height} + #{$gap}) * 2);
+        }
 
         &.active {
-          background-image: url(../assets/header-v-03/close.svg);
+          span {
+            opacity: 0;
+          }
+
+          &::before {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+
+          &::after {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
         }
       }
     }
@@ -485,16 +533,60 @@
             background-color: rgba($color: #ffffff, $alpha: 0);
             cursor: pointer;
 
-            &::before {
-              content: '';
-              display: inline-block;
+            &-icon {
+              position: relative;
+              display: block;
+              flex: 0 0 auto;
+              height: 20px;
               width: 20px;
-              aspect-ratio: 1;
-              background: url(../assets/header-v-03/menu.svg) center / cover no-repeat;
+
+              $line-width: 15px;
+              $line-height: 2px;
+              $gap: 2px;
+
+              $total-height: ($line-height * 3) + ($gap * 2);
+              $offset: calc(50% - #{$total-height / 2});
+
+              & span,
+              &::before,
+              &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                width: $line-width;
+                height: $line-height;
+                background: #000;
+                transform: translateX(-50%);
+                transition: all 0.3s ease;
+              }
+
+              &::before {
+                top: $offset;
+              }
+
+              & span {
+                top: calc(#{$offset} + #{$line-height} + #{$gap});
+              }
+
+              &::after {
+                top: calc(#{$offset} + (#{$line-height} + #{$gap}) * 2);
+              }
             }
 
-            &.active::before {
-              background-image: url(../assets/header-v-03/close.svg);
+            &.active &-icon {
+              span {
+                opacity: 0;
+              }
+
+              &::before {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+              }
+
+              &::after {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+              }
             }
           }
 
