@@ -66,7 +66,29 @@
   &__search {
     right: 0;
     z-index: 10;
-    background: url(../assets/search-01/search.svg) center / 18px no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color ease-out 0.2s;
+
+    &::before {
+      content: '';
+      position: relative;
+      z-index: 10;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url(../assets/search-01/search.svg) center / 18px no-repeat;
+      transition: filter ease-out 0.2s;
+    }
+  }
+
+  &:has(&__input:focus) &__search {
+    background-color: #1e674e;
+
+    &::before {
+      filter: brightness(0%) invert(100%);
+    }
   }
 
   &__reset {
@@ -79,6 +101,8 @@
 
     @include tablet {
       right: 32px;
+      width: 24px;
+      height: 24px;
     }
 
     &.active {
