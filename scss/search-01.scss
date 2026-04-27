@@ -28,7 +28,7 @@
     transition-duration: 0.2s;
 
     @include tablet {
-      min-height: 45px;
+      min-height: 46px;
       width: calc(16 / 14 * 100%);
       margin: 0 -7.2%;
       padding: 10px 14px;
@@ -36,7 +36,7 @@
       box-sizing: border-box;
       font-size: 16px;
       line-height: 100%;
-      transform: scale(0.875) translateY(-3px);
+      transform: scale(0.875) translateY(-4px);
     }
 
     &:focus {
