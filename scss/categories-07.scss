@@ -20,7 +20,6 @@
     flex: 0 0 calc(100% / 4 - 16px / 4 * 3);
     box-sizing: border-box;
 
-
     @include laptop {
       flex: 0 0 calc(100% / 2 - 16px / 2);
     }
@@ -40,12 +39,7 @@
     }
 
     &-info {
-      display: none;
       margin: 20px 0 0;
-
-      @include mobile {
-        display: block;
-      }
 
       &-title {
         margin: 0;

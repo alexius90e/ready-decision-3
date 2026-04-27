@@ -52,13 +52,7 @@
   height: auto;
 }
 .categories-07__card-info {
-  display: none;
   margin: 20px 0 0;
-}
-@media (max-width: 576px) {
-  .categories-07__card-info {
-    display: block;
-  }
 }
 .categories-07__card-info-title {
   margin: 0;
