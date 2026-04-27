@@ -4,6 +4,11 @@
 .search-01 {
   &__wrapper {
     position: relative;
+
+    @include tablet {
+      max-height: 40px;
+      overflow: hidden;
+    }
   }
 
   &__input {
@@ -22,6 +27,18 @@
     transition-timing-function: ease-out;
     transition-duration: 0.2s;
 
+    @include tablet {
+      min-height: 45px;
+      width: calc(16 / 14 * 100%);
+      margin: 0 -7.2%;
+      padding: 10px 14px;
+      padding-right: 80px;
+      box-sizing: border-box;
+      font-size: 16px;
+      line-height: 100%;
+      transform: scale(0.875) translateY(-3px);
+    }
+
     &:focus {
       border-color: #3e3e3e;
     }
@@ -38,6 +55,8 @@
     display: block;
     width: 40px;
     height: 40px;
+    padding: 0;
+    box-sizing: border-box;
     border: none;
     background-color: transparent;
     transform: translateY(-50%);
@@ -46,15 +65,21 @@
 
   &__search {
     right: 0;
+    z-index: 10;
     background: url(../assets/search-01/search.svg) center / 18px no-repeat;
   }
 
   &__reset {
     right: 40px;
+    z-index: 9;
     background: url(../assets/search-01/reset.svg) center / 16px no-repeat;
     opacity: 0;
     pointer-events: none;
     transition: opacity ease-out 0.2s;
+
+    @include tablet {
+      right: 32px;
+    }
 
     &.active {
       opacity: 0.5;
