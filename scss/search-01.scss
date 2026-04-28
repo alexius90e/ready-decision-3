@@ -9,9 +9,31 @@
       max-height: 40px;
       overflow: hidden;
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: block;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      transition-property: border;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+      pointer-events: none;
+    }
+  }
+
+  &:has(&__input:focus) &__wrapper {
+    &::before {
+      border-color: #3e3e3e;
+    }
   }
 
   &__input {
+    position: relative;
+    z-index: 1;
     display: block;
     min-height: 40px;
     width: 100%;
@@ -22,10 +44,7 @@
     line-height: 140%;
     color: #3e3e3e;
     outline: none;
-    border: 1px solid #ddd;
-    transition-property: border;
-    transition-timing-function: ease-out;
-    transition-duration: 0.2s;
+    border: none;
 
     @include tablet {
       min-height: 46px;
@@ -37,10 +56,6 @@
       font-size: 16px;
       line-height: 100%;
       transform: scale(0.875) translateY(-4px);
-    }
-
-    &:focus {
-      border-color: #3e3e3e;
     }
 
     &::placeholder {
