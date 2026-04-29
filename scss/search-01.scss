@@ -4,6 +4,10 @@
 .search-01 {
   &__wrapper {
     position: relative;
+  }
+
+  &__form {
+    position: relative;
 
     @include tablet {
       max-height: 40px;
@@ -25,7 +29,7 @@
     }
   }
 
-  &:has(&__input:focus) &__wrapper {
+  &:has(&__input:focus) &__form {
     &::before {
       border-color: #3e3e3e;
     }
@@ -126,6 +130,101 @@
 
       &:hover {
         opacity: 1;
+      }
+    }
+  }
+
+  &__results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 40px * 2);
+    padding: 20px 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    &-main {
+      flex: 0 0 auto;
+      max-height: calc(100dvh - 40px * 2 - 20px * 2 - 50px);
+
+      &-content {
+        max-height: calc(100dvh - 40px * 2 - 20px * 2 - 50px);
+        height: 324px;
+        overflow: auto;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 0;
+      padding: 0 12px;
+      list-style-type: none;
+
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        flex: 1 1 100%;
+        gap: 12px;
+
+        &-photo {
+          flex: 0 0 auto;
+          margin: 0;
+
+          &-image {
+            display: block;
+            max-width: 100%;
+            width: 48px;
+            height: auto;
+          }
+        }
+
+        &-info {
+          &-title,
+          &-price {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+            transition: color ease-out 0.2s;
+          }
+
+          &-title {
+            margin: 0;
+            color: #1c1c20;
+          }
+
+          &-price {
+            margin: 4px 0 0;
+            color: #c2c2c2;
+          }
+        }
+
+        &:hover &-info {
+          &-title,
+          &-price {
+            color: #1e674e;
+          }
+        }
+      }
+    }
+
+    &-more {
+      max-height: 50px;
+      margin: 20px 0 0;
+
+      &-button {
+        width: 100%;
+        border-color: rgba($color: #1e674e, $alpha: 0.2);
+        background-color: rgba($color: #1e674e, $alpha: 0.2);
       }
     }
   }
