@@ -1,0 +1,130 @@
+.photo-text-01 {
+  background-color: #1c1c20;
+}
+.photo-text-01__wrapper {
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.photo-text-01__photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+.photo-text-01__photo-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.photo-text-01__photo-image_desktop {
+  display: block;
+}
+@media (max-width: 768px) {
+  .photo-text-01__photo-image_desktop {
+    display: none;
+  }
+}
+.photo-text-01__photo-image_mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .photo-text-01__photo-image_mobile {
+    display: block;
+  }
+}
+.photo-text-01__content {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 32px 15px 72px;
+}
+@media (max-width: 1500px) {
+  .photo-text-01__content {
+    padding-bottom: 66px;
+  }
+}
+@media (max-width: 1200px) {
+  .photo-text-01__content {
+    padding-bottom: 55px;
+  }
+}
+@media (max-width: 992px) {
+  .photo-text-01__content {
+    padding-bottom: 52px;
+  }
+}
+@media (max-width: 768px) {
+  .photo-text-01__content {
+    padding-bottom: 46px;
+  }
+}
+.photo-text-01__content-title {
+  max-width: 982px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 1500px) {
+  .photo-text-01__content-title {
+    max-width: 788px;
+  }
+}
+@media (max-width: 1200px) {
+  .photo-text-01__content-title {
+    max-width: 656px;
+  }
+}
+@media (max-width: 992px) {
+  .photo-text-01__content-title {
+    max-width: 592px;
+  }
+}
+@media (max-width: 768px) {
+  .photo-text-01__content-title {
+    max-width: 360px;
+  }
+}
+.photo-text-01__content-title-row {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 120%;
+  color: #fff;
+}
+@media (max-width: 1500px) {
+  .photo-text-01__content-title-row {
+    font-size: 52px;
+  }
+}
+@media (max-width: 1200px) {
+  .photo-text-01__content-title-row {
+    font-size: 44px;
+  }
+}
+@media (max-width: 992px) {
+  .photo-text-01__content-title-row {
+    font-size: 34px;
+  }
+}
+@media (max-width: 768px) {
+  .photo-text-01__content-title-row {
+    font-size: 28px;
+  }
+}
+.photo-text-01__content-title-row:nth-child(1) {
+  text-align: left;
+}
+.photo-text-01__content-title-row:nth-child(2) {
+  text-align: right;
+}
+.photo-text-01__content-title-row-mark {
+  color: #166ff5;
+  background-color: transparent;
+}
