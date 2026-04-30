@@ -3,6 +3,7 @@
 }
 .search-01__form {
   position: relative;
+  z-index: 10;
 }
 @media (max-width: 768px) {
   .search-01__form {
@@ -151,9 +152,23 @@
 }
 .search-01__results {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 1px);
   left: 0;
   right: 0;
+  display: none;
+}
+.search-01__results.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.search-01__results::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+.search-01__results-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,18 +177,15 @@
       -ms-flex-direction: column;
           flex-direction: column;
   max-height: calc(100dvh - 80px);
-  padding: 20px 12px;
+  padding: 10px 12px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid #ddd;
-  display: none;
-}
-.search-01__results.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  background-color: #ffffff;
 }
 .search-01__results-main {
+  position: relative;
+  z-index: 10;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -190,9 +202,8 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 20px;
   margin: 0;
-  padding: 0 12px;
+  padding: 0;
   list-style-type: none;
 }
 .search-01__results-list-item {
@@ -206,6 +217,12 @@
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
   gap: 12px;
+  padding: 10px 12px;
+  -webkit-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+}
+.search-01__results-list-item:hover {
+  background-color: #FAFAFA;
 }
 .search-01__results-list-item-photo {
   -webkit-box-flex: 0;
@@ -233,6 +250,8 @@
 .search-01__results-list-item-info-price {
   margin: 4px 0 0;
   color: #c2c2c2;
+  -webkit-transition: color ease-out 0.4s;
+  transition: color ease-out 0.4s;
 }
 .search-01__results-list-item:hover .search-01__results-list-item-info-title, .search-01__results-list-item:hover .search-01__results-list-item-info-price {
   color: #1e674e;
@@ -243,6 +262,6 @@
 }
 .search-01__results-more-button {
   width: 100%;
-  border-color: rgba(30, 103, 78, 0.2);
-  background-color: rgba(30, 103, 78, 0.2);
+  border-color: #D2E1DC;
+  background-color: #D2E1DC;
 }

@@ -3,7 +3,7 @@ const search01ResetButton = document.querySelector('.search-01__reset');
 const search01Results = document.querySelector('.search-01__results');
 
 if (search01InputField && search01ResetButton && search01Results) {
-  const togglesearch01ResetButton = () => {
+  const toggleSearch01ResetButton = () => {
     const hasText = search01InputField.value.length > 0;
     if (hasText) {
       search01ResetButton.classList.add('active');
@@ -14,17 +14,23 @@ if (search01InputField && search01ResetButton && search01Results) {
     }
   };
 
-  search01InputField.addEventListener('input', togglesearch01ResetButton);
+  search01InputField.addEventListener('input', toggleSearch01ResetButton);
 
   const handleReset = () => {
     search01InputField.value = '';
     search01ResetButton.classList.remove('active');
     search01Results.classList.remove('active');
     search01InputField.focus();
-    togglesearch01ResetButton();
+    toggleSearch01ResetButton();
   };
 
   search01ResetButton.addEventListener('click', handleReset);
 
-  togglesearch01ResetButton();
+  const handleResultsClick = () => {
+    search01Results.classList.remove('active');
+  };
+
+  search01Results.addEventListener('click', handleResultsClick);
+
+  toggleSearch01ResetButton();
 }
