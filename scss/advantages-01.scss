@@ -1,0 +1,101 @@
+@import './variables';
+@import './mixins';
+
+.advantages-01 {
+  &__cards {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include desktop {
+      gap: 16px;
+    }
+
+    @include mobile {
+      gap: 10px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    flex: 0 0 calc(100% / 2 - 20px / 2);
+    max-width: calc(100% / 2 - 20px / 2);
+
+    @include desktop {
+      flex: 0 0 calc(100% / 2 - 16px / 2);
+      max-width: calc(100% / 2 - 16px / 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+      max-width: none;
+    }
+
+    &-photo {
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-info {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: flex;
+      align-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 24px 30px;
+
+      @include desktop {
+        gap: 8px;
+        padding: 24px 20px;
+      }
+
+      @include laptop {
+        padding: 20px 14px;
+      }
+
+      @include tablet {
+        padding: 20px 10px;
+      }
+
+      &-title {
+        flex: 1 1 100%;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 120%;
+        color: #fff;
+
+        @include desktoplg {
+          font-size: 24px;
+        }
+
+        @include laptop {
+          font-size: 20px;
+        }
+      }
+
+      &-description {
+        flex: 1 1 100%;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        color: #fff;
+
+        @include desktoplg {
+          font-size: 16px;
+        }
+
+        @include laptop {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
