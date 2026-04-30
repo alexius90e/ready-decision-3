@@ -6,7 +6,6 @@
 
   &__wrapper {
     position: relative;
-    max-width: 1500px;
     margin: 0 auto;
   }
 
@@ -17,8 +16,13 @@
 
     &-image {
       display: block;
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+        height: auto;
+
+
+      @include desktopxl {
+        max-width: 100%;
+      }
 
       &_desktop {
         display: block;

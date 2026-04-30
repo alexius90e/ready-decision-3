@@ -3,7 +3,6 @@
 }
 .photo-text-01__wrapper {
   position: relative;
-  max-width: 1500px;
   margin: 0 auto;
 }
 .photo-text-01__photo {
@@ -17,8 +16,13 @@
 }
 .photo-text-01__photo-image {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+}
+@media (max-width: 1800px) {
+  .photo-text-01__photo-image {
+    max-width: 100%;
+  }
 }
 .photo-text-01__photo-image_desktop {
   display: block;
