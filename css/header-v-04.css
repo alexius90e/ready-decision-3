@@ -447,6 +447,10 @@
 .header-v-04__bottom-nav-menu-item:has(.header-v-04__bottom-nav-menu-item-submenu:hover) > .header-v-04__bottom-nav-menu-item-link {
   opacity: 1 !important;
 }
+.header-v-04__bottom-nav-menu-item:has(.header-v-04__bottom-nav-menu-item-submenu:hover) > .header-v-04__bottom-nav-menu-item-link::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
 .header-v-04__menu {
   position: fixed;
   top: 0;

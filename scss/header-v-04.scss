@@ -377,6 +377,10 @@
 
         &-item:has(&-item-submenu:hover) > &-item-link {
           opacity: 1 !important;
+
+          &::after {
+            transform: rotate(180deg);
+          }
         }
       }
     }
