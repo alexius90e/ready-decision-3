@@ -117,7 +117,7 @@
         -ms-flex-order: 0;
             order: 0;
     margin: 0 -20px;
-    padding: 6px 20px;
+    padding: 8px 20px;
     padding-left: 54px;
     background-color: #fdf9fc;
   }
@@ -125,14 +125,14 @@
 @media (max-width: 576px) {
   .header-v-04__top-address {
     margin: 0 -15px;
-    padding: 6px 15px;
+    padding: 8px 15px;
     padding-left: 49px;
   }
 }
 @media (max-width: 340px) {
   .header-v-04__top-address {
     margin: 0 -10px;
-    padding: 6px 10px;
+    padding: 8px 10px;
     padding-left: 44px;
   }
 }
@@ -403,7 +403,7 @@
 }
 .header-v-04__bottom-nav-menu-item-submenu {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 1px);
   left: 0;
   display: block;
   width: 264px;
@@ -444,6 +444,9 @@
 .header-v-04__bottom-nav-menu:has(.header-v-04__bottom-nav-menu-item:hover) > .header-v-04__bottom-nav-menu-item > .header-v-04__bottom-nav-menu-item-link:hover, .header-v-04__bottom-nav-menu:has(.header-v-04__bottom-nav-menu-item:hover) > .header-v-04__bottom-nav-menu-item > .header-v-04__bottom-nav-menu-item-burger:hover {
   opacity: 1;
 }
+.header-v-04__bottom-nav-menu-item:has(.header-v-04__bottom-nav-menu-item-submenu:hover) > .header-v-04__bottom-nav-menu-item-link {
+  opacity: 1 !important;
+}
 .header-v-04__menu {
   position: fixed;
   top: 0;
@@ -456,7 +459,7 @@
 }
 @media (max-width: 992px) {
   .header-v-04__menu {
-    top: 61px;
+    top: 103px;
     z-index: 0;
     display: block;
     padding-top: 0;
@@ -519,7 +522,7 @@
   .header-v-04__menu-content {
     position: relative;
     z-index: 100;
-    max-height: calc(100dvh - 61px - 24px - 24px);
+    max-height: calc(100dvh - 61px - 24px - 24px - 50px);
   }
 }
 .header-v-04__menu-desktop {
