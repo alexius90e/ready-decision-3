@@ -189,11 +189,12 @@
         align-items: flex-start;
         flex: 1 1 100%;
         gap: 12px;
+        margin-right: 10px;
         padding: 10px 12px;
         transition: background-color ease-out 0.2s;
 
         &:hover {
-          background-color: #FAFAFA;
+          background-color: #fafafa;
         }
 
         &-photo {
@@ -244,8 +245,12 @@
 
       &-button {
         width: 100%;
-        border-color: #D2E1DC;
-        background-color: #D2E1DC;
+        border-color: #d2e1dc;
+        background-color: #d2e1dc;
+
+        &:hover {
+          border-color: #1e674e;
+        }
       }
     }
   }

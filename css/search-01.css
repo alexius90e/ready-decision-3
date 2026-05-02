@@ -217,12 +217,13 @@
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
   gap: 12px;
+  margin-right: 10px;
   padding: 10px 12px;
   -webkit-transition: background-color ease-out 0.2s;
   transition: background-color ease-out 0.2s;
 }
 .search-01__results-list-item:hover {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .search-01__results-list-item-photo {
   -webkit-box-flex: 0;
@@ -262,6 +263,9 @@
 }
 .search-01__results-more-button {
   width: 100%;
-  border-color: #D2E1DC;
-  background-color: #D2E1DC;
+  border-color: #d2e1dc;
+  background-color: #d2e1dc;
+}
+.search-01__results-more-button:hover {
+  border-color: #1e674e;
 }
