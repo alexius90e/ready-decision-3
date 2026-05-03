@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map-01</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/map-01.css" />
+    <script src="./js/map-01.js" defer></script>
+  </head>
+  <body>
+    <section class="map-01">
+      <div class="map-01__selector">
+        <div class="container">
+          <div class="map-01__selector-wrapper">
+            <div class="map-01__selector-select">
+              <div class="map-01__selector-select-trigger">
+                <span class="map-01__selector-select-trigger-text"></span>
+                <span class="map-01__selector-select-arrow"></span>
+              </div>
+              <div class="map-01__selector-select-dropdown">
+                <div class="map-01__selector-select-option selected" data-map-index="0">
+                  Бабушкина, 252, 3-й этаж (10:00-20:00)
+                </div>
+                <div class="map-01__selector-select-option" data-map-index="1">
+                  Восточно-Кругликовская, 22 (ЖК "Панорама") (10:00-21:00)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-01__maps">
+        <div class="map-01__maps-item" data-map-id="0">
+          <iframe
+            class="map-01__maps-item-iframe"
+            src="https://yandex.by/map-widget/v1/org/babushkina_i_k/1092955920/?ll=27.687406%2C53.809280&z=16"
+            width="560"
+            height="400"
+            frameborder="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+
+        <div class="map-01__maps-item" data-map-id="1">
+          <iframe
+            class="map-01__maps-item-iframe"
+            src="https://yandex.by/map-widget/v1/?ll=39.027335%2C45.047762&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjQxNjc3NxJc0KDQvtGB0YHQuNGPLCDQmtGA0LDRgdC90L7QtNCw0YAsINCS0L7RgdGC0L7Rh9C90L4t0JrRgNGD0LPQu9C40LrQvtCy0YHQutCw0Y8g0YPQu9C40YbQsCwgMjIiCg39GxxCFegwNEI%2C&z=16.67"
+            width="560"
+            height="400"
+            frameborder="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
