@@ -131,8 +131,8 @@
 .map-01__selector-select-option.selected {
   color: #635f5e;
 }
-.map-01__maps-item.hidden {
-  display: none;
+.map-01__maps-item {
+  background-color: #fdf9fc;
 }
 .map-01__maps-item-iframe {
   display: block;

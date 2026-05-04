@@ -5,7 +5,7 @@ if (map01Select) {
   const dropdown = map01Select.querySelector('.map-01__selector-select-dropdown');
   const options = map01Select.querySelectorAll('.map-01__selector-select-option');
   const selectedTextSpan = map01Select.querySelector('.map-01__selector-select-trigger-text');
-  const mapItems = document.querySelectorAll('.map-01__maps-item');
+  const mapIframe = document.querySelector('.map-01__maps-item-iframe');
 
   let isOpen = false;
 
@@ -24,24 +24,20 @@ if (map01Select) {
     else openDropdown();
   }
 
-  function updateMap(mapIndex) {
-    mapItems.forEach((item) => {
-      const id = parseInt(item.dataset.mapId);
-      if (id === mapIndex) item.classList.remove('hidden');
-      else item.classList.add('hidden');
-    });
+  function updateMap(mapUrl) {
+    if (mapIframe) mapIframe.setAttribute('src', mapUrl);
   }
 
   function selectOption(optionEl) {
     const text = optionEl.textContent;
-    const mapIndex = parseInt(optionEl.dataset.mapIndex);
+    const mapUrl = optionEl.dataset.mapUrl;
 
     if (selectedTextSpan) selectedTextSpan.textContent = text;
 
     options.forEach((option) => option.classList.remove('selected'));
     optionEl.classList.add('selected');
 
-    updateMap(mapIndex);
+    updateMap(mapUrl);
     closeDropdown();
   }
 
@@ -64,9 +60,10 @@ if (map01Select) {
   });
 
   const defaultOption = document.querySelector('.custom-select__option.selected');
+
   if (defaultOption) {
-    const defaultMapIndex = parseInt(defaultOption.dataset.mapIndex);
-    updateMap(defaultMapIndex);
+    const defaultMapUrl = defaultOption.dataset.mapUrl;
+    updateMap(defaultMapUrl);
     if (selectedTextSpan) selectedTextSpan.textContent = defaultOption.textContent;
   } else {
     const first = options[0];

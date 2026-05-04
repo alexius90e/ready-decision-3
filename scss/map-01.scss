@@ -120,9 +120,7 @@
 
   &__maps {
     &-item {
-      &.hidden {
-        display: none;
-      }
+      background-color: #fdf9fc;
 
       &-iframe {
         display: block;
