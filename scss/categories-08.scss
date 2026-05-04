@@ -44,11 +44,22 @@
 
     &-photo {
       margin: 0;
+      overflow: hidden;
 
       &-image {
         display: block;
         max-width: 100%;
+        width: 100%;
         height: auto;
+        transition-property: transform;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.4s;
+      }
+    }
+
+    &:hover &-photo {
+      &-image {
+        transform: scale(1.1);
       }
     }
 

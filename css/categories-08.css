@@ -63,11 +63,25 @@
 }
 .categories-08__item-photo {
   margin: 0;
+  overflow: hidden;
 }
 .categories-08__item-photo-image {
   display: block;
   max-width: 100%;
+  width: 100%;
   height: auto;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.categories-08__item:hover .categories-08__item-photo-image {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .categories-08__item-text {
   font-weight: 500;
