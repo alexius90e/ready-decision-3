@@ -51,21 +51,21 @@
     z-index: 1;
     margin: 0;
 
-    @include desktoplg {
-      margin: 0 -30px;
-    }
+    // @include desktoplg {
+    //   margin: 0 -30px;
+    // }
 
-    @include desktop {
-      margin: 0 -20px;
-    }
+    // @include desktop {
+    //   margin: 0 -20px;
+    // }
 
-    @include mobile {
-      margin: 0 -15px;
-    }
+    // @include mobile {
+    //   margin: 0 -15px;
+    // }
 
-    @include mobilesm {
-      margin: 0 -10px;
-    }
+    // @include mobilesm {
+    //   margin: 0 -10px;
+    // }
 
     &-image {
       display: block;
