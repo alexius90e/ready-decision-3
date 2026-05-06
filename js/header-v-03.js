@@ -3,27 +3,7 @@ const headerV03Burger = document.querySelector('.header-v-03__top-burger-button'
 const headerV03CatalogBurger = document.querySelector('.header-v-03__bottom-nav-menu-item-burger');
 const headerV03Menu = document.querySelector('.header-v-03__menu');
 
-const scrollLimit = 200;
 
-const minScrollStep = 20;
-
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll < lastScroll && lastScroll - currentScroll > minScrollStep) {
-    headerV03.classList.remove('hidden');
-  } else if (currentScroll > lastScroll && currentScroll > scrollLimit) {
-    if (!headerV03Menu.classList.contains('active')) {
-      headerV03.classList.add('hidden');
-    }
-  } else if (currentScroll < scrollLimit) {
-    headerV03.classList.remove('hidden');
-  }
-
-  lastScroll = currentScroll;
-});
 
 if (headerV03Burger && headerV03Menu && headerV03CatalogBurger) {
   const burgerButtons = [headerV03Burger, headerV03CatalogBurger];
@@ -138,7 +118,68 @@ if (headerV03Search) {
   headerV03Search.addEventListener('click', (event) => {
     const isLayout = event.target === event.currentTarget;
     const isToggleBtn = event.target.classList.contains('header-v-03__top-search-toggler-button');
-    if (isLayout) event.currentTarget.classList.remove('active');
+    const isCancelBtn = event.target.classList.contains('header-v-03__search-cancel-button');
+    if (isLayout || isCancelBtn) event.currentTarget.classList.remove('active');
     if (isToggleBtn) event.currentTarget.classList.add('active');
   });
 }
+
+const headerV03SearchInputField = document.querySelector('.header-v-03__search-input');
+const headerV03SearchResetButton = document.querySelector('.header-v-03__search-reset');
+const headerV03SearchResults = document.querySelector('.header-v-03__search-results');
+
+if (headerV03SearchInputField && headerV03SearchResetButton && headerV03SearchResults) {
+  const toggleHeaderV03SearchButton = () => {
+    const hasText = headerV03SearchInputField.value.length > 0;
+    if (hasText) {
+      headerV03SearchResetButton.classList.add('active');
+      headerV03SearchResults.classList.add('active');
+    } else {
+      headerV03SearchResetButton.classList.remove('active');
+      headerV03SearchResults.classList.remove('active');
+    }
+  };
+
+  headerV03SearchInputField.addEventListener('input', toggleHeaderV03SearchButton);
+
+  const handleReset = () => {
+    headerV03SearchInputField.value = '';
+    headerV03SearchResetButton.classList.remove('active');
+    headerV03SearchResults.classList.remove('active');
+    headerV03SearchInputField.focus();
+    toggleHeaderV03SearchButton();
+  };
+
+  headerV03SearchResetButton.addEventListener('click', handleReset);
+
+  const handleResultsClick = () => {
+    headerV03SearchResults.classList.remove('active');
+  };
+
+  headerV03SearchResults.addEventListener('click', handleResultsClick);
+
+  toggleHeaderV03SearchButton();
+}
+
+const scrollLimit = 200;
+
+const minScrollStep = 20;
+
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll < lastScroll && lastScroll - currentScroll > minScrollStep) {
+    headerV03.classList.remove('hidden');
+  } else if (currentScroll > lastScroll && currentScroll > scrollLimit) {
+    if (!headerV03Menu.classList.contains('active')) {
+      headerV03.classList.add('hidden');
+      if (headerV03SearchResults) headerV03SearchResults.classList.remove('active');
+    }
+  } else if (currentScroll < scrollLimit) {
+    headerV03.classList.remove('hidden');
+  }
+
+  lastScroll = currentScroll;
+});
