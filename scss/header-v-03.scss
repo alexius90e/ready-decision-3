@@ -571,7 +571,7 @@
 
     &-results {
       position: absolute;
-      top: calc(100% - 1px);
+      top: 100%;
       left: 0;
       right: 0;
 
@@ -595,6 +595,7 @@
         padding: 10px 12px;
         box-sizing: border-box;
         border: 1px solid #ddd;
+        border-top: none;
         background-color: #ffffff;
       }
 
