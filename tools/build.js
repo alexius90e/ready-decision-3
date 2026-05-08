@@ -18,7 +18,7 @@ fs.mkdirSync(archivesDir, { recursive: true });
 // список файлов из аргументов
 const files = process.argv.slice(2);
 if (files.length === 0) {
-  console.error('Укажите html файлы: node tools/build.js index.html about.html');
+  console.error('Укажите html файлы: node tools/build.js index about.html');
   process.exit(1);
 }
 
@@ -37,14 +37,24 @@ function copyDir(src, dest) {
 }
 
 // обработка каждого файла
-files.forEach(fileName => {
-  const htmlPath = path.join(rootDir, fileName);
+files.forEach(inputName => {
+  // Добавляем .html, если расширение не указано
+  let baseName = inputName;
+  let fullFileName = inputName;
+  if (!inputName.endsWith('.html')) {
+    fullFileName = inputName + '.html';
+    baseName = inputName; // уже без .html
+  } else {
+    baseName = path.basename(inputName, '.html');
+  }
+
+  const htmlPath = path.join(rootDir, fullFileName);
   if (!fs.existsSync(htmlPath)) {
-    console.error(`Файл ${fileName} не найден`);
+    console.error(`Файл ${fullFileName} не найден`);
     return;
   }
 
-  const outDir = path.join(buildDir, path.basename(fileName, '.html'));
+  const outDir = path.join(buildDir, baseName);
   fs.mkdirSync(outDir, { recursive: true });
 
   // читаем HTML
@@ -52,8 +62,8 @@ files.forEach(fileName => {
   const dom = new JSDOM(htmlContent);
   const document = dom.window.document;
 
-  // копируем сам HTML
-  fs.writeFileSync(path.join(outDir, fileName), htmlContent);
+  // копируем сам HTML (сохраняем с оригинальным именем, но внутри папки build/block)
+  fs.writeFileSync(path.join(outDir, fullFileName), htmlContent);
 
   // собираем CSS и JS
   const assetsToCopy = [];
@@ -76,16 +86,16 @@ files.forEach(fileName => {
     }
   });
 
-  // копируем assets/<имя_файла>
-  const assetFolder = path.join(rootDir, 'assets', path.basename(fileName, '.html'));
+  // копируем assets/<имя_блока>
+  const assetFolder = path.join(rootDir, 'assets', baseName);
   if (fs.existsSync(assetFolder)) {
-    const destAssetFolder = path.join(outDir, 'assets', path.basename(fileName, '.html'));
+    const destAssetFolder = path.join(outDir, 'assets', baseName);
     fs.mkdirSync(destAssetFolder, { recursive: true });
     copyDir(assetFolder, destAssetFolder);
   }
 
   // архивируем
-  const zipPath = path.join(archivesDir, `${path.basename(fileName, '.html')}.zip`);
+  const zipPath = path.join(archivesDir, `${baseName}.zip`);
   const output = fs.createWriteStream(zipPath);
   const archive = archiver('zip', { zlib: { level: 9 } });
 
