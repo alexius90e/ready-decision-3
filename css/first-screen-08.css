@@ -52,6 +52,15 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 768px) {
+  .first-screen-08__background-photo {
+    min-height: auto;
+    width: 100%;
+    height: 100%;
+    -o-object-position: top center;
+       object-position: top center;
+  }
+}
 .first-screen-08__background-photo_desktop {
   display: block;
 }
