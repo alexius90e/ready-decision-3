@@ -21,7 +21,7 @@
 }
 @media (max-width: 768px) {
   .first-screen-08 {
-    min-height: auto;
+    min-height: 160dvw;
     padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
   }
 }
@@ -38,40 +38,12 @@
   inset: 0;
   margin: 0;
 }
-@media (max-width: 768px) {
-  .first-screen-08__background {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    overflow: hidden;
-    bottom: 320px;
-  }
-}
-@media (max-width: 576px) {
-  .first-screen-08__background {
-    bottom: 400px;
-  }
-}
 .first-screen-08__background-photo {
   display: block;
   width: 100%;
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media (max-width: 768px) {
-  .first-screen-08__background-photo {
-    min-height: auto;
-    max-width: none;
-    width: 768px;
-    height: auto;
-  }
 }
 .first-screen-08__background-photo_desktop {
   display: block;
@@ -184,18 +156,14 @@
   background: #166ff5;
 }
 .first-screen-08__discount {
+  position: relative;
   max-width: 1162px;
   margin: 70px 0 0;
-  padding: 30px 26px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #3b3b3b;
 }
 @media (max-width: 1500px) {
   .first-screen-08__discount {
     max-width: 987px;
     margin-top: 64px;
-    padding: 24px 20px;
   }
 }
 @media (max-width: 1200px) {
@@ -206,6 +174,42 @@
 @media (max-width: 992px) {
   .first-screen-08__discount {
     max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  .first-screen-08__discount::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    right: -20px;
+    bottom: 0;
+    background-color: #1d1d1d;
+  }
+}
+@media (max-width: 576px) {
+  .first-screen-08__discount::before {
+    left: -15px;
+    right: -15px;
+  }
+}
+@media (max-width: 340px) {
+  .first-screen-08__discount::before {
+    left: -10px;
+    right: -10px;
+  }
+}
+.first-screen-08__discount-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 30px 26px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #3b3b3b;
+}
+@media (max-width: 1500px) {
+  .first-screen-08__discount-wrapper {
+    padding: 24px 20px;
   }
 }
 .first-screen-08__discount-title {

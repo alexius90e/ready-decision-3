@@ -18,10 +18,9 @@
   }
 
   @include tablet {
-    min-height: auto;
+    min-height: calc(100dvw / 1500 * 2400);
     padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
   }
-
 
   @include mobilesm {
     padding: 20px 0;
@@ -36,30 +35,11 @@
     inset: 0;
     margin: 0;
 
-  @include tablet {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    bottom: 320px;
-  }
-
-   @include mobile {
-    bottom: 400px;
-  }
-
     &-photo {
       display: block;
       width: 100%;
       min-height: 100%;
       object-fit: cover;
-
-      @include tablet {
-        min-height: auto;
-        max-width: none;
-        width: 768px;
-        height: auto;
-      }
 
       &_desktop {
         display: block;
@@ -162,17 +142,13 @@
   }
 
   &__discount {
+    position: relative;
     max-width: 1162px;
     margin: 70px 0 0;
-    padding: 30px 26px;
-    box-sizing: border-box;
-    background-color: #3b3b3b;
 
     @include desktoplg {
       max-width: 987px;
       margin-top: 64px;
-
-      padding: 24px 20px;
     }
 
     @include desktop {
@@ -181,6 +157,40 @@
 
     @include laptop {
       max-width: none;
+    }
+
+    &::before {
+      @include tablet {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: -20px;
+        right: -20px;
+        bottom: 0;
+        background-color: #1d1d1d;
+      }
+
+      @include mobile {
+        left: -15px;
+        right: -15px;
+      }
+
+      @include mobilesm {
+        left: -10px;
+        right: -10px;
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      z-index: 10;
+      padding: 30px 26px;
+      box-sizing: border-box;
+      background-color: #3b3b3b;
+
+      @include desktoplg {
+        padding: 24px 20px;
+      }
     }
 
     &-title {
