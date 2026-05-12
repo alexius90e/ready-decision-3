@@ -10,7 +10,7 @@ if (reviews03SwiperEl) {
   const swiper = new Swiper(reviews03SwiperEl, {
     slidesPerView: 'auto',
     spaceBetween: 16,
-    // loop: true,
+    loop: true,
     loopAdditionalSlides: 1,
     initialSlide: 1,
     preloadImages: true,

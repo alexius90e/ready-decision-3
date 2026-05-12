@@ -25,12 +25,12 @@
 }
 @media (max-width: 992px) {
   .reviews-03__slider .swiper-slide {
-    width: calc((100% - 40px) / 2 - 20px);
+    width: calc((100% - 20px) / 2 - 20px);
   }
 }
 @media (max-width: 768px) {
   .reviews-03__slider .swiper-slide {
-    width: calc(100% - 40px - 16px);
+    width: calc(100% - 24px - 16px);
   }
 }
 .reviews-03__slider-controls-button-prev, .reviews-03__slider-controls-button-next {
@@ -57,6 +57,7 @@
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+  cursor: pointer;
 }
 @media (max-width: 992px) {
   .reviews-03__slider-controls-button-prev, .reviews-03__slider-controls-button-next {

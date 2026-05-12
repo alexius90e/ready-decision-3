@@ -29,11 +29,11 @@
         }
 
         @include laptop {
-          width: calc((100% - 40px) / 2 - 20px);
+          width: calc((100% - 20px) / 2 - 20px);
         }
 
         @include tablet {
-          width: calc(100% - 40px - 16px);
+          width: calc(100% - 24px - 16px);
         }
       }
     }
@@ -55,6 +55,7 @@
           transition-property: color;
           transition-timing-function: ease-in-out;
           transition-duration: 0.2s;
+          cursor: pointer;
 
           @include laptop {
             display: none;
