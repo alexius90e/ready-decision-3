@@ -34,6 +34,11 @@
     position: absolute;
     inset: 0;
     margin: 0;
+    box-sizing: border-box;
+
+    @include tablet {
+      padding-bottom: 320px;
+    }
 
     &-photo {
       display: block;

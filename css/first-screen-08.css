@@ -37,6 +37,13 @@
   position: absolute;
   inset: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .first-screen-08__background {
+    padding-bottom: 320px;
+  }
 }
 .first-screen-08__background-photo {
   display: block;
