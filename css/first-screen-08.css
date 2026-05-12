@@ -21,13 +21,13 @@
 }
 @media (max-width: 768px) {
   .first-screen-08 {
-    min-height: 160dvw;
-    padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
+    min-height: auto;
+    padding: 0;
   }
 }
 @media (max-width: 340px) {
   .first-screen-08 {
-    padding: 20px 0;
+    padding: 0;
   }
 }
 .first-screen-08 .container {
@@ -60,6 +60,7 @@
     height: 100%;
     -o-object-position: top center;
        object-position: top center;
+    display: none;
   }
 }
 .first-screen-08__background-photo_desktop {
@@ -89,6 +90,7 @@
 @media (max-width: 768px) {
   .first-screen-08__background-photo_mobile {
     display: block;
+    display: none;
   }
 }
 .first-screen-08__wrapper {
@@ -103,6 +105,17 @@
           flex-direction: column;
   min-height: 100%;
   width: 100%;
+}
+.first-screen-08__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+@media (max-width: 768px) {
+  .first-screen-08__content {
+    position: absolute;
+    top: clamp(20px, 13.3333vw - 28px, 80px);
+  }
 }
 .first-screen-08__title {
   margin: 0;
@@ -173,6 +186,31 @@
   box-decoration-break: clone;
   background: #166ff5;
 }
+.first-screen-08__figure {
+  display: none;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .first-screen-08__figure {
+    display: block;
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .first-screen-08__figure {
+    margin: 0 -15px;
+  }
+}
+@media (max-width: 340px) {
+  .first-screen-08__figure {
+    margin: 0 -10px;
+  }
+}
+.first-screen-08__figure-photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .first-screen-08__discount {
   position: relative;
   max-width: 1162px;
@@ -195,26 +233,8 @@
   }
 }
 @media (max-width: 768px) {
-  .first-screen-08__discount::before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: -20px;
-    right: -20px;
-    bottom: 0;
-    background-color: #1d1d1d;
-  }
-}
-@media (max-width: 576px) {
-  .first-screen-08__discount::before {
-    left: -15px;
-    right: -15px;
-  }
-}
-@media (max-width: 340px) {
-  .first-screen-08__discount::before {
-    left: -10px;
-    right: -10px;
+  .first-screen-08__discount {
+    margin-top: -30px;
   }
 }
 .first-screen-08__discount-wrapper {

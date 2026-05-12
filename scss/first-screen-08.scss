@@ -18,12 +18,15 @@
   }
 
   @include tablet {
-    min-height: calc(100dvw / 1500 * 2400);
-    padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
+    // min-height: calc(100dvw / 1500 * 2400);
+    // padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
+    min-height: auto;
+    padding: 0;
   }
 
   @include mobilesm {
-    padding: 20px 0;
+    // padding: 20px 0;
+    padding: 0;
   }
 
   & .container {
@@ -52,6 +55,7 @@
         width: 100%;
         height: 100%;
         object-position: top center;
+        display: none;
       }
 
       &_desktop {
@@ -79,6 +83,7 @@
 
         @include tablet {
           display: block;
+          display: none;
         }
       }
     }
@@ -91,6 +96,15 @@
     flex-direction: column;
     min-height: 100%;
     width: 100%;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+    @include tablet {
+      position: absolute;
+      top: clamp(20px, 13.3333vw - 28px, 80px);
+    }
   }
 
   &__title {
@@ -155,6 +169,30 @@
     }
   }
 
+  &__figure {
+    display: none;
+    margin: 0;
+
+    @include tablet {
+      display: block;
+      margin: 0 -20px;
+    }
+
+    @include mobile {
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      margin: 0 -10px;
+    }
+
+    &-photo {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
   &__discount {
     position: relative;
     max-width: 1162px;
@@ -173,26 +211,8 @@
       max-width: none;
     }
 
-    &::before {
-      @include tablet {
-        content: '';
-        position: absolute;
-        top: 30px;
-        left: -20px;
-        right: -20px;
-        bottom: 0;
-        background-color: #1d1d1d;
-      }
-
-      @include mobile {
-        left: -15px;
-        right: -15px;
-      }
-
-      @include mobilesm {
-        left: -10px;
-        right: -10px;
-      }
+    @include tablet {
+      margin-top: -30px;
     }
 
     &-wrapper {
