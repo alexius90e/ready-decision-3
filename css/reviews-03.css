@@ -2,6 +2,9 @@
   position: relative;
   overflow: hidden;
 }
+.reviews-03__main .container {
+  max-width: none;
+}
 .reviews-03__slider .swiper {
   display: grid;
   overflow: visible;

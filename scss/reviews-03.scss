@@ -5,6 +5,10 @@
   &__main {
     position: relative;
     overflow: hidden;
+
+    & .container {
+      max-width: none;
+    }
   }
 
   &__slider {
