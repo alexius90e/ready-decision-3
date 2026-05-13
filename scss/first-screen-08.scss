@@ -13,19 +13,8 @@
     padding: clamp(40px, 4.87013vw + 2.5974px, 100px) 0;
   }
 
-  @include desktop {
-    min-height: calc(100dvw / 1800 * 1350);
-  }
-
-  @include tablet {
-    // min-height: calc(100dvw / 1500 * 2400);
-    // padding: clamp(20px, 13.3333vw - 28px, 80px) 0 0;
+  @include laptop {
     min-height: auto;
-    padding: 0;
-  }
-
-  @include mobilesm {
-    // padding: 20px 0;
     padding: 0;
   }
 
@@ -40,8 +29,8 @@
     margin: 0;
     box-sizing: border-box;
 
-    @include tablet {
-      padding-bottom: 320px;
+    @include laptop {
+      display: none;
     }
 
     &-photo {
@@ -49,43 +38,6 @@
       width: 100%;
       min-height: 100%;
       object-fit: cover;
-
-      @include tablet {
-        min-height: auto;
-        width: 100%;
-        height: 100%;
-        object-position: top center;
-        display: none;
-      }
-
-      &_desktop {
-        display: block;
-
-        @include desktop {
-          display: none;
-        }
-      }
-
-      &_laptop {
-        display: none;
-
-        @include desktop {
-          display: block;
-        }
-
-        @include tablet {
-          display: none;
-        }
-      }
-
-      &_mobile {
-        display: none;
-
-        @include tablet {
-          display: block;
-          display: none;
-        }
-      }
     }
   }
 
@@ -101,8 +53,12 @@
   &__content {
     flex: 1 1 auto;
 
-    @include tablet {
+    @include laptop {
       position: absolute;
+      top: clamp(40px, 4.87013vw + 2.5974px, 100px);
+    }
+
+    @include tablet {
       top: clamp(20px, 13.3333vw - 28px, 80px);
     }
   }
@@ -173,7 +129,7 @@
     display: none;
     margin: 0;
 
-    @include tablet {
+    @include laptop {
       display: block;
       margin: 0 -20px;
     }
@@ -190,6 +146,22 @@
       display: block;
       max-width: 100%;
       height: auto;
+
+      &_desktop {
+        display: block;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+      }
     }
   }
 
@@ -209,9 +181,6 @@
 
     @include laptop {
       max-width: none;
-    }
-
-    @include tablet {
       margin-top: -30px;
     }
 
