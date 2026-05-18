@@ -113,6 +113,10 @@
   max-width: 100%;
   height: auto;
   border-radius: 16px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .image-carousel-07__slide-name {
   margin: 16px 0 0;

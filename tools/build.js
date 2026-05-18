@@ -24,7 +24,7 @@ if (files.length === 0) {
 
 // вспомогательная функция копирования папки
 function copyDir(src, dest) {
-  fs.readdirSync(src).forEach(item => {
+  fs.readdirSync(src).forEach((item) => {
     const srcItem = path.join(src, item);
     const destItem = path.join(dest, item);
     if (fs.lstatSync(srcItem).isDirectory()) {
@@ -37,7 +37,7 @@ function copyDir(src, dest) {
 }
 
 // обработка каждого файла
-files.forEach(inputName => {
+files.forEach((inputName) => {
   // Добавляем .html, если расширение не указано
   let baseName = inputName;
   let fullFileName = inputName;
@@ -67,17 +67,17 @@ files.forEach(inputName => {
 
   // собираем CSS и JS
   const assetsToCopy = [];
-  document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+  document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
     const href = link.getAttribute('href');
     if (href) assetsToCopy.push(href);
   });
-  document.querySelectorAll('script[src]').forEach(script => {
+  document.querySelectorAll('script[src]').forEach((script) => {
     const src = script.getAttribute('src');
     if (src) assetsToCopy.push(src);
   });
 
   // копируем CSS/JS
-  assetsToCopy.forEach(relPath => {
+  assetsToCopy.forEach((relPath) => {
     const srcPath = path.join(rootDir, relPath);
     if (fs.existsSync(srcPath)) {
       const destPath = path.join(outDir, relPath);
@@ -101,6 +101,9 @@ files.forEach(inputName => {
 
   output.on('close', () => {
     console.log(`Архив создан: ${zipPath} (${archive.pointer()} байт)`);
+    if (fs.existsSync(buildDir)) {
+      fs.rmSync(buildDir, { recursive: true, force: true });
+    }
   });
 
   archive.pipe(output);

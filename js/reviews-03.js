@@ -15,6 +15,7 @@ if (reviews03SwiperEl) {
     initialSlide: 1,
     preloadImages: true,
     watchSlidesVisibility: true,
+    touchEventsTarget: 'container',
     breakpoints: {
       0: {
         spaceBetween: 16,
