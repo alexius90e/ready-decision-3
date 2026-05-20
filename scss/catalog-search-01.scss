@@ -28,6 +28,10 @@
       flex: 1 1 100%;
     }
 
+    &.hidden {
+      display: none;
+    }
+
     &-figure {
       margin: 0;
       overflow: hidden;

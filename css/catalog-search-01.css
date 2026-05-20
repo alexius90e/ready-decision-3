@@ -43,6 +43,9 @@
             flex: 1 1 100%;
   }
 }
+.catalog-search-01__card.hidden {
+  display: none;
+}
 .catalog-search-01__card-figure {
   margin: 0;
   overflow: hidden;
