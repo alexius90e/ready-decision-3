@@ -45,11 +45,24 @@
 }
 .categories-07__card-figure {
   margin: 0;
+  overflow: hidden;
 }
 .categories-07__card-figure-image {
   display: block;
   max-width: 100%;
   height: auto;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.categories-07__card-figure-image:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .categories-07__card-info {
   display: -webkit-box;
