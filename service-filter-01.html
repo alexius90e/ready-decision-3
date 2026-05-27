@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>service-filter-01</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/service-filter-01.css" />
+    <script src="./js/service-filter-01.js" defer></script>
+  </head>
+  <body>
+    <section class="service-filter-01">
+      <div class="container">
+        <div class="service-filter-01__wrapper">
+          <div class="service-filter-01__search">
+            <div class="service-filter-01__search-form">
+              <input
+                class="service-filter-01__search-input"
+                type="text"
+                placeholder="Введите текст"
+              />
+              <button class="service-filter-01__search-reset"></button>
+            </div>
+          </div>
+
+          <div class="service-filter-01__main">
+            <nav class="service-filter-01__nav">
+              <div class="service-filter-01__nav-title">Выберите услугу</div>
+
+              <div class="service-filter-01__nav-wrapper">
+                <div class="service-filter-01__nav-current active"></div>
+
+                <ul class="service-filter-01__nav-menu">
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="1">
+                      Парикмахерские услуги
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="2">
+                      Эпиляция
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="3">
+                      Косметология
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="4">
+                      Аппаратные методики коррекции фигуры
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="5">
+                      Массаж
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="6">
+                      Маникюр
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="7">
+                      Педикюр
+                    </button>
+                  </li>
+                  <li class="service-filter-01__nav-menu-item">
+                    <button class="service-filter-01__nav-menu-item-button" data-category="8">
+                      Брови и макияж
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="service-filter-01__details">
+              <div class="service-filter-01__results"></div>
+
+              <div class="service-filter-01__subcategory">
+                <div class="service-filter-01__subcategory-item" data-category="1">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">
+                      Парикмахерские услуги
+                    </div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">Женские стрижки</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Мужские стрижки</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Детские стрижки</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Окрашивание волос
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Химическая завивка и выпрямление
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Укладка и прически
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Лечение и уход за волосами
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Бритье и коррекция линии роста волос
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Плетение и прически с косами
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Оформление бороды и усов
+                    </a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="2">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">Эпиляция</div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">Эпиляция воском</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Шугаринг</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Лазерная эпиляция
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Фотоэпиляция</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Электроэпиляция</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Эпиляция зоны бикини
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Эпиляция ног и рук
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Эпиляция подмышек
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Эпиляция лица</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Эпиляция спины и живота
+                    </a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="3">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">
+                      Косметология
+                    </div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">Чистка лица</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Пилинги</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Уходовые процедуры
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Инъекционная косметология
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Контурная пластика
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Аппаратная косметология
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Лазерная косметология
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Коррекция и лечение акне
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Уход за телом</a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="4">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">
+                      Аппаратные методики коррекции фигуры
+                    </div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">Прессотерапия</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">LPG массаж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Кавитация</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">RF-лифтинг тела</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Миостимуляция</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Криолиполиз</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Ультразвуковая терапия
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Электромиостимуляция
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Вакуумный роликовый массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Магнитотерапия</a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="5">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">Массаж</div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Классический массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Расслабляющий массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Лечебный массаж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Антицеллюлитный массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Спортивный массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Точечный массаж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Тайский массаж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Стоунтерапия</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Лимфодренажный массаж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Вакуумный массаж
+                    </a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="6">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">Маникюр</div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Классический маникюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Аппаратный маникюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Комбинированный маникюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Европейский маникюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Спа-маникюр</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Японский маникюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Покрытие лаком</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Покрытие гель-лаком
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Наращивание ногтей
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Ремонт и укрепление ногтей
+                    </a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="7">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">Педикюр</div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Классический педикюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Аппаратный педикюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Комбинированный педикюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Европейский педикюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Спа-педикюр</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Медицинский педикюр
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Покрытие гель-лаком
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Коррекция вросшего ногтя
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Уход за стопами и пятками
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Парафинотерапия для ног
+                    </a>
+                  </div>
+                </div>
+
+                <div class="service-filter-01__subcategory-item" data-category="8">
+                  <div class="service-filter-01__subcategory-item-heading">
+                    <div class="service-filter-01__subcategory-item-heading-title">
+                      Брови и макияж
+                    </div>
+                    <div class="service-filter-01__subcategory-item-heading-more">
+                      <a class="service-filter-01__subcategory-item-heading-more-link" href="#">
+                        Подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="service-filter-01__subcategory-item-links">
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Коррекция бровей
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Окрашивание бровей
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Ламинирование бровей
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Ботокс бровей</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Дневной макияж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Вечерний макияж</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Свадебный макияж
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Макияж для фотосессий
+                    </a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">Укладка бровей</a>
+                    <a class="service-filter-01__subcategory-item-link" href="#">
+                      Архитектура бровей
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
