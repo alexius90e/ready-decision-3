@@ -43,21 +43,21 @@
       display: block;
       min-height: 40px;
       width: 100%;
-      padding: 9px 12px;
-      padding-right: 96px;
+      padding: 9px 50px;
       box-sizing: border-box;
       font-size: 14px;
       line-height: 140%;
       color: #3e3e3e;
       outline: none;
       border: none;
+      background: url(../assets/service-filter-01/search.svg) left 16px center / 18px no-repeat;
+      background-color: #ffffff;
 
       @include tablet {
         min-height: 46px;
         width: calc(16 / 14 * 100%);
         margin: 0 -7.2%;
-        padding: 10px 14px;
-        padding-right: 80px;
+        padding: 10px 46px;
         box-sizing: border-box;
         font-size: 16px;
         line-height: 100%;
@@ -112,7 +112,7 @@
 
   &__nav {
     flex: 0 0 328px;
-    padding: 24px 0 8px;
+    padding: 24px 0 0;
     border: 1px solid #df97c2;
     border-radius: 1px;
     background-color: #ffffff;
@@ -201,6 +201,7 @@
 
       &-item {
         &-button {
+          position: relative;
           display: inline-block;
           width: 100%;
           padding: 16px 20px;
@@ -220,12 +221,43 @@
             background-color: #f5f5f5;
           }
 
+          &:hover::before,
+          &:hover::after,
+          &.active::before,
+          &.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            display: block;
+            height: 1px;
+            background-color: #f5f5f5;
+          }
+
+          &:hover::before,
+          &.active::before {
+            bottom: 100%;
+          }
+
+          &:hover::after,
+          &.active::after {
+            top: 100%;
+          }
+
           &.active {
             background-color: #f5f5f5;
 
             @include tablet {
               display: none;
             }
+          }
+        }
+
+        &:first-child &-button {
+          border-top: 1px solid #df97c2;
+
+          &.active {
+            border-top: 1px solid transparent;
           }
         }
 
@@ -328,9 +360,14 @@
         font-size: 16px;
         color: #000;
         background-color: #f7ebf2;
+        transition: transform ease-out 0.2s;
 
         @include mobile {
           flex: 1 1 100%;
+        }
+
+        &:hover {
+          transform: scale(0.96);
         }
       }
     }
