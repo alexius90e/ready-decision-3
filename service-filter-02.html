@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>service-filter-02</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/service-filter-02.css" />
+    <script src="./js/service-filter-02.js" defer></script>
+  </head>
+  <body>
+    <section class="service-filter-02">
+      <div class="container">
+        <div class="service-filter-02__wrapper">
+          <div class="service-filter-02__search">
+            <div class="service-filter-02__search-form">
+              <input
+                class="service-filter-02__search-input"
+                type="text"
+                placeholder="Введите текст"
+              />
+              <button class="service-filter-02__search-reset"></button>
+            </div>
+          </div>
+
+          <div class="service-filter-02__main">
+            <nav class="service-filter-02__nav">
+              <div class="service-filter-02__nav-title">Выберите услугу</div>
+
+              <div class="service-filter-02__nav-wrapper">
+                <div class="service-filter-02__nav-current"></div>
+
+                <ul class="service-filter-02__nav-menu">
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="1">
+                      Парикмахерские услуги
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="2">
+                      Эпиляция
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="3">
+                      Косметология
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="4">
+                      Аппаратные методики коррекции фигуры
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="5">
+                      Массаж
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="6">
+                      Маникюр
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="7">
+                      Педикюр
+                    </button>
+                  </li>
+                  <li class="service-filter-02__nav-menu-item">
+                    <button class="service-filter-02__nav-menu-item-button" data-category="8">
+                      Брови и макияж
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="service-filter-02__details">
+              <div class="service-filter-02__results">
+                <div class="service-filter-02__results-title">Результаты поиска</div>
+
+                <ul class="service-filter-02__results-list"></ul>
+
+                <div class="service-filter-02__results-notfound"></div>
+              </div>
+
+              <div class="service-filter-02__subcategory">
+                <div class="service-filter-02__subcategory-item" data-category="1">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">
+                        Парикмахерские услуги
+                      </div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Женские стрижки
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Мужские стрижки
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Детские стрижки
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Окрашивание волос
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Химическая завивка и выпрямление
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Укладка и прически
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Лечение и уход за волосами
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Бритье и коррекция линии роста волос
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Плетение и прически с косами
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Оформление бороды и усов
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="2">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Эпиляция</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция воском
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">Шугаринг</a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Лазерная эпиляция
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Фотоэпиляция
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Электроэпиляция
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция зоны бикини
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция ног и рук
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция подмышек
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция лица
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Эпиляция спины и живота
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="3">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Косметология</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Чистка лица
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">Пилинги</a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Уходовые процедуры
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Инъекционная косметология
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Контурная пластика
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Аппаратная косметология
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Лазерная косметология
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Коррекция и лечение акне
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Уход за телом
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="4">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">
+                        Аппаратные методики коррекции фигуры
+                      </div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Прессотерапия
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">LPG массаж</a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">Кавитация</a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          RF-лифтинг тела
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Миостимуляция
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Криолиполиз
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Ультразвуковая терапия
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Электромиостимуляция
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Вакуумный роликовый массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Магнитотерапия
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="5">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Массаж</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Классический массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Расслабляющий массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Лечебный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Антицеллюлитный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Спортивный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Точечный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Тайский массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Стоунтерапия
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Лимфодренажный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Вакуумный массаж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="6">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Маникюр</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Классический маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Аппаратный маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Комбинированный маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Европейский маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Спа-маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Японский маникюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Покрытие лаком
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Покрытие гель-лаком
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Наращивание ногтей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Ремонт и укрепление ногтей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="7">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Педикюр</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Классический педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Аппаратный педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Комбинированный педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Европейский педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Спа-педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Медицинский педикюр
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Покрытие гель-лаком
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Коррекция вросшего ногтя
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Уход за стопами и пятками
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Парафинотерапия для ног
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="service-filter-02__subcategory-item" data-category="8">
+                  <div class="service-filter-02__service">
+                    <div class="service-filter-02__service-heading">
+                      <div class="service-filter-02__service-heading-title">Брови и макияж</div>
+                      <div class="service-filter-02__service-heading-more">
+                        <a class="service-filter-02__service-heading-more-link" href="#">
+                          Подробнее
+                        </a>
+                      </div>
+                    </div>
+
+                    <ul class="service-filter-02__service-list">
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Коррекция бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Окрашивание бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Ламинирование бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Ботокс бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Дневной макияж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Вечерний макияж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Свадебный макияж
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Макияж для фотосессий
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Укладка бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                      <li class="service-filter-02__service-list-item">
+                        <a class="service-filter-02__service-list-item-link" href="#">
+                          Архитектура бровей
+                        </a>
+                        <span class="service-filter-02__service-list-item-price">от 4150 ₽</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
