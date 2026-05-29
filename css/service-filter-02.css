@@ -427,6 +427,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  gap: 24px;
   padding: 14px 20px;
 }
 .service-filter-02__service-list-item:nth-child(odd) {

@@ -396,6 +396,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 24px;
         padding: 14px 20px;
 
         &:nth-child(odd) {
