@@ -338,10 +338,20 @@
   display: none;
 }
 .service-filter-02__subcategory-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
   display: none;
 }
 .service-filter-02__subcategory-item.active {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .service-filter-02__details:has(.service-filter-02__results.active) .service-filter-02__subcategory {
   display: none;

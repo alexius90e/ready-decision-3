@@ -292,7 +292,6 @@
     &.active {
       display: flex;
     }
-    
 
     &-title {
       margin-bottom: 16px;
@@ -324,10 +323,13 @@
 
   &__subcategory {
     &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       display: none;
 
       &.active {
-        display: block;
+        display: flex;
       }
     }
   }
