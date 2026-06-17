@@ -182,14 +182,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-@media (max-width: 1200px) {
-  .header-04__top-contacts {
-    gap: 20px;
-  }
 }
 @media (max-width: 992px) {
   .header-04__top-contacts {
@@ -202,6 +197,7 @@
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    gap: 4px;
   }
 }
 .header-04__top-contacts-phone {
@@ -214,6 +210,16 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+@media (max-width: 992px) {
+  .header-04__top-contacts-phone {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 .header-04__top-contacts-phone-link {
   font-weight: 500;
@@ -246,6 +252,60 @@
   .header-04__top-contacts-phone-link-text {
     display: none;
   }
+}
+.header-04__top-contacts-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  gap: 4px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.header-04__top-contacts-social-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+.header-04__top-contacts-social-link::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-04__top-contacts-social-link_tg {
+  background-color: #26a4e3;
+}
+.header-04__top-contacts-social-link_tg::before {
+  background-image: url(../assets/header-04/tg.svg);
+}
+.header-04__top-contacts-social-link_max {
+  background: linear-gradient(229deg, #894ee1 0%, #7347e2 22.8%, #257cf6 70.95%, #42b7f5 100%);
+}
+.header-04__top-contacts-social-link_max::before {
+  background-image: url(../assets/header-04/max.svg);
 }
 .header-04__top-burger {
   display: none;

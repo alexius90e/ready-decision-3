@@ -140,23 +140,25 @@
     &-contacts {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 24px;
       box-sizing: border-box;
-
-      @include desktop {
-        gap: 20px;
-      }
 
       @include laptop {
         flex: 1 1 auto;
         justify-content: flex-end;
         order: 2;
+        gap: 4px;
       }
 
       &-phone {
         display: flex;
         align-items: center;
         flex: 0 0 auto;
+        order: 0;
+
+        @include laptop {
+          order: 1;
+        }
 
         &-link {
           font-weight: 500;
@@ -186,6 +188,57 @@
           &-text {
             @include laptop {
               display: none;
+            }
+          }
+        }
+      }
+
+      &-social {
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+        gap: 4px;
+        order: 1;
+
+        &-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          margin: 0;
+
+          &::before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          &_tg {
+            background-color: #26a4e3;
+
+            &::before {
+              background-image: url(../assets/header-04/tg.svg);
+            }
+          }
+
+          &_max {
+            background: linear-gradient(
+              229deg,
+              #894ee1 0%,
+              #7347e2 22.8%,
+              #257cf6 70.95%,
+              #42b7f5 100%
+            );
+
+            &::before {
+              background-image: url(../assets/header-04/max.svg);
             }
           }
         }
