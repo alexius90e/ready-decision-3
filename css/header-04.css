@@ -289,20 +289,14 @@
 .header-04__top-contacts-social-link::before {
   content: "";
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 40px;
+  height: 40px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.header-04__top-contacts-social-link_tg {
-  background-color: #26a4e3;
-}
 .header-04__top-contacts-social-link_tg::before {
   background-image: url(../assets/header-04/tg.svg);
-}
-.header-04__top-contacts-social-link_max {
-  background: linear-gradient(229deg, #894ee1 0%, #7347e2 22.8%, #257cf6 70.95%, #42b7f5 100%);
 }
 .header-04__top-contacts-social-link_max::before {
   background-image: url(../assets/header-04/max.svg);
