@@ -244,6 +244,121 @@
     }
   }
 
+  &__double-range {
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    &-inputs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    &-input-group {
+      display: flex;
+      align-items: center;
+      flex: 0 1 auto;
+      gap: 8px;
+      margin: 0 -8px;
+    }
+
+    &-label {
+      font-size: 14px;
+      color: #7d7d7d;
+    }
+
+    &-input {
+      display: block;
+      width: 100%;
+      padding: 10px 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 125%;
+      color: #7d7d7d;
+      border: 1px solid #d0d0d0;
+      transition: border-color ease-out 0.2s;
+
+      &:focus {
+        border-color: #1e674e;
+        outline: none;
+      }
+    }
+
+    &-sliders {
+      position: relative;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      cursor: default;
+    }
+
+    &-track {
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    &-track-fill {
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background-color: #1e674e;
+      transition:
+        left 0.1s,
+        right 0.1s;
+      pointer-events: none;
+    }
+
+    &-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 4px solid #1e674e;
+      background-color: #ffffff;
+      cursor: grab;
+      z-index: 10;
+      box-sizing: border-box;
+      transition: transform 0.15s ease;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      &--min {
+        z-index: 11;
+      }
+      &--max {
+        z-index: 10;
+      }
+    }
+
+    &-indicators {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px -2px 0;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 120%;
+      text-align: center;
+      color: #7d7d7d;
+    }
+  }
+
   &__catalog {
     max-width: 100%;
 

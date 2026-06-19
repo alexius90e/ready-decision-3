@@ -189,7 +189,58 @@
                 <div class="catalog-v-03__accordion active">
                   <div class="catalog-v-03__accordion-toggler">Бюджет</div>
                   <div class="catalog-v-03__accordion-panel">
-                    <div>Lorem ipsum...</div>
+                    <div
+                      class="catalog-v-03__double-range"
+                      data-min="1100000"
+                      data-max="11160000"
+                      data-step="500"
+                    >
+                      <!-- Поля ввода -->
+                      <div class="catalog-v-03__double-range-inputs">
+                        <div class="catalog-v-03__double-range-input-group">
+                          <input
+                            type="text"
+                            class="catalog-v-03__double-range-input catalog-v-03__double-range-input--min"
+                          />
+                        </div>
+                        <div class="catalog-v-03__double-range-input-group">
+                          <input
+                            type="text"
+                            class="catalog-v-03__double-range-input catalog-v-03__double-range-input--max"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Кастомный слайдер -->
+                      <div class="catalog-v-03__double-range-sliders">
+                        <div class="catalog-v-03__double-range-track">
+                          <div class="catalog-v-03__double-range-track-fill"></div>
+                        </div>
+                        <!-- Ползунки (круглые ручки) -->
+                        <div
+                          class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--min"
+                          style="left: 0%"
+                        ></div>
+                        <div
+                          class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--max"
+                          style="left: 100%"
+                        ></div>
+                      </div>
+
+                      <!-- Индикаторы -->
+                      <div class="catalog-v-03__double-range-indicators">
+                        <span
+                          class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--min"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--max"
+                        >
+                          1000
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
