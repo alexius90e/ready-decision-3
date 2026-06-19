@@ -495,6 +495,7 @@
 
       &-circle {
         display: block;
+        flex: 0 0 auto;
         width: 12px;
         height: 12px;
         box-sizing: border-box;
@@ -514,6 +515,7 @@
       &:has(&-input:checked)::before {
         content: '';
         display: block;
+        flex: 0 0 auto;
         width: 16px;
         height: 16px;
         background: url(../assets/catalog-v-03/check-green.svg) center / cover no-repeat;
