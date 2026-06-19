@@ -347,26 +347,28 @@
 
   &__double-range {
     width: 100%;
-    padding: 0 8px;
     box-sizing: border-box;
 
+    // Поля ввода (упрощённо)
     &-inputs {
       display: flex;
       gap: 12px;
-      margin: 0 -8px;
       margin-bottom: 12px;
+      // убрали отрицательные margin, чтобы не усложнять
     }
 
     &-input-group {
       display: flex;
       align-items: center;
-      flex: 0 0 calc(100% / 2 - 12px / 2);
+      flex: 1 1 0; // равномерное распределение
       gap: 8px;
+      min-width: 0; // предотвращает переполнение
     }
 
     &-label {
       font-size: 14px;
       color: #7d7d7d;
+      white-space: nowrap;
     }
 
     &-input {
@@ -379,6 +381,7 @@
       color: #7d7d7d;
       border: 1px solid #d0d0d0;
       transition: border-color ease-out 0.2s;
+      min-width: 0; // чтобы не вылезало
 
       &:focus {
         border-color: #1e674e;
@@ -386,6 +389,7 @@
       }
     }
 
+    // Контейнер слайдеров
     &-sliders {
       position: relative;
       height: 18px;
@@ -393,12 +397,14 @@
       align-items: center;
       user-select: none;
       cursor: default;
+      touch-action: none; // отключает жесты браузера
     }
 
+    // Трек (фоновая полоса)
     &-track {
       position: absolute;
-      left: -8px;
-      right: -8px;
+      left: 0;
+      right: 0;
       top: 50%;
       height: 8px;
       border-radius: 4px;
@@ -407,14 +413,17 @@
       pointer-events: none;
     }
 
+    // Заливка между ползунками
     &-track-fill {
       position: absolute;
       inset: 0;
       border-radius: 16px;
       background-color: #1e674e;
       pointer-events: none;
+      will-change: left, right; // оптимизация
     }
 
+    // Ползунки
     &-thumb {
       position: absolute;
       top: 50%;
@@ -425,9 +434,12 @@
       border-radius: 50%;
       border: 4px solid #1e674e;
       background-color: #ffffff;
-      transition: transform ease-out 0.2s;
+      // убираем transition на transform, т.к. позиция меняется через left (или transform)
+      // можно оставить transition для hover-эффекта scale, но не для перемещения
       transform: translate(-50%, -50%);
       cursor: grab;
+      touch-action: none;
+      will-change: left; // или transform, если используете translateX
 
       &:active {
         cursor: grabbing;
@@ -441,10 +453,11 @@
       }
     }
 
+    // Индикаторы
     &-indicators {
       display: flex;
       justify-content: space-between;
-      margin: 4px -2px 0;
+      margin-top: 4px;
       font-weight: 400;
       font-size: 10px;
       line-height: 120%;
@@ -1030,42 +1043,42 @@
       }
 
       &-tags {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      right: 48px;
-      z-index: 99;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        right: 48px;
+        z-index: 99;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
 
-      &:empty {
-        display: none;
-      }
-
-      &-item {
-        display: block;
-        flex: 0 0 auto;
-        padding: 4px 8px;
-        box-sizing: border-box;
-        font-weight: 500;
-        font-size: 11px;
-        line-height: 140%;
-        color: #7d7d7d;
-        border-radius: 12px;
-        background-color: #ffffff;
-
-        &_sold {
-          color: #3c56ca;
-          background-color: #eaf0fb;
+        &:empty {
+          display: none;
         }
 
-        &_available {
-          color: #218653;
-          background-color: #e8f6ee;
+        &-item {
+          display: block;
+          flex: 0 0 auto;
+          padding: 4px 8px;
+          box-sizing: border-box;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 140%;
+          color: #7d7d7d;
+          border-radius: 12px;
+          background-color: #ffffff;
+
+          &_sold {
+            color: #3c56ca;
+            background-color: #eaf0fb;
+          }
+
+          &_available {
+            color: #218653;
+            background-color: #e8f6ee;
+          }
         }
       }
-    }
     }
 
     &-more {
@@ -1096,8 +1109,6 @@
         }
       }
     }
-
-    
   }
 
   &__pagination {
