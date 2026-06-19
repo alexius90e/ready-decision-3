@@ -30,7 +30,25 @@ catalogV03Items.forEach((item) => {
   });
 });
 
-//accordion
+// filter
+
+const catalogV03Filter = document.querySelector('.catalog-v-03__filter');
+const catalogV03FilterToggler = document.querySelector('.catalog-v-03__heading-actions-filter');
+
+if (catalogV03Filter && catalogV03FilterToggler) {
+  catalogV03FilterToggler.addEventListener('click', (event) => {
+    catalogV03Filter.classList.add('active');
+  });
+
+  catalogV03Filter.addEventListener('click', (event) => {
+    const isLayout = event.target === event.currentTarget;
+    const isClose = event.target.classList.contains('catalog-v-03__filter-close-button');
+
+    if (isLayout || isClose) catalogV03Filter.classList.remove('active');
+  });
+}
+
+// accordion
 
 const catalogV03AccordionEls = document.querySelectorAll('.catalog-v-03__accordion');
 const catalogV03MaxHeightLimit = 1000;
@@ -397,4 +415,68 @@ catalogV03YearRangeEls.forEach((container) => {
   generateOptions(toDropdown, toValue);
   closeAllDropdowns();
   updateHiddenInputs();
+});
+
+// sort
+
+const catalogV03SortEls = document.querySelectorAll('.catalog-v-03__sort');
+
+catalogV03SortEls.forEach((container) => {
+  const trigger = container.querySelector('.catalog-v-03__sort-trigger');
+  const triggerText = container.querySelector('.catalog-v-03__sort-trigger-text');
+  const dropdown = container.querySelector('.catalog-v-03__sort-dropdown');
+  const options = container.querySelectorAll('.catalog-v-03__sort-option');
+  const hiddenInput = container.querySelector('.catalog-v-03__sort-input');
+
+  trigger.addEventListener('click', function (event) {
+    event.stopPropagation();
+    const isOpen = container.classList.contains('open');
+    if (isOpen) {
+      container.classList.remove('open');
+      dropdown.style.display = 'none';
+    } else {
+      container.classList.add('open');
+      dropdown.style.display = 'block';
+    }
+  });
+
+  options.forEach((option) => {
+    option.addEventListener('click', function () {
+      const value = this.dataset.value;
+      const text = this.textContent.trim();
+
+      triggerText.textContent = text;
+
+      if (hiddenInput) hiddenInput.value = value;
+
+      options.forEach((opt) => opt.classList.remove('catalog-v-03__sort-option--active'));
+      this.classList.add('catalog-v-03__sort-option--active');
+
+      container.classList.remove('open');
+      dropdown.style.display = 'none';
+
+      container.dispatchEvent(
+        new CustomEvent('change', {
+          detail: { value: value, text: text },
+        }),
+      );
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!container.contains(event.target)) {
+      container.classList.remove('open');
+      dropdown.style.display = 'none';
+    }
+  });
+
+  if (hiddenInput) {
+    const initialValue = hiddenInput.value;
+    options.forEach((opt) => {
+      if (opt.dataset.value === initialValue) {
+        triggerText.textContent = opt.textContent.trim();
+        opt.classList.add('catalog-v-03__sort-option--active');
+      }
+    });
+  }
 });

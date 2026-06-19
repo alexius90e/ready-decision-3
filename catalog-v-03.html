@@ -17,415 +17,472 @@
         <div class="catalog-v-03__wrapper">
           <aside class="catalog-v-03__wrapper-sidebar">
             <div class="catalog-v-03__filter">
-              <div class="catalog-v-03__filter-title">Фильтр</div>
-
-              <div class="catalog-v-03__filter-content">
-                <div class="catalog-v-03__accordion active">
-                  <div class="catalog-v-03__accordion-toggler">Марка авто</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div class="catalog-v-03__checkboxset">
-                      <div class="catalog-v-03__checkboxset-search">
-                        <input
-                          type="text"
-                          class="catalog-v-03__checkboxset-search-input"
-                          name="checkboxsetSearch"
-                          placeholder="Поиск по брендам"
-                        />
-                      </div>
-
-                      <div class="catalog-v-03__checkboxset-set">
-                        <div class="catalog-v-03__checkbox">
-                          <input
-                            type="checkbox"
-                            id="brand-lada"
-                            class="catalog-v-03__checkbox-input"
-                            name="brand"
-                            value="lada"
-                            checked
-                          />
-                          <label for="brand-lada" class="catalog-v-03__checkbox-label">
-                            Lada (ВАЗ)
-                          </label>
-                        </div>
-
-                        <div class="catalog-v-03__checkbox">
-                          <input
-                            type="checkbox"
-                            id="brand-changan"
-                            class="catalog-v-03__checkbox-input"
-                            name="brand"
-                            value="changan"
-                          />
-                          <label for="brand-changan" class="catalog-v-03__checkbox-label">
-                            Changan
-                          </label>
-                        </div>
-
-                        <div class="catalog-v-03__checkbox">
-                          <input
-                            type="checkbox"
-                            id="brand-bmw"
-                            class="catalog-v-03__checkbox-input"
-                            name="brand"
-                            value="bmw"
-                          />
-                          <label for="brand-bmw" class="catalog-v-03__checkbox-label">BMW</label>
-                        </div>
-
-                        <div class="catalog-v-03__checkbox">
-                          <input
-                            type="checkbox"
-                            id="brand-daewoo"
-                            class="catalog-v-03__checkbox-input"
-                            name="brand"
-                            value="daewoo"
-                          />
-                          <label for="brand-daewoo" class="catalog-v-03__checkbox-label">
-                            Daewoo
-                          </label>
-                        </div>
-
-                        <div class="catalog-v-03__checkbox">
-                          <input
-                            type="checkbox"
-                            id="brand-nissan"
-                            class="catalog-v-03__checkbox-input"
-                            name="brand"
-                            value="nissan"
-                          />
-                          <label for="brand-nissan" class="catalog-v-03__checkbox-label">
-                            Nissan
-                          </label>
-                        </div>
-                      </div>
-
-                      <div class="catalog-v-03__no-results" style="display: none">
-                        Ничего не найдено
-                      </div>
+              <div class="catalog-v-03__filter-wrapper">
+                <div class="catalog-v-03__filter-content">
+                  <div class="catalog-v-03__filter-heading">
+                    <div class="catalog-v-03__filter-title">Фильтр</div>
+                    <div class="catalog-v-03__filter-close">
+                      <button class="catalog-v-03__filter-close-button"></button>
                     </div>
                   </div>
-                </div>
 
-                <div class="catalog-v-03__accordion active">
-                  <div class="catalog-v-03__accordion-toggler">Год выпуска</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div class="catalog-v-03__year-range" data-start="2000" data-end="2026">
-                      <div class="catalog-v-03__year-range-item catalog-v-03__year-range-item_from">
-                        <button class="catalog-v-03__year-range-trigger" data-placeholder="от">
-                          от
-                        </button>
-                        <div class="catalog-v-03__year-range-dropdown" style="display: none"></div>
-                      </div>
+                  <div class="catalog-v-03__filter-main">
+                    <div class="catalog-v-03__accordion active">
+                      <div class="catalog-v-03__accordion-toggler">Марка авто</div>
+                      <div class="catalog-v-03__accordion-panel">
+                        <div class="catalog-v-03__checkboxset">
+                          <div class="catalog-v-03__checkboxset-search">
+                            <input
+                              type="text"
+                              class="catalog-v-03__checkboxset-search-input"
+                              name="checkboxsetSearch"
+                              placeholder="Поиск по брендам"
+                            />
+                          </div>
 
-                      <div class="catalog-v-03__year-range-item catalog-v-03__year-range-item_to">
-                        <button class="catalog-v-03__year-range-trigger" data-placeholder="до">
-                          до
-                        </button>
-                        <div class="catalog-v-03__year-range-dropdown" style="display: none"></div>
-                      </div>
+                          <div class="catalog-v-03__checkboxset-set">
+                            <div class="catalog-v-03__checkbox">
+                              <input
+                                type="checkbox"
+                                id="brand-lada"
+                                class="catalog-v-03__checkbox-input"
+                                name="brand"
+                                value="lada"
+                                checked
+                              />
+                              <label for="brand-lada" class="catalog-v-03__checkbox-label">
+                                Lada (ВАЗ)
+                              </label>
+                            </div>
 
-                      <input
-                        type="hidden"
-                        class="catalog-v-03__year-range-input-from"
-                        name="year_from"
-                        value=""
-                      />
-                      <input
-                        type="hidden"
-                        class="catalog-v-03__year-range-input-to"
-                        name="year_to"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
+                            <div class="catalog-v-03__checkbox">
+                              <input
+                                type="checkbox"
+                                id="brand-changan"
+                                class="catalog-v-03__checkbox-input"
+                                name="brand"
+                                value="changan"
+                              />
+                              <label for="brand-changan" class="catalog-v-03__checkbox-label">
+                                Changan
+                              </label>
+                            </div>
 
-                <div class="catalog-v-03__accordion">
-                  <div class="catalog-v-03__accordion-toggler">Модель</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div class="catalog-v-03__checkboxset">
-                      <div class="catalog-v-03__checkbox">
-                        <input
-                          type="checkbox"
-                          id="lada-granta"
-                          class="catalog-v-03__checkbox-input"
-                          name="lada"
-                          value="lada-granta"
-                          checked
-                        />
-                        <label for="lada-granta" class="catalog-v-03__checkbox-label">
-                          LADA Granta
-                        </label>
-                      </div>
+                            <div class="catalog-v-03__checkbox">
+                              <input
+                                type="checkbox"
+                                id="brand-bmw"
+                                class="catalog-v-03__checkbox-input"
+                                name="brand"
+                                value="bmw"
+                              />
+                              <label for="brand-bmw" class="catalog-v-03__checkbox-label">
+                                BMW
+                              </label>
+                            </div>
 
-                      <div class="catalog-v-03__checkbox">
-                        <input
-                          type="checkbox"
-                          id="lada-vesta"
-                          class="catalog-v-03__checkbox-input"
-                          name="lada"
-                          value="lada-vesta"
-                        />
-                        <label for="lada-vesta" class="catalog-v-03__checkbox-label">
-                          LADA Vesta
-                        </label>
-                      </div>
+                            <div class="catalog-v-03__checkbox">
+                              <input
+                                type="checkbox"
+                                id="brand-daewoo"
+                                class="catalog-v-03__checkbox-input"
+                                name="brand"
+                                value="daewoo"
+                              />
+                              <label for="brand-daewoo" class="catalog-v-03__checkbox-label">
+                                Daewoo
+                              </label>
+                            </div>
 
-                      <div class="catalog-v-03__checkbox">
-                        <input
-                          type="checkbox"
-                          id="lada-largus"
-                          class="catalog-v-03__checkbox-input"
-                          name="lada"
-                          value="lada-largus"
-                        />
-                        <label for="lada-largus" class="catalog-v-03__checkbox-label">
-                          LADA Largus
-                        </label>
-                      </div>
+                            <div class="catalog-v-03__checkbox">
+                              <input
+                                type="checkbox"
+                                id="brand-nissan"
+                                class="catalog-v-03__checkbox-input"
+                                name="brand"
+                                value="nissan"
+                              />
+                              <label for="brand-nissan" class="catalog-v-03__checkbox-label">
+                                Nissan
+                              </label>
+                            </div>
+                          </div>
 
-                      <div class="catalog-v-03__checkbox">
-                        <input
-                          type="checkbox"
-                          id="lada-niva-legend"
-                          class="catalog-v-03__checkbox-input"
-                          name="lada"
-                          value="lada-niva-legend"
-                        />
-                        <label for="lada-niva-legend" class="catalog-v-03__checkbox-label">
-                          LADA Niva Legend
-                        </label>
-                      </div>
-
-                      <div class="catalog-v-03__checkbox">
-                        <input
-                          type="checkbox"
-                          id="lada-niva"
-                          class="catalog-v-03__checkbox-input"
-                          name="lada"
-                          value="lada-niva"
-                        />
-                        <label for="lada-niva" class="catalog-v-03__checkbox-label">
-                          LADA Niva
-                        </label>
+                          <div class="catalog-v-03__no-results" style="display: none">
+                            Ничего не найдено
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                <div class="catalog-v-03__accordion active">
-                  <div class="catalog-v-03__accordion-toggler">Бюджет</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div
-                      class="catalog-v-03__double-range"
-                      data-min="1100000"
-                      data-max="11160000"
-                      data-step="500"
-                    >
-                      <!-- Поля ввода -->
-                      <div class="catalog-v-03__double-range-inputs">
-                        <div class="catalog-v-03__double-range-input-group">
+                    <div class="catalog-v-03__accordion active">
+                      <div class="catalog-v-03__accordion-toggler">Год выпуска</div>
+                      <div class="catalog-v-03__accordion-panel">
+                        <div class="catalog-v-03__year-range" data-start="2000" data-end="2026">
+                          <div
+                            class="catalog-v-03__year-range-item catalog-v-03__year-range-item_from"
+                          >
+                            <button class="catalog-v-03__year-range-trigger" data-placeholder="от">
+                              от
+                            </button>
+                            <div
+                              class="catalog-v-03__year-range-dropdown"
+                              style="display: none"
+                            ></div>
+                          </div>
+
+                          <div
+                            class="catalog-v-03__year-range-item catalog-v-03__year-range-item_to"
+                          >
+                            <button class="catalog-v-03__year-range-trigger" data-placeholder="до">
+                              до
+                            </button>
+                            <div
+                              class="catalog-v-03__year-range-dropdown"
+                              style="display: none"
+                            ></div>
+                          </div>
+
                           <input
-                            type="text"
-                            class="catalog-v-03__double-range-input catalog-v-03__double-range-input--min"
+                            type="hidden"
+                            class="catalog-v-03__year-range-input-from"
+                            name="year_from"
+                            value=""
                           />
-                        </div>
-                        <div class="catalog-v-03__double-range-input-group">
                           <input
-                            type="text"
-                            class="catalog-v-03__double-range-input catalog-v-03__double-range-input--max"
+                            type="hidden"
+                            class="catalog-v-03__year-range-input-to"
+                            name="year_to"
+                            value=""
                           />
                         </div>
                       </div>
+                    </div>
 
-                      <div class="catalog-v-03__double-range-sliders">
-                        <div class="catalog-v-03__double-range-track">
-                          <div class="catalog-v-03__double-range-track-fill"></div>
+                    <div class="catalog-v-03__accordion">
+                      <div class="catalog-v-03__accordion-toggler">Модель</div>
+                      <div class="catalog-v-03__accordion-panel">
+                        <div class="catalog-v-03__checkboxset">
+                          <div class="catalog-v-03__checkbox">
+                            <input
+                              type="checkbox"
+                              id="lada-granta"
+                              class="catalog-v-03__checkbox-input"
+                              name="lada"
+                              value="lada-granta"
+                              checked
+                            />
+                            <label for="lada-granta" class="catalog-v-03__checkbox-label">
+                              LADA Granta
+                            </label>
+                          </div>
+
+                          <div class="catalog-v-03__checkbox">
+                            <input
+                              type="checkbox"
+                              id="lada-vesta"
+                              class="catalog-v-03__checkbox-input"
+                              name="lada"
+                              value="lada-vesta"
+                            />
+                            <label for="lada-vesta" class="catalog-v-03__checkbox-label">
+                              LADA Vesta
+                            </label>
+                          </div>
+
+                          <div class="catalog-v-03__checkbox">
+                            <input
+                              type="checkbox"
+                              id="lada-largus"
+                              class="catalog-v-03__checkbox-input"
+                              name="lada"
+                              value="lada-largus"
+                            />
+                            <label for="lada-largus" class="catalog-v-03__checkbox-label">
+                              LADA Largus
+                            </label>
+                          </div>
+
+                          <div class="catalog-v-03__checkbox">
+                            <input
+                              type="checkbox"
+                              id="lada-niva-legend"
+                              class="catalog-v-03__checkbox-input"
+                              name="lada"
+                              value="lada-niva-legend"
+                            />
+                            <label for="lada-niva-legend" class="catalog-v-03__checkbox-label">
+                              LADA Niva Legend
+                            </label>
+                          </div>
+
+                          <div class="catalog-v-03__checkbox">
+                            <input
+                              type="checkbox"
+                              id="lada-niva"
+                              class="catalog-v-03__checkbox-input"
+                              name="lada"
+                              value="lada-niva"
+                            />
+                            <label for="lada-niva" class="catalog-v-03__checkbox-label">
+                              LADA Niva
+                            </label>
+                          </div>
                         </div>
+                      </div>
+                    </div>
 
+                    <div class="catalog-v-03__accordion active">
+                      <div class="catalog-v-03__accordion-toggler">Бюджет</div>
+                      <div class="catalog-v-03__accordion-panel">
                         <div
-                          class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--min"
-                          style="left: 0%"
-                        ></div>
-                        <div
-                          class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--max"
-                          style="left: 100%"
-                        ></div>
-                      </div>
-
-                      <div class="catalog-v-03__double-range-indicators">
-                        <span
-                          class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--min"
+                          class="catalog-v-03__double-range"
+                          data-min="1100000"
+                          data-max="11160000"
+                          data-step="500"
                         >
-                          0
-                        </span>
-                        <span
-                          class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--max"
-                        >
-                          1000
-                        </span>
+                          <!-- Поля ввода -->
+                          <div class="catalog-v-03__double-range-inputs">
+                            <div class="catalog-v-03__double-range-input-group">
+                              <input
+                                type="text"
+                                class="catalog-v-03__double-range-input catalog-v-03__double-range-input--min"
+                              />
+                            </div>
+                            <div class="catalog-v-03__double-range-input-group">
+                              <input
+                                type="text"
+                                class="catalog-v-03__double-range-input catalog-v-03__double-range-input--max"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="catalog-v-03__double-range-sliders">
+                            <div class="catalog-v-03__double-range-track">
+                              <div class="catalog-v-03__double-range-track-fill"></div>
+                            </div>
+
+                            <div
+                              class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--min"
+                              style="left: 0%"
+                            ></div>
+                            <div
+                              class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--max"
+                              style="left: 100%"
+                            ></div>
+                          </div>
+
+                          <div class="catalog-v-03__double-range-indicators">
+                            <span
+                              class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--min"
+                            >
+                              0
+                            </span>
+                            <span
+                              class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--max"
+                            >
+                              1000
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="catalog-v-03__accordion active">
+                      <div class="catalog-v-03__accordion-toggler">Цвет</div>
+                      <div class="catalog-v-03__accordion-panel">
+                        <div class="catalog-v-03__color">
+                          <label class="catalog-v-03__color-item">
+                            <input
+                              class="catalog-v-03__color-item-input"
+                              type="checkbox"
+                              name="color"
+                              value="blue"
+                            />
+                            <span
+                              class="catalog-v-03__color-item-circle"
+                              style="background-color: #000000"
+                            ></span>
+                            <span class="catalog-v-03__color-item-name">Чёрный</span>
+                          </label>
+
+                          <label class="catalog-v-03__color-item">
+                            <input
+                              class="catalog-v-03__color-item-input"
+                              type="checkbox"
+                              name="color"
+                              value="red"
+                              checked
+                            />
+                            <span
+                              class="catalog-v-03__color-item-circle"
+                              style="background-color: #f30000"
+                            ></span>
+                            <span class="catalog-v-03__color-item-name">Красный</span>
+                          </label>
+
+                          <label class="catalog-v-03__color-item">
+                            <input
+                              class="catalog-v-03__color-item-input"
+                              type="checkbox"
+                              name="color"
+                              value="green"
+                            />
+                            <span
+                              class="catalog-v-03__color-item-circle"
+                              style="background-color: #ffffff"
+                            ></span>
+                            <span class="catalog-v-03__color-item-name">Белый</span>
+                          </label>
+
+                          <label class="catalog-v-03__color-item">
+                            <input
+                              class="catalog-v-03__color-item-input"
+                              type="checkbox"
+                              name="color"
+                              value="yellow"
+                            />
+                            <span
+                              class="catalog-v-03__color-item-circle"
+                              style="background-color: #003392"
+                            ></span>
+                            <span class="catalog-v-03__color-item-name">Синий</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="catalog-v-03__accordion active">
+                      <div class="catalog-v-03__accordion-toggler">Кузов</div>
+                      <div class="catalog-v-03__accordion-panel">
+                        <div class="catalog-v-03__bodytype">
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype1"
+                              checked
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-1.svg" alt="bodytype1" />
+                            </figure>
+                          </label>
+
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype2"
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-2.svg" alt="bodytype2" />
+                            </figure>
+                          </label>
+
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype3"
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-3.svg" alt="bodytype3" />
+                            </figure>
+                          </label>
+
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype4"
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-4.svg" alt="bodytype4" />
+                            </figure>
+                          </label>
+
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype5"
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-5.svg" alt="bodytype5" />
+                            </figure>
+                          </label>
+
+                          <label class="catalog-v-03__bodytype-item">
+                            <input
+                              class="catalog-v-03__bodytype-item-input"
+                              type="checkbox"
+                              name="bodytype"
+                              value="bodytype5"
+                            />
+                            <figure class="catalog-v-03__bodytype-item-figure">
+                              <img src="./assets/catalog-v-03/bodytype-img-5.svg" alt="bodytype5" />
+                            </figure>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="catalog-v-03__accordion active">
-                  <div class="catalog-v-03__accordion-toggler">Цвет</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div class="catalog-v-03__color">
-                      <label class="catalog-v-03__color-item">
-                        <input
-                          class="catalog-v-03__color-item-input"
-                          type="checkbox"
-                          name="color"
-                          value="blue"
-                        />
-                        <span
-                          class="catalog-v-03__color-item-circle"
-                          style="background-color: #000000"
-                        ></span>
-                        <span class="catalog-v-03__color-item-name">Чёрный</span>
-                      </label>
-
-                      <label class="catalog-v-03__color-item">
-                        <input
-                          class="catalog-v-03__color-item-input"
-                          type="checkbox"
-                          name="color"
-                          value="red"
-                          checked
-                        />
-                        <span
-                          class="catalog-v-03__color-item-circle"
-                          style="background-color: #f30000"
-                        ></span>
-                        <span class="catalog-v-03__color-item-name">Красный</span>
-                      </label>
-
-                      <label class="catalog-v-03__color-item">
-                        <input
-                          class="catalog-v-03__color-item-input"
-                          type="checkbox"
-                          name="color"
-                          value="green"
-                        />
-                        <span
-                          class="catalog-v-03__color-item-circle"
-                          style="background-color: #ffffff"
-                        ></span>
-                        <span class="catalog-v-03__color-item-name">Белый</span>
-                      </label>
-
-                      <label class="catalog-v-03__color-item">
-                        <input
-                          class="catalog-v-03__color-item-input"
-                          type="checkbox"
-                          name="color"
-                          value="yellow"
-                        />
-                        <span
-                          class="catalog-v-03__color-item-circle"
-                          style="background-color: #003392"
-                        ></span>
-                        <span class="catalog-v-03__color-item-name">Синий</span>
-                      </label>
-                    </div>
+                  <div class="catalog-v-03__filter-actions">
+                    <button class="catalog-v-03__filter-actions-show button button_dark">
+                      Показать автомобили
+                    </button>
+                    <button class="catalog-v-03__filter-actions-reset button button_light">
+                      очистить фильтр
+                    </button>
                   </div>
                 </div>
-
-                <div class="catalog-v-03__accordion active">
-                  <div class="catalog-v-03__accordion-toggler">Кузов</div>
-                  <div class="catalog-v-03__accordion-panel">
-                    <div class="catalog-v-03__bodytype">
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype1"
-                          checked
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-1.svg" alt="bodytype1" />
-                        </figure>
-                      </label>
-
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype2"
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-2.svg" alt="bodytype2" />
-                        </figure>
-                      </label>
-
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype3"
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-3.svg" alt="bodytype3" />
-                        </figure>
-                      </label>
-
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype4"
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-4.svg" alt="bodytype4" />
-                        </figure>
-                      </label>
-
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype5"
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-5.svg" alt="bodytype5" />
-                        </figure>
-                      </label>
-
-                      <label class="catalog-v-03__bodytype-item">
-                        <input
-                          class="catalog-v-03__bodytype-item-input"
-                          type="checkbox"
-                          name="bodytype"
-                          value="bodytype5"
-                        />
-                        <figure class="catalog-v-03__bodytype-item-figure">
-                          <img src="./assets/catalog-v-03/bodytype-img-5.svg" alt="bodytype5" />
-                        </figure>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="catalog-v-03__filter-actions">
-                <button class="catalog-v-03__filter-actions-show button button_dark">
-                  Показать автомобили
-                </button>
-                <button class="catalog-v-03__filter-actions-reset button button_light">
-                  очистить фильтр
-                </button>
               </div>
             </div>
           </aside>
 
           <div class="catalog-v-03__wrapper-main">
+            <div class="catalog-v-03__heading">
+              <div class="catalog-v-03__heading-total">Всего 1 365 моделей</div>
+
+              <div class="catalog-v-03__heading-actions">
+                <div class="catalog-v-03__heading-actions-sorting">
+                  <div class="catalog-v-03__sort">
+                    <button class="catalog-v-03__sort-trigger" type="button">
+                      <span class="catalog-v-03__sort-trigger-text">По популярности</span>
+                      <span class="catalog-v-03__sort-trigger-arrow"></span>
+                    </button>
+
+                    <div class="catalog-v-03__sort-dropdown" style="display: none">
+                      <div class="catalog-v-03__sort-option" data-value="popular">
+                        По популярности
+                      </div>
+                      <div class="catalog-v-03__sort-option" data-value="price-asc">
+                        По возрастанию цены
+                      </div>
+                      <div class="catalog-v-03__sort-option" data-value="price-desc">
+                        По убыванию цены
+                      </div>
+                    </div>
+
+                    <input
+                      type="hidden"
+                      class="catalog-v-03__sort-input"
+                      name="sort"
+                      value="popular"
+                    />
+                  </div>
+                </div>
+
+                <button class="catalog-v-03__heading-actions-filter">Фильтр</button>
+              </div>
+            </div>
+
             <div class="catalog-v-03__catalog">
               <div class="catalog-v-03__catalog-wrapper">
                 <div class="catalog-v-03__catalog-item">
@@ -498,74 +555,12 @@
                       <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
                     </div>
                   </div>
-                </div>
 
-                <div class="catalog-v-03__catalog-item">
-                  <div class="catalog-v-03__catalog-item-sliders">
-                    <div class="catalog-v-03__catalog-item-main">
-                      <div class="swiper">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-2.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-3.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-4.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="catalog-v-03__catalog-item-thumbs">
-                      <div class="swiper" thumbsSlider="">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-2.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-3.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-4.jpg" alt="car" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="catalog-v-03__catalog-item-content">
-                    <h3 class="catalog-v-03__catalog-item-content-title">BMW X5, 2022</h3>
-                    <div class="catalog-v-03__catalog-item-content-tags">
-                      <div class="catalog-v-03__catalog-item-content-tags-item">Бензин</div>
-                      <div class="catalog-v-03__catalog-item-content-tags-item">1,6</div>
-                      <div class="catalog-v-03__catalog-item-content-tags-item">Автомат</div>
-                      <div class="catalog-v-03__catalog-item-content-tags-item">245,345 км.</div>
-                      <div class="catalog-v-03__catalog-item-content-tags-item">Передний</div>
-                      <div class="catalog-v-03__catalog-item-content-tags-item">Передний</div>
-                    </div>
-                    <div class="catalog-v-03__catalog-item-content-price">914.000 ₽</div>
-                    <div class="catalog-v-03__catalog-item-content-info">
-                      <div class="catalog-v-03__catalog-item-content-info-payment">
-                        от 150.067 ₽/мес.
-                      </div>
-                      <div class="catalog-v-03__catalog-item-content-info-views">1201235</div>
-                    </div>
-                    <div class="catalog-v-03__catalog-item-content-favourites">
-                      <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
+                  <div class="catalog-v-03__catalog-item-tags">
+                    <div
+                      class="catalog-v-03__catalog-item-tags-item catalog-v-03__catalog-item-tags-item_sold"
+                    >
+                      Продан
                     </div>
                   </div>
                 </div>
@@ -638,6 +633,86 @@
                       <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
                     </div>
                   </div>
+
+                  <div class="catalog-v-03__catalog-item-tags">
+                    <div
+                      class="catalog-v-03__catalog-item-tags-item catalog-v-03__catalog-item-tags-item_available"
+                    >
+                      В наличии
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog-v-03__catalog-item">
+                  <div class="catalog-v-03__catalog-item-sliders">
+                    <div class="catalog-v-03__catalog-item-main">
+                      <div class="swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-2.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-3.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-4.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="catalog-v-03__catalog-item-thumbs">
+                      <div class="swiper" thumbsSlider="">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-2.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-3.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-4.jpg" alt="car" />
+                          </div>
+                          <div class="swiper-slide">
+                            <img src="./assets/catalog-v-03/car-1.jpg" alt="car" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="catalog-v-03__catalog-item-content">
+                    <h3 class="catalog-v-03__catalog-item-content-title">BMW X5, 2022</h3>
+                    <div class="catalog-v-03__catalog-item-content-tags">
+                      <div class="catalog-v-03__catalog-item-content-tags-item">Бензин</div>
+                      <div class="catalog-v-03__catalog-item-content-tags-item">1,6</div>
+                      <div class="catalog-v-03__catalog-item-content-tags-item">Автомат</div>
+                      <div class="catalog-v-03__catalog-item-content-tags-item">245,345 км.</div>
+                      <div class="catalog-v-03__catalog-item-content-tags-item">Передний</div>
+                      <div class="catalog-v-03__catalog-item-content-tags-item">Передний</div>
+                    </div>
+                    <div class="catalog-v-03__catalog-item-content-price">914.000 ₽</div>
+                    <div class="catalog-v-03__catalog-item-content-info">
+                      <div class="catalog-v-03__catalog-item-content-info-payment">
+                        от 150.067 ₽/мес.
+                      </div>
+                      <div class="catalog-v-03__catalog-item-content-info-views">1201235</div>
+                    </div>
+                    <div class="catalog-v-03__catalog-item-content-favourites">
+                      <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
+                    </div>
+                  </div>
+
+                  <div class="catalog-v-03__catalog-item-tags"></div>
                 </div>
 
                 <div class="catalog-v-03__catalog-item">
@@ -710,6 +785,8 @@
                       <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
                     </div>
                   </div>
+
+                  <div class="catalog-v-03__catalog-item-tags"></div>
                 </div>
 
                 <div class="catalog-v-03__catalog-item">
@@ -780,6 +857,8 @@
                       <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
                     </div>
                   </div>
+
+                  <div class="catalog-v-03__catalog-item-tags"></div>
                 </div>
 
                 <div class="catalog-v-03__catalog-item">
@@ -850,6 +929,8 @@
                       <button class="catalog-v-03__catalog-item-content-favourites-button"></button>
                     </div>
                   </div>
+
+                  <div class="catalog-v-03__catalog-item-tags"></div>
                 </div>
               </div>
 
