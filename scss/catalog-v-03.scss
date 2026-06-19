@@ -349,20 +349,18 @@
     width: 100%;
     box-sizing: border-box;
 
-    // Поля ввода (упрощённо)
     &-inputs {
       display: flex;
       gap: 12px;
       margin-bottom: 12px;
-      // убрали отрицательные margin, чтобы не усложнять
     }
 
     &-input-group {
       display: flex;
       align-items: center;
-      flex: 1 1 0; // равномерное распределение
+      flex: 1 1 0;
       gap: 8px;
-      min-width: 0; // предотвращает переполнение
+      min-width: 0;
     }
 
     &-label {
@@ -381,7 +379,7 @@
       color: #7d7d7d;
       border: 1px solid #d0d0d0;
       transition: border-color ease-out 0.2s;
-      min-width: 0; // чтобы не вылезало
+      min-width: 0;
 
       &:focus {
         border-color: #1e674e;
@@ -389,7 +387,6 @@
       }
     }
 
-    // Контейнер слайдеров
     &-sliders {
       position: relative;
       height: 18px;
@@ -397,10 +394,9 @@
       align-items: center;
       user-select: none;
       cursor: default;
-      touch-action: none; // отключает жесты браузера
+      touch-action: none;
     }
 
-    // Трек (фоновая полоса)
     &-track {
       position: absolute;
       left: 0;
@@ -413,17 +409,15 @@
       pointer-events: none;
     }
 
-    // Заливка между ползунками
     &-track-fill {
       position: absolute;
       inset: 0;
       border-radius: 16px;
       background-color: #1e674e;
       pointer-events: none;
-      will-change: left, right; // оптимизация
+      will-change: left, right;
     }
 
-    // Ползунки
     &-thumb {
       position: absolute;
       top: 50%;
@@ -434,12 +428,19 @@
       border-radius: 50%;
       border: 4px solid #1e674e;
       background-color: #ffffff;
-      // убираем transition на transform, т.к. позиция меняется через left (или transform)
-      // можно оставить transition для hover-эффекта scale, но не для перемещения
-      transform: translate(-50%, -50%);
+      margin-top: -8px;
+      margin-left: -8px;
       cursor: grab;
       touch-action: none;
-      will-change: left; // или transform, если используете translateX
+      will-change: left;
+      transition: none;
+
+      @include tablet {
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-left: -10px;
+      }
 
       &:active {
         cursor: grabbing;
@@ -453,7 +454,6 @@
       }
     }
 
-    // Индикаторы
     &-indicators {
       display: flex;
       justify-content: space-between;

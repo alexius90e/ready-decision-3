@@ -484,13 +484,23 @@
   border-radius: 50%;
   border: 4px solid #1e674e;
   background-color: #ffffff;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin-top: -8px;
+  margin-left: -8px;
   cursor: -webkit-grab;
   cursor: grab;
   -ms-touch-action: none;
       touch-action: none;
   will-change: left;
+  -webkit-transition: none;
+  transition: none;
+}
+@media (max-width: 768px) {
+  .catalog-v-03__double-range-thumb {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
 }
 .catalog-v-03__double-range-thumb:active {
   cursor: -webkit-grabbing;

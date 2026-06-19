@@ -144,12 +144,13 @@ catalogV03DoubleRangeEls.forEach((container) => {
     return parts.length > 1 ? intPart + '.' + parts[1] : intPart;
   }
 
+  // Обновление только слайдеров и индикаторов (без полей)
   function updateSlidersAndIndicators() {
     const leftPercent = ((currentMin - min) / (max - min)) * 100;
     const rightPercent = ((max - currentMax) / (max - min)) * 100;
 
     thumbMin.style.left = leftPercent + '%';
-    thumbMax.style.left = 100 - rightPercent + '%';
+    thumbMax.style.left = (100 - rightPercent) + '%';
     trackFill.style.left = leftPercent + '%';
     trackFill.style.right = rightPercent + '%';
 
@@ -157,12 +158,13 @@ catalogV03DoubleRangeEls.forEach((container) => {
     if (maxIndicator) maxIndicator.textContent = formatNumber(currentMax);
   }
 
+  // Полное обновление (поля + слайдеры)
   function updateUI() {
     const leftPercent = ((currentMin - min) / (max - min)) * 100;
     const rightPercent = ((max - currentMax) / (max - min)) * 100;
 
     thumbMin.style.left = leftPercent + '%';
-    thumbMax.style.left = 100 - rightPercent + '%';
+    thumbMax.style.left = (100 - rightPercent) + '%';
     trackFill.style.left = leftPercent + '%';
     trackFill.style.right = rightPercent + '%';
 
@@ -172,9 +174,10 @@ catalogV03DoubleRangeEls.forEach((container) => {
     if (maxIndicator) maxIndicator.textContent = formatNumber(currentMax);
   }
 
-  // ─── УНИВЕРСАЛЬНОЕ ПЕРЕТАСКИВАНИЕ ЧЕРЕЗ POINTER EVENTS ───
+  // ─── ПЕРЕТАСКИВАНИЕ ЧЕРЕЗ POINTER EVENTS + rAF ───
   function makeDraggable(thumb, isMin) {
     let isDragging = false;
+    let animationFrame = null;
 
     function startDrag(event) {
       event.preventDefault();
@@ -186,29 +189,39 @@ catalogV03DoubleRangeEls.forEach((container) => {
 
     function moveDrag(event) {
       if (!isDragging) return;
-      const clientX = event.clientX;
-      const rect = slidersContainer.getBoundingClientRect();
-      let percent = (clientX - rect.left) / rect.width;
-      percent = Math.min(Math.max(percent, 0), 1);
-
-      let value = min + percent * (max - min);
-      value = Math.round(value / step) * step;
-      value = Math.min(Math.max(value, min), max);
-
-      if (isMin) {
-        if (value > currentMax) value = currentMax;
-        currentMin = value;
-      } else {
-        if (value < currentMin) value = currentMin;
-        currentMax = value;
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
       }
+      const clientX = event.clientX;
+      animationFrame = requestAnimationFrame(() => {
+        const rect = slidersContainer.getBoundingClientRect();
+        let percent = (clientX - rect.left) / rect.width;
+        percent = Math.min(Math.max(percent, 0), 1);
 
-      updateUI();
+        let value = min + percent * (max - min);
+        value = Math.round(value / step) * step;
+        value = Math.min(Math.max(value, min), max);
+
+        if (isMin) {
+          if (value > currentMax) value = currentMax;
+          currentMin = value;
+        } else {
+          if (value < currentMin) value = currentMin;
+          currentMax = value;
+        }
+        updateUI();
+        animationFrame = null;
+      });
     }
 
     function endDrag(event) {
       if (isDragging) {
         isDragging = false;
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+        }
         thumb.releasePointerCapture(event.pointerId);
         document.body.style.cursor = '';
         thumb.style.cursor = 'grab';
@@ -257,7 +270,6 @@ catalogV03DoubleRangeEls.forEach((container) => {
       if (val < currentMin) val = currentMin;
       currentMax = val;
     }
-
     updateSlidersAndIndicators();
   }
 
