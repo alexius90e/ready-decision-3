@@ -138,14 +138,12 @@ catalogV03DoubleRangeEls.forEach((container) => {
   let currentMin = min;
   let currentMax = max;
 
-  // Форматирование числа с пробелами
   function formatNumber(num) {
     const parts = num.toString().split('.');
     const intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     return parts.length > 1 ? intPart + '.' + parts[1] : intPart;
   }
 
-  // Обновление только слайдеров, трека и индикаторов (без полей ввода)
   function updateSlidersAndIndicators() {
     const leftPercent = ((currentMin - min) / (max - min)) * 100;
     const rightPercent = ((max - currentMax) / (max - min)) * 100;
@@ -174,21 +172,23 @@ catalogV03DoubleRangeEls.forEach((container) => {
     if (maxIndicator) maxIndicator.textContent = formatNumber(currentMax);
   }
 
+  // ─── УНИВЕРСАЛЬНОЕ ПЕРЕТАСКИВАНИЕ ЧЕРЕЗ POINTER EVENTS ───
   function makeDraggable(thumb, isMin) {
     let isDragging = false;
 
-    thumb.addEventListener('mousedown', function (event) {
+    function startDrag(event) {
       event.preventDefault();
       isDragging = true;
+      thumb.setPointerCapture(event.pointerId);
       document.body.style.cursor = 'grabbing';
       thumb.style.cursor = 'grabbing';
-    });
+    }
 
-    document.addEventListener('mousemove', function (event) {
+    function moveDrag(event) {
       if (!isDragging) return;
-
+      const clientX = event.clientX;
       const rect = slidersContainer.getBoundingClientRect();
-      let percent = (event.clientX - rect.left) / rect.width;
+      let percent = (clientX - rect.left) / rect.width;
       percent = Math.min(Math.max(percent, 0), 1);
 
       let value = min + percent * (max - min);
@@ -204,20 +204,26 @@ catalogV03DoubleRangeEls.forEach((container) => {
       }
 
       updateUI();
-    });
+    }
 
-    document.addEventListener('mouseup', function () {
+    function endDrag(event) {
       if (isDragging) {
         isDragging = false;
+        thumb.releasePointerCapture(event.pointerId);
         document.body.style.cursor = '';
         thumb.style.cursor = 'grab';
       }
-    });
+    }
+
+    thumb.addEventListener('pointerdown', startDrag);
+    document.addEventListener('pointermove', moveDrag);
+    document.addEventListener('pointerup', endDrag);
   }
 
   makeDraggable(thumbMin, true);
   makeDraggable(thumbMax, false);
 
+  // ─── Обработка полей ввода ───
   function sanitizeInput(value) {
     return value.replace(/[^0-9.]/g, '');
   }
