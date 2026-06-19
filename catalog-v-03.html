@@ -109,7 +109,43 @@
                 <div class="catalog-v-03__accordion active">
                   <div class="catalog-v-03__accordion-toggler">Год выпуска</div>
                   <div class="catalog-v-03__accordion-panel">
-                    <div>Lorem ipsum...</div>
+                    <div
+                      class="catalog-v-03__year-range"
+                      data-start="2000"
+                      data-end="2026"
+                      data-from="2000"
+                      data-to="2025"
+                      data-name-from="year_from"
+                      data-name-to="year_to"
+                    >
+                      <div class="catalog-v-03__year-range-item catalog-v-03__year-range-item_from">
+                        <button class="catalog-v-03__year-range-trigger" data-placeholder="от">
+                          от
+                        </button>
+                        <div class="catalog-v-03__year-range-dropdown" style="display: none"></div>
+                      </div>
+
+                      <div class="catalog-v-03__year-range-item catalog-v-03__year-range-item_to">
+                        <button class="catalog-v-03__year-range-trigger" data-placeholder="до">
+                          до
+                        </button>
+                        <div class="catalog-v-03__year-range-dropdown" style="display: none"></div>
+                      </div>
+
+                      <!-- Скрытые инпуты для отправки -->
+                      <input
+                        type="hidden"
+                        class="catalog-v-03__year-range-input-from"
+                        name="year_from"
+                        value=""
+                      />
+                      <input
+                        type="hidden"
+                        class="catalog-v-03__year-range-input-to"
+                        name="year_to"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -211,12 +247,11 @@
                         </div>
                       </div>
 
-                      <!-- Кастомный слайдер -->
                       <div class="catalog-v-03__double-range-sliders">
                         <div class="catalog-v-03__double-range-track">
                           <div class="catalog-v-03__double-range-track-fill"></div>
                         </div>
-                        <!-- Ползунки (круглые ручки) -->
+
                         <div
                           class="catalog-v-03__double-range-thumb catalog-v-03__double-range-thumb--min"
                           style="left: 0%"
@@ -227,7 +262,6 @@
                         ></div>
                       </div>
 
-                      <!-- Индикаторы -->
                       <div class="catalog-v-03__double-range-indicators">
                         <span
                           class="catalog-v-03__double-range-indicator catalog-v-03__double-range-indicator--min"
