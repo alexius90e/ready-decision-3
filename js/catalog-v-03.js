@@ -280,14 +280,9 @@ catalogV03YearRangeEls.forEach((container) => {
 
   const startYear = parseInt(container.dataset.start, 10) || 2000;
   const endYear = parseInt(container.dataset.end, 10) || 2026;
-  const initialFrom = container.dataset.from ? parseInt(container.dataset.from, 10) : null;
-  const initialTo = container.dataset.to ? parseInt(container.dataset.to, 10) : null;
 
-  if (fromInput) fromInput.name = container.dataset.nameFrom || 'year_from';
-  if (toInput) toInput.name = container.dataset.nameTo || 'year_to';
-
-  let fromValue = initialFrom;
-  let toValue = initialTo;
+  let fromValue = startYear;
+  let toValue = endYear;
 
   function generateOptions(dropdown, selectedValue, disabledYears = []) {
     dropdown.innerHTML = '';
