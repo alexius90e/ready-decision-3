@@ -185,7 +185,6 @@
       font-size: 16px;
       line-height: 150%;
       color: #1a1a1a;
-      opacity: 0.5;
       transition: opacity ease-out 0.2s;
       cursor: pointer;
 
@@ -202,11 +201,13 @@
     }
 
     &.active &-toggler {
-      opacity: 1;
-
       &::after {
         transform: rotate(0deg);
       }
+    }
+
+    &.disabled &-toggler {
+      opacity: 0.5;
     }
 
     &-panel {
@@ -733,6 +734,12 @@
         gap: 8px;
         min-height: 40px;
         padding: 8px 32px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #1a1a1a;
         border: none;
         background-color: #ebebeb;
         cursor: pointer;

@@ -210,7 +210,6 @@
   font-size: 16px;
   line-height: 150%;
   color: #1a1a1a;
-  opacity: 0.5;
   -webkit-transition: opacity ease-out 0.2s;
   transition: opacity ease-out 0.2s;
   cursor: pointer;
@@ -231,12 +230,12 @@
   transition: transform ease-out 0.2s;
   transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
 }
-.catalog-v-03__accordion.active .catalog-v-03__accordion-toggler {
-  opacity: 1;
-}
 .catalog-v-03__accordion.active .catalog-v-03__accordion-toggler::after {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+}
+.catalog-v-03__accordion.disabled .catalog-v-03__accordion-toggler {
+  opacity: 0.5;
 }
 .catalog-v-03__accordion-panel {
   max-height: 0;
@@ -837,6 +836,12 @@
   gap: 8px;
   min-height: 40px;
   padding: 8px 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1a1a1a;
   border: none;
   background-color: #ebebeb;
   cursor: pointer;
