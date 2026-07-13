@@ -197,28 +197,28 @@ serviceFilter03Multiselects.forEach((container) => {
     return;
   }
 
+  options.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
   let selectedValues = [];
 
   function buildCheckboxes() {
     dropdown.innerHTML = '';
-    [...options]
-      .sort((a, b) => String(a).trim().toLowerCase().localeCompare(String(b).trim().toLowerCase()))
-      .forEach((opt) => {
-        const label = document.createElement('label');
-        label.className = 'service-filter-03__multiselect-option';
+    options.forEach((opt) => {
+      const label = document.createElement('label');
+      label.className = 'service-filter-03__multiselect-option';
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = opt;
-        checkbox.className = 'service-filter-03__multiselect-option-checkbox';
-        checkbox.checked = selectedValues.includes(opt);
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = opt;
+      checkbox.className = 'service-filter-03__multiselect-option-checkbox';
+      checkbox.checked = selectedValues.includes(opt);
 
-        const text = document.createTextNode(' ' + opt);
+      const text = document.createTextNode(' ' + opt);
 
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        dropdown.appendChild(label);
-      });
+      label.appendChild(checkbox);
+      label.appendChild(text);
+      dropdown.appendChild(label);
+    });
   }
 
   function updateTrigger() {
@@ -259,12 +259,10 @@ serviceFilter03Multiselects.forEach((container) => {
     if (checkbox.checked) {
       if (!selectedValues.includes(value)) selectedValues.push(value);
     } else {
-      selectedValues = selectedValues.filter((value) => value !== value);
+      selectedValues = selectedValues.filter((v) => v !== value);
     }
     console.log(selectedValues);
-    selectedValues.sort((a, b) =>
-      String(a).trim().toLowerCase().localeCompare(String(b).trim().toLowerCase()),
-    );
+    selectedValues.sort((a, b) => options.indexOf(a) - options.indexOf(b));
     updateTrigger();
     updateHiddenInput();
   }
@@ -278,9 +276,7 @@ serviceFilter03Multiselects.forEach((container) => {
       closeAllDropdowns();
       toggleDropdown(true);
       buildCheckboxes();
-      const checkboxes = dropdown.querySelectorAll(
-        '.service-filter-03__multiselect-option-checkbox',
-      );
+      const checkboxes = dropdown.querySelectorAll('.service-filter-03__multiselect-option-checkbox');
       checkboxes.forEach((checkbox) => {
         checkbox.checked = selectedValues.includes(checkbox.value);
       });

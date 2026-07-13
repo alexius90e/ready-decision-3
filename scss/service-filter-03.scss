@@ -22,13 +22,16 @@
       display: flex;
       flex-wrap: wrap;
       flex: 0 0 calc(100% / 4 - 12px / 4 * 3);
+      max-width: calc(100% / 4 - 12px / 4 * 3);
 
       @include desktop {
         flex: 0 0 calc(100% / 2 - 12px / 2);
+        max-width: calc(100% / 2 - 12px / 2);
       }
 
       @include tablet {
         flex: 1 1 100%;
+        max-width: 100%;
       }
 
       &-label {
@@ -42,6 +45,7 @@
 
       &-inputs {
         flex: 1 1 100%;
+        max-width: 100%;
         font-weight: 400;
         font-size: 16px;
         line-height: 140%;
@@ -247,20 +251,40 @@
     &-item {
       position: relative;
       flex: 1 1 100%;
+      max-width: 100%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url(../assets/service-filter-03/chevron-down.svg) center / cover no-repeat;
+        transform: translateY(-50%);
+        transition: transform ease-out 0.2s;
+      }
     }
 
     &-trigger {
-      display: flex;
+      display: block;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      max-width: 100%;
       width: 100%;
-      padding: 16px 16px;
+      padding: 14px 16px;
+      padding-right: 40px;
+      box-sizing: border-box;
       font-weight: 400;
       font-size: 16px;
-      line-height: 100%;
+      line-height: 125%;
       color: #ffffff;
       text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       border: 1px solid #444444;
       border-radius: 4px;
       background-color: #1e1e1e;
@@ -271,19 +295,11 @@
         border-color: #ffffff;
         outline: none;
       }
-
-      &::after {
-        content: '';
-        width: 16px;
-        height: 16px;
-        background: url(../assets/service-filter-03/chevron-down.svg) center / cover no-repeat;
-        transition: transform ease-out 0.2s;
-      }
     }
 
-    &.open &-trigger {
+    &.open &-item {
       &::after {
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
       }
     }
 
@@ -342,8 +358,8 @@
         border: 1px solid #757575;
         border-radius: 4px;
         transition-property: background-color, border-color;
-          transition-timing-function: ease-out;
-          transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
       }
 
       &:has(&-checkbox:checked)::before {

@@ -30,12 +30,14 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(25% - 9px);
           flex: 0 0 calc(25% - 9px);
+  max-width: calc(25% - 9px);
 }
 @media (max-width: 1200px) {
   .service-filter-03__form-fieldset {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 6px);
             flex: 0 0 calc(50% - 6px);
+    max-width: calc(50% - 6px);
   }
 }
 @media (max-width: 768px) {
@@ -43,6 +45,7 @@
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 .service-filter-03__form-fieldset-label {
@@ -59,6 +62,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
+  max-width: 100%;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -292,11 +296,26 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
+  max-width: 100%;
+}
+.service-filter-03__multiselect-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../assets/service-filter-03/chevron-down.svg) center/cover no-repeat;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform ease-out 0.2s;
+  transition: -webkit-transform ease-out 0.2s;
+  transition: transform ease-out 0.2s;
+  transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
 }
 .service-filter-03__multiselect-trigger {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -304,13 +323,20 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 8px;
+  max-width: 100%;
   width: 100%;
-  padding: 16px 16px;
+  padding: 14px 16px;
+  padding-right: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 125%;
   color: #ffffff;
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid #444444;
   border-radius: 4px;
   background-color: #1e1e1e;
@@ -322,19 +348,9 @@
   border-color: #ffffff;
   outline: none;
 }
-.service-filter-03__multiselect-trigger::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: url(../assets/service-filter-03/chevron-down.svg) center/cover no-repeat;
-  -webkit-transition: -webkit-transform ease-out 0.2s;
-  transition: -webkit-transform ease-out 0.2s;
-  transition: transform ease-out 0.2s;
-  transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
-}
-.service-filter-03__multiselect.open .service-filter-03__multiselect-trigger::after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+.service-filter-03__multiselect.open .service-filter-03__multiselect-item::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
 }
 .service-filter-03__multiselect-dropdown {
   position: absolute;
