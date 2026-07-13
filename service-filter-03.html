@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>service-filter-03</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/service-filter-03.css" />
+    <script src="./js/service-filter-03.js" defer></script>
+  </head>
+  <body>
+    <section class="service-filter-03">
+      <div class="container">
+        <div class="service-filter-03__form">
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Марка</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div class="service-filter-03__multiselect">
+                <div
+                  class="service-filter-03__multiselect"
+                  data-options='["BMW", "Audi", "Porsche", "Toyota"]'
+                >
+                  <div class="service-filter-03__multiselect-item">
+                    <button
+                      class="service-filter-03__multiselect-trigger"
+                      data-placeholder="Любая"
+                    ></button>
+                    <div
+                      class="service-filter-03__multiselect-dropdown"
+                      style="display: none"
+                    ></div>
+                  </div>
+                  <input
+                    type="hidden"
+                    class="service-filter-03__multiselect-input"
+                    name="brand"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Модель</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div
+                class="service-filter-03__multiselect"
+                data-options='["1-series", "3-series", "5-series", "7-series","X3", "X5", "X7"]'
+              >
+                <div class="service-filter-03__multiselect-item">
+                  <button
+                    class="service-filter-03__multiselect-trigger"
+                    data-placeholder="Любая"
+                  ></button>
+                  <div class="service-filter-03__multiselect-dropdown" style="display: none"></div>
+                </div>
+                <input
+                  type="hidden"
+                  class="service-filter-03__multiselect-input"
+                  name="models"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Тип кузова</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div
+                class="service-filter-03__multiselect"
+                data-options='["Седан", "Купе", "Универсал"]'
+              >
+                <div class="service-filter-03__multiselect-item">
+                  <button
+                    class="service-filter-03__multiselect-trigger"
+                    data-placeholder="Любая"
+                  ></button>
+                  <div class="service-filter-03__multiselect-dropdown" style="display: none"></div>
+                </div>
+                <input
+                  type="hidden"
+                  class="service-filter-03__multiselect-input"
+                  name="body_type"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Коробка передач</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div
+                class="service-filter-03__multiselect"
+                data-options='["Ручная", "Автомат", "Робот"]'
+              >
+                <div class="service-filter-03__multiselect-item">
+                  <button
+                    class="service-filter-03__multiselect-trigger"
+                    data-placeholder="Любая"
+                  ></button>
+                  <div class="service-filter-03__multiselect-dropdown" style="display: none"></div>
+                </div>
+                <input
+                  type="hidden"
+                  class="service-filter-03__multiselect-input"
+                  name="gearbox"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Бюджет</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div class="service-filter-03__budget">
+                <input
+                  class="service-filter-03__budget-input"
+                  type="text"
+                  name="budget_from"
+                  placeholder="от"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                />
+                <input
+                  class="service-filter-03__budget-input"
+                  type="text"
+                  name="budget_to"
+                  placeholder="до"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Год выпуска</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div class="service-filter-03__year-range" data-start="2000" data-end="2026">
+                <div
+                  class="service-filter-03__year-range-item service-filter-03__year-range-item_from"
+                >
+                  <button class="service-filter-03__year-range-trigger" data-placeholder="от">
+                    от
+                  </button>
+                  <div class="service-filter-03__year-range-dropdown" style="display: none"></div>
+                </div>
+
+                <div
+                  class="service-filter-03__year-range-item service-filter-03__year-range-item_to"
+                >
+                  <button class="service-filter-03__year-range-trigger" data-placeholder="до">
+                    до
+                  </button>
+                  <div class="service-filter-03__year-range-dropdown" style="display: none"></div>
+                </div>
+
+                <input
+                  type="hidden"
+                  class="service-filter-03__year-range-input-from"
+                  name="year_from"
+                  value=""
+                />
+                <input
+                  type="hidden"
+                  class="service-filter-03__year-range-input-to"
+                  name="year_to"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-label">Привод</div>
+            <div class="service-filter-03__form-fieldset-inputs">
+              <div
+                class="service-filter-03__multiselect"
+                data-options='["Передний", "Задний", "Полный"]'
+              >
+                <div class="service-filter-03__multiselect-item">
+                  <button
+                    class="service-filter-03__multiselect-trigger"
+                    data-placeholder="Любая"
+                  ></button>
+                  <div class="service-filter-03__multiselect-dropdown" style="display: none"></div>
+                </div>
+                <input
+                  type="hidden"
+                  class="service-filter-03__multiselect-input"
+                  name="drive"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="service-filter-03__form-fieldset">
+            <div class="service-filter-03__form-fieldset-buttons">
+              <button class="service-filter-03__form-fieldset-buttons-submit">Показать</button>
+              <button class="service-filter-03__form-fieldset-buttons-clear">Очистить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
