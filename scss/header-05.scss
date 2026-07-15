@@ -670,10 +670,25 @@
         gap: 0 24px;
 
         &_brand {
+          position: relative;
           flex: 1 1 auto;
 
           @include laptop {
             flex: 1 1 100%;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -33px;
+            bottom: 0;
+            width: 1px;
+            background-color: #444444;
+
+            @include laptop {
+              display: none;
+            }
           }
         }
 
