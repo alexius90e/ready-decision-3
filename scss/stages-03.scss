@@ -1,0 +1,102 @@
+@import './variables';
+@import './mixins';
+
+.stages-03 {
+  background-color: #1e1e1e;
+
+  &__cards {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__card {
+    flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+
+    @include desktop {
+      flex: 0 0 calc(100% / 2 - 30px / 2);
+    }
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+
+    &-counter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+
+      &::after {
+        content: '';
+        display: block;
+        flex: 1 1 auto;
+        height: 1px;
+        width: 100%;
+        background-color: #444444;
+      }
+
+      &-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        min-width: 40px;
+        min-height: 40px;
+        width: fit-content;
+        padding: 8px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        color: #fff;
+        border-radius: 8px;
+        background-color: #444444;
+      }
+    }
+
+    &-title {
+      margin: 24px 0 0;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    &-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style-type: none;
+
+      &-item {
+        position: relative;
+        flex: 1 1 100%;
+        padding-left: 22px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.7);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 6px;
+          display: block;
+          width: 8px;
+          aspect-ratio: 1;
+          border-radius: 8px;
+          background-color: #a2031a;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
