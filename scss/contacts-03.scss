@@ -1,0 +1,231 @@
+@import './variables';
+@import './mixins';
+
+.contacts-03 {
+  background-color: #1e1e1e;
+
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+
+    @include laptop {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__contacts {
+    flex: 0 0 calc(100% / 2 - 30px / 2);
+    max-width: calc(100% / 2 - 30px / 2);
+
+    @include laptop {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    &-block {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      flex: 0 0 calc(100% / 2 - 16px / 2);
+      max-width: calc(100% / 2 - 16px / 2);
+      padding: 24px;
+      box-sizing: border-box;
+      border: 1px solid #434343;
+      border-radius: 8px;
+
+      @include tablet {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      &:first-child,
+      &:last-child {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      &-label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      &-text,
+      &-link {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        color: #fff;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 16px 0 0;
+
+      &-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc(100% / 2 - 16px / 2);
+        max-width: calc(100% / 2 - 16px / 2);
+        gap: 8px;
+        padding: 16px 32px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 8px;
+        border: none;
+        border-radius: 8px;
+        background-color: transparent;
+        cursor: pointer;
+
+        @include mobile {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+
+        &::before {
+          content: '';
+          position: relative;
+          z-index: 10;
+          display: block;
+          flex: 0 0 auto;
+          width: 18px;
+          aspect-ratio: 1;
+        }
+
+        &_max::before {
+          background: url(../assets/contacts-03/max.svg) center / cover no-repeat;
+        }
+
+        &_tg::before {
+          background: url(../assets/contacts-03/tg.svg) center / cover no-repeat;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          box-sizing: border-box;
+          border: 1px solid rgba($color: #444444, $alpha: 1);
+          transition: opacity ease-out 0.2s;
+          opacity: 0;
+        }
+
+        &_max {
+          background: linear-gradient(
+            229.34deg,
+            #894ee1 8.38%,
+            #7347e2 29.17%,
+            #257cf6 73.08%,
+            #42b7f5 99.57%
+          );
+
+          &::after {
+            background: linear-gradient(
+              229.34deg,
+              #5b00e2 8.38%,
+              #561ce3 29.17%,
+              #0068fa 73.08%,
+              #007bbc 99.57%
+            );
+          }
+        }
+
+        &_tg {
+          background: #229ed9;
+
+          &::after {
+            background: #007fbc;
+          }
+        }
+
+        &_max:hover::after,
+        &_tg:hover::after {
+          opacity: 1;
+        }
+
+        &-text {
+          position: relative;
+          z-index: 10;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 100%;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    flex: 0 0 calc(100% / 2 - 30px / 2);
+    max-width: calc(100% / 2 - 30px / 2);
+    background-color: #444444;
+
+    @include laptop {
+      flex: 1 1 100%;
+      max-width: 100%;
+      min-height: 414px;
+    }
+
+    &-figure {
+      height: 100%;
+      margin: 0;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left center;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      left: 18px;
+      bottom: 24px;
+      display: flex;
+      align-items: center;
+      max-width: calc(100% - 18px * 2);
+      width: fit-content;
+      padding: 5px 12px;
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #c5c5c3;
+      border: 1px solid #343434;
+      border-radius: 8px;
+      background-color: #262626;
+      cursor: pointer;
+
+      @include laptop {
+        bottom: 36px;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 18px;
+        aspect-ratio: 1;
+        background: url(../assets/contacts-03/pin-icon.svg) center / cover no-repeat;
+      }
+    }
+  }
+}

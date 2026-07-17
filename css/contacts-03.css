@@ -1,0 +1,252 @@
+.contacts-03 {
+  background-color: #1e1e1e;
+}
+.contacts-03__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 30px;
+}
+@media (max-width: 992px) {
+  .contacts-03__wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.contacts-03__contacts {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 15px);
+          flex: 0 0 calc(50% - 15px);
+  max-width: calc(50% - 15px);
+}
+@media (max-width: 992px) {
+  .contacts-03__contacts {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.contacts-03__contacts-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+.contacts-03__contacts-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 8px);
+          flex: 0 0 calc(50% - 8px);
+  max-width: calc(50% - 8px);
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #434343;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .contacts-03__contacts-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.contacts-03__contacts-block:first-child, .contacts-03__contacts-block:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  max-width: 100%;
+}
+.contacts-03__contacts-block-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+.contacts-03__contacts-block-text, .contacts-03__contacts-block-link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+}
+.contacts-03__contacts-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0 0;
+}
+.contacts-03__contacts-actions-button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 8px);
+          flex: 0 0 calc(50% - 8px);
+  max-width: calc(50% - 8px);
+  gap: 8px;
+  padding: 16px 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .contacts-03__contacts-actions-button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.contacts-03__contacts-actions-button::before {
+  content: "";
+  position: relative;
+  z-index: 10;
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 18px;
+  aspect-ratio: 1;
+}
+.contacts-03__contacts-actions-button_max::before {
+  background: url(../assets/contacts-03/max.svg) center/cover no-repeat;
+}
+.contacts-03__contacts-actions-button_tg::before {
+  background: url(../assets/contacts-03/tg.svg) center/cover no-repeat;
+}
+.contacts-03__contacts-actions-button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #444444;
+  -webkit-transition: opacity ease-out 0.2s;
+  transition: opacity ease-out 0.2s;
+  opacity: 0;
+}
+.contacts-03__contacts-actions-button_max {
+  background: linear-gradient(229.34deg, #894ee1 8.38%, #7347e2 29.17%, #257cf6 73.08%, #42b7f5 99.57%);
+}
+.contacts-03__contacts-actions-button_max::after {
+  background: linear-gradient(229.34deg, #5b00e2 8.38%, #561ce3 29.17%, #0068fa 73.08%, #007bbc 99.57%);
+}
+.contacts-03__contacts-actions-button_tg {
+  background: #229ed9;
+}
+.contacts-03__contacts-actions-button_tg::after {
+  background: #007fbc;
+}
+.contacts-03__contacts-actions-button_max:hover::after, .contacts-03__contacts-actions-button_tg:hover::after {
+  opacity: 1;
+}
+.contacts-03__contacts-actions-button-text {
+  position: relative;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+}
+.contacts-03__map {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 15px);
+          flex: 0 0 calc(50% - 15px);
+  max-width: calc(50% - 15px);
+  background-color: #444444;
+}
+@media (max-width: 992px) {
+  .contacts-03__map {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    max-width: 100%;
+    min-height: 414px;
+  }
+}
+.contacts-03__map-figure {
+  height: 100%;
+  margin: 0;
+}
+.contacts-03__map-figure-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left center;
+     object-position: left center;
+}
+.contacts-03__map-link {
+  position: absolute;
+  left: 18px;
+  bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: calc(100% - 36px);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #c5c5c3;
+  border: 1px solid #343434;
+  border-radius: 8px;
+  background-color: #262626;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .contacts-03__map-link {
+    bottom: 36px;
+  }
+}
+.contacts-03__map-link::before {
+  content: "";
+  display: block;
+  width: 18px;
+  aspect-ratio: 1;
+  background: url(../assets/contacts-03/pin-icon.svg) center/cover no-repeat;
+}
