@@ -1,0 +1,253 @@
+.advantages-02 {
+  background-color: #1e1e1e;
+}
+.advantages-02__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+}
+@media (max-width: 992px) {
+  .advantages-02__wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.advantages-02__main {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 705px;
+          flex: 0 1 705px;
+}
+@media (max-width: 992px) {
+  .advantages-02__main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.advantages-02__main-benefits {
+  display: block;
+}
+.advantages-02__main-benefit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #444;
+}
+.advantages-02__main-benefit:first-child {
+  padding-top: 0;
+}
+.advantages-02__main-benefit:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.advantages-02__main-benefit-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 40px;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 8px;
+  background-color: #444444;
+}
+.advantages-02__main-benefit-icon-image {
+  display: block;
+  max-width: 100%;
+  width: 24px;
+  height: auto;
+}
+.advantages-02__main-benefit-content-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.advantages-02__main-benefit-content-text {
+  margin: 8px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+.advantages-02__main-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 12px;
+  margin: 32px 0 0;
+}
+@media (max-width: 992px) {
+  .advantages-02__main-actions {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.advantages-02__main-actions-button_calc, .advantages-02__main-actions-button_more {
+  padding: 17px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  -webkit-transition-property: border-color, background-color, color;
+  transition-property: border-color, background-color, color;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+@media (max-width: 992px) {
+  .advantages-02__main-actions-button_calc, .advantages-02__main-actions-button_more {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.advantages-02__main-actions-button_calc {
+  border-color: #a2031a;
+  background-color: #a2031a;
+}
+.advantages-02__main-actions-button_calc:hover {
+  border-color: #880216;
+  background-color: #880216;
+}
+.advantages-02__main-actions-button_calc:disabled {
+  color: #b3b3b3;
+  border-color: #444444;
+  background-color: #383838;
+}
+.advantages-02__main-actions-button_more {
+  border-color: #949494;
+  background-color: #303030;
+}
+.advantages-02__main-actions-button_more:hover {
+  background-color: #242424;
+}
+.advantages-02__main-actions-button_more:disabled {
+  color: #b3b3b3;
+  border-color: #444444;
+  background-color: #383838;
+}
+.advantages-02__main-disclaimer {
+  margin: 12px 0 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+.advantages-02__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 586px;
+          flex: 0 0 586px;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 16px;
+  background-color: #2c2c2c;
+}
+@media (max-width: 1200px) {
+  .advantages-02__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 464px;
+            flex: 0 0 464px;
+  }
+}
+@media (max-width: 992px) {
+  .advantages-02__info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.advantages-02__info-benefits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px;
+}
+.advantages-02__info-benefit {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 6px);
+          flex: 0 0 calc(50% - 6px);
+  max-width: calc(50% - 6px);
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #444444;
+}
+.advantages-02__info-benefit-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #fff;
+}
+.advantages-02__info-benefit-description {
+  margin: 12px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.advantages-02__info-banks {
+  margin: 24px 0 0;
+}
+.advantages-02__info-banks-title {
+  margin: 0 0 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+.advantages-02__info-banks-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.advantages-02__info-banks-list-item {
+  padding: 4px 8px;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background-color: #444444;
+}
