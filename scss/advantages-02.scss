@@ -104,6 +104,7 @@
           transition-property: border-color, background-color, color;
           transition-timing-function: ease-out;
           transition-duration: 0.2s;
+          cursor: pointer;
 
           @include laptop {
             flex: 1 1 100%;

@@ -124,6 +124,7 @@
           transition-timing-function: ease-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
+  cursor: pointer;
 }
 @media (max-width: 992px) {
   .advantages-02__main-actions-button_calc, .advantages-02__main-actions-button_more {
