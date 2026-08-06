@@ -15,10 +15,10 @@
   background: -webkit-gradient(linear, left top, right top, from(rgba(30, 30, 30, 0)), to(#1e1e1e));
   background: linear-gradient(90deg, rgba(30, 30, 30, 0), #1e1e1e);
 }
-.breadcrumbs-01 .container {
-  max-width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+@media (max-width: 1500px) {
+  .breadcrumbs-01 .container {
+    max-width: 100%;
+  }
 }
 .breadcrumbs-01__wrapper {
   display: -webkit-box;

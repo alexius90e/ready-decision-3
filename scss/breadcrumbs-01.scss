@@ -23,8 +23,9 @@
   }
 
   & .container {
-    max-width: 100%;
-    box-sizing: border-box;
+    @include desktoplg {
+      max-width: 100%;
+    }
   }
 
   &__wrapper {
