@@ -34,6 +34,7 @@ if (productCard03SliderMain && productCard03SliderThumbs) {
   const thumbsSwiper = new Swiper(productCard03SliderThumbs, {
     freeMode: true,
     watchSlidesProgress: true,
+    allowTouchMove: false,
   });
 
   const mainSwiper = new Swiper(productCard03SliderMain, {
