@@ -1,0 +1,68 @@
+@import './variables';
+@import './mixins';
+
+.faq-01 {
+  background-color: #1e1e1e;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    padding: 16px;
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    &-toggler {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+      color: #fff;
+
+      &::after {
+        content: '';
+        display: block;
+        flex: 0 0 auto;
+        width: 20px;
+        aspect-ratio: 1;
+        background: url(../assets/faq-01/chevron-down.svg) center / cover no-repeat;
+        transition: transform ease-out 0.2s;
+      }
+    }
+
+    &.active &-toggler {
+      &::after {
+        transform: scale(1, -1);
+      }
+    }
+
+    &-panel {
+      display: block;
+      overflow: hidden;
+      transition: max-height ease-out 0.2s;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 8px;
+      }
+
+      &:not(.active) {
+        max-height: 0;
+      }
+
+      &-content {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}

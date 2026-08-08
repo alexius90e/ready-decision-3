@@ -1,0 +1,72 @@
+.faq-01 {
+  background-color: #1e1e1e;
+}
+.faq-01__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+.faq-01__item {
+  padding: 16px;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
+.faq-01__item-toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+}
+.faq-01__item-toggler::after {
+  content: "";
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 20px;
+  aspect-ratio: 1;
+  background: url(../assets/faq-01/chevron-down.svg) center/cover no-repeat;
+  -webkit-transition: -webkit-transform ease-out 0.2s;
+  transition: -webkit-transform ease-out 0.2s;
+  transition: transform ease-out 0.2s;
+  transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
+}
+.faq-01__item.active .faq-01__item-toggler::after {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+.faq-01__item-panel {
+  display: block;
+  overflow: hidden;
+  -webkit-transition: max-height ease-out 0.2s;
+  transition: max-height ease-out 0.2s;
+}
+.faq-01__item-panel::before {
+  content: "";
+  display: block;
+  height: 8px;
+}
+.faq-01__item-panel:not(.active) {
+  max-height: 0;
+}
+.faq-01__item-panel-content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
