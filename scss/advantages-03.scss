@@ -1,0 +1,88 @@
+@import './variables';
+@import './mixins';
+
+.advantages-03 {
+  background-color: #1e1e1e;
+  overflow: hidden;
+
+  &__slider {
+    & .swiper {
+      @include laptop {
+        overflow: visible;
+      }
+
+      &-wrapper {
+        flex-wrap: wrap;
+        gap: 24px;
+
+        @include laptop {
+          flex-wrap: nowrap;
+          gap: 0;
+        }
+      }
+
+      &-slide {
+        flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
+
+        @include laptop {
+          flex: 0 0 auto;
+          max-width: calc(100% / 2 - 24px / 2 - 20px);
+        }
+
+        @include tablet {
+          max-width: calc(100% - 24px - 20px);
+        }
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 424px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    @include laptop {
+    min-height: 400px;
+    }
+
+    &-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      margin: 0;
+
+      &-image {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      position: relative;
+      z-index: 10;
+
+      &-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        color: #fff;
+      }
+
+      &-text {
+        margin: 8px 0 0;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
