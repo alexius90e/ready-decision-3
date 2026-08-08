@@ -1,0 +1,231 @@
+@import './variables';
+@import './mixins';
+
+.first-screen-10 {
+  padding: 61px 0;
+  background: url(../assets/first-screen-10/bg.jpg) center no-repeat;
+  background-size: auto 100%;
+  background-color: #09090b;
+
+  @include laptop {
+    padding: 24px 0;
+    background-image: url(../assets/first-screen-10/bg-mob.jpg);
+    background-size: cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include desktop {
+      gap: 32px;
+    }
+
+    @include laptop {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__main {
+    flex: 0 1 620px;
+
+    @include laptop {
+      flex: 1 1 100%;
+    }
+
+    &-tag {
+      display: block;
+      width: fit-content;
+      padding: 6px 12px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      border-radius: 4px;
+      background: #a2031a;
+    }
+
+    &-title {
+      margin: 30px 0 0;
+      font-weight: 800;
+      font-size: 64px;
+      line-height: 115%;
+      letter-spacing: -0.02em;
+      color: #fff;
+
+      @include tablet {
+        font-size: 38px;
+      }
+    }
+
+    &-description {
+      margin: 16px 0 0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 30px 0 0;
+      padding: 0;
+      list-style-type: none;
+
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff;
+
+        @include tablet {
+          font-size: 14px;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          flex: 0 0 auto;
+          width: 20px;
+          aspect-ratio: 1;
+          background: url(../assets/first-screen-10/check-circle.svg) center / cover no-repeat;
+        }
+      }
+    }
+  }
+
+  &__callback {
+    flex: 0 0 480px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-color: #1e1e1e;
+
+    @include laptop {
+      flex: 1 1 100%;
+      padding: 24px;
+    }
+
+    &-title {
+      margin: 0 0 8px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      color: #fff;
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+
+    &-description {
+      margin: 0 0 30px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #8e8e93;
+
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &-fieldset {
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+
+      &-input {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 16px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #ffffff;
+        border: 1px solid #444;
+        border-radius: 8px;
+        background-color: transparent;
+        transition-property: background-color, border-color, color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+
+        &:user-invalid {
+          border-color: #ec221f;
+        }
+
+        &:disabled {
+          color: #b3b3b3;
+          border-color: #444444;
+          background-color: #383838;
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      &-submit {
+        display: inline-block;
+        width: 100%;
+        padding: 17px 24px;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        background-color: #a2031a;
+        transition-property: background-color, color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #880216;
+        }
+
+        &:disabled {
+          color: #b3b3b3;
+          background-color: #383838;
+        }
+      }
+
+      &-disclaimer {
+        margin: 16px 0 0;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        color: rgba(255, 255, 255, 0.7);
+
+        &-link {
+          color: inherit;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          transition-property: background-color, color;
+          transition-timing-function: ease-out;
+          transition-duration: 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
