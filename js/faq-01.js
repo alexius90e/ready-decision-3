@@ -1,45 +1,46 @@
-const faq01Items = document.querySelectorAll('.faq-01__item');
+const faqItems = document.querySelectorAll('.faq-01__item');
 
-function updateFaq01Item(faq01Item) {
-  const panel = faq01Item.querySelector('.faq-01__item-panel');
-  if (panel) {
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-      faq01Item.classList.remove('active');
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      faq01Item.classList.add('active');
-    }
+function toggleFaqItem(item) {
+  const panel = item.querySelector('.faq-01__item-panel');
+  if (!panel) return;
+
+  const isOpen = panel.style.maxHeight;
+
+  if (isOpen) {
+    panel.style.maxHeight = null;
+    item.classList.remove('active');
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    item.classList.add('active');
   }
 }
 
-function updateFaq01ItemHeight(faq01Item) {
-  const panel = faq01Item.querySelector('.faq-01__item-panel');
+function updateFaqItemHeight(item) {
+  const panel = item.querySelector('.faq-01__item-panel');
+  if (!panel) return;
 
-  if (panel) {
+  if (item.classList.contains('active')) {
     panel.style.maxHeight = panel.scrollHeight + 'px';
   }
 }
 
-faq01Items.forEach((faq01Item, index) => {
-  if (index === 0) {
-    faq01Item.classList.add('active');
-    updateFaq01Item(faq01Item);
-  }
+if (faqItems.length > 0) {
+  toggleFaqItem(faqItems[0]);
+}
 
-  faq01Item.addEventListener('click', (event) => {
+faqItems.forEach((item) => {
+  item.addEventListener('click', (event) => {
     const isToggler = event.target.classList.contains('faq-01__item-toggler');
-    const isActive = event.currentTarget.classList.contains('active');
-
     if (isToggler) {
-      updateFaq01Item(faq01Item);
+      toggleFaqItem(item);
     }
   });
 });
 
+let resizeTimer;
 window.addEventListener('resize', () => {
-  faq01Items.forEach((faq01Item) => {
-    const isActive = faq01Item.classList.contains('active');
-    if (isActive) updateFaq01ItemHeight(faq01Item);
-  });
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    faqItems.forEach((item) => updateFaqItemHeight(item));
+  }, 200);
 });
