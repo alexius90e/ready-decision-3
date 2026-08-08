@@ -42,5 +42,5 @@ window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
     faqItems.forEach((item) => updateFaqItemHeight(item));
-  }, 200);
+  }, 100);
 });
