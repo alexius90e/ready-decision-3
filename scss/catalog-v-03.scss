@@ -781,21 +781,26 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        min-height: 40px;
+        min-height: 50px;
         padding: 8px 32px;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
         text-transform: uppercase;
         text-align: center;
-        color: #1a1a1a;
-        border: none;
-        background-color: #ebebeb;
+        color: #ffffff;
+        border: 1px solid #949494;
+        border-radius: 8px;
+        background-color: #303030;
         cursor: pointer;
         display: none;
 
         @include laptop {
           display: flex;
+        }
+
+        @include tablet {
+          min-height: 40px;
         }
 
         &::before {
@@ -832,7 +837,9 @@
       @include tablet {
         min-width: 40px;
         padding: 0;
+        border: 1px solid #949494;
         background: url(../assets/catalog-v-03/arrows-up-down.svg) center / 24px no-repeat;
+        background-color: #303030;
       }
 
       &-text {
