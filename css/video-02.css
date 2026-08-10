@@ -19,21 +19,14 @@
   overflow: hidden;
   border-radius: 16px;
 }
-@media (max-width: 1500px) {
-  .video-02__review {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.3333333333% - 16px);
-            flex: 0 0 calc(33.3333333333% - 16px);
-  }
-}
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .video-02__review {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 12px);
             flex: 0 0 calc(50% - 12px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .video-02__review {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
