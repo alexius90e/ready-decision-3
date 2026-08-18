@@ -1,0 +1,281 @@
+@import './variables';
+@import './mixins';
+
+.catalog-carousel-01 {
+  overflow: hidden;
+  background-color: #1e1e1e;
+
+  &__slider {
+    position: relative;
+
+    & > .swiper {
+      display: grid;
+      overflow: visible;
+
+      @include laptop {
+        overflow: visible;
+      }
+
+      & > .swiper-wrapper {
+        min-width: 0;
+
+        & > .swiper-slide {
+          height: 100%;
+          max-width: 342px;
+          width: 342px;
+
+          @include laptop {
+            max-width: calc((100% - 24px) / 2 - 20px);
+            width: calc((100% - 24px) / 2 - 20px);
+          }
+
+          @include tablet {
+            max-width: calc(100% - 24px - 16px);
+            width: calc(100% - 24px - 16px);
+          }
+        }
+      }
+    }
+
+    &-controls {
+
+
+      &-button {
+        &-prev,
+        &-next {
+          position: absolute;
+          top: 50%;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background-color: $color-black;
+          transform: translateY(-50%);
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.2s;
+          cursor: pointer;
+
+          @include laptop {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #1e674e;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 22px;
+            aspect-ratio: 1;
+            filter: invert(100%);
+            background: url(../assets/catalog-carousel-01/arrow-left.svg) center / cover no-repeat;
+          }
+
+          &.swiper-button-disabled {
+            opacity: 0;
+          }
+        }
+
+        &-prev {
+          left: 0;
+
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-next {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #2c2c2c;
+    transition-property: background-color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.32s;
+
+    &-main,
+    &-thumbs {
+      & .swiper {
+        display: grid;
+
+        &-slide {
+          overflow: hidden;
+
+          & > img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            transform: scale(1.01);
+          }
+        }
+      }
+    }
+
+    &-thumbs {
+      & .swiper-slide {
+        transition: filter ease-out 0.2s;
+        filter: brightness(0.5);
+        cursor: pointer;
+
+        &.swiper-slide-thumb-active {
+          filter: brightness(1);
+        }
+      }
+    }
+
+    &-content {
+      display: block;
+      padding: 16px;
+
+      & * {
+        transition-property: color, background-color;
+        transition-timing-function: ease-out;
+        transition-duration: 0.32s;
+      }
+
+      &-title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: #ffffff;
+      }
+
+      &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin: 12px 0 0;
+
+        &-item {
+          padding: 4px 8px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 125%;
+          color: rgba($color: #ffffff, $alpha: 0.7);
+          border-radius: 4px;
+          background-color: #444444;
+        }
+      }
+
+      &-price {
+        margin: 12px 0 0;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      &-info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin: 6px 0 0;
+
+        &-payment,
+        &-views {
+          display: block;
+          flex: 0 1 auto;
+          box-sizing: border-box;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: rgba($color: #ffffff, $alpha: 0.5);
+        }
+
+        &-payment {
+          padding-right: 20px;
+          background: url(../assets/catalog-carousel-01/info.svg) top 2px right / 16px no-repeat;
+        }
+
+        &-views {
+          padding-left: 20px;
+          background: url(../assets/catalog-carousel-01/eye.svg) top 2px left / 16px no-repeat;
+        }
+      }
+
+      &-favourites {
+        &-button {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          z-index: 10;
+          display: block;
+          width: 31px;
+          height: 31px;
+          padding: 0;
+          border: none;
+          border-radius: 32px;
+          background: url(../assets/catalog-carousel-01/heart.svg) center / 16px no-repeat;
+          background-color: #2c2c2c;
+          transition-property: background-image, transform;
+          transition-timing-function: ease-out;
+          transition-duration: 0.2s;
+          will-change: background-image, transform;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.active {
+            background-image: url(../assets/catalog-carousel-01/heart-active.svg);
+          }
+        }
+      }
+    }
+
+    &-tags {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: 48px;
+      z-index: 99;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      &:empty {
+        display: none;
+      }
+
+      &-item {
+        display: block;
+        flex: 0 0 auto;
+        padding: 4px 8px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: #fff;
+        border-radius: 12px;
+        background-color: #ffffff;
+
+        &_sold {
+          background-color: #3c56ca;
+        }
+
+        &_available {
+          background-color: #218653;
+        }
+      }
+    }
+  }
+}
