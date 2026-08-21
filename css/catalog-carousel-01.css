@@ -108,6 +108,7 @@
           transition-timing-function: ease-out;
   -webkit-transition-duration: 0.32s;
           transition-duration: 0.32s;
+  isolation: isolate;
 }
 .catalog-carousel-01__card-link {
   position: absolute;
@@ -332,7 +333,7 @@
   position: absolute;
   top: 16px;
   left: 16px;
-  z-index: 99;
+  z-index: 999;
   pointer-events: none;
   display: block;
   -webkit-box-flex: 0;
@@ -350,6 +351,12 @@
   color: #fff;
   border-radius: 12px;
   background-color: #ffffff;
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
 }
 .catalog-carousel-01__card-tags-item_sold {
   background-color: #3c56ca;
