@@ -24,7 +24,7 @@ catalog04Cards.forEach((card) => {
 
   card.addEventListener('click', (event) => {
     const isFavButton = event.target.classList.contains(
-      'catalog-04__card-content-favourites-button',
+      'catalog-04__card-favourites-button',
     );
     if (isFavButton) event.target.classList.toggle('active');
   });
