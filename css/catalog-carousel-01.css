@@ -328,28 +328,20 @@
 .catalog-carousel-01__card-favourites-button.active {
   background-image: url(../assets/catalog-carousel-01/heart-active.svg);
 }
-.catalog-carousel-01__card-tags {
+.catalog-carousel-01__card-tags-item {
   position: absolute;
   top: 16px;
   left: 16px;
   right: 48px;
   z-index: 99;
   pointer-events: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 8px;
-}
-.catalog-carousel-01__card-tags:empty {
-  display: none;
-}
-.catalog-carousel-01__card-tags-item {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 4px 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

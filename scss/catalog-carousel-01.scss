@@ -323,23 +323,16 @@
     }
 
     &-tags {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      right: 48px;
-      z-index: 99;
-      pointer-events: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-
-      &:empty {
-        display: none;
-      }
-
       &-item {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        right: 48px;
+        z-index: 99;
+        pointer-events: none;
         display: block;
         flex: 0 0 auto;
+        width: fit-content;
         padding: 4px 8px;
         box-sizing: border-box;
         font-weight: 500;
