@@ -5,6 +5,10 @@
   overflow: hidden;
   background-color: #1e1e1e;
 
+  & .container {
+    max-width: none;
+  }
+
   &__slider {
     position: relative;
 
@@ -38,8 +42,6 @@
     }
 
     &-controls {
-
-
       &-button {
         &-prev,
         &-next {
@@ -107,8 +109,17 @@
     transition-timing-function: ease-out;
     transition-duration: 0.32s;
 
+    &-link {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
     &-main,
     &-thumbs {
+      position: relative;
+      z-index: 10;
+
       & .swiper {
         display: grid;
 
@@ -125,6 +136,10 @@
       }
     }
 
+    &-main {
+      pointer-events: none;
+    }
+
     &-thumbs {
       & .swiper-slide {
         transition: filter ease-out 0.2s;
@@ -138,6 +153,9 @@
     }
 
     &-content {
+      position: relative;
+      z-index: 10;
+      pointer-events: none;
       display: block;
       padding: 16px;
 
@@ -210,34 +228,34 @@
           background: url(../assets/catalog-carousel-01/eye.svg) top 2px left / 16px no-repeat;
         }
       }
+    }
 
-      &-favourites {
-        &-button {
-          position: absolute;
-          top: 16px;
-          right: 16px;
-          z-index: 10;
-          display: block;
-          width: 31px;
-          height: 31px;
-          padding: 0;
-          border: none;
-          border-radius: 32px;
-          background: url(../assets/catalog-carousel-01/heart.svg) center / 16px no-repeat;
-          background-color: #2c2c2c;
-          transition-property: background-image, transform;
-          transition-timing-function: ease-out;
-          transition-duration: 0.2s;
-          will-change: background-image, transform;
-          cursor: pointer;
+    &-favourites {
+      &-button {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 99;
+        display: block;
+        width: 31px;
+        height: 31px;
+        padding: 0;
+        border: none;
+        border-radius: 32px;
+        background: url(../assets/catalog-carousel-01/heart.svg) center / 16px no-repeat;
+        background-color: #2c2c2c;
+        transition-property: background-image, transform;
+        transition-timing-function: ease-out;
+        transition-duration: 0.2s;
+        will-change: background-image, transform;
+        cursor: pointer;
 
-          &:hover {
-            transform: scale(1.1);
-          }
+        &:hover {
+          transform: scale(1.1);
+        }
 
-          &.active {
-            background-image: url(../assets/catalog-carousel-01/heart-active.svg);
-          }
+        &.active {
+          background-image: url(../assets/catalog-carousel-01/heart-active.svg);
         }
       }
     }
@@ -248,6 +266,7 @@
       left: 16px;
       right: 48px;
       z-index: 99;
+      pointer-events: none;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;

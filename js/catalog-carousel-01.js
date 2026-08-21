@@ -11,6 +11,10 @@ if (catalogCarousel01SwiperEl) {
     slidesPerView: 'auto',
     spaceBetween: 24,
     loop: true,
+    loopAdditionalSlides: 1,
+    initialSlide: 1,
+    preloadImages: true,
+    watchSlidesVisibility: true,
     touchEventsTarget: 'container',
     navigation: {
       prevEl: catalogCarousel01SwiperPrevEl,
@@ -45,7 +49,7 @@ catalogCarousel01Cards.forEach((card) => {
 
   card.addEventListener('click', (event) => {
     const isFavButton = event.target.classList.contains(
-      'catalog-carousel-01__card-content-favourites-button',
+      'catalog-carousel-01__card-favourites-button',
     );
     if (isFavButton) event.target.classList.toggle('active');
   });
