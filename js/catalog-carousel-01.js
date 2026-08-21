@@ -41,9 +41,16 @@ catalogCarousel01Cards.forEach((card) => {
     const mainSwiper = new Swiper(mainSliderElem, {
       spaceBetween: 20,
       loop: true,
+      allowTouchMove: false,
+      slideToClickedSlide: true,
       thumbs: {
         swiper: thumbsSwiper,
       },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 1000,
     });
   }
 
