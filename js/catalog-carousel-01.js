@@ -58,6 +58,21 @@ catalogCarousel01Cards.forEach((card) => {
     const isFavButton = event.target.classList.contains(
       'catalog-carousel-01__card-favourites-button',
     );
+    const isPaymentMoreButton = event.target.classList.contains(
+      'catalog-carousel-01__card-info-payment-more-button',
+    );
     if (isFavButton) event.target.classList.toggle('active');
+
+    const moreEl = event.currentTarget.querySelector(
+      '.catalog-carousel-01__card-info-payment-more',
+    );
+
+    if (moreEl) {
+      if (isPaymentMoreButton) {
+        moreEl.classList.add('active');
+      } else if (event.target === moreEl) {
+        moreEl.classList.remove('active');
+      }
+    }
   });
 });

@@ -114,6 +114,10 @@
   inset: 0;
   z-index: 1;
 }
+.catalog-carousel-01__card-sliders {
+  position: relative;
+  z-index: 10;
+}
 .catalog-carousel-01__card-main, .catalog-carousel-01__card-thumbs {
   position: relative;
   z-index: 10;
@@ -152,7 +156,7 @@
   z-index: 10;
   pointer-events: none;
   display: block;
-  padding: 16px;
+  padding: 16px 16px 0;
 }
 .catalog-carousel-01__card-content * {
   -webkit-transition-property: color, background-color;
@@ -195,7 +199,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-.catalog-carousel-01__card-content-info {
+.catalog-carousel-01__card-info {
+  position: relative;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -209,8 +215,75 @@
       flex-wrap: wrap;
   gap: 8px 16px;
   margin: 6px 0 0;
+  padding: 0 16px 16px;
 }
-.catalog-carousel-01__card-content-info-payment, .catalog-carousel-01__card-content-info-views {
+.catalog-carousel-01__card-info-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.catalog-carousel-01__card-info-payment-value {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.5);
+}
+.catalog-carousel-01__card-info-payment-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.catalog-carousel-01__card-info-payment-more.active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+}
+.catalog-carousel-01__card-info-payment-more-button {
+  display: inline-block;
+  width: 16px;
+  aspect-ratio: 1;
+  border: none;
+  background: url(../assets/catalog-carousel-01/info.svg) center/16px no-repeat;
+  cursor: pointer;
+}
+.catalog-carousel-01__card-info-payment-more-dialog {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 11;
+  display: block;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #444444;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity ease-out 0.2s;
+  transition: opacity ease-out 0.2s;
+}
+.catalog-carousel-01__card-info-payment-more.active .catalog-carousel-01__card-info-payment-more-dialog {
+  opacity: 1;
+  pointer-events: all;
+}
+.catalog-carousel-01__card-info-views {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -221,12 +294,6 @@
   font-size: 14px;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.5);
-}
-.catalog-carousel-01__card-content-info-payment {
-  padding-right: 20px;
-  background: url(../assets/catalog-carousel-01/info.svg) top 2px right/16px no-repeat;
-}
-.catalog-carousel-01__card-content-info-views {
   padding-left: 20px;
   background: url(../assets/catalog-carousel-01/eye.svg) top 2px left/16px no-repeat;
 }
