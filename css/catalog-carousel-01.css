@@ -294,7 +294,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5) !important;
   padding-left: 20px;
   background: url(../assets/catalog-carousel-01/eye.svg) top 2px left/16px no-repeat;
 }
