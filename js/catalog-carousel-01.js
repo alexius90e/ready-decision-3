@@ -58,11 +58,11 @@ catalogCarousel01Cards.forEach((card) => {
     const isFavButton = event.target.classList.contains(
       'catalog-carousel-01__card-favourites-button',
     );
+    if (isFavButton) event.target.classList.toggle('active');
+
     const isPaymentMoreButton = event.target.classList.contains(
       'catalog-carousel-01__card-info-payment-more-button',
     );
-    if (isFavButton) event.target.classList.toggle('active');
-
     const moreEl = event.currentTarget.querySelector(
       '.catalog-carousel-01__card-info-payment-more',
     );

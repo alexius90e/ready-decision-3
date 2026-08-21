@@ -57,6 +57,22 @@
     max-width: 100%;
   }
 }
+.catalog-04__card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.catalog-04__card-sliders {
+  position: relative;
+  z-index: 10;
+}
+.catalog-04__card-main, .catalog-04__card-thumbs {
+  position: relative;
+  z-index: 10;
+}
+.catalog-04__card-main .swiper, .catalog-04__card-thumbs .swiper {
+  display: grid;
+}
 .catalog-04__card-main .swiper-slide, .catalog-04__card-thumbs .swiper-slide {
   overflow: hidden;
 }
@@ -68,13 +84,7 @@
           transform: scale(1.01);
 }
 .catalog-04__card-main {
-  position: relative;
-  z-index: 10;
   pointer-events: none;
-}
-.catalog-04__card-thumbs {
-  position: relative;
-  z-index: 10;
 }
 .catalog-04__card-thumbs .swiper-slide {
   -webkit-transition: -webkit-filter ease-out 0.2s;
@@ -94,7 +104,7 @@
   z-index: 10;
   pointer-events: none;
   display: block;
-  padding: 16px;
+  padding: 16px 16px 0;
 }
 .catalog-04__card-content * {
   -webkit-transition-property: color, background-color;
@@ -137,7 +147,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-.catalog-04__card-content-info {
+.catalog-04__card-info {
+  position: relative;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,8 +163,75 @@
       flex-wrap: wrap;
   gap: 8px 16px;
   margin: 6px 0 0;
+  padding: 0 16px 16px;
 }
-.catalog-04__card-content-info-payment, .catalog-04__card-content-info-views {
+.catalog-04__card-info-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.catalog-04__card-info-payment-value {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.5);
+}
+.catalog-04__card-info-payment-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.catalog-04__card-info-payment-more.active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+}
+.catalog-04__card-info-payment-more-button {
+  display: inline-block;
+  width: 16px;
+  aspect-ratio: 1;
+  border: none;
+  background: url(../assets/catalog-04/info.svg) center/16px no-repeat;
+  cursor: pointer;
+}
+.catalog-04__card-info-payment-more-dialog {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 11;
+  display: block;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #444444;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity ease-out 0.2s;
+  transition: opacity ease-out 0.2s;
+}
+.catalog-04__card-info-payment-more.active .catalog-04__card-info-payment-more-dialog {
+  opacity: 1;
+  pointer-events: all;
+}
+.catalog-04__card-info-views {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -163,12 +242,6 @@
   font-size: 14px;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.5);
-}
-.catalog-04__card-content-info-payment {
-  padding-right: 20px;
-  background: url(../assets/catalog-04/info.svg) top 2px right/16px no-repeat;
-}
-.catalog-04__card-content-info-views {
   padding-left: 20px;
   background: url(../assets/catalog-04/eye.svg) top 2px left/16px no-repeat;
 }
@@ -203,28 +276,19 @@
 .catalog-04__card-favourites-button.active {
   background-image: url(../assets/catalog-04/heart-active.svg);
 }
-.catalog-04__card-tags {
+.catalog-04__card-tags-item {
   position: absolute;
   top: 16px;
   left: 16px;
-  right: 48px;
   z-index: 99;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 8px;
   pointer-events: none;
-}
-.catalog-04__card-tags:empty {
-  display: none;
-}
-.catalog-04__card-tags-item {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 4px 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -240,11 +304,6 @@
 }
 .catalog-04__card-tags-item_available {
   background-color: #218653;
-}
-.catalog-04__card-link {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
 }
 .catalog-04__more {
   margin: 48px 0 0;

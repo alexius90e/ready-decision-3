@@ -19,14 +19,34 @@ catalogV03Items.forEach((item) => {
       thumbs: {
         swiper: thumbsSwiper,
       },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 1000,
     });
   }
 
   item.addEventListener('click', (event) => {
     const isFavButton = event.target.classList.contains(
-      'catalog-v-03__catalog-item-content-favourites-button',
+      'catalog-v-03__catalog-item-favourites-button',
     );
     if (isFavButton) event.target.classList.toggle('active');
+
+    const isPaymentMoreButton = event.target.classList.contains(
+      'catalog-v-03__catalog-item-info-payment-more-button',
+    );
+    const moreEl = event.currentTarget.querySelector(
+      '.catalog-v-03__catalog-item-info-payment-more',
+    );
+
+    if (moreEl) {
+      if (isPaymentMoreButton) {
+        moreEl.classList.add('active');
+      } else if (event.target === moreEl) {
+        moreEl.classList.remove('active');
+      }
+    }
   });
 });
 
@@ -150,7 +170,7 @@ catalogV03DoubleRangeEls.forEach((container) => {
     const rightPercent = ((max - currentMax) / (max - min)) * 100;
 
     thumbMin.style.left = leftPercent + '%';
-    thumbMax.style.left = (100 - rightPercent) + '%';
+    thumbMax.style.left = 100 - rightPercent + '%';
     trackFill.style.left = leftPercent + '%';
     trackFill.style.right = rightPercent + '%';
 
@@ -164,7 +184,7 @@ catalogV03DoubleRangeEls.forEach((container) => {
     const rightPercent = ((max - currentMax) / (max - min)) * 100;
 
     thumbMin.style.left = leftPercent + '%';
-    thumbMax.style.left = (100 - rightPercent) + '%';
+    thumbMax.style.left = 100 - rightPercent + '%';
     trackFill.style.left = leftPercent + '%';
     trackFill.style.right = rightPercent + '%';
 

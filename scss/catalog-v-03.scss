@@ -961,24 +961,46 @@
         max-width: 100%;
       }
 
+      &-link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+
+      &-sliders {
+        position: relative;
+        z-index: 10;
+      }
+
       &-main,
       &-thumbs {
-        & .swiper-slide {
-          overflow: hidden;
+        position: relative;
+        z-index: 10;
 
-          & > img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            transform: scale(1.01);
+        & .swiper {
+          display: grid;
+
+          &-slide {
+            overflow: hidden;
+
+            & > img {
+              display: block;
+              max-width: 100%;
+              height: auto;
+              transform: scale(1.01);
+            }
           }
         }
+      }
+
+      &-main {
+        pointer-events: none;
       }
 
       &-thumbs {
         & .swiper-slide {
           transition: filter ease-out 0.2s;
-          filter: brightness(0.75);
+          filter: brightness(0.5);
           cursor: pointer;
 
           &.swiper-slide-thumb-active {
@@ -988,7 +1010,11 @@
       }
 
       &-content {
-        padding: 16px;
+        position: relative;
+        z-index: 10;
+        pointer-events: none;
+        display: block;
+        padding: 16px 16px 0;
 
         & * {
           transition-property: color, background-color;
@@ -1029,84 +1055,135 @@
           text-transform: uppercase;
           color: #ffffff;
         }
+      }
 
-        &-info {
+      &-info {
+        position: relative;
+        z-index: 100;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin: 6px 0 0;
+        padding: 0 16px 16px;
+
+        &-payment {
           display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 8px 16px;
-          margin: 6px 0 0;
+          align-items: center;
+          gap: 4px;
 
-          &-payment,
-          &-views {
-            display: block;
-            flex: 0 1 auto;
-            box-sizing: border-box;
+          &-value {
             font-weight: 400;
             font-size: 14px;
             line-height: 140%;
             color: rgba($color: #ffffff, $alpha: 0.5);
           }
 
-          &-payment {
-            padding-right: 20px;
-            background: url(../assets/catalog-v-03/info.svg) top 2px right / 16px no-repeat;
-          }
+          &-more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-          &-views {
-            padding-left: 20px;
-            background: url(../assets/catalog-v-03/eye.svg) top 2px left / 16px no-repeat;
+            &.active {
+              &::before {
+                content: '';
+                position: fixed;
+                inset: 0;
+                z-index: 10;
+                background-color: rgba($color: #000000, $alpha: 0);
+              }
+            }
+
+            &-button {
+              display: inline-block;
+              width: 16px;
+              aspect-ratio: 1;
+              border: none;
+              background: url(../assets/catalog-v-03/info.svg) center / 16px no-repeat;
+              cursor: pointer;
+            }
+
+            &-dialog {
+              position: absolute;
+              left: 16px;
+              right: 16px;
+              bottom: 16px;
+              z-index: 11;
+              display: block;
+              padding: 12px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 140%;
+              color: #ffffff;
+              border-radius: 8px;
+              box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.1);
+              background-color: #444444;
+              opacity: 0;
+              pointer-events: none;
+              transition: opacity ease-out 0.2s;
+            }
+
+            &.active &-dialog {
+              opacity: 1;
+              pointer-events: all;
+            }
           }
         }
 
-        &-favourites {
-          &-button {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            z-index: 10;
-            display: block;
-            width: 24px;
-            height: 24px;
-            padding: 0;
-            border: none;
-            background: url(../assets/catalog-v-03/heart.svg) center / 20px no-repeat;
-            background-color: transparent;
-            transition-property: background-image, transform;
-            transition-timing-function: ease-out;
-            transition-duration: 0.2s;
-            will-change: background-image, transform;
-            cursor: pointer;
+        &-views {
+          display: block;
+          flex: 0 1 auto;
+          box-sizing: border-box;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: rgba($color: #ffffff, $alpha: 0.5);
+          padding-left: 20px;
+          background: url(../assets/catalog-v-03/eye.svg) top 2px left / 16px no-repeat;
+        }
+      }
 
-            &:hover {
-              transform: scale(1.1);
-            }
+      &-favourites {
+        &-button {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          z-index: 99;
+          display: block;
+          width: 31px;
+          height: 31px;
+          padding: 0;
+          border: none;
+          border-radius: 32px;
+          background: url(../assets/catalog-v-03/heart.svg) center / 16px no-repeat;
+          background-color: transparent;
+          transition-property: background-image, transform;
+          transition-timing-function: ease-out;
+          transition-duration: 0.2s;
+          will-change: background-image, transform;
+          cursor: pointer;
 
-            &.active {
-              background-image: url(../assets/catalog-v-03/heart-active.svg);
-            }
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.active {
+            background-image: url(../assets/catalog-v-03/heart-active.svg);
           }
         }
       }
 
       &-tags {
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        right: 48px;
-        z-index: 99;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-
-        &:empty {
-          display: none;
-        }
-
         &-item {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          z-index: 99;
+          pointer-events: none;
           display: block;
           flex: 0 0 auto;
+          width: fit-content;
           padding: 4px 8px;
           box-sizing: border-box;
           font-weight: 500;

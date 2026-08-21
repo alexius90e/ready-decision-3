@@ -19,13 +19,31 @@ catalog04Cards.forEach((card) => {
       thumbs: {
         swiper: thumbsSwiper,
       },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 1000,
     });
   }
 
   card.addEventListener('click', (event) => {
-    const isFavButton = event.target.classList.contains(
-      'catalog-04__card-favourites-button',
-    );
+    const isFavButton = event.target.classList.contains('catalog-04__card-favourites-button');
     if (isFavButton) event.target.classList.toggle('active');
+
+    const isPaymentMoreButton = event.target.classList.contains(
+      'catalog-04__card-info-payment-more-button',
+    );
+    const moreEl = event.currentTarget.querySelector(
+      '.catalog-04__card-info-payment-more',
+    );
+
+    if (moreEl) {
+      if (isPaymentMoreButton) {
+        moreEl.classList.add('active');
+      } else if (event.target === moreEl) {
+        moreEl.classList.remove('active');
+      }
+    }
   });
 });

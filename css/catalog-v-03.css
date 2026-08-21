@@ -1097,6 +1097,22 @@
     max-width: 100%;
   }
 }
+.catalog-v-03__catalog-item-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.catalog-v-03__catalog-item-sliders {
+  position: relative;
+  z-index: 10;
+}
+.catalog-v-03__catalog-item-main, .catalog-v-03__catalog-item-thumbs {
+  position: relative;
+  z-index: 10;
+}
+.catalog-v-03__catalog-item-main .swiper, .catalog-v-03__catalog-item-thumbs .swiper {
+  display: grid;
+}
 .catalog-v-03__catalog-item-main .swiper-slide, .catalog-v-03__catalog-item-thumbs .swiper-slide {
   overflow: hidden;
 }
@@ -1107,13 +1123,16 @@
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
 }
+.catalog-v-03__catalog-item-main {
+  pointer-events: none;
+}
 .catalog-v-03__catalog-item-thumbs .swiper-slide {
   -webkit-transition: -webkit-filter ease-out 0.2s;
   transition: -webkit-filter ease-out 0.2s;
   transition: filter ease-out 0.2s;
   transition: filter ease-out 0.2s, -webkit-filter ease-out 0.2s;
-  -webkit-filter: brightness(0.75);
-          filter: brightness(0.75);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
   cursor: pointer;
 }
 .catalog-v-03__catalog-item-thumbs .swiper-slide.swiper-slide-thumb-active {
@@ -1121,7 +1140,11 @@
           filter: brightness(1);
 }
 .catalog-v-03__catalog-item-content {
-  padding: 16px;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  display: block;
+  padding: 16px 16px 0;
 }
 .catalog-v-03__catalog-item-content * {
   -webkit-transition-property: color, background-color;
@@ -1164,7 +1187,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-.catalog-v-03__catalog-item-content-info {
+.catalog-v-03__catalog-item-info {
+  position: relative;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1178,8 +1203,75 @@
       flex-wrap: wrap;
   gap: 8px 16px;
   margin: 6px 0 0;
+  padding: 0 16px 16px;
 }
-.catalog-v-03__catalog-item-content-info-payment, .catalog-v-03__catalog-item-content-info-views {
+.catalog-v-03__catalog-item-info-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+.catalog-v-03__catalog-item-info-payment-value {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.5);
+}
+.catalog-v-03__catalog-item-info-payment-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.catalog-v-03__catalog-item-info-payment-more.active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+}
+.catalog-v-03__catalog-item-info-payment-more-button {
+  display: inline-block;
+  width: 16px;
+  aspect-ratio: 1;
+  border: none;
+  background: url(../assets/catalog-v-03/info.svg) center/16px no-repeat;
+  cursor: pointer;
+}
+.catalog-v-03__catalog-item-info-payment-more-dialog {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 11;
+  display: block;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #444444;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity ease-out 0.2s;
+  transition: opacity ease-out 0.2s;
+}
+.catalog-v-03__catalog-item-info-payment-more.active .catalog-v-03__catalog-item-info-payment-more-dialog {
+  opacity: 1;
+  pointer-events: all;
+}
+.catalog-v-03__catalog-item-info-views {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -1190,26 +1282,21 @@
   font-size: 14px;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.5);
-}
-.catalog-v-03__catalog-item-content-info-payment {
-  padding-right: 20px;
-  background: url(../assets/catalog-v-03/info.svg) top 2px right/16px no-repeat;
-}
-.catalog-v-03__catalog-item-content-info-views {
   padding-left: 20px;
   background: url(../assets/catalog-v-03/eye.svg) top 2px left/16px no-repeat;
 }
-.catalog-v-03__catalog-item-content-favourites-button {
+.catalog-v-03__catalog-item-favourites-button {
   position: absolute;
   top: 16px;
   right: 16px;
-  z-index: 10;
+  z-index: 99;
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 31px;
+  height: 31px;
   padding: 0;
   border: none;
-  background: url(../assets/catalog-v-03/heart.svg) center/20px no-repeat;
+  border-radius: 32px;
+  background: url(../assets/catalog-v-03/heart.svg) center/16px no-repeat;
   background-color: transparent;
   -webkit-transition-property: background-image, -webkit-transform;
   transition-property: background-image, -webkit-transform;
@@ -1222,34 +1309,26 @@
   will-change: background-image, transform;
   cursor: pointer;
 }
-.catalog-v-03__catalog-item-content-favourites-button:hover {
+.catalog-v-03__catalog-item-favourites-button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.catalog-v-03__catalog-item-content-favourites-button.active {
+.catalog-v-03__catalog-item-favourites-button.active {
   background-image: url(../assets/catalog-v-03/heart-active.svg);
 }
-.catalog-v-03__catalog-item-tags {
+.catalog-v-03__catalog-item-tags-item {
   position: absolute;
   top: 16px;
   left: 16px;
-  right: 48px;
   z-index: 99;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 8px;
-}
-.catalog-v-03__catalog-item-tags:empty {
-  display: none;
-}
-.catalog-v-03__catalog-item-tags-item {
+  pointer-events: none;
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 4px 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
