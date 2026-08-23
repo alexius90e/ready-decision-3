@@ -152,6 +152,13 @@
   -webkit-filter: brightness(1);
           filter: brightness(1);
 }
+.catalog-carousel-01__card-thumbs .swiper-slide img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
 .catalog-carousel-01__card-content {
   position: relative;
   z-index: 10;

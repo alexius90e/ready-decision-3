@@ -38,41 +38,79 @@ catalogCarousel01Cards.forEach((card) => {
       watchSlidesProgress: true,
       allowTouchMove: false,
     });
+
     const mainSwiper = new Swiper(mainSliderElem, {
       spaceBetween: 20,
-      loop: true,
       allowTouchMove: false,
       slideToClickedSlide: true,
-      thumbs: {
-        swiper: thumbsSwiper,
-      },
       effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      speed: 1000,
+      fadeEffect: { crossFade: true },
+      speed: 700,
     });
-  }
 
-  card.addEventListener('click', (event) => {
-    const isFavButton = event.target.classList.contains(
-      'catalog-carousel-01__card-favourites-button',
-    );
-    if (isFavButton) event.target.classList.toggle('active');
-
-    const isPaymentMoreButton = event.target.classList.contains(
-      'catalog-carousel-01__card-info-payment-more-button',
-    );
-    const moreEl = event.currentTarget.querySelector(
-      '.catalog-carousel-01__card-info-payment-more',
-    );
-
-    if (moreEl) {
-      if (isPaymentMoreButton) {
-        moreEl.classList.add('active');
-      } else if (event.target === moreEl) {
-        moreEl.classList.remove('active');
+    function updateThumbs(activeIndex, animate = true) {
+      const slides = thumbsSliderElem.querySelectorAll('.swiper-slide');
+      slides.forEach((slide) => {
+        const idx = parseInt(slide.getAttribute('data-swiper-slide-index'));
+        slide.classList.toggle('swiper-slide-thumb-active', idx === activeIndex);
+      });
+      const targetRealIndex = thumbsSwiper.slides.findIndex(
+        (slide) => parseInt(slide.getAttribute('data-swiper-slide-index')) === activeIndex,
+      );
+      if (targetRealIndex !== -1) {
+        thumbsSwiper.slideTo(targetRealIndex, animate ? 300 : 0);
       }
     }
-  });
+
+    const thumbSlides = thumbsSliderElem.querySelectorAll('.swiper-slide');
+    thumbSlides.forEach((thumbSlide) => {
+      thumbSlide.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        const slideIndex = parseInt(this.getAttribute('data-swiper-slide-index'));
+        if (slideIndex === mainSwiper.realIndex) return;
+
+        updateThumbs(slideIndex, false);
+
+        if (mainSwiper.animating) {
+          mainSwiper.slideTo(mainSwiper.realIndex, 0, false);
+        }
+        mainSwiper.slideTo(slideIndex, mainSwiper.params.speed);
+      });
+    });
+
+    mainSwiper.on('slideChange', function () {
+      updateThumbs(this.realIndex, false);
+    });
+
+    mainSwiper.on('slideChangeTransitionEnd', function () {
+      updateThumbs(this.realIndex, false);
+    });
+
+    updateThumbs(mainSwiper.realIndex, false);
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('.catalog-carousel-01__card-thumbs')) return;
+
+      const isFavButton = event.target.classList.contains(
+        'catalog-carousel-01__card-favourites-button',
+      );
+      if (isFavButton) event.target.classList.toggle('active');
+
+      const isPaymentMoreButton = event.target.classList.contains(
+        'catalog-carousel-01__card-info-payment-more-button',
+      );
+      const moreEl = event.currentTarget.querySelector(
+        '.catalog-carousel-01__card-info-payment-more',
+      );
+
+      if (moreEl) {
+        if (isPaymentMoreButton) {
+          moreEl.classList.add('active');
+        } else if (event.target === moreEl) {
+          moreEl.classList.remove('active');
+        }
+      }
+    });
+  }
 });

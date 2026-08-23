@@ -987,7 +987,8 @@
               display: block;
               max-width: 100%;
               height: auto;
-              transform: scale(1.01);
+              user-select: none;
+              pointer-events: none;
             }
           }
         }
@@ -998,13 +999,22 @@
       }
 
       &-thumbs {
+        position: relative;
+        z-index: 99;
+
         & .swiper-slide {
           transition: filter ease-out 0.2s;
           filter: brightness(0.5);
           cursor: pointer;
+          
 
           &.swiper-slide-thumb-active {
             filter: brightness(1);
+          }
+
+          & img {
+            user-select: none;
+            pointer-events: none;
           }
         }
       }

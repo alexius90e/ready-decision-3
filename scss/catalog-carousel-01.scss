@@ -155,6 +155,11 @@
         &.swiper-slide-thumb-active {
           filter: brightness(1);
         }
+
+        & img {
+          user-select: none;
+          pointer-events: none;
+        }
       }
     }
 
