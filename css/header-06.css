@@ -205,6 +205,7 @@
   display: block;
 }
 .header-06__top-menu-collapse {
+  position: relative;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -297,6 +298,7 @@
 @media (max-width: 1500px) {
   .header-06__top-menu-collapse-panel {
     position: absolute;
+    top: calc(100% + 16px);
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
@@ -614,6 +616,9 @@
   .header-06__menu-content {
     max-height: calc(100dvh - 75px);
   }
+}
+.header-06__menu-nav {
+  padding: 20px 0;
 }
 .header-06__menu-nav-item-title {
   display: -webkit-box;

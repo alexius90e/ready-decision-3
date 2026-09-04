@@ -172,6 +172,7 @@
       }
 
       &-collapse {
+        position: relative;
         order: 1;
 
         @include desktoplg {
@@ -249,6 +250,7 @@
 
           @include desktoplg {
             position: absolute;
+            top: calc(100% + 16px);
             align-items: stretch;
             flex-direction: column;
             gap: 0;
@@ -536,6 +538,8 @@
     }
 
     &-nav {
+      padding: 20px 0;
+
       &-item {
         &-title {
           display: flex;
