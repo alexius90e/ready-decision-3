@@ -311,11 +311,6 @@
         display: flex;
         align-items: center;
         flex: 0 0 auto;
-        order: 0;
-
-        @include laptop {
-          order: 1;
-        }
 
         &-link {
           font-weight: 600;
@@ -417,9 +412,9 @@
           width: 16px;
           pointer-events: none;
 
-          $line-width: 14px;
+          $line-width: 16px;
           $line-height: 1px;
-          $gap: 3px;
+          $gap: 4px;
 
           $total-height: ($line-height * 3) + ($gap * 2);
           $offset: calc(50% - #{$total-height / 2});
@@ -538,7 +533,7 @@
     }
 
     &-nav {
-      padding: 20px 0;
+      margin: 0 0 20px;
 
       &-item {
         &-title {

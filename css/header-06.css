@@ -380,16 +380,6 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
-}
-@media (max-width: 992px) {
-  .header-06__top-contacts-phone {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
 }
 .header-06__top-contacts-phone-link {
   font-weight: 600;
@@ -514,7 +504,7 @@
   content: "";
   position: absolute;
   left: 50%;
-  width: 14px;
+  width: 16px;
   height: 1px;
   background-color: #1e1e1e;
   -webkit-transform: translateX(-50%);
@@ -525,13 +515,13 @@
   transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
 }
 .header-06__top-burger-button-icon::before {
-  top: calc(50% - 4.5px);
+  top: calc(50% - 5.5px);
 }
 .header-06__top-burger-button-icon span {
-  top: calc(calc(50% - 4.5px) + 1px + 3px);
+  top: calc(calc(50% - 5.5px) + 1px + 4px);
 }
 .header-06__top-burger-button-icon::after {
-  top: calc(calc(50% - 4.5px) + (1px + 3px) * 2);
+  top: calc(calc(50% - 5.5px) + (1px + 4px) * 2);
 }
 .header-06__top-burger-button:disabled .header-06__top-burger-button-icon {
   opacity: 0.5;
@@ -618,7 +608,7 @@
   }
 }
 .header-06__menu-nav {
-  padding: 20px 0;
+  margin: 0 0 20px;
 }
 .header-06__menu-nav-item-title {
   display: -webkit-box;

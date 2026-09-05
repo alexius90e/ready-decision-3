@@ -153,8 +153,9 @@ header06MenuNavItemEls.forEach((header06MenuNavItemEl) => {
 
   header06MenuNavItemEl.addEventListener('click', (event) => {
     const isMoreBtn = event.target.classList.contains('header-06__menu-nav-item-title-more-button');
+    const isTitle = event.target.classList.contains('header-06__menu-nav-item-title');
 
-    if (isMoreBtn) {
+    if (isMoreBtn || isTitle) {
       toggleHeader06MenuNavItem(event.currentTarget);
     }
   });
