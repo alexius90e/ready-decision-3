@@ -330,15 +330,17 @@
             transform: none;
   }
 }
-.header-06__top-menu-collapse .header-06__top-menu-item-submenu::before {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: auto;
-  width: 10px;
-  background-color: transparent;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+@media (max-width: 1500px) {
+  .header-06__top-menu-collapse .header-06__top-menu-item-submenu::before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 10px;
+    background-color: transparent;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 .header-06__top-contacts {
   display: -webkit-box;
@@ -496,32 +498,29 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  height: 16px;
-  width: 16px;
-  pointer-events: none;
+  height: 20px;
+  width: 20px;
 }
 .header-06__top-burger-button-icon span, .header-06__top-burger-button-icon::before, .header-06__top-burger-button-icon::after {
   content: "";
   position: absolute;
   left: 50%;
-  width: 16px;
-  height: 1px;
-  background-color: #1e1e1e;
+  width: 15px;
+  height: 2px;
+  background: #000;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-transition: -webkit-transform ease-out 0.2s;
-  transition: -webkit-transform ease-out 0.2s;
-  transition: transform ease-out 0.2s;
-  transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .header-06__top-burger-button-icon::before {
-  top: calc(50% - 5.5px);
+  top: calc(50% - 5px);
 }
 .header-06__top-burger-button-icon span {
-  top: calc(calc(50% - 5.5px) + 1px + 4px);
+  top: calc(calc(50% - 5px) + 2px + 2px);
 }
 .header-06__top-burger-button-icon::after {
-  top: calc(calc(50% - 5.5px) + (1px + 4px) * 2);
+  top: calc(calc(50% - 5px) + (2px + 2px) * 2);
 }
 .header-06__top-burger-button:disabled .header-06__top-burger-button-icon {
   opacity: 0.5;
@@ -650,6 +649,9 @@
 .header-06__menu-nav-item.active .header-06__menu-nav-item-title-more-button {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+.header-06__menu-nav-item:has(.header-06__menu-nav-item-submenu) .header-06__menu-nav-item-title-link {
+  pointer-events: none;
 }
 .header-06__menu-nav-item:has(.header-06__menu-nav-item-submenu) .header-06__menu-nav-item-title-more {
   display: block;
