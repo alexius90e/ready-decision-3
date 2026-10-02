@@ -1,0 +1,314 @@
+@import './variables';
+@import './mixins';
+
+.pricing-packages-01 {
+  background-color: #ffffff;
+
+  &__wrapper {
+    display: block;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+    overflow: auto;
+
+    @include laptop {
+      gap: 8px;
+    }
+
+    &-button {
+      display: inline-block;
+      flex: 0 0 auto;
+      padding: 11px 20px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 100%;
+      text-align: center;
+      color: #2c2f33;
+      border: 1px solid #d8dce2;
+      border-radius: 24px;
+      background-color: #ffffff;
+      cursor: pointer;
+
+      @include laptop {
+        font-size: 15px;
+      }
+
+      &.active {
+        color: #ffffff;
+        border: 1px solid #166ff5;
+        background-color: #166ff5;
+      }
+    }
+  }
+
+  &__content {
+    display: block;
+
+    @include tablet {
+      padding-bottom: 10px;
+      overflow: auto;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    display: none;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include laptop {
+      gap: 16px;
+    }
+
+    @include tablet {
+      min-width: 654px;
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    &-details {
+      display: block;
+      flex: 0 0 calc(100% / 2 - 30px / 2);
+
+      @include desktop {
+        flex: 0 0 calc(100% / 2 - 20px / 2);
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 16px / 2);
+      }
+    }
+
+    &-info {
+      padding: 40px;
+      background: #1d1d1d;
+
+      @include desktoplg {
+        padding: 32px;
+      }
+
+      @include laptop {
+        padding: 16px;
+      }
+
+      &-title {
+        margin: 0;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 130%;
+        color: #fff;
+
+        @include desktop {
+          font-size: 28px;
+        }
+
+        @include laptop {
+          font-size: 24px;
+        }
+      }
+
+      &-description {
+        margin: 20px 0 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #b5b5b5;
+
+        @include laptop {
+          font-size: 15px;
+        }
+      }
+
+      &-price {
+        margin: 48px 0 0;
+        font-weight: 600;
+        font-size: 44px;
+        color: #fff;
+
+        @include laptop {
+          font-size: 38px;
+        }
+      }
+
+      &-details {
+        margin: 6px 0 0;
+        font-weight: 500;
+        font-size: 14px;
+        color: #8a9099;
+      }
+
+      &-calculate {
+        margin: 32px 0 0;
+
+        &-button {
+          width: 100%;
+        }
+      }
+    }
+
+    &-prices {
+      padding: 32px 40px;
+      border: 1px solid #d9d9d9;
+
+      @include desktoplg {
+        padding: 28px 32px;
+      }
+
+      @include desktop {
+        padding: 18px 24px;
+      }
+
+      @include laptop {
+        padding: 16px;
+      }
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 0;
+        border-top: 1px solid #edeff2;
+
+        @include laptop {
+          flex-wrap: wrap;
+        }
+
+        &:first-child {
+          border-top: none;
+        }
+
+        &-text {
+          font-weight: 400;
+          font-size: 16px;
+          color: #2c2f33;
+
+          @include laptop {
+            flex: 1 1 100%;
+            font-size: 15px;
+          }
+        }
+
+        &-value {
+          flex: 0 0 auto;
+          min-width: 128px;
+          font-weight: 600;
+          font-size: 20px;
+          color: #111214;
+          text-align: right;
+
+          @include laptop {
+            flex: 1 1 100%;
+            font-size: 18px;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    &-included {
+      flex: 0 0 calc(100% / 2 - 30px / 2);
+      padding: 40px;
+      background-color: #f2f2f2;
+
+      @include desktoplg {
+        padding: 32px;
+      }
+
+      @include desktop {
+        flex: 0 0 calc(100% / 2 - 20px / 2);
+        padding: 24px;
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 16px / 2);
+        padding: 16px;
+      }
+
+      &-title {
+        margin: 0;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 130%;
+        color: #111214;
+
+        @include desktop {
+          font-size: 28px;
+        }
+
+        @include laptop {
+          font-size: 24px;
+        }
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 32px 0 0;
+
+        @include desktoplg {
+          margin-top: 28px;
+        }
+
+        @include desktop {
+          margin-top: 16px;
+        }
+
+        &-item {
+          position: relative;
+          padding-left: 22px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #8e8e93;
+          }
+
+          &.active::before {
+            background-color: #1b5bff;
+          }
+
+          &-title {
+            margin: 0;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 140%;
+            color: #000;
+
+            @include laptop {
+              font-size: 16px;
+            }
+          }
+
+          &-text {
+            margin: 2px 0 0;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #8e8e93;
+
+            @include laptop {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
