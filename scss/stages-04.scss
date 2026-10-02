@@ -1,0 +1,119 @@
+@import './variables';
+@import './mixins';
+
+.stages-04 {
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 4px 48px;
+  }
+
+  &__accordion {
+    flex: 0 0 calc(100% / 2 - 48px / 2);
+    max-width: calc(100% / 2 - 48px / 2);
+    border-top: 1px solid transparent;
+
+    @include laptop {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    &:nth-child(n + 3) {
+      border-top-color: #e4e7ec;
+    }
+
+    &:nth-child(2) {
+      @include laptop {
+        border-top-color: #e4e7ec;
+      }
+    }
+
+    &-toggler {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px 16px 0;
+
+      @include laptop {
+        gap: 12px;
+        padding: 20px 16px 20px 0;
+      }
+
+      &-id {
+        flex: 0 0 18px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 150%;
+        color: #1b5bff;
+        pointer-events: none;
+      }
+
+      &-title {
+        flex: 1 1 auto;
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+        pointer-events: none;
+
+        @include laptop {
+          font-size: 16px;
+        }
+      }
+
+      &-indicator {
+        position: relative;
+        display: block;
+        flex: 0 0 auto;
+        width: 16px;
+        pointer-events: none;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(50% - 2px / 2);
+          left: calc(50% - 12px / 2);
+          display: block;
+          width: 12px;
+          height: 2px;
+          background-color: #b7bcc4;
+          transition: transform ease-out 0.2s;
+        }
+
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &.active &-toggler {
+      &-indicator {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height ease-out 0.2s;
+      will-change: max-height;
+
+      &-content {
+        padding: 0 40px 24px 34px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #5e646c;
+
+        @include laptop {
+          padding: 0 40px 24px 30px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
