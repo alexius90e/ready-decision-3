@@ -189,9 +189,6 @@
   -webkit-animation: catalog05CardIn 0.3s ease-out;
           animation: catalog05CardIn 0.3s ease-out;
 }
-.catalog-05__card:hover {
-  background-color: rgba(255, 255, 255, 0);
-}
 .catalog-05__card-heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -707,19 +704,19 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  height: 36px;
-}
-@media (max-width: 768px) {
-  .catalog-05__card-results-item-title-icon {
-    height: auto;
-  }
 }
 .catalog-05__card-results-item-title-icon-image {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 28px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
+  .catalog-05__card-results-item-title-icon-image {
+    width: 22px;
+  }
+}
+@media (max-width: 1200px) {
   .catalog-05__card-results-item-title-icon-image {
     width: 20px;
   }

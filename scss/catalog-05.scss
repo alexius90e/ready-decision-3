@@ -143,10 +143,6 @@
       animation: catalog05CardIn 0.3s ease-out;
     }
 
-    &:hover {
-      background-color: rgba($color: #ffffff, $alpha: 0);
-    }
-
     &-heading {
       display: flex;
       align-items: flex-start;
@@ -203,16 +199,16 @@
     }
 
     &:hover &-heading {
-       &-details {
+      &-details {
         &-link {
           transform: translateX(4px);
 
-           &::before {
+          &::before {
             filter: brightness(0) saturate(100%) invert(31%) sepia(97%) saturate(2200%)
-                hue-rotate(210deg) brightness(97%) contrast(95%);
-           }
+              hue-rotate(210deg) brightness(97%) contrast(95%);
+          }
         }
-       }
+      }
     }
 
     &-description {
@@ -571,18 +567,18 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            height: 36px;
-
-            @include tablet {
-              height: auto;
-            }
 
             &-image {
               display: block;
               max-width: 100%;
               height: auto;
+              width: 28px;
 
-              @include tablet {
+              @include desktoplg {
+                width: 22px;
+              }
+
+              @include desktop {
                 width: 20px;
               }
             }
@@ -608,7 +604,8 @@
           &-icon {
             &-image {
               filter: brightness(0) saturate(100%) invert(31%) sepia(97%) saturate(2200%)
-                hue-rotate(210deg) brightness(97%) contrast(95%);filter: brightness(0) saturate(100%) invert(31%) sepia(97%) saturate(2200%)
+                hue-rotate(210deg) brightness(97%) contrast(95%);
+              filter: brightness(0) saturate(100%) invert(31%) sepia(97%) saturate(2200%)
                 hue-rotate(210deg) brightness(97%) contrast(95%);
             }
           }
