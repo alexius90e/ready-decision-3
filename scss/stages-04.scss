@@ -10,9 +10,6 @@
   }
 
   &__accordion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     flex: 0 0 calc(100% / 2 - 48px / 2);
     max-width: calc(100% / 2 - 48px / 2);
     border-top: 1px solid transparent;

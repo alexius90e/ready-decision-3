@@ -257,6 +257,11 @@
     padding: 32px;
   }
 }
+@media (max-width: 1200px) {
+  .pricing-packages-01__card-info {
+    padding: 24px;
+  }
+}
 @media (max-width: 992px) {
   .pricing-packages-01__card-info {
     padding: 16px;

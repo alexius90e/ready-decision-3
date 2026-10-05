@@ -10,16 +10,6 @@
   gap: 3px 48px;
 }
 .stages-04__accordion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(50% - 24px);
           flex: 0 0 calc(50% - 24px);

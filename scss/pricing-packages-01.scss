@@ -222,6 +222,10 @@
         padding: 32px;
       }
 
+      @include desktop {
+        padding: 24px;
+      }
+
       @include laptop {
         padding: 16px;
       }
