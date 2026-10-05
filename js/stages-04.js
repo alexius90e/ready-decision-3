@@ -13,11 +13,13 @@ function handleStages04AccordionClick(event) {
 
   if (event.target === panel) return;
 
-  event.currentTarget.classList.toggle('active');
-  if (panel.style.maxHeight) {
-    panel.style.maxHeight = null;
-  } else {
-    panel.style.maxHeight = panel.scrollHeight + 'px';
+  if (event.target === toggler) {
+    event.currentTarget.classList.toggle('active');
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
   }
 }
 
@@ -38,3 +40,5 @@ window.addEventListener('resize', () => {
   clearTimeout(stages04ResizeTimer);
   stages04ResizeTimer = setTimeout(updateStages04PanelsHeight, 50);
 });
+
+window.addEventListener('load', updateStages04PanelsHeight);

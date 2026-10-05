@@ -7,9 +7,19 @@
           align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 4px 48px;
+  gap: 3px 48px;
 }
 .stages-04__accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(50% - 24px);
           flex: 0 0 calc(50% - 24px);
@@ -49,7 +59,7 @@
 @media (max-width: 992px) {
   .stages-04__accordion-toggler {
     gap: 12px;
-    padding: 20px 16px 20px 0;
+    padding: 17px 16px 17px 0;
   }
 }
 .stages-04__accordion-toggler-id {
