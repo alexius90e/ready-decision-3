@@ -50,8 +50,22 @@
     display: block;
 
     @include tablet {
+      padding: 0 20px;
       padding-bottom: 10px;
+      margin: 0 -20px;
       overflow: auto;
+    }
+
+    @include mobile {
+      padding: 0 15px;
+      padding-bottom: 10px;
+      margin: 0 -15px;
+    }
+
+    @include mobilesm {
+      padding: 0 10px;
+      padding-bottom: 10px;
+      margin: 0 -10px;
     }
   }
 
@@ -69,10 +83,6 @@
       gap: 16px;
     }
 
-    @include tablet {
-      min-width: 654px;
-    }
-
     &.active {
       display: flex;
     }
@@ -80,6 +90,7 @@
     &-details {
       display: block;
       flex: 0 0 calc(100% / 2 - 30px / 2);
+      box-sizing: border-box;
 
       @include desktop {
         flex: 0 0 calc(100% / 2 - 20px / 2);
@@ -87,6 +98,18 @@
 
       @include laptop {
         flex: 0 0 calc(100% / 2 - 16px / 2);
+      }
+
+      @include tablet {
+        min-width: calc(100dvw - 20px - 16px - 40px);
+      }
+
+      @include mobile {
+        min-width: calc(100dvw - 15px - 16px - 40px);
+      }
+
+      @include mobilesm {
+        min-width: calc(100dvw - 10px - 16px - 40px);
       }
     }
 
@@ -219,6 +242,7 @@
     &-included {
       flex: 0 0 calc(100% / 2 - 30px / 2);
       padding: 40px;
+      box-sizing: border-box;
       background-color: #f2f2f2;
 
       @include desktoplg {
@@ -233,6 +257,10 @@
       @include laptop {
         flex: 0 0 calc(100% / 2 - 16px / 2);
         padding: 16px;
+      }
+
+      @include tablet {
+        min-width: 320px;
       }
 
       &-title {
@@ -268,6 +296,7 @@
         &-item {
           position: relative;
           padding-left: 22px;
+          cursor: pointer;
 
           &::before {
             content: '';
@@ -278,9 +307,10 @@
             width: 10px;
             height: 10px;
             background-color: #8e8e93;
+            transition: background-color ease-out 0.2s;
           }
 
-          &.active::before {
+          &:hover::before {
             background-color: #1b5bff;
           }
 
