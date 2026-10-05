@@ -567,6 +567,19 @@
             justify-content: center;
             align-items: center;
             margin: 0;
+            min-height: 36px;
+
+            @include desktoplg {
+              min-height: 31px;
+            }
+
+            @include desktop {
+              min-height: 26px;
+            }
+
+            @include laptop {
+              min-height: 20px;
+            }
 
             &-image {
               display: block;
@@ -580,6 +593,11 @@
 
               @include desktop {
                 width: 20px;
+              }
+
+              @include laptop {
+                max-height: 21px;
+                overflow: auto;
               }
             }
           }
