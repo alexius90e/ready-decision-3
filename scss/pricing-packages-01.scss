@@ -47,7 +47,17 @@
   }
 
   &__content {
-    display: block;
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include laptop {
+      gap: 16px;
+    }
 
     @include tablet {
       padding: 0 20px;
@@ -69,48 +79,139 @@
     }
   }
 
-  &__card {
-    display: flex;
-    align-items: stretch;
-    gap: 30px;
-    display: none;
+  &__cards {
+    display: block;
+    flex: 0 0 calc(100% / 2 - 30px / 2);
+    box-sizing: border-box;
 
     @include desktop {
-      gap: 20px;
+      flex: 0 0 calc(100% / 2 - 20px / 2);
     }
 
     @include laptop {
-      gap: 16px;
+      flex: 0 0 calc(100% / 2 - 16px / 2);
     }
 
-    &.active {
-      display: flex;
+    @include tablet {
+      min-width: calc(100dvw - 20px - 16px - 40px);
     }
 
-    &-details {
-      display: block;
-      flex: 0 0 calc(100% / 2 - 30px / 2);
-      box-sizing: border-box;
+    @include mobile {
+      min-width: calc(100dvw - 15px - 16px - 40px);
+    }
+
+    @include mobilesm {
+      min-width: calc(100dvw - 10px - 16px - 40px);
+    }
+  }
+
+  &__included {
+    flex: 0 0 calc(100% / 2 - 30px / 2);
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+
+    @include desktoplg {
+      padding: 32px;
+    }
+
+    @include desktop {
+      flex: 0 0 calc(100% / 2 - 20px / 2);
+      padding: 24px;
+    }
+
+    @include laptop {
+      flex: 0 0 calc(100% / 2 - 16px / 2);
+      padding: 16px;
+    }
+
+    @include tablet {
+      min-width: 320px;
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 130%;
+      color: #111214;
 
       @include desktop {
-        flex: 0 0 calc(100% / 2 - 20px / 2);
+        font-size: 28px;
       }
 
       @include laptop {
-        flex: 0 0 calc(100% / 2 - 16px / 2);
+        font-size: 24px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 32px 0 0;
+
+      @include desktoplg {
+        margin-top: 28px;
       }
 
-      @include tablet {
-        min-width: calc(100dvw - 20px - 16px - 40px);
+      @include desktop {
+        margin-top: 16px;
       }
 
-      @include mobile {
-        min-width: calc(100dvw - 15px - 16px - 40px);
-      }
+      &-item {
+        position: relative;
+        padding-left: 22px;
+        cursor: pointer;
 
-      @include mobilesm {
-        min-width: calc(100dvw - 10px - 16px - 40px);
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          display: block;
+          width: 10px;
+          height: 10px;
+          background-color: #8e8e93;
+          transition: background-color ease-out 0.2s;
+        }
+
+        &:hover::before {
+          background-color: #1b5bff;
+        }
+
+        &-title {
+          margin: 0;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 140%;
+          color: #000;
+
+          @include laptop {
+            font-size: 16px;
+          }
+        }
+
+        &-text {
+          margin: 2px 0 0;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #8e8e93;
+
+          @include laptop {
+            font-size: 14px;
+          }
+        }
       }
+    }
+  }
+
+  &__card {
+    display: none;
+
+    &.active {
+      display: block;
     }
 
     &-info {
@@ -234,108 +335,6 @@
             flex: 1 1 100%;
             font-size: 18px;
             text-align: left;
-          }
-        }
-      }
-    }
-
-    &-included {
-      flex: 0 0 calc(100% / 2 - 30px / 2);
-      padding: 40px;
-      box-sizing: border-box;
-      background-color: #f2f2f2;
-
-      @include desktoplg {
-        padding: 32px;
-      }
-
-      @include desktop {
-        flex: 0 0 calc(100% / 2 - 20px / 2);
-        padding: 24px;
-      }
-
-      @include laptop {
-        flex: 0 0 calc(100% / 2 - 16px / 2);
-        padding: 16px;
-      }
-
-      @include tablet {
-        min-width: 320px;
-      }
-
-      &-title {
-        margin: 0;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 130%;
-        color: #111214;
-
-        @include desktop {
-          font-size: 28px;
-        }
-
-        @include laptop {
-          font-size: 24px;
-        }
-      }
-
-      &-list {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        margin: 32px 0 0;
-
-        @include desktoplg {
-          margin-top: 28px;
-        }
-
-        @include desktop {
-          margin-top: 16px;
-        }
-
-        &-item {
-          position: relative;
-          padding-left: 22px;
-          cursor: pointer;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 0;
-            display: block;
-            width: 10px;
-            height: 10px;
-            background-color: #8e8e93;
-            transition: background-color ease-out 0.2s;
-          }
-
-          &:hover::before {
-            background-color: #1b5bff;
-          }
-
-          &-title {
-            margin: 0;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 140%;
-            color: #000;
-
-            @include laptop {
-              font-size: 16px;
-            }
-          }
-
-          &-text {
-            margin: 2px 0 0;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            color: #8e8e93;
-
-            @include laptop {
-              font-size: 14px;
-            }
           }
         }
       }
